@@ -2,7 +2,9 @@ site_name: DeepL .NET Documentation
 nav:
 - Overview: index.md
 - Guides:
+  - Getting Started: guides/getting-started.md
   - Microsoft.Extensions.AI: guides/meai.md
+  - Combined Search + Translation: guides/combined-tools.md
 # EXAMPLES:START
 # EXAMPLES:END
         
