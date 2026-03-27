@@ -48,3 +48,19 @@ DeepL API has tagged operations generating sub-clients:
 - `client.StyleRules.*` — Style rule management (v3)
 - `client.VoiceAPI.*` — Voice streaming (v3)
 - `client.AdminApi.*` — Developer key management
+
+## Voice API Notes
+
+The Voice API provides **real-time speech translation** via WebSocket:
+1. REST endpoint (`GetVoiceStreamingUrlAsync`) returns an ephemeral `wss://` URL + token
+2. Client connects to WebSocket and streams audio bytes
+3. Server returns transcription + multi-language translations in real-time
+
+**Not ISpeechToTextClient compatible** — the bi-directional WebSocket streaming pattern doesn't map to MEAI's single-request transcription model. Use the SDK's native `client.VoiceAPI.GetVoiceStreamingUrlAsync()` + a WebSocket client.
+
+## Document Translation Workflow
+
+Three-step async pattern:
+1. **Upload:** `client.TranslateDocuments.TranslateDocumentAsync(targetLang, fileBytes, filename)` → returns `DocumentId` + `DocumentKey`
+2. **Poll:** `client.TranslateDocuments.GetDocumentStatusAsync(docId, docKey)` → check `Status` (Queued → Translating → Done)
+3. **Download:** `client.TranslateDocuments.DownloadDocumentAsync(docId, docKey)` → returns `byte[]` (one-time download)
