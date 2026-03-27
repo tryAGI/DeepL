@@ -4,6 +4,7 @@ namespace DeepL;
 
 public partial class DeepLClient
 {
+#pragma warning disable CA1822 // Mark members as static
     partial void PrepareRequest(
         global::System.Net.Http.HttpClient client,
         global::System.Net.Http.HttpRequestMessage request)
@@ -14,4 +15,5 @@ public partial class DeepLClient
                 new global::System.Net.Http.Headers.AuthenticationHeaderValue("DeepL-Auth-Key", apiKey);
         }
     }
+#pragma warning restore CA1822 // Mark members as static
 }
