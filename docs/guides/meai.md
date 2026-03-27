@@ -3,7 +3,7 @@
 !!! tip "Cross-SDK comparison"
     See the [centralized MEAI documentation](https://tryagi.github.io/docs/meai/) for feature matrices and comparisons across all tryAGI SDKs.
 
-The DeepL SDK provides `AIFunction` tool wrappers compatible with [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai). These tools can be used with any `IChatClient` to give AI models translation and text improvement capabilities.
+The DeepL SDK provides `AIFunction` tool wrappers compatible with [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai). These tools can be used with any `IChatClient` to give AI models translation, text improvement, and document translation capabilities.
 
 ## Installation
 
@@ -24,7 +24,8 @@ var deepLClient = new DeepLClient(
     apiKey: Environment.GetEnvironmentVariable("DEEPL_API_KEY")!);
 
 AIFunction translateTool = deepLClient.AsTranslateTool(
-    defaultTargetLanguage: TargetLanguage.En);
+    defaultTargetLanguage: TargetLanguage.En,
+    formality: Formality.More);  // Optional: formal tone
 
 // Use with any IChatClient (OpenAI, Anthropic, Ollama, etc.)
 IChatClient chatClient = /* your chat client */;
@@ -67,7 +68,9 @@ using DeepL;
 var deepLClient = new DeepLClient(
     apiKey: Environment.GetEnvironmentVariable("DEEPL_API_KEY")!);
 
-AIFunction rephraseTool = deepLClient.AsRephraseTool();
+AIFunction rephraseTool = deepLClient.AsRephraseTool(
+    writingStyle: WritingStyle.Business,  // Optional: business style
+    tone: WritingTone.Confident);         // Optional: confident tone
 
 // Use with any IChatClient
 IChatClient chatClient = /* your chat client */;
@@ -84,9 +87,35 @@ var response = await chatClient.GetResponseAsync(
 Console.WriteLine(response.Text);
 ```
 
-## Combining Both Tools
+## Document Translation Tool
 
-You can provide both translation and rephrasing tools simultaneously, letting the model decide which to use.
+Use `AsTranslateDocumentTool()` to create an `AIFunction` that handles the full document translation workflow (upload, poll, download). Supports DOCX, PPTX, XLSX, PDF, HTML, TXT, and more.
+
+```csharp
+using Microsoft.Extensions.AI;
+using DeepL;
+
+var deepLClient = new DeepLClient(
+    apiKey: Environment.GetEnvironmentVariable("DEEPL_API_KEY")!);
+
+AIFunction docTool = deepLClient.AsTranslateDocumentTool(
+    defaultTargetLanguage: TargetLanguage.Fr);
+
+// Use with any IChatClient
+IChatClient chatClient = /* your chat client */;
+
+var options = new ChatOptions
+{
+    Tools = [docTool],
+};
+```
+
+!!! note
+    The document translation tool accepts base64-encoded file content and returns the translated document as base64. This is best suited for agents that handle file I/O.
+
+## Combining All Tools
+
+You can provide all three tools simultaneously, letting the model decide which to use.
 
 ```csharp
 using Microsoft.Extensions.AI;
@@ -101,6 +130,7 @@ var options = new ChatOptions
     [
         deepLClient.AsTranslateTool(),
         deepLClient.AsRephraseTool(),
+        deepLClient.AsTranslateDocumentTool(),
     ],
 };
 
@@ -135,16 +165,33 @@ while (true)
 |--------|-----------|-------------|
 | `AsTranslateTool()` | `TranslateText` | Translates text between 30+ languages with automatic source detection |
 | `AsRephraseTool()` | `RephraseText` | Improves text clarity, tone, and style using DeepL Write API |
+| `AsTranslateDocumentTool()` | `TranslateDocument` | Translates documents (DOCX, PDF, TXT, etc.) with automatic polling |
 
 ### AsTranslateTool Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `defaultTargetLanguage` | `TargetLanguage` | `En` | Default target language when the model doesn't specify one |
+| `formality` | `Formality?` | `null` | Formality level: `Default`, `Less`, `More`, `PreferLess`, `PreferMore` |
+
+### AsRephraseTool Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `writingStyle` | `WritingStyle?` | `null` | Style: `Academic`, `Business`, `Casual`, `Simple`, or `Default` |
+| `tone` | `WritingTone?` | `null` | Tone: `Confident`, `Diplomatic`, `Enthusiastic`, `Friendly`, or `Default` |
+
+### AsTranslateDocumentTool Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `defaultTargetLanguage` | `TargetLanguage` | `En` | Default target language when the model doesn't specify one |
+| `formality` | `Formality?` | `null` | Formality level for the translation |
+| `pollIntervalMs` | `int` | `1000` | Polling interval in milliseconds when waiting for translation |
 
 ### Language Codes
 
-The translation tool accepts standard language codes as strings:
+The translation tools accept standard language codes as strings:
 
 | Code | Language | Code | Language |
 |------|----------|------|----------|

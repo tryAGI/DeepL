@@ -24,13 +24,35 @@ public partial class Tests
     }
 
     [TestMethod]
-    public void AsTranslateTool_WithDefaultLanguage()
+    public void AsTranslateTool_WithDefaultLanguageAndFormality()
     {
         using var client = CreateTestClient();
 
-        //// You can specify a default target language for translations.
-        var tool = client.AsTranslateTool(defaultTargetLanguage: TargetLanguage.De);
+        //// You can specify a default target language and formality level.
+        var tool = client.AsTranslateTool(
+            defaultTargetLanguage: TargetLanguage.De,
+            formality: Formality.More);
         tool.Name.Should().Be("TranslateText");
         tool.Description.Should().NotBeNullOrEmpty();
+    }
+
+    [TestMethod]
+    public async Task AsTranslateTool_TranslatesText()
+    {
+        using var client = GetAuthenticatedClient();
+
+        //// Invoke the translation tool directly to translate text.
+        var tool = client.AsTranslateTool(defaultTargetLanguage: TargetLanguage.De);
+        var result = await tool.InvokeAsync(
+            new AIFunctionArguments(new Dictionary<string, object?>
+            {
+                ["text"] = "Hello, world!",
+                ["targetLanguage"] = "DE",
+            }));
+
+        result.Should().NotBeNull();
+        var text = result?.ToString();
+        text.Should().NotBeNullOrWhiteSpace();
+        text.Should().Contain("Hallo");
     }
 }
