@@ -14,4 +14,6 @@ public partial class Tests
         
         return client;
     }
+
+    private static DeepLClient CreateTestClient() => new(apiKey: "test-key");
 }
