@@ -130,6 +130,98 @@ var response = await client.VoiceAPI.GetVoiceStreamingUrlAsync(
 // actual WebSocket streaming requires a separate WebSocket client.
 ```
 
+### Style Rules
+Demonstrates how to create, configure, and manage style rule lists for
+consistent translation output.
+
+```csharp
+var client = new DeepLClient(apiKey);
+
+// Style rules let you enforce terminology, formatting, and tone
+// preferences across translations. They are configured per language.
+
+// ## Create a style rule list
+
+// Create a new style rule list for English with punctuation rules:
+var created = await client.StyleRules.CreateStyleRuleListAsync(
+    name: "SDK Test Rules",
+    language: StyleRuleLanguage.En);
+
+// ## List style rule lists
+
+// Retrieve all style rule lists:
+var lists = await client.StyleRules.GetStyleRuleListsAsync(detailed: true);
+
+// ## Update configured rules
+
+// Configure specific rule categories (7 available: DatesAndTimes,
+// Formatting, Numbers, Punctuation, SpellingAndGrammar,
+// StyleAndTone, Vocabulary):
+var updated = await client.StyleRules.UpdateStyleRuleConfiguredRulesAsync(
+    styleId: created.StyleId,
+    punctuation: new ConfiguredRulesPunctuation());
+
+// ## Clean up
+
+await client.StyleRules.DeleteStyleRuleListAsync(
+    styleId: created.StyleId);
+```
+
+### Custom Instructions
+Shows how to add free-text custom instructions to a style rule list
+for fine-grained control over translation output.
+
+```csharp
+var client = new DeepLClient(apiKey);
+
+// Custom instructions let you provide free-text rules that
+// DeepL applies during translation — for example, enforcing
+// terminology conventions or formatting preferences.
+
+// ## Create a style rule list
+
+var styleRule = await client.StyleRules.CreateStyleRuleListAsync(
+    name: "Custom Instruction Demo",
+    language: StyleRuleLanguage.En);
+
+// ## Add a custom instruction
+
+// Each instruction has a label and a prompt describing the rule:
+var instruction = await client.StyleRules.CreateCustomInstructionAsync(
+    styleId: styleRule.StyleId,
+    label: "Currency formatting",
+    prompt: "Always place the currency symbol before the number (e.g. $100, €50).");
+
+// ## Retrieve the instruction
+
+var retrieved = await client.StyleRules.GetCustomInstructionAsync(
+    styleId: styleRule.StyleId,
+    instructionId: instruction.Id);
+
+// ## Add a source-language-specific instruction
+
+// You can optionally restrict an instruction to a specific
+// source language:
+var deInstruction = await client.StyleRules.CreateCustomInstructionAsync(
+    styleId: styleRule.StyleId,
+    label: "German compound nouns",
+    prompt: "Keep German compound nouns as a single word in the translation.",
+    sourceLanguage: "de");
+
+// ## Clean up
+
+await client.StyleRules.DeleteCustomInstructionAsync(
+    styleId: styleRule.StyleId,
+    instructionId: deInstruction.Id);
+
+await client.StyleRules.DeleteCustomInstructionAsync(
+    styleId: styleRule.StyleId,
+    instructionId: instruction.Id);
+
+await client.StyleRules.DeleteStyleRuleListAsync(
+    styleId: styleRule.StyleId);
+```
+
 ### Free API Endpoint
 Shows how to use the DeepL Free API endpoint instead of the Pro endpoint.
 

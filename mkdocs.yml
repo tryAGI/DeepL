@@ -13,6 +13,8 @@ nav:
   - List Languages: examples/list-languages.md
   - Translate Document: examples/translate-document.md
   - Voice Streaming: examples/voice-streaming.md
+  - Style Rules: examples/style-rules.md
+  - Custom Instructions: examples/custom-instructions.md
   - Free API Endpoint: examples/free-api-endpoint.md
 # EXAMPLES:END
         
