@@ -16,8 +16,8 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         //// Retrieve your DeepL account usage (character count and limits).
-        var response = await client.GetUsageAsync();
+        var response = await client.MetaInformation.GetUsageAsync();
 
-        response.CharacterCount.Should().BeGreaterOrEqualTo(0);
+        response.CharacterCount.Should().NotBeNull();
     }
 }

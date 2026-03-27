@@ -16,7 +16,7 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         //// List all supported source and target languages.
-        var languages = await client.GetLanguagesAsync();
+        var languages = await client.MetaInformation.GetLanguagesAsync();
 
         languages.Should().NotBeEmpty();
         languages[0].Language.Should().NotBeNullOrEmpty();

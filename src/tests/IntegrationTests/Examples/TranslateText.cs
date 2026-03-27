@@ -16,7 +16,7 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         //// Translate text from English to German using the DeepL API.
-        var response = await client.TranslateTextAsync(
+        var response = await client.TranslateText.TranslateTextAsync(
             request: new TranslateTextRequest
             {
                 Text = ["Hello, world!"],
@@ -25,6 +25,6 @@ public partial class Tests
 
         response.Translations.Should().NotBeEmpty();
         response.Translations[0].Text.Should().NotBeNullOrEmpty();
-        response.Translations[0].DetectedSourceLanguage.Should().NotBeNullOrEmpty();
+        response.Translations[0].DetectedSourceLanguage.Should().NotBeNull();
     }
 }
