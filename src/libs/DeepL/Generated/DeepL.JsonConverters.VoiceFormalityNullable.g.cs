@@ -1,0 +1,60 @@
+#nullable enable
+
+namespace DeepL.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class VoiceFormalityNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::DeepL.VoiceFormality?>
+    {
+        /// <inheritdoc />
+        public override global::DeepL.VoiceFormality? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::DeepL.VoiceFormalityExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::DeepL.VoiceFormality)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::DeepL.VoiceFormality?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::DeepL.VoiceFormality? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::DeepL.VoiceFormalityExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}
