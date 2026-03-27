@@ -6,6 +6,14 @@ nav:
   - Microsoft.Extensions.AI: guides/meai.md
   - Combined Search + Translation: guides/combined-tools.md
 # EXAMPLES:START
+- Examples:
+  - Translate Text: examples/translate-text.md
+  - Rephrase Text: examples/rephrase-text.md
+  - Get Usage: examples/get-usage.md
+  - List Languages: examples/list-languages.md
+  - Translate Document: examples/translate-document.md
+  - Voice Streaming: examples/voice-streaming.md
+  - Free API Endpoint: examples/free-api-endpoint.md
 # EXAMPLES:END
         
 theme:
