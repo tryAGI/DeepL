@@ -24,6 +24,15 @@ yq -i '
   .components.schemas.IgnoreTagList = {"type": "array", "items": {"type": "string"}, "description": "List of XML tags that indicate text not to be translated."}
 ' openapi.yaml
 
+# Fix codegen: rename enum values that produce case-insensitive PascalCase collisions (CS3005)
+# "per_cento" vs "percento" both become "PerCento"/"Percento" (differ only in case)
+# "per_cent" vs "percent" both become "PerCent"/"Percent" (differ only in case)
+# Rename the single-word variants to include "single_word" disambiguator
+sed -i '' \
+  -e 's/italian_word_percento/italian_single_word_percento/g' \
+  -e 's/spell_out_percent/spell_out_single_word_percent/g' \
+  openapi.yaml
+
 autosdk generate openapi.yaml \
   --namespace DeepL \
   --clientClassName DeepLClient \

@@ -3086,11 +3086,11 @@ components:
                 - use_numerals_followed_by_space_then_german_word_prozent
                 - use_numerals_followed_by_space_then_half_width_percent_symbol
                 - use_numerals_followed_by_space_then_italian_word_per_cento
-                - use_numerals_followed_by_space_then_italian_word_percento
+                - use_numerals_followed_by_space_then_italian_single_word_percento
                 - use_numerals_followed_by_space_then_korean_word_퍼센트
                 - use_numerals_followed_by_space_then_percent_symbol
                 - use_numerals_followed_by_space_then_spell_out_per_cent
-                - use_numerals_followed_by_space_then_spell_out_percent
+                - use_numerals_followed_by_space_then_spell_out_single_word_percent
                 - use_spanish_word_por_cien
                 - use_spanish_word_por_ciento
             reference_to_symbol:
