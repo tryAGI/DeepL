@@ -31,10 +31,27 @@ var client = new DeepLClient(apiKey); // DEEPL_API_KEY env var
 
 ## Spec Notes
 
-- DeepL uses `DeepL-Auth-Key <key>` auth header (not standard `Bearer`)
-- `generate.sh` converts `apiKey` security scheme to `http/bearer` for AutoSDK
-- `PrepareRequest` hook rewrites `Authorization: Bearer <key>` to `Authorization: DeepL-Auth-Key <key>`
-- `generate.sh` also flattens `allOf`-wrapping-string schemas (CommaSeparatedList, TagList types) to avoid reserved keyword codegen issues
+The `generate.sh` applies fixes via `yq`/`jq`:
+
+1. **Auth conversion:** Converts `apiKey` security scheme to `http/bearer` for AutoSDK
+2. **allOf string flattening:** Flattens `allOf`-wrapping-string schemas (CommaSeparatedList, TagList types) to avoid C# reserved keyword `string` as property name
+
+## Auth Hook
+
+DeepL uses `Authorization: DeepL-Auth-Key <key>` (not `Bearer`). The `PrepareRequest` hook in `Extensions/DeepLClient.Auth.cs` rewrites the scheme:
+
+```csharp
+partial void PrepareRequest(HttpClient client, HttpRequestMessage request)
+{
+    if (request.Headers.Authorization is { Scheme: "Bearer", Parameter: { } apiKey })
+    {
+        request.Headers.Authorization =
+            new AuthenticationHeaderValue("DeepL-Auth-Key", apiKey);
+    }
+}
+```
+
+> **Note:** `--security-scheme ApiKey:Header:<name>` cannot express DeepL's auth because it uses a custom scheme name in the `Authorization` header (not a separate custom header).
 
 ## Sub-client Pattern
 
