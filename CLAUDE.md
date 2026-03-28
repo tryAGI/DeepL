@@ -23,7 +23,7 @@ var client = new DeepLClient(apiKey); // DEEPL_API_KEY env var
 ## Key Files
 
 - `src/libs/DeepL/openapi.yaml` — OpenAPI spec (downloaded from DeepLcom/openapi)
-- `src/libs/DeepL/generate.sh` — Downloads spec, fixes auth + allOf string types, runs autosdk
+- `src/libs/DeepL/generate.sh` — Downloads spec, fixes allOf string types, runs autosdk with `--security-scheme`
 - `src/libs/DeepL/Generated/` — **Never edit** — auto-generated code
 - `src/libs/DeepL/Extensions/DeepLClient.Auth.cs` — PrepareRequest hook: `Bearer → DeepL-Auth-Key`
 - `src/tests/IntegrationTests/Tests.cs` — Test helper with bearer auth
@@ -31,10 +31,13 @@ var client = new DeepLClient(apiKey); // DEEPL_API_KEY env var
 
 ## Spec Notes
 
-The `generate.sh` applies fixes via `yq`/`jq`:
+The `generate.sh` applies fixes via `yq` and `--security-scheme`:
 
-1. **Auth conversion:** Converts `apiKey` security scheme to `http/bearer` for AutoSDK
-2. **allOf string flattening:** Flattens `allOf`-wrapping-string schemas (CommaSeparatedList, TagList types) to avoid C# reserved keyword `string` as property name
+**CLI flags:**
+- `--security-scheme Http:Header:Bearer` — Overrides spec's `apiKey` auth with standard HTTP bearer
+
+**Pre-generation (`yq`):**
+1. **allOf string flattening:** Flattens `allOf`-wrapping-string schemas (CommaSeparatedList, TagList types) to avoid C# reserved keyword `string` as property name
 
 ## Auth Hook
 
