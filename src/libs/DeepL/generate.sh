@@ -7,14 +7,6 @@ dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
 curl --fail --silent --show-error -L -o openapi.yaml https://raw.githubusercontent.com/DeepLcom/openapi/main/openapi.yaml
 
-# Fix auth: convert apiKey → http/bearer for AutoSDK constructor generation
-yq -i '
-  del(.components.securitySchemes) |
-  .components.securitySchemes.BearerAuth = {"type": "http", "scheme": "bearer"} |
-  del(.security) |
-  .security = [{"BearerAuth": []}]
-' openapi.yaml
-
 # Fix codegen: replace allOf-wrapping-string schemas with plain string type
 # (AutoSDK generates `string` as a C# property name which is a reserved keyword)
 yq -i '
@@ -30,14 +22,17 @@ yq -i '
 # "per_cento" vs "percento" both become "PerCento"/"Percento" (differ only in case)
 # "per_cent" vs "percent" both become "PerCent"/"Percent" (differ only in case)
 # Rename the single-word variants to include "single_word" disambiguator
-sed -i '' \
+sed \
   -e 's/italian_word_percento/italian_single_word_percento/g' \
   -e 's/spell_out_percent/spell_out_single_word_percent/g' \
-  openapi.yaml
+  openapi.yaml > openapi.yaml.tmp && mv openapi.yaml.tmp openapi.yaml
 
+# Auth: --security-scheme overrides the spec's apiKey auth with HTTP bearer.
+# DeepL uses 'Authorization: DeepL-Auth-Key <key>' — DeepLClient.Auth.cs rewrites Bearer → DeepL-Auth-Key.
 autosdk generate openapi.yaml \
   --namespace DeepL \
   --clientClassName DeepLClient \
   --targetFramework net10.0 \
   --output Generated \
-  --exclude-deprecated-operations
+  --exclude-deprecated-operations \
+  --security-scheme Http:Header:Bearer
