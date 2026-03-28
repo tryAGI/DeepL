@@ -3,7 +3,7 @@ set -euo pipefail
 
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
-curl --fail --silent --show-error -o openapi.yaml https://raw.githubusercontent.com/DeepLcom/openapi/main/openapi.yaml
+curl --fail --silent --show-error -L -o openapi.yaml https://raw.githubusercontent.com/DeepLcom/openapi/main/openapi.yaml
 
 # Fix auth: convert apiKey → http/bearer for AutoSDK constructor generation
 yq -i '
