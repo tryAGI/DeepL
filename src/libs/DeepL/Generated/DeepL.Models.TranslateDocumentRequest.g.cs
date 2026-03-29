@@ -103,11 +103,6 @@ namespace DeepL
         /// <summary>
         /// Initializes a new instance of the <see cref="TranslateDocumentRequest" /> class.
         /// </summary>
-        /// <param name="sourceLang">
-        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to detect the language of the text and translate it.<br/>
-        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
-        /// Example: EN
-        /// </param>
         /// <param name="targetLang">
         /// The language into which the text should be translated.<br/>
         /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
@@ -124,6 +119,11 @@ namespace DeepL
         ///   * `xlf / xliff` - XLIFF Document, version 2.1<br/>
         ///   * `srt` - SRT Document<br/>
         ///   * `jpeg / jpg / png` - Image
+        /// </param>
+        /// <param name="sourceLang">
+        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to detect the language of the text and translate it.<br/>
+        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
+        /// Example: EN
         /// </param>
         /// <param name="filename">
         /// The name of the uploaded file. Can be used as an alternative to including the file name in the file part's content disposition.
@@ -172,9 +172,9 @@ namespace DeepL
             global::DeepL.Formality? formality,
             string? glossaryId)
         {
+            this.SourceLang = sourceLang;
             this.TargetLang = targetLang;
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
-            this.SourceLang = sourceLang;
             this.Filename = filename;
             this.OutputFormat = outputFormat;
             this.Formality = formality;

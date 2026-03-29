@@ -224,15 +224,15 @@ namespace DeepL
         /// <param name="text">
         /// Text to be translated. Only UTF-8-encoded plain text is supported. The parameter may be specified multiple times and translations are returned in the same order as they are requested. Each of the parameter values may contain multiple sentences.
         /// </param>
-        /// <param name="sourceLang">
-        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to detect the language of the text and translate it.<br/>
-        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
-        /// Example: EN
-        /// </param>
         /// <param name="targetLang">
         /// The language into which the text should be translated.<br/>
         /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
         /// Example: DE
+        /// </param>
+        /// <param name="sourceLang">
+        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to detect the language of the text and translate it.<br/>
+        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
+        /// Example: EN
         /// </param>
         /// <param name="context">
         /// The `context` parameter makes it possible to include additional context that can influence a translation but is not translated itself. <br/>
@@ -386,8 +386,8 @@ namespace DeepL
             string? ignoreTags)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.TargetLang = targetLang;
             this.SourceLang = sourceLang;
+            this.TargetLang = targetLang;
             this.Context = context;
             this.ShowBilledCharacters = showBilledCharacters;
             this.SplitSentences = splitSentences;
