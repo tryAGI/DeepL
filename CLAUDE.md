@@ -14,7 +14,7 @@ dotnet test src/tests/IntegrationTests/
 
 ## Auth
 
-Bearer token auth (converted to `DeepL-Auth-Key` scheme via PrepareRequest hook):
+Bearer token auth (converted to `DeepL-Auth-Key` scheme via `Authorized` hook):
 
 ```csharp
 var client = new DeepLClient(apiKey); // DEEPL_API_KEY env var
@@ -25,7 +25,7 @@ var client = new DeepLClient(apiKey); // DEEPL_API_KEY env var
 - `src/libs/DeepL/openapi.yaml` — OpenAPI spec (downloaded from DeepLcom/openapi)
 - `src/libs/DeepL/generate.sh` — Downloads spec, fixes allOf string types, runs autosdk with `--security-scheme`
 - `src/libs/DeepL/Generated/` — **Never edit** — auto-generated code
-- `src/libs/DeepL/Extensions/DeepLClient.Auth.cs` — PrepareRequest hook: `Bearer → DeepL-Auth-Key`
+- `src/libs/DeepL/Extensions/DeepLClient.Auth.cs` — `Authorized` hook: `Bearer → DeepL-Auth-Key`
 - `src/tests/IntegrationTests/Tests.cs` — Test helper with bearer auth
 - `src/tests/IntegrationTests/Examples/` — Example tests (also generate docs)
 
@@ -41,15 +41,15 @@ The `generate.sh` applies fixes via `yq` and `--security-scheme`:
 
 ## Auth Hook
 
-DeepL uses `Authorization: DeepL-Auth-Key <key>` (not `Bearer`). The `PrepareRequest` hook in `Extensions/DeepLClient.Auth.cs` rewrites the scheme:
+DeepL uses `Authorization: DeepL-Auth-Key <key>` (not `Bearer`). The `Authorized` hook in `Extensions/DeepLClient.Auth.cs` modifies the shared Authorizations list:
 
 ```csharp
-partial void PrepareRequest(HttpClient client, HttpRequestMessage request)
+partial void Authorized(Authorization authorization)
 {
-    if (request.Headers.Authorization is { Scheme: "Bearer", Parameter: { } apiKey })
+    if (authorization.Type == "Bearer" && authorization.Value is { } apiKey)
     {
-        request.Headers.Authorization =
-            new AuthenticationHeaderValue("DeepL-Auth-Key", apiKey);
+        authorization.Type = "DeepL-Auth-Key";
+        authorization.Value = apiKey;
     }
 }
 ```
