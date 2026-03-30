@@ -4,16 +4,25 @@ namespace DeepL;
 
 public partial class DeepLClient
 {
-#pragma warning disable CA1822 // Mark members as static
-    partial void PrepareRequest(
-        global::System.Net.Http.HttpClient client,
-        global::System.Net.Http.HttpRequestMessage request)
+    partial void Authorized(
+        global::System.Net.Http.HttpClient client)
     {
-        if (request.Headers.Authorization is { Scheme: "Bearer", Parameter: { } apiKey })
+        // DeepL uses "Authorization: DeepL-Auth-Key <key>" instead of "Bearer".
+        // Rewrite the scheme in the shared Authorizations list so all sub-clients
+        // (TranslateText, RephraseText, etc.) send the correct header.
+        for (var i = 0; i < Authorizations.Count; i++)
         {
-            request.Headers.Authorization =
-                new global::System.Net.Http.Headers.AuthenticationHeaderValue("DeepL-Auth-Key", apiKey);
+            var auth = Authorizations[i];
+            if (auth is { Type: "Http", Name: "Bearer" })
+            {
+                Authorizations[i] = new EndPointAuthorization
+                {
+                    Type = auth.Type,
+                    Location = auth.Location,
+                    Name = "DeepL-Auth-Key",
+                    Value = auth.Value,
+                };
+            }
         }
     }
-#pragma warning restore CA1822 // Mark members as static
 }
