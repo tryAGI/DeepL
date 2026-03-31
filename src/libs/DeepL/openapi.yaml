@@ -4850,9 +4850,13 @@ components:
          * `es` - Spanish
          * `fr` - French
          * `it` - Italian
+         * `ja` - Japanese
+         * `ko` - Korean
          * `pt` - Portuguese (unspecified variant, defaults to `pt-PT`)
          * `pt-BR` - Portuguese (Brazilian)
          * `pt-PT` - Portuguese (all Portuguese variants excluding Brazilian Portuguese)
+         * `zh` - Chinese (unspecified variant, defaults to `zh-Hans`)
+         * `zh-Hans` - Chinese (simplified)
       enum:
         - de
         - en
@@ -4860,9 +4864,13 @@ components:
         - en-US
         - fr
         - it
+        - ja
+        - ko
         - pt
         - pt-BR
         - pt-PT
+        - zh
+        - zh-Hans
       example: de
     VoiceFormality:
       description: |-

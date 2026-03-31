@@ -12,9 +12,13 @@ namespace DeepL
     ///  * `es` - Spanish<br/>
     ///  * `fr` - French<br/>
     ///  * `it` - Italian<br/>
+    ///  * `ja` - Japanese<br/>
+    ///  * `ko` - Korean<br/>
     ///  * `pt` - Portuguese (unspecified variant, defaults to `pt-PT`)<br/>
     ///  * `pt-BR` - Portuguese (Brazilian)<br/>
     ///  * `pt-PT` - Portuguese (all Portuguese variants excluding Brazilian Portuguese)<br/>
+    ///  * `zh` - Chinese (unspecified variant, defaults to `zh-Hans`)<br/>
+    ///  * `zh-Hans` - Chinese (simplified)<br/>
     /// Example: de
     /// </summary>
     public enum TargetLanguageWrite
@@ -46,6 +50,14 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
+        Ja,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ko,
+        /// <summary>
+        /// 
+        /// </summary>
         Pt,
         /// <summary>
         /// 
@@ -55,6 +67,14 @@ namespace DeepL
         /// 
         /// </summary>
         PtPt,
+        /// <summary>
+        /// 
+        /// </summary>
+        Zh,
+        /// <summary>
+        /// 
+        /// </summary>
+        ZhHans,
     }
 
     /// <summary>
@@ -75,9 +95,13 @@ namespace DeepL
                 TargetLanguageWrite.EnUs => "en-US",
                 TargetLanguageWrite.Fr => "fr",
                 TargetLanguageWrite.It => "it",
+                TargetLanguageWrite.Ja => "ja",
+                TargetLanguageWrite.Ko => "ko",
                 TargetLanguageWrite.Pt => "pt",
                 TargetLanguageWrite.PtBr => "pt-BR",
                 TargetLanguageWrite.PtPt => "pt-PT",
+                TargetLanguageWrite.Zh => "zh",
+                TargetLanguageWrite.ZhHans => "zh-Hans",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -94,9 +118,13 @@ namespace DeepL
                 "en-US" => TargetLanguageWrite.EnUs,
                 "fr" => TargetLanguageWrite.Fr,
                 "it" => TargetLanguageWrite.It,
+                "ja" => TargetLanguageWrite.Ja,
+                "ko" => TargetLanguageWrite.Ko,
                 "pt" => TargetLanguageWrite.Pt,
                 "pt-BR" => TargetLanguageWrite.PtBr,
                 "pt-PT" => TargetLanguageWrite.PtPt,
+                "zh" => TargetLanguageWrite.Zh,
+                "zh-Hans" => TargetLanguageWrite.ZhHans,
                 _ => null,
             };
         }
