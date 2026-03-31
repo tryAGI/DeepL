@@ -24,9 +24,13 @@ namespace DeepL
         ///  * `es` - Spanish<br/>
         ///  * `fr` - French<br/>
         ///  * `it` - Italian<br/>
+        ///  * `ja` - Japanese<br/>
+        ///  * `ko` - Korean<br/>
         ///  * `pt` - Portuguese (unspecified variant, defaults to `pt-PT`)<br/>
         ///  * `pt-BR` - Portuguese (Brazilian)<br/>
         ///  * `pt-PT` - Portuguese (all Portuguese variants excluding Brazilian Portuguese)<br/>
+        ///  * `zh` - Chinese (unspecified variant, defaults to `zh-Hans`)<br/>
+        ///  * `zh-Hans` - Chinese (simplified)<br/>
         /// Example: de
         /// </summary>
         /// <example>de</example>
@@ -71,9 +75,13 @@ namespace DeepL
         ///  * `es` - Spanish<br/>
         ///  * `fr` - French<br/>
         ///  * `it` - Italian<br/>
+        ///  * `ja` - Japanese<br/>
+        ///  * `ko` - Korean<br/>
         ///  * `pt` - Portuguese (unspecified variant, defaults to `pt-PT`)<br/>
         ///  * `pt-BR` - Portuguese (Brazilian)<br/>
         ///  * `pt-PT` - Portuguese (all Portuguese variants excluding Brazilian Portuguese)<br/>
+        ///  * `zh` - Chinese (unspecified variant, defaults to `zh-Hans`)<br/>
+        ///  * `zh-Hans` - Chinese (simplified)<br/>
         /// Example: de
         /// </param>
         /// <param name="writingStyle">
