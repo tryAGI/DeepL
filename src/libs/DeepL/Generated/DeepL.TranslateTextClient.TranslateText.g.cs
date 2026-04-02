@@ -35,6 +35,28 @@ namespace DeepL
             global::DeepL.TranslateTextRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await TranslateTextAsResponseAsync(
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Request Translation<br/>
+        /// The translate function.<br/>
+        /// The total request body size must not exceed 128 KiB (128 · 1024 bytes). Please split up your text into multiple<br/>
+        /// calls if it exceeds this limit.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.TranslateTextResponse>> TranslateTextAsResponseAsync(
+
+            global::DeepL.TranslateTextRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -448,9 +470,12 @@ namespace DeepL
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::DeepL.TranslateTextResponse.FromJson(__content, JsonSerializerContext) ??
+                    var __value = global::DeepL.TranslateTextResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.TranslateTextResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -479,9 +504,12 @@ namespace DeepL
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::DeepL.TranslateTextResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = await global::DeepL.TranslateTextResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.TranslateTextResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

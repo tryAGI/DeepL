@@ -17,6 +17,16 @@ namespace DeepL
         /// <summary>
         /// Get Streaming URL
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.VoiceStreamingResponse>> GetVoiceStreamingUrlAsResponseAsync(
+
+            global::DeepL.GetVoiceStreamingUrlRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Streaming URL
+        /// </summary>
         /// <param name="sourceMediaContentType">
         /// The audio format for streaming. Specifies container, codec, and encoding parameters.<br/>
         /// Supported formats include PCM (recommended), OPUS (recommended for low bandwidth), FLAC, MP3, and AAC.<br/>

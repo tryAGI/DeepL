@@ -32,6 +32,24 @@ namespace DeepL
             string glossaryId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetGlossaryAsResponseAsync(
+                glossaryId: glossaryId,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Retrieve Glossary Details<br/>
+        /// Retrieve meta information for a single glossary, omitting the glossary entries.
+        /// </summary>
+        /// <param name="glossaryId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.MonolingualGlossary>> GetGlossaryAsResponseAsync(
+            string glossaryId,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetGlossaryArguments(
@@ -376,9 +394,12 @@ namespace DeepL
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::DeepL.MonolingualGlossary.FromJson(__content, JsonSerializerContext) ??
+                    var __value = global::DeepL.MonolingualGlossary.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.MonolingualGlossary>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -407,9 +428,12 @@ namespace DeepL
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::DeepL.MonolingualGlossary.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = await global::DeepL.MonolingualGlossary.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.MonolingualGlossary>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

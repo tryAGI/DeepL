@@ -20,6 +20,18 @@ namespace DeepL
         /// Replaces or creates a dictionary in the glossary with the specified entries.
         /// </summary>
         /// <param name="glossaryId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.MultilingualGlossaryEntriesInformation>> ReplaceDictionaryAsResponseAsync(
+            string glossaryId,
+
+            global::DeepL.MultilingualGlossaryEntries request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Replaces or creates a dictionary in the glossary with the specified entries.
+        /// </summary>
+        /// <param name="glossaryId"></param>
         /// <param name="sourceLang">
         /// The language in which the source texts in the glossary are specified.<br/>
         /// Example: en

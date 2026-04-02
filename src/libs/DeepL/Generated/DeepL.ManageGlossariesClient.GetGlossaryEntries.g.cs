@@ -33,6 +33,27 @@ namespace DeepL
             global::DeepL.GetGlossaryEntriesAccept? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            await GetGlossaryEntriesAsResponseAsync(
+                glossaryId: glossaryId,
+                accept: accept,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Retrieve Glossary Entries<br/>
+        /// List the entries of a single glossary in the format specified by the `Accept` header.
+        /// </summary>
+        /// <param name="glossaryId"></param>
+        /// <param name="accept">
+        /// Default Value: text/tab-separated-values
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse> GetGlossaryEntriesAsResponseAsync(
+            string glossaryId,
+            global::DeepL.GetGlossaryEntriesAccept? accept = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetGlossaryEntriesArguments(
@@ -414,6 +435,9 @@ namespace DeepL
                 {
                     __response.EnsureSuccessStatusCode();
 
+return new global::DeepL.AutoSDKHttpResponse(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response));
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -442,6 +466,9 @@ namespace DeepL
 #endif
                     ).ConfigureAwait(false);
 
+return new global::DeepL.AutoSDKHttpResponse(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response));
                 }
                 catch (global::System.Exception __ex)
                 {

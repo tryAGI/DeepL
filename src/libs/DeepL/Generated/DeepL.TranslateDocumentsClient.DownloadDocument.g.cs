@@ -38,6 +38,30 @@ namespace DeepL
             global::DeepL.DocumentKey request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await DownloadDocumentAsResponseAsync(
+                documentId: documentId,
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Download Translated Document<br/>
+        /// Once the status of the document translation process is `done`, the result can be downloaded.<br/>
+        /// For privacy reasons the translated document is automatically removed from the server once it was downloaded and cannot be downloaded again.
+        /// </summary>
+        /// <param name="documentId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<byte[]>> DownloadDocumentAsResponseAsync(
+            string documentId,
+
+            global::DeepL.DocumentKey request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -459,7 +483,10 @@ namespace DeepL
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return new global::DeepL.AutoSDKHttpResponse<byte[]>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __content);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -487,7 +514,10 @@ namespace DeepL
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return new global::DeepL.AutoSDKHttpResponse<byte[]>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __content);
                 }
                 catch (global::System.Exception __ex)
                 {

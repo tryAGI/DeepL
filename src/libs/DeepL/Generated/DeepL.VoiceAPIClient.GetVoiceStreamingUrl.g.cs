@@ -32,6 +32,25 @@ namespace DeepL
             global::DeepL.GetVoiceStreamingUrlRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetVoiceStreamingUrlAsResponseAsync(
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get Streaming URL
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.VoiceStreamingResponse>> GetVoiceStreamingUrlAsResponseAsync(
+
+            global::DeepL.GetVoiceStreamingUrlRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -346,9 +365,12 @@ namespace DeepL
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::DeepL.VoiceStreamingResponse.FromJson(__content, JsonSerializerContext) ??
+                    var __value = global::DeepL.VoiceStreamingResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.VoiceStreamingResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -377,9 +399,12 @@ namespace DeepL
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::DeepL.VoiceStreamingResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = await global::DeepL.VoiceStreamingResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.VoiceStreamingResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

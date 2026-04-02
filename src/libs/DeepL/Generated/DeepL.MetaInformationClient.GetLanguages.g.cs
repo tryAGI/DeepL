@@ -34,6 +34,26 @@ namespace DeepL
             global::DeepL.GetLanguagesType? type = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetLanguagesAsResponseAsync(
+                type: type,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Retrieve Supported Languages<br/>
+        /// Retrieve the list of languages that are currently supported for translation, either as source or target language, respectively.
+        /// </summary>
+        /// <param name="type">
+        /// Default Value: source
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>>> GetLanguagesAsResponseAsync(
+            global::DeepL.GetLanguagesType? type = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetLanguagesArguments(
@@ -409,9 +429,12 @@ namespace DeepL
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        (global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>), JsonSerializerContext) ??
+                    var __value = (global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>), JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::DeepL.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -440,9 +463,12 @@ namespace DeepL
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        (global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>), JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = (global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>), JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::DeepL.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

@@ -28,6 +28,21 @@ namespace DeepL
         public async global::System.Threading.Tasks.Task<global::DeepL.ListGlossaryLanguagesResponse> ListGlossaryLanguagesAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListGlossaryLanguagesAsResponseAsync(
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List Language Pairs Supported by Glossaries<br/>
+        /// Retrieve the list of language pairs supported by the glossary feature.
+        /// </summary>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.ListGlossaryLanguagesResponse>> ListGlossaryLanguagesAsResponseAsync(
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListGlossaryLanguagesArguments(
@@ -299,9 +314,12 @@ namespace DeepL
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::DeepL.ListGlossaryLanguagesResponse.FromJson(__content, JsonSerializerContext) ??
+                    var __value = global::DeepL.ListGlossaryLanguagesResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.ListGlossaryLanguagesResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -330,9 +348,12 @@ namespace DeepL
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::DeepL.ListGlossaryLanguagesResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = await global::DeepL.ListGlossaryLanguagesResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.ListGlossaryLanguagesResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

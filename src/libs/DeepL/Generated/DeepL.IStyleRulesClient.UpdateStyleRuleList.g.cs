@@ -20,6 +20,18 @@ namespace DeepL
         /// Update a style rule list
         /// </summary>
         /// <param name="styleId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.StyleRuleList>> UpdateStyleRuleListAsResponseAsync(
+            string styleId,
+
+            global::DeepL.UpdateStyleRuleListRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a style rule list
+        /// </summary>
+        /// <param name="styleId"></param>
         /// <param name="name">
         /// Name of the style rule list<br/>
         /// Example: New Technical Documentation Rules
