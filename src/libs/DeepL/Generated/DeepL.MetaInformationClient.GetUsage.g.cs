@@ -37,6 +37,30 @@ namespace DeepL
         public async global::System.Threading.Tasks.Task<global::DeepL.UsageResponse> GetUsageAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetUsageAsResponseAsync(
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Check Usage and Limits<br/>
+        /// Retrieve usage information within the current billing period together with the corresponding account limits. Usage is returned for:<br/>
+        /// - translated characters<br/>
+        /// - translated documents<br/>
+        /// - translated documents, team totals (for team accounts only)<br/>
+        /// Character usage includes both text and document translations, and is measured by the source text length in Unicode code points,<br/>
+        /// so for example "A", "Δ", "あ", and "深" are each counted as a single character.<br/>
+        /// Document usage only includes document translations, and is measured in individual documents.<br/>
+        /// Depending on the user account type, some usage types will be omitted.<br/>
+        /// Character usage is only included for developer accounts.<br/>
+        /// Document usage is only included for non-developer accounts, and team-combined document usage is only included for non-developer team accounts.
+        /// </summary>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.UsageResponse>> GetUsageAsResponseAsync(
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetUsageArguments(
@@ -407,9 +431,12 @@ namespace DeepL
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::DeepL.UsageResponse.FromJson(__content, JsonSerializerContext) ??
+                    var __value = global::DeepL.UsageResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.UsageResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -438,9 +465,12 @@ namespace DeepL
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::DeepL.UsageResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = await global::DeepL.UsageResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.UsageResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

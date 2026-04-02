@@ -23,6 +23,19 @@ namespace DeepL
         /// The total request body size must not exceed 128 KiB (128 · 1024 bytes). Please split up your text into multiple<br/>
         /// calls if it exceeds this limit.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.TranslateTextResponse>> TranslateTextAsResponseAsync(
+
+            global::DeepL.TranslateTextRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Request Translation<br/>
+        /// The translate function.<br/>
+        /// The total request body size must not exceed 128 KiB (128 · 1024 bytes). Please split up your text into multiple<br/>
+        /// calls if it exceeds this limit.
+        /// </summary>
         /// <param name="text">
         /// Text to be translated. Only UTF-8-encoded plain text is supported. The parameter may be specified<br/>
         /// multiple times and translations are returned in the same order as they are requested. Each of the<br/>

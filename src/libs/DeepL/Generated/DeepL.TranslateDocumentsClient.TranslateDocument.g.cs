@@ -43,6 +43,36 @@ namespace DeepL
             global::DeepL.TranslateDocumentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await TranslateDocumentAsResponseAsync(
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Upload and Translate a Document<br/>
+        /// This call uploads a document and queues it for translation.<br/>
+        /// The call returns once the upload is complete, returning a document ID and key which can be used to<br/>
+        /// [query the translation status](https://www.deepl.com/docs-api/documents/get-document-status)<br/>
+        /// and to [download the translated document](https://www.deepl.com/docs-api/documents/download-document) once translation is complete.<br/>
+        /// Because the request includes a file upload, it must be an HTTP POST request with content type `multipart/form-data`.<br/>
+        /// Please be aware that the uploaded document is automatically removed from the server once the translated document has been downloaded.<br/>
+        /// You have to upload the document again in order to restart the translation.<br/>
+        /// The maximum upload limit for documents is [available here](https://support.deepl.com/hc/articles/360020582359-Document-formats)<br/>
+        /// and may vary based on API plan and document type.<br/>
+        /// You may specify the glossary to use for the document translation using the `glossary_id` parameter.<br/>
+        /// **Important:** This requires the `source_lang` parameter to be set and the language pair of the glossary has to match the language pair of the request.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.TranslateDocumentResponse>> TranslateDocumentAsResponseAsync(
+
+            global::DeepL.TranslateDocumentRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -466,9 +496,12 @@ namespace DeepL
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::DeepL.TranslateDocumentResponse.FromJson(__content, JsonSerializerContext) ??
+                    var __value = global::DeepL.TranslateDocumentResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.TranslateDocumentResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -497,9 +530,12 @@ namespace DeepL
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::DeepL.TranslateDocumentResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = await global::DeepL.TranslateDocumentResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.TranslateDocumentResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

@@ -46,6 +46,36 @@ namespace DeepL
             global::DeepL.GlossaryTargetLanguage targetLang,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetMultilingualGlossaryEntriesAsResponseAsync(
+                glossaryId: glossaryId,
+                sourceLang: sourceLang,
+                targetLang: targetLang,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Retrieve Glossary Entries<br/>
+        /// List the entries of a single glossary in tsv format.
+        /// </summary>
+        /// <param name="glossaryId"></param>
+        /// <param name="sourceLang">
+        /// The language in which the source texts in the glossary are specified.<br/>
+        /// Example: en
+        /// </param>
+        /// <param name="targetLang">
+        /// The language in which the target texts in the glossary are specified.<br/>
+        /// Example: de
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.GlossaryDictionary>> GetMultilingualGlossaryEntriesAsResponseAsync(
+            string glossaryId,
+            global::DeepL.GlossarySourceLanguage sourceLang,
+            global::DeepL.GlossaryTargetLanguage targetLang,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetMultilingualGlossaryEntriesArguments(
@@ -398,9 +428,12 @@ namespace DeepL
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::DeepL.GlossaryDictionary.FromJson(__content, JsonSerializerContext) ??
+                    var __value = global::DeepL.GlossaryDictionary.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.GlossaryDictionary>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -429,9 +462,12 @@ namespace DeepL
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::DeepL.GlossaryDictionary.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = await global::DeepL.GlossaryDictionary.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.GlossaryDictionary>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

@@ -17,6 +17,16 @@ namespace DeepL
         /// <summary>
         /// Request text improvement
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.RephraseTextResponse>> RephraseTextAsResponseAsync(
+
+            global::DeepL.RephraseTextRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Request text improvement
+        /// </summary>
         /// <param name="text">
         /// Text to be improved. Only UTF-8-encoded plain text is supported. Improvements are returned in the same order as they are requested.
         /// </param>
