@@ -459,14 +459,7 @@ return new global::DeepL.AutoSDKHttpResponse(
                 try
                 {
                     __response.EnsureSuccessStatusCode();
-
-                    using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                        cancellationToken
-#endif
-                    ).ConfigureAwait(false);
-
-return new global::DeepL.AutoSDKHttpResponse(
+                    return new global::DeepL.AutoSDKHttpResponse(
                         statusCode: __response.StatusCode,
                         headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response));
                 }
