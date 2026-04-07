@@ -15,7 +15,7 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        UseChineseWord_ForMeasurement,
+        UseChineseWord零ForMeasurement,
     }
 
     /// <summary>
@@ -31,7 +31,7 @@ namespace DeepL
             return value switch
             {
                 ConfiguredRulesNumbersZeroFormat.UseChineseWord_ForNumbering => "use_chinese_word_〇_for_numbering",
-                ConfiguredRulesNumbersZeroFormat.UseChineseWord_ForMeasurement => "use_chinese_word_零_for_measurement",
+                ConfiguredRulesNumbersZeroFormat.UseChineseWord零ForMeasurement => "use_chinese_word_零_for_measurement",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,7 +43,7 @@ namespace DeepL
             return value switch
             {
                 "use_chinese_word_〇_for_numbering" => ConfiguredRulesNumbersZeroFormat.UseChineseWord_ForNumbering,
-                "use_chinese_word_零_for_measurement" => ConfiguredRulesNumbersZeroFormat.UseChineseWord_ForMeasurement,
+                "use_chinese_word_零_for_measurement" => ConfiguredRulesNumbersZeroFormat.UseChineseWord零ForMeasurement,
                 _ => null,
             };
         }

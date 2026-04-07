@@ -15,7 +15,7 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        SpellOutUnitFollowedByNumeralsThenKoreanWord_,
+        SpellOutUnitFollowedByNumeralsThenKoreanWord도,
         /// <summary>
         /// 
         /// </summary>
@@ -39,11 +39,11 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        UseNumeralsFollowedByJapaneseWord_WithoutSpace,
+        UseNumeralsFollowedByJapaneseWord度WithoutSpace,
         /// <summary>
         /// 
         /// </summary>
-        UseNumeralsFollowedByKoreanWord_,
+        UseNumeralsFollowedByKoreanWord도,
         /// <summary>
         /// 
         /// </summary>
@@ -75,14 +75,14 @@ namespace DeepL
             return value switch
             {
                 ConfiguredRulesNumbersTemperatureFormat.SpellOutUnit => "spell_out_unit",
-                ConfiguredRulesNumbersTemperatureFormat.SpellOutUnitFollowedByNumeralsThenKoreanWord_ => "spell_out_unit_followed_by_numerals_then_korean_word_도",
+                ConfiguredRulesNumbersTemperatureFormat.SpellOutUnitFollowedByNumeralsThenKoreanWord도 => "spell_out_unit_followed_by_numerals_then_korean_word_도",
                 ConfiguredRulesNumbersTemperatureFormat.UseArabicNumeralsFollowedBySpaceThenSpellOutUnit => "use_arabic_numerals_followed_by_space_then_spell_out_unit",
                 ConfiguredRulesNumbersTemperatureFormat.UseArabicNumeralsFollowedByUnitSymbolWithoutSpace => "use_arabic_numerals_followed_by_unit_symbol_without_space",
                 ConfiguredRulesNumbersTemperatureFormat.UseArabicNumeralsThenSpellOutUnit => "use_arabic_numerals_then_spell_out_unit",
                 ConfiguredRulesNumbersTemperatureFormat.UseChineseNumbersThenSpellOutUnit => "use_chinese_numbers_then_spell_out_unit",
                 ConfiguredRulesNumbersTemperatureFormat.UseItalianWordGradoAndDoNotSpecifyTemperatureScale => "use_italian_word_grado_and_do_not_specify_temperature_scale",
-                ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedByJapaneseWord_WithoutSpace => "use_numerals_followed_by_japanese_word_度_without_space",
-                ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedByKoreanWord_ => "use_numerals_followed_by_korean_word_도",
+                ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedByJapaneseWord度WithoutSpace => "use_numerals_followed_by_japanese_word_度_without_space",
+                ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedByKoreanWord도 => "use_numerals_followed_by_korean_word_도",
                 ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedBySpaceThenSpellOutUnit => "use_numerals_followed_by_space_then_spell_out_unit",
                 ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedBySpaceThenUnitSymbol => "use_numerals_followed_by_space_then_unit_symbol",
                 ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedByUnitSymbolWithoutSpace => "use_numerals_followed_by_unit_symbol_without_space",
@@ -98,14 +98,14 @@ namespace DeepL
             return value switch
             {
                 "spell_out_unit" => ConfiguredRulesNumbersTemperatureFormat.SpellOutUnit,
-                "spell_out_unit_followed_by_numerals_then_korean_word_도" => ConfiguredRulesNumbersTemperatureFormat.SpellOutUnitFollowedByNumeralsThenKoreanWord_,
+                "spell_out_unit_followed_by_numerals_then_korean_word_도" => ConfiguredRulesNumbersTemperatureFormat.SpellOutUnitFollowedByNumeralsThenKoreanWord도,
                 "use_arabic_numerals_followed_by_space_then_spell_out_unit" => ConfiguredRulesNumbersTemperatureFormat.UseArabicNumeralsFollowedBySpaceThenSpellOutUnit,
                 "use_arabic_numerals_followed_by_unit_symbol_without_space" => ConfiguredRulesNumbersTemperatureFormat.UseArabicNumeralsFollowedByUnitSymbolWithoutSpace,
                 "use_arabic_numerals_then_spell_out_unit" => ConfiguredRulesNumbersTemperatureFormat.UseArabicNumeralsThenSpellOutUnit,
                 "use_chinese_numbers_then_spell_out_unit" => ConfiguredRulesNumbersTemperatureFormat.UseChineseNumbersThenSpellOutUnit,
                 "use_italian_word_grado_and_do_not_specify_temperature_scale" => ConfiguredRulesNumbersTemperatureFormat.UseItalianWordGradoAndDoNotSpecifyTemperatureScale,
-                "use_numerals_followed_by_japanese_word_度_without_space" => ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedByJapaneseWord_WithoutSpace,
-                "use_numerals_followed_by_korean_word_도" => ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedByKoreanWord_,
+                "use_numerals_followed_by_japanese_word_度_without_space" => ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedByJapaneseWord度WithoutSpace,
+                "use_numerals_followed_by_korean_word_도" => ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedByKoreanWord도,
                 "use_numerals_followed_by_space_then_spell_out_unit" => ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedBySpaceThenSpellOutUnit,
                 "use_numerals_followed_by_space_then_unit_symbol" => ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedBySpaceThenUnitSymbol,
                 "use_numerals_followed_by_unit_symbol_without_space" => ConfiguredRulesNumbersTemperatureFormat.UseNumeralsFollowedByUnitSymbolWithoutSpace,

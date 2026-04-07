@@ -409,9 +409,9 @@ namespace DeepL
 
             typeof(global::DeepL.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsAndCedillasNullableJsonConverter),
 
-            typeof(global::DeepL.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCDerJsonConverter),
+            typeof(global::DeepL.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéderJsonConverter),
 
-            typeof(global::DeepL.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCDerNullableJsonConverter),
+            typeof(global::DeepL.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéderNullableJsonConverter),
 
             typeof(global::DeepL.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsWithSubjectVerbInversionJsonConverter),
 
@@ -870,7 +870,7 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ConfiguredRulesSpellingAndGrammarAbbreviatingFrenchWordNumero), TypeInfoPropertyName = "ConfiguredRulesSpellingAndGrammarAbbreviatingFrenchWordNumero2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ConfiguredRulesSpellingAndGrammarAbbreviationUsage), TypeInfoPropertyName = "ConfiguredRulesSpellingAndGrammarAbbreviationUsage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ConfiguredRulesSpellingAndGrammarAccentsAndCedillas), TypeInfoPropertyName = "ConfiguredRulesSpellingAndGrammarAccentsAndCedillas2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCDer), TypeInfoPropertyName = "ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCDer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéder), TypeInfoPropertyName = "ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ConfiguredRulesSpellingAndGrammarAccentsWithSubjectVerbInversion), TypeInfoPropertyName = "ConfiguredRulesSpellingAndGrammarAccentsWithSubjectVerbInversion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ConfiguredRulesSpellingAndGrammarActivePassiveVoice), TypeInfoPropertyName = "ConfiguredRulesSpellingAndGrammarActivePassiveVoice2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ConfiguredRulesSpellingAndGrammarAllCaps), TypeInfoPropertyName = "ConfiguredRulesSpellingAndGrammarAllCaps2")]
