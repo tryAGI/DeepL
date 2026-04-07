@@ -11,7 +11,7 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        UseHiraganaJapaneseWord__Or__WhenUsingArabicNumeralsInHorizontalWritingButUseKanjiJapaneseWord__Or__WhenUsingKanjiNumbers,
+        UseHiraganaJapaneseWordか所Orか月WhenUsingArabicNumeralsInHorizontalWritingButUseKanjiJapaneseWord箇所Or箇月WhenUsingKanjiNumbers,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace DeepL
         {
             return value switch
             {
-                ConfiguredRulesNumbersUseOfHiraganaAndKanji.UseHiraganaJapaneseWord__Or__WhenUsingArabicNumeralsInHorizontalWritingButUseKanjiJapaneseWord__Or__WhenUsingKanjiNumbers => "use_hiragana_japanese_word_か所_or_か月_when_using_arabic_numerals_in_horizontal_writing_but_use_kanji_japanese_word_箇所_or_箇月_when_using_kanji_numbers",
+                ConfiguredRulesNumbersUseOfHiraganaAndKanji.UseHiraganaJapaneseWordか所Orか月WhenUsingArabicNumeralsInHorizontalWritingButUseKanjiJapaneseWord箇所Or箇月WhenUsingKanjiNumbers => "use_hiragana_japanese_word_か所_or_か月_when_using_arabic_numerals_in_horizontal_writing_but_use_kanji_japanese_word_箇所_or_箇月_when_using_kanji_numbers",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace DeepL
         {
             return value switch
             {
-                "use_hiragana_japanese_word_か所_or_か月_when_using_arabic_numerals_in_horizontal_writing_but_use_kanji_japanese_word_箇所_or_箇月_when_using_kanji_numbers" => ConfiguredRulesNumbersUseOfHiraganaAndKanji.UseHiraganaJapaneseWord__Or__WhenUsingArabicNumeralsInHorizontalWritingButUseKanjiJapaneseWord__Or__WhenUsingKanjiNumbers,
+                "use_hiragana_japanese_word_か所_or_か月_when_using_arabic_numerals_in_horizontal_writing_but_use_kanji_japanese_word_箇所_or_箇月_when_using_kanji_numbers" => ConfiguredRulesNumbersUseOfHiraganaAndKanji.UseHiraganaJapaneseWordか所Orか月WhenUsingArabicNumeralsInHorizontalWritingButUseKanjiJapaneseWord箇所Or箇月WhenUsingKanjiNumbers,
                 _ => null,
             };
         }

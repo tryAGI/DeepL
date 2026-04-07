@@ -468,7 +468,7 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCDer? Type110 { get; set; }
+        public global::DeepL.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéder? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>

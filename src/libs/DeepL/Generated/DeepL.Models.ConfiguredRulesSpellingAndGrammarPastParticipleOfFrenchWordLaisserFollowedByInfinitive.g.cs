@@ -15,7 +15,7 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        UseInvariableFormFrenchWordLaiss_,
+        UseInvariableFormFrenchWordLaissé,
     }
 
     /// <summary>
@@ -31,7 +31,7 @@ namespace DeepL
             return value switch
             {
                 ConfiguredRulesSpellingAndGrammarPastParticipleOfFrenchWordLaisserFollowedByInfinitive.MakeFrenchWordLaisserAgreeWithDirectObjectComplementIfItAppearsBeforeVerb => "make_french_word_laisser_agree_with_direct_object_complement_if_it_appears_before_verb",
-                ConfiguredRulesSpellingAndGrammarPastParticipleOfFrenchWordLaisserFollowedByInfinitive.UseInvariableFormFrenchWordLaiss_ => "use_invariable_form_french_word_laissé",
+                ConfiguredRulesSpellingAndGrammarPastParticipleOfFrenchWordLaisserFollowedByInfinitive.UseInvariableFormFrenchWordLaissé => "use_invariable_form_french_word_laissé",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,7 +43,7 @@ namespace DeepL
             return value switch
             {
                 "make_french_word_laisser_agree_with_direct_object_complement_if_it_appears_before_verb" => ConfiguredRulesSpellingAndGrammarPastParticipleOfFrenchWordLaisserFollowedByInfinitive.MakeFrenchWordLaisserAgreeWithDirectObjectComplementIfItAppearsBeforeVerb,
-                "use_invariable_form_french_word_laissé" => ConfiguredRulesSpellingAndGrammarPastParticipleOfFrenchWordLaisserFollowedByInfinitive.UseInvariableFormFrenchWordLaiss_,
+                "use_invariable_form_french_word_laissé" => ConfiguredRulesSpellingAndGrammarPastParticipleOfFrenchWordLaisserFollowedByInfinitive.UseInvariableFormFrenchWordLaissé,
                 _ => null,
             };
         }

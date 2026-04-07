@@ -33,8 +33,8 @@ namespace DeepL
         /// Formatting options for Accents In Verbs Conjugated Like French Word Céder
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accents_in_verbs_conjugated_like_french_word_céder")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::DeepL.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCDerJsonConverter))]
-        public global::DeepL.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCDer? AccentsInVerbsConjugatedLikeFrenchWordC_der { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::DeepL.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéderJsonConverter))]
+        public global::DeepL.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéder? AccentsInVerbsConjugatedLikeFrenchWordCéder { get; set; }
 
         /// <summary>
         /// Formatting options for Accents With Subject Verb Inversion
@@ -222,7 +222,7 @@ namespace DeepL
         /// <param name="accentsAndCedillas">
         /// Formatting options for Accents And Cedillas
         /// </param>
-        /// <param name="accentsInVerbsConjugatedLikeFrenchWordC_der">
+        /// <param name="accentsInVerbsConjugatedLikeFrenchWordCéder">
         /// Formatting options for Accents In Verbs Conjugated Like French Word Céder
         /// </param>
         /// <param name="accentsWithSubjectVerbInversion">
@@ -304,7 +304,7 @@ namespace DeepL
             global::DeepL.ConfiguredRulesSpellingAndGrammarAbbreviatingFrenchWordNumero? abbreviatingFrenchWordNumero,
             global::DeepL.ConfiguredRulesSpellingAndGrammarAbbreviationUsage? abbreviationUsage,
             global::DeepL.ConfiguredRulesSpellingAndGrammarAccentsAndCedillas? accentsAndCedillas,
-            global::DeepL.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCDer? accentsInVerbsConjugatedLikeFrenchWordC_der,
+            global::DeepL.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéder? accentsInVerbsConjugatedLikeFrenchWordCéder,
             global::DeepL.ConfiguredRulesSpellingAndGrammarAccentsWithSubjectVerbInversion? accentsWithSubjectVerbInversion,
             global::DeepL.ConfiguredRulesSpellingAndGrammarActivePassiveVoice? activePassiveVoice,
             global::DeepL.ConfiguredRulesSpellingAndGrammarAllCaps? allCaps,
@@ -333,7 +333,7 @@ namespace DeepL
             this.AbbreviatingFrenchWordNumero = abbreviatingFrenchWordNumero;
             this.AbbreviationUsage = abbreviationUsage;
             this.AccentsAndCedillas = accentsAndCedillas;
-            this.AccentsInVerbsConjugatedLikeFrenchWordC_der = accentsInVerbsConjugatedLikeFrenchWordC_der;
+            this.AccentsInVerbsConjugatedLikeFrenchWordCéder = accentsInVerbsConjugatedLikeFrenchWordCéder;
             this.AccentsWithSubjectVerbInversion = accentsWithSubjectVerbInversion;
             this.ActivePassiveVoice = activePassiveVoice;
             this.AllCaps = allCaps;
