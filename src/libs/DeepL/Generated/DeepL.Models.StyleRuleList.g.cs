@@ -15,7 +15,7 @@ namespace DeepL
         /// <example>bd0a38f3-1831-440b-a8dd-2c702e2325ab</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("style_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string StyleId { get; set; }
+        public required global::System.Guid StyleId { get; set; }
 
         /// <summary>
         /// Name associated with the style rule.
@@ -106,7 +106,7 @@ namespace DeepL
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public StyleRuleList(
-            string styleId,
+            global::System.Guid styleId,
             string name,
             global::System.DateTime creationTime,
             global::System.DateTime updatedTime,
@@ -115,7 +115,7 @@ namespace DeepL
             global::DeepL.ConfiguredRules? configuredRules,
             global::System.Collections.Generic.IList<global::DeepL.CustomInstruction>? customInstructions)
         {
-            this.StyleId = styleId ?? throw new global::System.ArgumentNullException(nameof(styleId));
+            this.StyleId = styleId;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreationTime = creationTime;
             this.UpdatedTime = updatedTime;

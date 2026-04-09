@@ -144,6 +144,24 @@ namespace DeepL
         public string? GlossaryId { get; set; }
 
         /// <summary>
+        /// A unique ID assigned to a translation memory.<br/>
+        /// **Note:** Requests with the `translation_memory_id` parameter must use the `quality_optimized` model type. Requests combining `translation_memory_id` and `model_type: latency_optimized` will be rejected.<br/>
+        /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
+        /// </summary>
+        /// <example>a74d88fb-ed2a-4943-a664-a4512398b994</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("translation_memory_id")]
+        public global::System.Guid? TranslationMemoryId { get; set; }
+
+        /// <summary>
+        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher).<br/>
+        /// Default Value: 75<br/>
+        /// Example: 75
+        /// </summary>
+        /// <example>75</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("translation_memory_threshold")]
+        public int? TranslationMemoryThreshold { get; set; }
+
+        /// <summary>
         /// Sets which kind of tags should be handled. Options currently available:<br/>
         ///  * `xml`: Enable XML tag handling; see [XML Handling](https://www.deepl.com/docs-api/xml).<br/>
         ///  * `html`: Enable HTML tag handling; see [HTML Handling](https://www.deepl.com/docs-api/html).
@@ -316,6 +334,16 @@ namespace DeepL
         /// <param name="glossaryId">
         /// Specify the glossary to use for the translation. **Important:** This requires the `source_lang` parameter to be set and the language pair of the glossary has to match the language pair of the request.
         /// </param>
+        /// <param name="translationMemoryId">
+        /// A unique ID assigned to a translation memory.<br/>
+        /// **Note:** Requests with the `translation_memory_id` parameter must use the `quality_optimized` model type. Requests combining `translation_memory_id` and `model_type: latency_optimized` will be rejected.<br/>
+        /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
+        /// </param>
+        /// <param name="translationMemoryThreshold">
+        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher).<br/>
+        /// Default Value: 75<br/>
+        /// Example: 75
+        /// </param>
         /// <param name="tagHandling">
         /// Sets which kind of tags should be handled. Options currently available:<br/>
         ///  * `xml`: Enable XML tag handling; see [XML Handling](https://www.deepl.com/docs-api/xml).<br/>
@@ -378,6 +406,8 @@ namespace DeepL
             global::DeepL.Formality? formality,
             global::DeepL.ModelType? modelType,
             string? glossaryId,
+            global::System.Guid? translationMemoryId,
+            int? translationMemoryThreshold,
             global::DeepL.TagHandlingOption? tagHandling,
             global::DeepL.TagHandlingVersionOption? tagHandlingVersion,
             global::DeepL.OutlineDetectionOptionStr? outlineDetection,
@@ -395,6 +425,8 @@ namespace DeepL
             this.Formality = formality;
             this.ModelType = modelType;
             this.GlossaryId = glossaryId;
+            this.TranslationMemoryId = translationMemoryId;
+            this.TranslationMemoryThreshold = translationMemoryThreshold;
             this.TagHandling = tagHandling;
             this.TagHandlingVersion = tagHandlingVersion;
             this.OutlineDetection = outlineDetection;

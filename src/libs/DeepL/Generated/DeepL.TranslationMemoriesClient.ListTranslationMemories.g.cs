@@ -1,0 +1,409 @@
+
+#nullable enable
+
+namespace DeepL
+{
+    public partial class TranslationMemoriesClient
+    {
+
+
+        private static readonly global::DeepL.EndPointSecurityRequirement s_ListTranslationMemoriesSecurityRequirement0 =
+            new global::DeepL.EndPointSecurityRequirement
+            {
+                Authorizations = new global::DeepL.EndPointAuthorizationRequirement[]
+                {                    new global::DeepL.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::DeepL.EndPointSecurityRequirement[] s_ListTranslationMemoriesSecurityRequirements =
+            new global::DeepL.EndPointSecurityRequirement[]
+            {                s_ListTranslationMemoriesSecurityRequirement0,
+            };
+        partial void PrepareListTranslationMemoriesArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int? page,
+            ref int? pageSize);
+        partial void PrepareListTranslationMemoriesRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? page,
+            int? pageSize);
+        partial void ProcessListTranslationMemoriesResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessListTranslationMemoriesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// List translation memories<br/>
+        /// Retrieve a list of translation memories associated with the authenticated account.
+        /// </summary>
+        /// <param name="page">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.ListTranslationMemoriesResponse> ListTranslationMemoriesAsync(
+            int? page = default,
+            int? pageSize = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __response = await ListTranslationMemoriesAsResponseAsync(
+                page: page,
+                pageSize: pageSize,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List translation memories<br/>
+        /// Retrieve a list of translation memories associated with the authenticated account.
+        /// </summary>
+        /// <param name="page">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.ListTranslationMemoriesResponse>> ListTranslationMemoriesAsResponseAsync(
+            int? page = default,
+            int? pageSize = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            PrepareArguments(
+                client: HttpClient);
+            PrepareListTranslationMemoriesArguments(
+                httpClient: HttpClient,
+                page: ref page,
+                pageSize: ref pageSize);
+
+
+            var __authorizations = global::DeepL.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListTranslationMemoriesSecurityRequirements,
+                operationName: "ListTranslationMemoriesAsync");
+
+            var __pathBuilder = new global::DeepL.PathBuilder(
+                path: "/v3/translation_memories",
+                baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("page_size", pageSize?.ToString()) 
+                ;
+            var __path = __pathBuilder.ToString();
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Get,
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in __authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
+
+            PrepareRequest(
+                client: HttpClient,
+                request: __httpRequest);
+            PrepareListTranslationMemoriesRequest(
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
+                page: page,
+                pageSize: pageSize);
+
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: HttpClient,
+                response: __response);
+            ProcessListTranslationMemoriesResponse(
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            // 
+            if ((int)__response.StatusCode == 401)
+            {
+                string? __content_401 = null;
+                global::System.Exception? __exception_401 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_401 = __ex;
+                }
+
+                throw new global::DeepL.ApiException(
+                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_401,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_401,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // 
+            if ((int)__response.StatusCode == 403)
+            {
+                string? __content_403 = null;
+                global::System.Exception? __exception_403 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_403 = __ex;
+                }
+
+                throw new global::DeepL.ApiException(
+                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_403,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_403,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // 
+            if ((int)__response.StatusCode == 429)
+            {
+                string? __content_429 = null;
+                global::System.Exception? __exception_429 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_429 = __ex;
+                }
+
+                throw new global::DeepL.ApiException(
+                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_429,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_429,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // 
+            if ((int)__response.StatusCode == 500)
+            {
+                string? __content_500 = null;
+                global::System.Exception? __exception_500 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_500 = __ex;
+                }
+
+                throw new global::DeepL.ApiException(
+                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_500,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_500,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // 
+            if ((int)__response.StatusCode == 503)
+            {
+                string? __content_503 = null;
+                global::System.Exception? __exception_503 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_503 = __ex;
+                }
+
+                throw new global::DeepL.ApiException(
+                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_503,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_503,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessListTranslationMemoriesResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
+
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    var __value = global::DeepL.ListTranslationMemoriesResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.ListTranslationMemoriesResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
+                }
+                catch (global::System.Exception __ex)
+                {
+                    throw new global::DeepL.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    var __value = await global::DeepL.ListTranslationMemoriesResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.ListTranslationMemoriesResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
+                }
+                catch (global::System.Exception __ex)
+                {
+                    string? __content = null;
+                    try
+                    {
+                        __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                            cancellationToken
+#endif
+                        ).ConfigureAwait(false);
+                    }
+                    catch (global::System.Exception)
+                    {
+                    }
+
+                    throw new global::DeepL.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+        }
+    }
+}

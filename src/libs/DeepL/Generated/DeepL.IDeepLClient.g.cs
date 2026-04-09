@@ -139,6 +139,15 @@ namespace DeepL
         public TranslateTextClient TranslateText { get; }
 
         /// <summary>
+        /// The translation memory endpoints allow you to interact with your account's translation memories, used to store<br/>
+        /// and reuse previously created translations. Translation memories can be used in text translation requests by<br/>
+        /// specifying the `translation_memory_id` parameter to denote a specific translation memory and the<br/>
+        /// `translation_memory_threshold` which defines the minimum matching percentage required for a translation memory<br/>
+        /// segment to be applied (recommended to be 75% or higher).
+        /// </summary>
+        public TranslationMemoriesClient TranslationMemories { get; }
+
+        /// <summary>
         /// The Voice API provides real-time voice transcription and translation services.<br/>
         /// Use a two-step flow: first request a streaming URL via REST, then establish a WebSocket connection for streaming audio and receiving transcriptions.
         /// </summary>

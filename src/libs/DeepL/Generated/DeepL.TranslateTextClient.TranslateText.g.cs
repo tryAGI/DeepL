@@ -664,6 +664,16 @@ namespace DeepL
         ///   next-gen models, the request will fall back to latency_optimized classic models.
         /// </param>
         /// <param name="glossaryId"></param>
+        /// <param name="translationMemoryId">
+        /// A unique ID assigned to a translation memory.<br/>
+        /// **Note:** Requests with the `translation_memory_id` parameter must use the `quality_optimized` model type. Requests combining `translation_memory_id` and `model_type: latency_optimized` will be rejected.<br/>
+        /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
+        /// </param>
+        /// <param name="translationMemoryThreshold">
+        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher).<br/>
+        /// Default Value: 75<br/>
+        /// Example: 75
+        /// </param>
         /// <param name="customInstructions">
         /// Specify a list of instructions to customize the translation behavior. Up to 10 custom instructions can be specified, each with a maximum of 300 characters.<br/>
         /// **Important:**  The target language must be `de`, `en`, `es`, `fr`, `it`, `ja`, `ko`, `zh` or any variants of these languages.<br/>
@@ -731,6 +741,8 @@ namespace DeepL
             global::DeepL.Formality? formality = default,
             global::DeepL.ModelType? modelType = default,
             string? glossaryId = default,
+            global::System.Guid? translationMemoryId = default,
+            int? translationMemoryThreshold = default,
             global::System.Collections.Generic.IList<string>? customInstructions = default,
             bool? enableBetaLanguages = default,
             global::DeepL.TagHandlingOption? tagHandling = default,
@@ -752,6 +764,8 @@ namespace DeepL
                 Formality = formality,
                 ModelType = modelType,
                 GlossaryId = glossaryId,
+                TranslationMemoryId = translationMemoryId,
+                TranslationMemoryThreshold = translationMemoryThreshold,
                 CustomInstructions = customInstructions,
                 EnableBetaLanguages = enableBetaLanguages,
                 TagHandling = tagHandling,
