@@ -5,6 +5,25 @@ namespace DeepL
 {
     public partial class StyleRulesClient
     {
+
+
+        private static readonly global::DeepL.EndPointSecurityRequirement s_CreateCustomInstructionSecurityRequirement0 =
+            new global::DeepL.EndPointSecurityRequirement
+            {
+                Authorizations = new global::DeepL.EndPointAuthorizationRequirement[]
+                {                    new global::DeepL.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::DeepL.EndPointSecurityRequirement[] s_CreateCustomInstructionSecurityRequirements =
+            new global::DeepL.EndPointSecurityRequirement[]
+            {                s_CreateCustomInstructionSecurityRequirement0,
+            };
         partial void PrepareCreateCustomInstructionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string styleId,
@@ -67,9 +86,15 @@ namespace DeepL
                 styleId: ref styleId,
                 request: request);
 
+
+            var __authorizations = global::DeepL.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateCustomInstructionSecurityRequirements,
+                operationName: "CreateCustomInstructionAsync");
+
             var __pathBuilder = new global::DeepL.PathBuilder(
                 path: $"/v3/style_rules/{styleId}/custom_instructions",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -79,7 +104,7 @@ namespace DeepL
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

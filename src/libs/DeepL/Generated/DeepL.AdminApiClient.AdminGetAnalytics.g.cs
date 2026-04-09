@@ -5,6 +5,25 @@ namespace DeepL
 {
     public partial class AdminApiClient
     {
+
+
+        private static readonly global::DeepL.EndPointSecurityRequirement s_AdminGetAnalyticsSecurityRequirement0 =
+            new global::DeepL.EndPointSecurityRequirement
+            {
+                Authorizations = new global::DeepL.EndPointAuthorizationRequirement[]
+                {                    new global::DeepL.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::DeepL.EndPointSecurityRequirement[] s_AdminGetAnalyticsSecurityRequirements =
+            new global::DeepL.EndPointSecurityRequirement[]
+            {                s_AdminGetAnalyticsSecurityRequirement0,
+            };
         partial void PrepareAdminGetAnalyticsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.DateTime startDate,
@@ -74,6 +93,12 @@ namespace DeepL
                 endDate: ref endDate,
                 groupBy: ref groupBy);
 
+
+            var __authorizations = global::DeepL.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_AdminGetAnalyticsSecurityRequirements,
+                operationName: "AdminGetAnalyticsAsync");
+
             var __pathBuilder = new global::DeepL.PathBuilder(
                 path: "/v2/admin/analytics",
                 baseUri: HttpClient.BaseAddress); 
@@ -81,7 +106,7 @@ namespace DeepL
                 .AddRequiredParameter("start_date", startDate.ToString("yyyy-MM-dd"))
                 .AddRequiredParameter("end_date", endDate.ToString("yyyy-MM-dd"))
                 .AddOptionalParameter("group_by", groupBy?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -91,7 +116,7 @@ namespace DeepL
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

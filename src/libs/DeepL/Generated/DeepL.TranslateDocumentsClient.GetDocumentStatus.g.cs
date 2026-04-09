@@ -5,6 +5,25 @@ namespace DeepL
 {
     public partial class TranslateDocumentsClient
     {
+
+
+        private static readonly global::DeepL.EndPointSecurityRequirement s_GetDocumentStatusSecurityRequirement0 =
+            new global::DeepL.EndPointSecurityRequirement
+            {
+                Authorizations = new global::DeepL.EndPointAuthorizationRequirement[]
+                {                    new global::DeepL.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::DeepL.EndPointSecurityRequirement[] s_GetDocumentStatusSecurityRequirements =
+            new global::DeepL.EndPointSecurityRequirement[]
+            {                s_GetDocumentStatusSecurityRequirement0,
+            };
         partial void PrepareGetDocumentStatusArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string documentId,
@@ -71,9 +90,15 @@ namespace DeepL
                 documentId: ref documentId,
                 request: request);
 
+
+            var __authorizations = global::DeepL.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetDocumentStatusSecurityRequirements,
+                operationName: "GetDocumentStatusAsync");
+
             var __pathBuilder = new global::DeepL.PathBuilder(
                 path: $"/v2/document/{documentId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -83,7 +108,7 @@ namespace DeepL
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
