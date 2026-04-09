@@ -6,6 +6,7 @@ namespace DeepL
     public sealed partial class DeepLClient
     {
         /// <inheritdoc cref="DeepLClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::DeepL.EndPointAuthorization}?, bool)"/>
+
         public DeepLClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

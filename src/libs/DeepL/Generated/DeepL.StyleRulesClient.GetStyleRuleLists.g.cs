@@ -5,6 +5,25 @@ namespace DeepL
 {
     public partial class StyleRulesClient
     {
+
+
+        private static readonly global::DeepL.EndPointSecurityRequirement s_GetStyleRuleListsSecurityRequirement0 =
+            new global::DeepL.EndPointSecurityRequirement
+            {
+                Authorizations = new global::DeepL.EndPointAuthorizationRequirement[]
+                {                    new global::DeepL.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::DeepL.EndPointSecurityRequirement[] s_GetStyleRuleListsSecurityRequirements =
+            new global::DeepL.EndPointSecurityRequirement[]
+            {                s_GetStyleRuleListsSecurityRequirement0,
+            };
         partial void PrepareGetStyleRuleListsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
@@ -82,6 +101,12 @@ namespace DeepL
                 pageSize: ref pageSize,
                 detailed: ref detailed);
 
+
+            var __authorizations = global::DeepL.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetStyleRuleListsSecurityRequirements,
+                operationName: "GetStyleRuleListsAsync");
+
             var __pathBuilder = new global::DeepL.PathBuilder(
                 path: "/v3/style_rules",
                 baseUri: HttpClient.BaseAddress); 
@@ -89,7 +114,7 @@ namespace DeepL
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("detailed", detailed?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -99,7 +124,7 @@ namespace DeepL
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

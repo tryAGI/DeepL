@@ -13,7 +13,7 @@ namespace DeepL
         /// <summary>
         /// DeepL API Pro
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.deepl.com";
+        public const string DefaultBaseUrl = "https://api.deepl.com/";
 
         private bool _disposeHttpClient = true;
 
@@ -100,7 +100,7 @@ namespace DeepL
         };
 
         /// <summary>
-        /// Information about API usage and value ranges
+        /// Information about API usage and value ranges.
         /// </summary>
         public MetaInformationClient MetaInformation => new MetaInformationClient(HttpClient, authorizations: Authorizations)
         {
@@ -110,7 +110,7 @@ namespace DeepL
 
         /// <summary>
         /// The `rephrase` endpoint  is used to make corrections and adjustments to texts based on style or tone.<br/>
-        /// For more details, visit [this documentation page](https://developers.deepl.com/docs/api-reference/improve-text)
+        /// For more details, visit [this documentation page](https://developers.deepl.com/docs/api-reference/improve-text).
         /// </summary>
         public RephraseTextClient RephraseText => new RephraseTextClient(HttpClient, authorizations: Authorizations)
         {

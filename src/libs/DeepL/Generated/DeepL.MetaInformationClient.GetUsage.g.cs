@@ -5,6 +5,25 @@ namespace DeepL
 {
     public partial class MetaInformationClient
     {
+
+
+        private static readonly global::DeepL.EndPointSecurityRequirement s_GetUsageSecurityRequirement0 =
+            new global::DeepL.EndPointSecurityRequirement
+            {
+                Authorizations = new global::DeepL.EndPointAuthorizationRequirement[]
+                {                    new global::DeepL.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::DeepL.EndPointSecurityRequirement[] s_GetUsageSecurityRequirements =
+            new global::DeepL.EndPointSecurityRequirement[]
+            {                s_GetUsageSecurityRequirement0,
+            };
         partial void PrepareGetUsageArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetUsageRequest(
@@ -66,9 +85,15 @@ namespace DeepL
             PrepareGetUsageArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::DeepL.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetUsageSecurityRequirements,
+                operationName: "GetUsageAsync");
+
             var __pathBuilder = new global::DeepL.PathBuilder(
                 path: "/v2/usage",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -78,7 +103,7 @@ namespace DeepL
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
