@@ -9,24 +9,28 @@ namespace DeepL
         /// </summary>
         /// <param name="glossaryId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.MultilingualGlossaryEntriesInformation> ReplaceDictionaryAsync(
             string glossaryId,
 
             global::DeepL.MultilingualGlossaryEntries request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Replaces or creates a dictionary in the glossary with the specified entries.
         /// </summary>
         /// <param name="glossaryId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.MultilingualGlossaryEntriesInformation>> ReplaceDictionaryAsResponseAsync(
             string glossaryId,
 
             global::DeepL.MultilingualGlossaryEntries request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Replaces or creates a dictionary in the glossary with the specified entries.
@@ -52,6 +56,7 @@ namespace DeepL
         /// Default Value: tsv<br/>
         /// Example: tsv
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.MultilingualGlossaryEntriesInformation> ReplaceDictionaryAsync(
@@ -60,6 +65,7 @@ namespace DeepL
             global::DeepL.GlossaryTargetLanguage? targetLang = default,
             string? entries = default,
             global::DeepL.GlossaryEntriesFormat? entriesFormat = default,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

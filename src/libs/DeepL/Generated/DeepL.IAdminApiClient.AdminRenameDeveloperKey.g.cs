@@ -8,21 +8,25 @@ namespace DeepL
         /// Rename a developer key as an admin
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.ApiKey> AdminRenameDeveloperKeyAsync(
 
             global::DeepL.AdminRenameDeveloperKeyRequest request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Rename a developer key as an admin
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.ApiKey>> AdminRenameDeveloperKeyAsResponseAsync(
 
             global::DeepL.AdminRenameDeveloperKeyRequest request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Rename a developer key as an admin
@@ -35,11 +39,13 @@ namespace DeepL
         /// API key label.<br/>
         /// Example: developer key prod
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.ApiKey> AdminRenameDeveloperKeyAsync(
             string keyId,
             string label,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

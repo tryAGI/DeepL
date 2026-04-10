@@ -8,21 +8,25 @@ namespace DeepL
         /// Request text improvement
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.RephraseTextResponse> RephraseTextAsync(
 
             global::DeepL.RephraseTextRequest request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Request text improvement
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.RephraseTextResponse>> RephraseTextAsResponseAsync(
 
             global::DeepL.RephraseTextRequest request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Request text improvement
@@ -56,6 +60,7 @@ namespace DeepL
         /// Specify the desired tone for your text.<br/>
         /// The `prefer_` prefix allows falling back to the default tone if the language does not yet support tones.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.RephraseTextResponse> RephraseTextAsync(
@@ -63,6 +68,7 @@ namespace DeepL
             global::DeepL.TargetLanguageWrite? targetLang = default,
             global::DeepL.WritingStyle? writingStyle = default,
             global::DeepL.WritingTone? tone = default,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -25,6 +25,7 @@ namespace DeepL
             Authorizations.Add(new global::DeepL.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "HttpBearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

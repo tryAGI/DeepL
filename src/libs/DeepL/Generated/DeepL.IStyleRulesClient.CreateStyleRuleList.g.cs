@@ -8,21 +8,25 @@ namespace DeepL
         /// Create a style rule list
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.StyleRuleList> CreateStyleRuleListAsync(
 
             global::DeepL.CreateStyleRuleListRequest request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a style rule list
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.StyleRuleList>> CreateStyleRuleListAsResponseAsync(
 
             global::DeepL.CreateStyleRuleListRequest request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a style rule list
@@ -40,6 +44,7 @@ namespace DeepL
         /// <param name="customInstructions">
         /// List of custom instructions to enable for the style rule list
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.StyleRuleList> CreateStyleRuleListAsync(
@@ -47,6 +52,7 @@ namespace DeepL
             global::DeepL.StyleRuleLanguage language,
             global::DeepL.ConfiguredRules? configuredRules = default,
             global::System.Collections.Generic.IList<global::DeepL.CustomInstructionRequest>? customInstructions = default,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

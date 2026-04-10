@@ -8,21 +8,25 @@ namespace DeepL
         /// Set developer key usage limits as an admin
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.ApiKey> AdminSetDeveloperKeyUsageLimitsAsync(
 
             global::DeepL.AdminSetDeveloperKeyUsageLimitsRequest request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set developer key usage limits as an admin
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.ApiKey>> AdminSetDeveloperKeyUsageLimitsAsResponseAsync(
 
             global::DeepL.AdminSetDeveloperKeyUsageLimitsRequest request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set developer key usage limits as an admin
@@ -43,12 +47,14 @@ namespace DeepL
         /// Setting the limit to `null` disables the limit, effectively allowing unlimited usage.<br/>
         /// Example: 3600000
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.ApiKey> AdminSetDeveloperKeyUsageLimitsAsync(
             string keyId,
             double? characters = default,
             double? speechToTextMilliseconds = default,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

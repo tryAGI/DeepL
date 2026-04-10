@@ -11,11 +11,13 @@ namespace DeepL
         /// calls if it exceeds this limit.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.TranslateTextResponse> TranslateTextAsync(
 
             global::DeepL.TranslateTextRequest request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Request Translation<br/>
@@ -24,11 +26,13 @@ namespace DeepL
         /// calls if it exceeds this limit.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.TranslateTextResponse>> TranslateTextAsResponseAsync(
 
             global::DeepL.TranslateTextRequest request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Request Translation<br/>
@@ -194,6 +198,7 @@ namespace DeepL
         /// <param name="ignoreTags">
         /// List of XML tags that indicate text not to be translated.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.TranslateTextResponse> TranslateTextAsync(
@@ -216,6 +221,7 @@ namespace DeepL
             global::System.Collections.Generic.IList<string>? nonSplittingTags = default,
             global::System.Collections.Generic.IList<string>? splittingTags = default,
             global::System.Collections.Generic.IList<string>? ignoreTags = default,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
