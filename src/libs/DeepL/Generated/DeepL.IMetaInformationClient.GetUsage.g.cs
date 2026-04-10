@@ -17,9 +17,11 @@ namespace DeepL
         /// Character usage is only included for developer accounts.<br/>
         /// Document usage is only included for non-developer accounts, and team-combined document usage is only included for non-developer team accounts.
         /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.UsageResponse> GetUsageAsync(
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Check Usage and Limits<br/>
@@ -34,9 +36,11 @@ namespace DeepL
         /// Character usage is only included for developer accounts.<br/>
         /// Document usage is only included for non-developer accounts, and team-combined document usage is only included for non-developer team accounts.
         /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.UsageResponse>> GetUsageAsResponseAsync(
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

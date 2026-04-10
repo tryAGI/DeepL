@@ -8,21 +8,25 @@ namespace DeepL
         /// Create a Glossary
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.MonolingualGlossary> CreateGlossaryAsync(
 
             global::DeepL.CreateGlossaryParameters request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a Glossary
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.MonolingualGlossary>> CreateGlossaryAsResponseAsync(
 
             global::DeepL.CreateGlossaryParameters request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a Glossary
@@ -51,6 +55,7 @@ namespace DeepL
         /// Default Value: tsv<br/>
         /// Example: tsv
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.MonolingualGlossary> CreateGlossaryAsync(
@@ -59,6 +64,7 @@ namespace DeepL
             global::DeepL.GlossaryTargetLanguage targetLang,
             string entries,
             global::DeepL.CreateGlossaryParametersEntriesFormat entriesFormat = global::DeepL.CreateGlossaryParametersEntriesFormat.Tsv,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
