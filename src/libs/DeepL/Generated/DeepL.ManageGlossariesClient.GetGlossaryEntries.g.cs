@@ -6,6 +6,19 @@ namespace DeepL
     public partial class ManageGlossariesClient
     {
 
+        private static readonly global::DeepL.AutoSDKServer[] s_GetGlossaryEntriesServers = new global::DeepL.AutoSDKServer[]
+        {            new global::DeepL.AutoSDKServer(
+                id: "https-api-deepl-com",
+                name: "DeepL API Pro",
+                url: "https://api.deepl.com/",
+                description: "DeepL API Pro"),
+            new global::DeepL.AutoSDKServer(
+                id: "https-api-free-deepl-com",
+                name: "DeepL API Free",
+                url: "https://api-free.deepl.com/",
+                description: "DeepL API Free"),
+        };
+
 
         private static readonly global::DeepL.EndPointSecurityRequirement s_GetGlossaryEntriesSecurityRequirement0 =
             new global::DeepL.EndPointSecurityRequirement
@@ -110,7 +123,9 @@ namespace DeepL
             {
                             var __pathBuilder = new global::DeepL.PathBuilder(
                                 path: $"/v2/glossaries/{glossaryId}/entries",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetGlossaryEntriesServers,
+                                defaultBaseUrl: "https://api.deepl.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::DeepL.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -141,10 +156,10 @@ namespace DeepL
                 } 
             }
 
-                if (accept != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Accept", accept?.ToValueString() ?? string.Empty);
-                }
+            if (accept != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Accept", accept?.ToValueString() ?? string.Empty);
+            }
 
                 global::DeepL.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
