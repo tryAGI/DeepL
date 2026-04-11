@@ -6,6 +6,19 @@ namespace DeepL
     public partial class AdminApiClient
     {
 
+        private static readonly global::DeepL.AutoSDKServer[] s_AdminGetAnalyticsServers = new global::DeepL.AutoSDKServer[]
+        {            new global::DeepL.AutoSDKServer(
+                id: "https-api-deepl-com",
+                name: "DeepL API Pro",
+                url: "https://api.deepl.com/",
+                description: "DeepL API Pro"),
+            new global::DeepL.AutoSDKServer(
+                id: "https-api-free-deepl-com",
+                name: "DeepL API Free",
+                url: "https://api-free.deepl.com/",
+                description: "DeepL API Free"),
+        };
+
 
         private static readonly global::DeepL.EndPointSecurityRequirement s_AdminGetAnalyticsSecurityRequirement0 =
             new global::DeepL.EndPointSecurityRequirement
@@ -123,7 +136,9 @@ namespace DeepL
             {
                             var __pathBuilder = new global::DeepL.PathBuilder(
                                 path: "/v2/admin/analytics",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_AdminGetAnalyticsServers,
+                                defaultBaseUrl: "https://api.deepl.com/")); 
                             __pathBuilder
                                 .AddRequiredParameter("start_date", startDate.ToString("yyyy-MM-dd"))
                                 .AddRequiredParameter("end_date", endDate.ToString("yyyy-MM-dd"))

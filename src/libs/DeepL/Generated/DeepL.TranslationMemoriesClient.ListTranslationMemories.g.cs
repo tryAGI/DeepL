@@ -6,6 +6,19 @@ namespace DeepL
     public partial class TranslationMemoriesClient
     {
 
+        private static readonly global::DeepL.AutoSDKServer[] s_ListTranslationMemoriesServers = new global::DeepL.AutoSDKServer[]
+        {            new global::DeepL.AutoSDKServer(
+                id: "https-api-deepl-com",
+                name: "DeepL API Pro",
+                url: "https://api.deepl.com/",
+                description: "DeepL API Pro"),
+            new global::DeepL.AutoSDKServer(
+                id: "https-api-free-deepl-com",
+                name: "DeepL API Free",
+                url: "https://api-free.deepl.com/",
+                description: "DeepL API Free"),
+        };
+
 
         private static readonly global::DeepL.EndPointSecurityRequirement s_ListTranslationMemoriesSecurityRequirement0 =
             new global::DeepL.EndPointSecurityRequirement
@@ -121,7 +134,9 @@ namespace DeepL
             {
                             var __pathBuilder = new global::DeepL.PathBuilder(
                                 path: "/v3/translation_memories",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListTranslationMemoriesServers,
+                                defaultBaseUrl: "https://api.deepl.com/")); 
                             __pathBuilder
                                 .AddOptionalParameter("page", page?.ToString())
                                 .AddOptionalParameter("page_size", pageSize?.ToString()) 

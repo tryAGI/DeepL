@@ -6,6 +6,19 @@ namespace DeepL
     public partial class StyleRulesClient
     {
 
+        private static readonly global::DeepL.AutoSDKServer[] s_GetCustomInstructionServers = new global::DeepL.AutoSDKServer[]
+        {            new global::DeepL.AutoSDKServer(
+                id: "https-api-deepl-com",
+                name: "DeepL API Pro",
+                url: "https://api.deepl.com/",
+                description: "DeepL API Pro"),
+            new global::DeepL.AutoSDKServer(
+                id: "https-api-free-deepl-com",
+                name: "DeepL API Free",
+                url: "https://api-free.deepl.com/",
+                description: "DeepL API Free"),
+        };
+
 
         private static readonly global::DeepL.EndPointSecurityRequirement s_GetCustomInstructionSecurityRequirement0 =
             new global::DeepL.EndPointSecurityRequirement
@@ -111,7 +124,9 @@ namespace DeepL
             {
                             var __pathBuilder = new global::DeepL.PathBuilder(
                                 path: $"/v3/style_rules/{styleId}/custom_instructions/{instructionId}",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetCustomInstructionServers,
+                                defaultBaseUrl: "https://api.deepl.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::DeepL.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
