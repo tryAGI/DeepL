@@ -134,7 +134,7 @@ namespace DeepL
                 PrepareDeleteStyleRuleListRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    styleId: styleId);
+                    styleId: styleId!);
 
                 return __httpRequest;
             }

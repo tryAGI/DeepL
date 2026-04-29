@@ -178,7 +178,7 @@ namespace DeepL
                 PrepareUpdateStyleRuleConfiguredRulesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    styleId: styleId,
+                    styleId: styleId!,
                     request: request);
 
                 return __httpRequest;

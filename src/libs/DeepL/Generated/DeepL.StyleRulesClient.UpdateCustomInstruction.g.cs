@@ -186,8 +186,8 @@ namespace DeepL
                 PrepareUpdateCustomInstructionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    styleId: styleId,
-                    instructionId: instructionId,
+                    styleId: styleId!,
+                    instructionId: instructionId!,
                     request: request);
 
                 return __httpRequest;
