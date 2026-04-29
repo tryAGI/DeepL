@@ -172,7 +172,7 @@ namespace DeepL
                 PrepareGetGlossaryEntriesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    glossaryId: glossaryId,
+                    glossaryId: glossaryId!,
                     accept: accept);
 
                 return __httpRequest;

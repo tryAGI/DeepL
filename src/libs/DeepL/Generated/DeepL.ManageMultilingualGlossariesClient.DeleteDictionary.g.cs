@@ -154,9 +154,9 @@ namespace DeepL
                 PrepareDeleteDictionaryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    glossaryId: glossaryId,
-                    sourceLang: sourceLang,
-                    targetLang: targetLang);
+                    glossaryId: glossaryId!,
+                    sourceLang: sourceLang!,
+                    targetLang: targetLang!);
 
                 return __httpRequest;
             }

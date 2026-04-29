@@ -162,7 +162,7 @@ namespace DeepL
                 PrepareRequestReconnectionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    token: token);
+                    token: token!);
 
                 return __httpRequest;
             }

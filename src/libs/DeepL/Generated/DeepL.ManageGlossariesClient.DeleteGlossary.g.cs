@@ -135,7 +135,7 @@ namespace DeepL
                 PrepareDeleteGlossaryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    glossaryId: glossaryId);
+                    glossaryId: glossaryId!);
 
                 return __httpRequest;
             }

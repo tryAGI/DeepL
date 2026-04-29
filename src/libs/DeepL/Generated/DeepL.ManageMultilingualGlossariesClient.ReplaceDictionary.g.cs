@@ -178,7 +178,7 @@ namespace DeepL
                 PrepareReplaceDictionaryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    glossaryId: glossaryId,
+                    glossaryId: glossaryId!,
                     request: request);
 
                 return __httpRequest;

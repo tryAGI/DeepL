@@ -180,13 +180,41 @@ namespace DeepL
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SourceLang?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.SourceLang).HasValue ? (request.SourceLang).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"source_lang\"");
                             }
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.TargetLang.ToValueString()}"),
+                                content: new global::System.Net.Http.StringContent(request.TargetLang.ToValueString()),
                                 name: "\"target_lang\"");
                             var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                            __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Filename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentFile,
                                 name: "\"file\"",
@@ -199,28 +227,28 @@ namespace DeepL
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Filename}"),
+                                    content: new global::System.Net.Http.StringContent(request.Filename ?? string.Empty),
                                     name: "\"filename\"");
                             } 
                             if (request.OutputFormat != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutputFormat}"),
+                                    content: new global::System.Net.Http.StringContent(request.OutputFormat ?? string.Empty),
                                     name: "\"output_format\"");
                             } 
                             if (request.Formality != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Formality?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Formality).HasValue ? (request.Formality).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"formality\"");
                             } 
                             if (request.GlossaryId != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.GlossaryId}"),
+                                    content: new global::System.Net.Http.StringContent(request.GlossaryId ?? string.Empty),
                                     name: "\"glossary_id\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

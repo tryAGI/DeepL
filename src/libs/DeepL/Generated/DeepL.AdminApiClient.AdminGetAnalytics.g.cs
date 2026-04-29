@@ -184,8 +184,8 @@ namespace DeepL
                 PrepareAdminGetAnalyticsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    startDate: startDate,
-                    endDate: endDate,
+                    startDate: startDate!,
+                    endDate: endDate!,
                     groupBy: groupBy);
 
                 return __httpRequest;
