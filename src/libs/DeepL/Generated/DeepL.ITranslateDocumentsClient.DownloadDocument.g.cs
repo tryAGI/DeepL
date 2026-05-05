@@ -30,6 +30,22 @@ namespace DeepL
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::System.IO.Stream> DownloadDocumentAsStreamAsync(
+            string documentId,
+
+            global::DeepL.DocumentKey request,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Download Translated Document<br/>
+        /// Once the status of the document translation process is `done`, the result can be downloaded.<br/>
+        /// For privacy reasons the translated document is automatically removed from the server once it was downloaded and cannot be downloaded again.
+        /// </summary>
+        /// <param name="documentId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<byte[]>> DownloadDocumentAsResponseAsync(
             string documentId,
 

@@ -75,6 +75,36 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            await DeleteDictionaryAsResponseAsync(
+                glossaryId: glossaryId,
+                sourceLang: sourceLang,
+                targetLang: targetLang,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Deletes the dictionary associated with the given language pair with the given glossary ID.
+        /// </summary>
+        /// <param name="glossaryId"></param>
+        /// <param name="sourceLang">
+        /// The language in which the source texts in the glossary are specified.<br/>
+        /// Example: en
+        /// </param>
+        /// <param name="targetLang">
+        /// The language in which the target texts in the glossary are specified.<br/>
+        /// Example: de
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::DeepL.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse> DeleteDictionaryAsResponseAsync(
+            string glossaryId,
+            global::DeepL.GlossarySourceLanguage sourceLang,
+            global::DeepL.GlossaryTargetLanguage targetLang,
+            global::DeepL.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareDeleteDictionaryArguments(
@@ -105,14 +135,15 @@ namespace DeepL
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::DeepL.PathBuilder(
                                 path: $"/v3/glossaries/{glossaryId}/dictionaries",
                                 baseUri: ResolveBaseUri(
                                 servers: s_DeleteDictionaryServers,
-                                defaultBaseUrl: "https://api.deepl.com/")); 
+                                defaultBaseUrl: "https://api.deepl.com/"));
                             __pathBuilder
                                 .AddRequiredParameter("source_lang", sourceLang.ToValueString())
-                                .AddRequiredParameter("target_lang", targetLang.ToValueString()) 
+                                .AddRequiredParameter("target_lang", targetLang.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::DeepL.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -186,6 +217,8 @@ namespace DeepL
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -196,6 +229,11 @@ namespace DeepL
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::DeepL.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::DeepL.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -213,6 +251,8 @@ namespace DeepL
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -222,8 +262,7 @@ namespace DeepL
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::DeepL.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -232,6 +271,11 @@ namespace DeepL
                         __attempt < __maxAttempts &&
                         global::DeepL.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::DeepL.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::DeepL.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -248,14 +292,15 @@ namespace DeepL
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::DeepL.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -295,6 +340,8 @@ namespace DeepL
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -315,6 +362,8 @@ namespace DeepL
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Bad request. Please check error message and your parameters.
@@ -604,6 +653,10 @@ namespace DeepL
                                 {
                                     __response.EnsureSuccessStatusCode();
 
+                return new global::DeepL.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -625,6 +678,10 @@ namespace DeepL
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
+                                    return new global::DeepL.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
