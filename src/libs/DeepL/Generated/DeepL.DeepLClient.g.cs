@@ -46,7 +46,7 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        public AdminApiClient AdminApi => new AdminApiClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AdminApiClient AdminApi => new AdminApiClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -76,7 +76,7 @@ namespace DeepL
         /// - [delete](https://www.deepl.com/docs-api/glossaries/delete-glossary) the existing glossary,<br/>
         /// - [create a new glossary](https://www.deepl.com/docs-api/glossaries/create-glossary) with the same name.
         /// </summary>
-        public ManageGlossariesClient ManageGlossaries => new ManageGlossariesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ManageGlossariesClient ManageGlossaries => new ManageGlossariesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -101,7 +101,7 @@ namespace DeepL
         /// Glossaries created via the DeepL API are now unified with glossaries created via the DeepL website and DeepL apps.<br/>
         /// Please only use the v3 glossary API in conjunction with multilingual or edited glossaries from the website.
         /// </summary>
-        public ManageMultilingualGlossariesClient ManageMultilingualGlossaries => new ManageMultilingualGlossariesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ManageMultilingualGlossariesClient ManageMultilingualGlossaries => new ManageMultilingualGlossariesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -111,7 +111,7 @@ namespace DeepL
         /// <summary>
         /// Information about API usage and value ranges.
         /// </summary>
-        public MetaInformationClient MetaInformation => new MetaInformationClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MetaInformationClient MetaInformation => new MetaInformationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -122,7 +122,7 @@ namespace DeepL
         /// The `rephrase` endpoint  is used to make corrections and adjustments to texts based on style or tone.<br/>
         /// For more details, visit [this documentation page](https://developers.deepl.com/docs/api-reference/improve-text).
         /// </summary>
-        public RephraseTextClient RephraseText => new RephraseTextClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RephraseTextClient RephraseText => new RephraseTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -136,7 +136,7 @@ namespace DeepL
         /// to the selected formatting and spelling conventions.<br/>
         /// If you encounter issues, please let us know at support@DeepL.com.
         /// </summary>
-        public StyleRulesClient StyleRules => new StyleRulesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public StyleRulesClient StyleRules => new StyleRulesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -163,7 +163,7 @@ namespace DeepL
         ///   - once the status call reports `done`, [download](https://www.deepl.com/docs-api/documents/download-document) the translated document.<br/>
         /// To learn more about context in DeepL API translations, we recommend [this article](https://www.deepl.com/docs-api/general/working-with-context).
         /// </summary>
-        public TranslateDocumentsClient TranslateDocuments => new TranslateDocumentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TranslateDocumentsClient TranslateDocuments => new TranslateDocumentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -174,7 +174,7 @@ namespace DeepL
         /// The text-translation API currently consists of a single endpoint, `translate`, which is described below.<br/>
         /// To learn more about context in DeepL API translations, we recommend [this article](https://www.deepl.com/docs-api/general/working-with-context).
         /// </summary>
-        public TranslateTextClient TranslateText => new TranslateTextClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TranslateTextClient TranslateText => new TranslateTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -188,7 +188,7 @@ namespace DeepL
         /// `translation_memory_threshold` which defines the minimum matching percentage required for a translation memory<br/>
         /// segment to be applied (recommended to be 75% or higher).
         /// </summary>
-        public TranslationMemoriesClient TranslationMemories => new TranslationMemoriesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TranslationMemoriesClient TranslationMemories => new TranslationMemoriesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -199,7 +199,7 @@ namespace DeepL
         /// The Voice API provides real-time voice transcription and translation services.<br/>
         /// Use a two-step flow: first request a streaming URL via REST, then establish a WebSocket connection for streaming audio and receiving transcriptions.
         /// </summary>
-        public VoiceAPIClient VoiceAPI => new VoiceAPIClient(HttpClient, authorizations: Authorizations, options: Options)
+        public VoiceAPIClient VoiceAPI => new VoiceAPIClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -267,10 +267,10 @@ namespace DeepL
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public DeepLClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::DeepL.EndPointAuthorization>? authorizations = null,
-            global::DeepL.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::DeepL.EndPointAuthorization>? authorizations,
+            global::DeepL.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
