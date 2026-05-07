@@ -57,9 +57,7 @@ namespace DeepL
             ref byte[] content);
 
         /// <summary>
-        /// Download Translated Document<br/>
-        /// Once the status of the document translation process is `done`, the result can be downloaded.<br/>
-        /// For privacy reasons the translated document is automatically removed from the server once it was downloaded and cannot be downloaded again.
+        /// Download Translated Document
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="request"></param>
@@ -84,9 +82,7 @@ namespace DeepL
             return __response.Body;
         }
         /// <summary>
-        /// Download Translated Document<br/>
-        /// Once the status of the document translation process is `done`, the result can be downloaded.<br/>
-        /// For privacy reasons the translated document is automatically removed from the server once it was downloaded and cannot be downloaded again.
+        /// Download Translated Document
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="request"></param>
@@ -757,9 +753,7 @@ namespace DeepL
             }
         }
         /// <summary>
-        /// Download Translated Document<br/>
-        /// Once the status of the document translation process is `done`, the result can be downloaded.<br/>
-        /// For privacy reasons the translated document is automatically removed from the server once it was downloaded and cannot be downloaded again.
+        /// Download Translated Document
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="request"></param>
@@ -1468,9 +1462,7 @@ namespace DeepL
             }
         }
         /// <summary>
-        /// Download Translated Document<br/>
-        /// Once the status of the document translation process is `done`, the result can be downloaded.<br/>
-        /// For privacy reasons the translated document is automatically removed from the server once it was downloaded and cannot be downloaded again.
+        /// Download Translated Document
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="documentKey1">

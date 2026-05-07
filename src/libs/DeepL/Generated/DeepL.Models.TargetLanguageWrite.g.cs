@@ -4,21 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// The language for the text improvement. Options currently available:<br/>
-    ///  * `de` - German<br/>
-    ///  * `en` - English (unspecified variant, defaults to `en-US`)<br/>
-    ///  * `en-GB` - English (British)<br/>
-    ///  * `en-US` - English (American)<br/>
-    ///  * `es` - Spanish<br/>
-    ///  * `fr` - French<br/>
-    ///  * `it` - Italian<br/>
-    ///  * `ja` - Japanese<br/>
-    ///  * `ko` - Korean<br/>
-    ///  * `pt` - Portuguese (unspecified variant, defaults to `pt-PT`)<br/>
-    ///  * `pt-BR` - Portuguese (Brazilian)<br/>
-    ///  * `pt-PT` - Portuguese (all Portuguese variants excluding Brazilian Portuguese)<br/>
-    ///  * `zh` - Chinese (unspecified variant, defaults to `zh-Hans`)<br/>
-    ///  * `zh-Hans` - Chinese (simplified)<br/>
+    /// The language for the text improvement.<br/>
     /// Example: de
     /// </summary>
     public enum TargetLanguageWrite
@@ -39,6 +25,10 @@ namespace DeepL
         /// 
         /// </summary>
         EnUs,
+        /// <summary>
+        /// 
+        /// </summary>
+        Es,
         /// <summary>
         /// 
         /// </summary>
@@ -93,6 +83,7 @@ namespace DeepL
                 TargetLanguageWrite.En => "en",
                 TargetLanguageWrite.EnGb => "en-GB",
                 TargetLanguageWrite.EnUs => "en-US",
+                TargetLanguageWrite.Es => "es",
                 TargetLanguageWrite.Fr => "fr",
                 TargetLanguageWrite.It => "it",
                 TargetLanguageWrite.Ja => "ja",
@@ -116,6 +107,7 @@ namespace DeepL
                 "en" => TargetLanguageWrite.En,
                 "en-GB" => TargetLanguageWrite.EnGb,
                 "en-US" => TargetLanguageWrite.EnUs,
+                "es" => TargetLanguageWrite.Es,
                 "fr" => TargetLanguageWrite.Fr,
                 "it" => TargetLanguageWrite.It,
                 "ja" => TargetLanguageWrite.Ja,

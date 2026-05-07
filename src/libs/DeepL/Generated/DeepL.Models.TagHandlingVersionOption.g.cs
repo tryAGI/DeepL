@@ -5,17 +5,17 @@ namespace DeepL
 {
     /// <summary>
     /// Sets which version of the tag handling algorithm should be used. Options currently available:<br/>
-    ///  * `v2`: Improved algorithm released in October 2025 (default as of December 2025).<br/>
-    ///  * `v1`: Traditional algorithm (default until December 2025).
+    /// * `v1`: Traditional algorithm (currently the default, will become deprecated in the future).<br/>
+    /// * `v2`: Improved algorithm released in October 2025 (will become the default in the future).
     /// </summary>
     public enum TagHandlingVersionOption
     {
         /// <summary>
-        /// Traditional algorithm (default until December 2025).
+        /// Traditional algorithm (currently the default, will become deprecated in the future).
         /// </summary>
         V1,
         /// <summary>
-        /// Improved algorithm released in October 2025 (default as of December 2025).
+        /// Improved algorithm released in October 2025 (will become the default in the future).
         /// </summary>
         V2,
     }

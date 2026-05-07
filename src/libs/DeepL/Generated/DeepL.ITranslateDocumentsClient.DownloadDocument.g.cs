@@ -5,9 +5,7 @@ namespace DeepL
     public partial interface ITranslateDocumentsClient
     {
         /// <summary>
-        /// Download Translated Document<br/>
-        /// Once the status of the document translation process is `done`, the result can be downloaded.<br/>
-        /// For privacy reasons the translated document is automatically removed from the server once it was downloaded and cannot be downloaded again.
+        /// Download Translated Document
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="request"></param>
@@ -21,9 +19,7 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Download Translated Document<br/>
-        /// Once the status of the document translation process is `done`, the result can be downloaded.<br/>
-        /// For privacy reasons the translated document is automatically removed from the server once it was downloaded and cannot be downloaded again.
+        /// Download Translated Document
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="request"></param>
@@ -37,9 +33,7 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Download Translated Document<br/>
-        /// Once the status of the document translation process is `done`, the result can be downloaded.<br/>
-        /// For privacy reasons the translated document is automatically removed from the server once it was downloaded and cannot be downloaded again.
+        /// Download Translated Document
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="request"></param>
@@ -53,9 +47,7 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Download Translated Document<br/>
-        /// Once the status of the document translation process is `done`, the result can be downloaded.<br/>
-        /// For privacy reasons the translated document is automatically removed from the server once it was downloaded and cannot be downloaded again.
+        /// Download Translated Document
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="documentKey1">

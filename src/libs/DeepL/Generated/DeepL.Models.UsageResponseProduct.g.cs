@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace DeepL
@@ -34,7 +36,7 @@ namespace DeepL
         public int? ApiKeyUnitCount { get; set; }
 
         /// <summary>
-        /// Total units used for this product by the account in the current period.<br/>
+        /// Total units used for this product in the current period.<br/>
         /// Example: 5643
         /// </summary>
         /// <example>5643</example>
@@ -42,19 +44,21 @@ namespace DeepL
         public int? AccountUnitCount { get; set; }
 
         /// <summary>
-        /// Characters used for this product by this API key in the current period.<br/>
+        /// Use api_key_unit_count instead. Characters used for this product by this API key in the current period."<br/>
         /// Example: 0
         /// </summary>
         /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key_character_count")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? ApiKeyCharacterCount { get; set; }
 
         /// <summary>
-        /// Total characters used for this product in the current period.<br/>
+        /// Use account_unit_count instead. Total characters used for this product in the current period."<br/>
         /// Example: 5643
         /// </summary>
         /// <example>5643</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("character_count")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? CharacterCount { get; set; }
 
         /// <summary>
@@ -79,15 +83,7 @@ namespace DeepL
         /// Example: 0
         /// </param>
         /// <param name="accountUnitCount">
-        /// Total units used for this product by the account in the current period.<br/>
-        /// Example: 5643
-        /// </param>
-        /// <param name="apiKeyCharacterCount">
-        /// Characters used for this product by this API key in the current period.<br/>
-        /// Example: 0
-        /// </param>
-        /// <param name="characterCount">
-        /// Total characters used for this product in the current period.<br/>
+        /// Total units used for this product in the current period.<br/>
         /// Example: 5643
         /// </param>
 #if NET7_0_OR_GREATER
@@ -97,16 +93,12 @@ namespace DeepL
             string? productType,
             global::DeepL.UsageResponseProductBillingUnit? billingUnit,
             int? apiKeyUnitCount,
-            int? accountUnitCount,
-            int? apiKeyCharacterCount,
-            int? characterCount)
+            int? accountUnitCount)
         {
             this.ProductType = productType;
             this.BillingUnit = billingUnit;
             this.ApiKeyUnitCount = apiKeyUnitCount;
             this.AccountUnitCount = accountUnitCount;
-            this.ApiKeyCharacterCount = apiKeyCharacterCount;
-            this.CharacterCount = characterCount;
         }
 
         /// <summary>

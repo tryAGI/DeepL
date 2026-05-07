@@ -5,7 +5,6 @@ namespace DeepL
 {
     /// <summary>
     /// The text-translation API currently consists of a single endpoint, `translate`, which is described below.<br/>
-    /// To learn more about context in DeepL API translations, we recommend [this article](https://www.deepl.com/docs-api/general/working-with-context).<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

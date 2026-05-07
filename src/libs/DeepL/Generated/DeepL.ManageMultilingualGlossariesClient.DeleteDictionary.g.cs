@@ -504,6 +504,72 @@ namespace DeepL
                                 };
                             }
                             // 
+                            if ((int)__response.StatusCode == 413)
+                            {
+                                string? __content_413 = null;
+                                global::System.Exception? __exception_413 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_413 = __ex;
+                                }
+
+                                throw new global::DeepL.ApiException(
+                                    message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_413,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_413,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 415)
+                            {
+                                string? __content_415 = null;
+                                global::System.Exception? __exception_415 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_415 = __ex;
+                                }
+
+                                throw new global::DeepL.ApiException(
+                                    message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_415,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_415,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
                             if ((int)__response.StatusCode == 429)
                             {
                                 string? __content_429 = null;
@@ -530,6 +596,39 @@ namespace DeepL
                                     statusCode: __response.StatusCode)
                                 {
                                     ResponseBody = __content_429,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 456)
+                            {
+                                string? __content_456 = null;
+                                global::System.Exception? __exception_456 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_456 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_456 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_456 = __ex;
+                                }
+
+                                throw new global::DeepL.ApiException(
+                                    message: __content_456 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_456,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_456,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,

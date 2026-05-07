@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace DeepL
@@ -9,25 +11,24 @@ namespace DeepL
     public sealed partial class TranslateDocumentRequest
     {
         /// <summary>
-        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to detect the language of the text and translate it.<br/>
-        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
+        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
+        /// detect the language of the text and translate it.<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
         /// Example: EN
         /// </summary>
         /// <example>EN</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_lang")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::DeepL.JsonConverters.SourceLanguageJsonConverter))]
-        public global::DeepL.SourceLanguage? SourceLang { get; set; }
+        public string? SourceLang { get; set; }
 
         /// <summary>
         /// The language into which the text should be translated.<br/>
-        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
         /// Example: DE
         /// </summary>
         /// <example>DE</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_lang")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::DeepL.JsonConverters.TargetLanguageJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::DeepL.TargetLanguage TargetLang { get; set; }
+        public required string TargetLang { get; set; }
 
         /// <summary>
         /// The document file to be translated. The file name should be included in this part's content disposition. As an alternative, the filename parameter can be used. The following file types and extensions are supported:<br/>
@@ -39,7 +40,7 @@ namespace DeepL
         ///   * `txt` - Plain Text Document<br/>
         ///   * `xlf / xliff` - XLIFF Document, version 2.1<br/>
         ///   * `srt` - SRT Document<br/>
-        ///   * `jpeg / jpg / png` - Image
+        ///   * `jpeg` / `jpg` / `png` - Image (currently in beta)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -52,36 +53,26 @@ namespace DeepL
         public string? Filename { get; set; }
 
         /// <summary>
-        /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.<br/>
-        /// Note: Not all combinations of input file and translation file extensions are permitted. See [Document Format Conversions](https://www.deepl.com/docs-api/documents/format-conversions) for the permitted combinations.
+        /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
         public string? OutputFormat { get; set; }
 
         /// <summary>
         /// Sets whether the translated text should lean towards formal or informal language.<br/>
-        /// This feature currently only works for target languages<br/>
-        /// `DE` (German),<br/>
-        /// `FR` (French),<br/>
-        /// `IT` (Italian),<br/>
-        /// `ES` (Spanish),<br/>
-        /// `ES-419` (Latin American Spanish),<br/>
-        /// `NL` (Dutch),<br/>
-        /// `PL` (Polish),<br/>
-        /// `PT-BR` and `PT-PT` (Portuguese),<br/>
-        /// `JA` (Japanese),<br/>
-        /// and `RU` (Russian).<br/>
-        /// Learn more about the plain/polite feature for Japanese [here](https://support.deepl.com/hc/en-us/articles/6306700061852-About-the-plain-polite-feature-in-Japanese).<br/>
-        /// Setting this parameter with a target language that does not support formality will fail,<br/>
-        /// unless one of the `prefer_...` options are used.<br/>
+        /// This feature is only available for certain target languages. Setting this parameter <br/>
+        /// with a target language that does not support formality will fail, unless one of the <br/>
+        /// `prefer_...` options are used.<br/>
         /// Possible options are:<br/>
         ///   * `default` (default)<br/>
         ///   * `more` - for a more formal language<br/>
         ///   * `less` - for a more informal language<br/>
         ///   * `prefer_more` - for a more formal language if available, otherwise fallback to default formality<br/>
         ///   * `prefer_less` - for a more informal language if available, otherwise fallback to default formality<br/>
-        /// Default Value: default
+        /// Default Value: default<br/>
+        /// Example: prefer_more
         /// </summary>
+        /// <example>prefer_more</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("formality")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::DeepL.JsonConverters.FormalityJsonConverter))]
         public global::DeepL.Formality? Formality { get; set; }
@@ -95,6 +86,14 @@ namespace DeepL
         public string? GlossaryId { get; set; }
 
         /// <summary>
+        /// This parameter is maintained for backward compatibility and has no effect.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_beta_languages")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public bool? EnableBetaLanguages { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -105,7 +104,7 @@ namespace DeepL
         /// </summary>
         /// <param name="targetLang">
         /// The language into which the text should be translated.<br/>
-        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
         /// Example: DE
         /// </param>
         /// <param name="file">
@@ -118,43 +117,33 @@ namespace DeepL
         ///   * `txt` - Plain Text Document<br/>
         ///   * `xlf / xliff` - XLIFF Document, version 2.1<br/>
         ///   * `srt` - SRT Document<br/>
-        ///   * `jpeg / jpg / png` - Image
+        ///   * `jpeg` / `jpg` / `png` - Image (currently in beta)
         /// </param>
         /// <param name="sourceLang">
-        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to detect the language of the text and translate it.<br/>
-        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
+        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
+        /// detect the language of the text and translate it.<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
         /// Example: EN
         /// </param>
         /// <param name="filename">
         /// The name of the uploaded file. Can be used as an alternative to including the file name in the file part's content disposition.
         /// </param>
         /// <param name="outputFormat">
-        /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.<br/>
-        /// Note: Not all combinations of input file and translation file extensions are permitted. See [Document Format Conversions](https://www.deepl.com/docs-api/documents/format-conversions) for the permitted combinations.
+        /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.
         /// </param>
         /// <param name="formality">
         /// Sets whether the translated text should lean towards formal or informal language.<br/>
-        /// This feature currently only works for target languages<br/>
-        /// `DE` (German),<br/>
-        /// `FR` (French),<br/>
-        /// `IT` (Italian),<br/>
-        /// `ES` (Spanish),<br/>
-        /// `ES-419` (Latin American Spanish),<br/>
-        /// `NL` (Dutch),<br/>
-        /// `PL` (Polish),<br/>
-        /// `PT-BR` and `PT-PT` (Portuguese),<br/>
-        /// `JA` (Japanese),<br/>
-        /// and `RU` (Russian).<br/>
-        /// Learn more about the plain/polite feature for Japanese [here](https://support.deepl.com/hc/en-us/articles/6306700061852-About-the-plain-polite-feature-in-Japanese).<br/>
-        /// Setting this parameter with a target language that does not support formality will fail,<br/>
-        /// unless one of the `prefer_...` options are used.<br/>
+        /// This feature is only available for certain target languages. Setting this parameter <br/>
+        /// with a target language that does not support formality will fail, unless one of the <br/>
+        /// `prefer_...` options are used.<br/>
         /// Possible options are:<br/>
         ///   * `default` (default)<br/>
         ///   * `more` - for a more formal language<br/>
         ///   * `less` - for a more informal language<br/>
         ///   * `prefer_more` - for a more formal language if available, otherwise fallback to default formality<br/>
         ///   * `prefer_less` - for a more informal language if available, otherwise fallback to default formality<br/>
-        /// Default Value: default
+        /// Default Value: default<br/>
+        /// Example: prefer_more
         /// </param>
         /// <param name="glossaryId">
         /// A unique ID assigned to a glossary.<br/>
@@ -164,16 +153,16 @@ namespace DeepL
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TranslateDocumentRequest(
-            global::DeepL.TargetLanguage targetLang,
+            string targetLang,
             byte[] file,
-            global::DeepL.SourceLanguage? sourceLang,
+            string? sourceLang,
             string? filename,
             string? outputFormat,
             global::DeepL.Formality? formality,
             string? glossaryId)
         {
             this.SourceLang = sourceLang;
-            this.TargetLang = targetLang;
+            this.TargetLang = targetLang ?? throw new global::System.ArgumentNullException(nameof(targetLang));
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename;
             this.OutputFormat = outputFormat;

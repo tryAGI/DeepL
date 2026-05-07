@@ -41,12 +41,12 @@ namespace DeepL
         public int? TextImprovementCharacters { get; set; }
 
         /// <summary>
-        /// Duration of speech-to-text usage in milliseconds.<br/>
-        /// Example: 1800000
+        /// Duration of speech-to-text usage in minutes.<br/>
+        /// Example: 107.46
         /// </summary>
-        /// <example>1800000</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("speech_to_text_milliseconds")]
-        public int? SpeechToTextMilliseconds { get; set; }
+        /// <example>107.46</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speech_to_text_minutes")]
+        public double? SpeechToTextMinutes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -73,9 +73,9 @@ namespace DeepL
         /// Number of characters used for text improvement.<br/>
         /// Example: 4727
         /// </param>
-        /// <param name="speechToTextMilliseconds">
-        /// Duration of speech-to-text usage in milliseconds.<br/>
-        /// Example: 1800000
+        /// <param name="speechToTextMinutes">
+        /// Duration of speech-to-text usage in minutes.<br/>
+        /// Example: 107.46
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -85,13 +85,13 @@ namespace DeepL
             int? textTranslationCharacters,
             int? documentTranslationCharacters,
             int? textImprovementCharacters,
-            int? speechToTextMilliseconds)
+            double? speechToTextMinutes)
         {
             this.TotalCharacters = totalCharacters;
             this.TextTranslationCharacters = textTranslationCharacters;
             this.DocumentTranslationCharacters = documentTranslationCharacters;
             this.TextImprovementCharacters = textImprovementCharacters;
-            this.SpeechToTextMilliseconds = speechToTextMilliseconds;
+            this.SpeechToTextMinutes = speechToTextMinutes;
         }
 
         /// <summary>

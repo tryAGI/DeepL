@@ -4,16 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// Specifies which DeepL model should be used for translation.<br/>
-    /// Possible values are:<br/>
-    /// * `latency_optimized` (default) - uses lower latency “classic” translation models, which support all language pairs;<br/>
-    ///   default value<br/>
-    /// * `quality_optimized` - uses higher latency, improved quality “next-gen” translation models, which support only a<br/>
-    ///   subset of language pairs; if a language pair that is not supported by next-gen models is included in the<br/>
-    ///   request, it will fail. Consider using prefer_quality_optimized instead.<br/>
-    /// * `prefer_quality_optimized` - prioritizes use of higher latency, improved quality “next-gen” translation models,<br/>
-    ///   which support only a subset of DeepL languages; if a request includes a language pair not supported by<br/>
-    ///   next-gen models, the request will fall back to latency_optimized classic models.
+    /// Specifies which DeepL model should be used for translation.
     /// </summary>
     public enum ModelType
     {

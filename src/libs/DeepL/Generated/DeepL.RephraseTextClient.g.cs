@@ -5,7 +5,6 @@ namespace DeepL
 {
     /// <summary>
     /// The `rephrase` endpoint  is used to make corrections and adjustments to texts based on style or tone.<br/>
-    /// For more details, visit [this documentation page](https://developers.deepl.com/docs/api-reference/improve-text)<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

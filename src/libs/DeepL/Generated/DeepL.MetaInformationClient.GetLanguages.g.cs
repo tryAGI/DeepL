@@ -55,8 +55,7 @@ namespace DeepL
             ref string content);
 
         /// <summary>
-        /// Retrieve Supported Languages<br/>
-        /// Retrieve the list of languages that are currently supported for translation, either as source or target language, respectively.
+        /// Retrieve Supported Languages
         /// </summary>
         /// <param name="type">
         /// Default Value: source
@@ -78,8 +77,7 @@ namespace DeepL
             return __response.Body;
         }
         /// <summary>
-        /// Retrieve Supported Languages<br/>
-        /// Retrieve the list of languages that are currently supported for translation, either as source or target language, respectively.
+        /// Retrieve Supported Languages
         /// </summary>
         /// <param name="type">
         /// Default Value: source

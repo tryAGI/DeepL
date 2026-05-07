@@ -5,17 +5,18 @@ namespace DeepL
 {
     /// <summary>
     /// Sets which kind of tags should be handled. Options currently available:<br/>
-    ///  * `xml`: Enable XML tag handling; see [XML Handling](https://www.deepl.com/docs-api/xml).<br/>
-    ///  * `html`: Enable HTML tag handling; see [HTML Handling](https://www.deepl.com/docs-api/html).
+    ///  * `xml`<br/>
+    ///  * `html`<br/>
+    /// Example: html
     /// </summary>
     public enum TagHandlingOption
     {
         /// <summary>
-        /// Enable HTML tag handling; see [HTML Handling](https://www.deepl.com/docs-api/html).
+        /// 
         /// </summary>
         Html,
         /// <summary>
-        /// Enable XML tag handling; see [XML Handling](https://www.deepl.com/docs-api/xml).
+        /// 
         /// </summary>
         Xml,
     }
