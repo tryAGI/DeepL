@@ -30,7 +30,7 @@ public partial class Tests
 
         //// Each instruction has a label and a prompt describing the rule:
         var instruction = await client.StyleRules.CreateCustomInstructionAsync(
-            styleId: styleRule.StyleId,
+            styleId: styleRule.StyleId.ToString(),
             label: "Currency formatting",
             prompt: "Always place the currency symbol before the number (e.g. $100, €50).");
 
@@ -41,7 +41,7 @@ public partial class Tests
         //// ## Retrieve the instruction
 
         var retrieved = await client.StyleRules.GetCustomInstructionAsync(
-            styleId: styleRule.StyleId,
+            styleId: styleRule.StyleId.ToString(),
             instructionId: instruction.Id);
 
         retrieved.Id.Should().Be(instruction.Id);
@@ -51,7 +51,7 @@ public partial class Tests
         //// You can optionally restrict an instruction to a specific
         //// source language:
         var deInstruction = await client.StyleRules.CreateCustomInstructionAsync(
-            styleId: styleRule.StyleId,
+            styleId: styleRule.StyleId.ToString(),
             label: "German compound nouns",
             prompt: "Keep German compound nouns as a single word in the translation.",
             sourceLanguage: "de");
@@ -61,14 +61,14 @@ public partial class Tests
         //// ## Clean up
 
         await client.StyleRules.DeleteCustomInstructionAsync(
-            styleId: styleRule.StyleId,
+            styleId: styleRule.StyleId.ToString(),
             instructionId: deInstruction.Id);
 
         await client.StyleRules.DeleteCustomInstructionAsync(
-            styleId: styleRule.StyleId,
+            styleId: styleRule.StyleId.ToString(),
             instructionId: instruction.Id);
 
         await client.StyleRules.DeleteStyleRuleListAsync(
-            styleId: styleRule.StyleId);
+            styleId: styleRule.StyleId.ToString());
     }
 }

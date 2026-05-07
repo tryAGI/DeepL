@@ -26,7 +26,7 @@ public partial class Tests
             name: "SDK Test Rules",
             language: StyleRuleLanguage.En);
 
-        created.StyleId.Should().NotBeNullOrEmpty();
+        created.StyleId.Should().NotBeEmpty();
         created.Name.Should().Be("SDK Test Rules");
         created.Language.Should().Be(StyleRuleLanguage.En);
 
@@ -44,7 +44,7 @@ public partial class Tests
         //// Formatting, Numbers, Punctuation, SpellingAndGrammar,
         //// StyleAndTone, Vocabulary):
         var updated = await client.StyleRules.UpdateStyleRuleConfiguredRulesAsync(
-            styleId: created.StyleId,
+            styleId: created.StyleId.ToString(),
             punctuation: new ConfiguredRulesPunctuation());
 
         updated.Version.Should().BeGreaterThanOrEqualTo(created.Version);
@@ -52,6 +52,6 @@ public partial class Tests
         //// ## Clean up
 
         await client.StyleRules.DeleteStyleRuleListAsync(
-            styleId: created.StyleId);
+            styleId: created.StyleId.ToString());
     }
 }
