@@ -5,9 +5,7 @@ namespace DeepL
     public partial interface ITranslateDocumentsClient
     {
         /// <summary>
-        /// Check Document Status<br/>
-        /// Retrieve the current status of a document translation process.<br/>
-        /// If the translation is still in progress, the estimated time remaining is also included in the response.
+        /// Check Document Status
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="request"></param>
@@ -21,9 +19,7 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Check Document Status<br/>
-        /// Retrieve the current status of a document translation process.<br/>
-        /// If the translation is still in progress, the estimated time remaining is also included in the response.
+        /// Check Document Status
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="request"></param>
@@ -37,9 +33,7 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Check Document Status<br/>
-        /// Retrieve the current status of a document translation process.<br/>
-        /// If the translation is still in progress, the estimated time remaining is also included in the response.
+        /// Check Document Status
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="documentKey1">

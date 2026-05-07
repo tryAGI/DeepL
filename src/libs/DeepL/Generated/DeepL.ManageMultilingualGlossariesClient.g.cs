@@ -9,7 +9,7 @@ namespace DeepL
     /// `glossary_id` parameter. A glossary contains (several) dictionaries.<br/>
     /// A dictionary is a mapping of source phrases to target phrases for a single language pair.<br/>
     /// If you encounter issues, please let us know at support@DeepL.com.<br/>
-    /// Currently you can create glossaries with any of the languages DeepL supports.<br/>
+    /// Currently you can create glossaries with any of the languages DeepL supports (with the exception of Thai).<br/>
     /// The maximum size limit for a glossary is 10 MiB = 10485760 bytes and each source/target text,<br/>
     /// as well as the name of the glossary, is limited to 1024 UTF-8 bytes.<br/>
     /// A total of 1000 glossaries are allowed per account.<br/>

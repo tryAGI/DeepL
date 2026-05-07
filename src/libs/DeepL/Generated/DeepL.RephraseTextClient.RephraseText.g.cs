@@ -457,21 +457,7 @@ namespace DeepL
         /// Text to be improved. Only UTF-8-encoded plain text is supported. Improvements are returned in the same order as they are requested.
         /// </param>
         /// <param name="targetLang">
-        /// The language for the text improvement. Options currently available:<br/>
-        ///  * `de` - German<br/>
-        ///  * `en` - English (unspecified variant, defaults to `en-US`)<br/>
-        ///  * `en-GB` - English (British)<br/>
-        ///  * `en-US` - English (American)<br/>
-        ///  * `es` - Spanish<br/>
-        ///  * `fr` - French<br/>
-        ///  * `it` - Italian<br/>
-        ///  * `ja` - Japanese<br/>
-        ///  * `ko` - Korean<br/>
-        ///  * `pt` - Portuguese (unspecified variant, defaults to `pt-PT`)<br/>
-        ///  * `pt-BR` - Portuguese (Brazilian)<br/>
-        ///  * `pt-PT` - Portuguese (all Portuguese variants excluding Brazilian Portuguese)<br/>
-        ///  * `zh` - Chinese (unspecified variant, defaults to `zh-Hans`)<br/>
-        ///  * `zh-Hans` - Chinese (simplified)<br/>
+        /// The language for the text improvement.<br/>
         /// Example: de
         /// </param>
         /// <param name="writingStyle">

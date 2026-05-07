@@ -4,7 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// The language that the style rules are applied to.
+    /// The language that the style rule list is applied to.
     /// </summary>
     public enum StyleRuleLanguage
     {

@@ -9,15 +9,19 @@ namespace DeepL
     public sealed partial class ListGlossaryLanguagesResponseSupportedLanguage
     {
         /// <summary>
-        /// The language in which the source texts in the glossary are specified.
+        /// The language in which the source texts in the glossary are specified.<br/>
+        /// Example: en
         /// </summary>
+        /// <example>en</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_lang")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SourceLang { get; set; }
 
         /// <summary>
-        /// The language in which the target texts in the glossary are specified.
+        /// The language in which the target texts in the glossary are specified.<br/>
+        /// Example: de
         /// </summary>
+        /// <example>de</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_lang")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TargetLang { get; set; }
@@ -32,10 +36,12 @@ namespace DeepL
         /// Initializes a new instance of the <see cref="ListGlossaryLanguagesResponseSupportedLanguage" /> class.
         /// </summary>
         /// <param name="sourceLang">
-        /// The language in which the source texts in the glossary are specified.
+        /// The language in which the source texts in the glossary are specified.<br/>
+        /// Example: en
         /// </param>
         /// <param name="targetLang">
-        /// The language in which the target texts in the glossary are specified.
+        /// The language in which the target texts in the glossary are specified.<br/>
+        /// Example: de
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

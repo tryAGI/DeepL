@@ -9,21 +9,26 @@ namespace DeepL
     public sealed partial class TranslateTextResponseTranslation
     {
         /// <summary>
-        /// The language detected in the source text. It reflects the value of the `source_lang` parameter, when specified.
+        /// The language detected in the source text. It reflects the value of the `source_lang` parameter, when specified.<br/>
+        /// Example: EN
         /// </summary>
+        /// <example>EN</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("detected_source_language")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::DeepL.JsonConverters.SourceLanguageJsonConverter))]
-        public global::DeepL.SourceLanguage? DetectedSourceLanguage { get; set; }
+        public string? DetectedSourceLanguage { get; set; }
 
         /// <summary>
-        /// The translated text.
+        /// The translated text.<br/>
+        /// Example: Hallo, Welt!
         /// </summary>
+        /// <example>Hallo, Welt!</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         public string? Text { get; set; }
 
         /// <summary>
-        /// Number of characters counted by DeepL for billing purposes. Only present if the show_billed_characters parameter is set to true.
+        /// Number of characters counted by DeepL for billing purposes. Only present if the show_billed_characters parameter is set to true.<br/>
+        /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("billed_characters")]
         public int? BilledCharacters { get; set; }
 
@@ -45,13 +50,16 @@ namespace DeepL
         /// Initializes a new instance of the <see cref="TranslateTextResponseTranslation" /> class.
         /// </summary>
         /// <param name="detectedSourceLanguage">
-        /// The language detected in the source text. It reflects the value of the `source_lang` parameter, when specified.
+        /// The language detected in the source text. It reflects the value of the `source_lang` parameter, when specified.<br/>
+        /// Example: EN
         /// </param>
         /// <param name="text">
-        /// The translated text.
+        /// The translated text.<br/>
+        /// Example: Hallo, Welt!
         /// </param>
         /// <param name="billedCharacters">
-        /// Number of characters counted by DeepL for billing purposes. Only present if the show_billed_characters parameter is set to true.
+        /// Number of characters counted by DeepL for billing purposes. Only present if the show_billed_characters parameter is set to true.<br/>
+        /// Example: 42
         /// </param>
         /// <param name="modelTypeUsed">
         /// Indicates the translation model used. Only present if model_type parameter is included in the request.<br/>
@@ -61,7 +69,7 @@ namespace DeepL
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TranslateTextResponseTranslation(
-            global::DeepL.SourceLanguage? detectedSourceLanguage,
+            string? detectedSourceLanguage,
             string? text,
             int? billedCharacters,
             string? modelTypeUsed)

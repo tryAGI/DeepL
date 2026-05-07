@@ -13,15 +13,7 @@ namespace DeepL
     ///   * `txt` - Plain Text Document<br/>
     ///   * `xlf / xliff` - XLIFF Document, version 2.1<br/>
     ///   * `srt` - SRT Document<br/>
-    ///   * `jpeg / jpg / png` - Image<br/>
-    /// Please note that with every submitted document of type .pptx, .docx, .xlsx, or .pdf,<br/>
-    /// you are billed a minimum of 50,000 characters with the DeepL API plan,<br/>
-    /// no matter how many characters are included in the document.<br/>
-    /// Translating a document usually involves three types of HTTP requests:<br/>
-    ///   - [upload](https://www.deepl.com/docs-api/documents/translate-document) the document to be translated,<br/>
-    ///   - periodically [check the status](https://www.deepl.com/docs-api/documents/get-document-status) of the document translation,<br/>
-    ///   - once the status call reports `done`, [download](https://www.deepl.com/docs-api/documents/download-document) the translated document.<br/>
-    /// To learn more about context in DeepL API translations, we recommend [this article](https://www.deepl.com/docs-api/general/working-with-context).<br/>
+    ///   * `jpeg` / `jpg` / `png` - Image (currently in beta)<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

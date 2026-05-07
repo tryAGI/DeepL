@@ -4,12 +4,8 @@
 namespace DeepL
 {
     /// <summary>
-    /// Sets whether the translation engine should respect the original formatting, even if it would usually correct some aspects. Possible values are:<br/>
-    ///  * `0` (default)<br/>
-    ///  * `1`<br/>
-    /// The formatting aspects affected by this setting include:<br/>
-    ///  * Punctuation at the beginning and end of the sentence<br/>
-    ///  * Upper/lower case at the beginning of the sentence<br/>
+    /// Sets whether the translation engine should respect the original formatting, even if it would usually <br/>
+    /// correct some aspects.<br/>
     /// Default Value: 0
     /// </summary>
     public enum PreserveFormattingOptionStr

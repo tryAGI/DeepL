@@ -4,7 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// Usage statistics for a specific API key and specific date.
+    /// Usage statistics for a specific API key and optionally a specific date.
     /// </summary>
     public sealed partial class KeyAndDayUsageItem
     {
@@ -25,7 +25,7 @@ namespace DeepL
         public string? ApiKeyLabel { get; set; }
 
         /// <summary>
-        /// The usage date when group_by is "key_and_day".<br/>
+        /// The usage date. Only present when group_by is "key_and_day".<br/>
         /// Example: 2025-09-29T00:00:00Z
         /// </summary>
         /// <example>2025-09-29T00:00:00Z</example>
@@ -56,7 +56,7 @@ namespace DeepL
         /// Example: DeepL API Key Prod
         /// </param>
         /// <param name="usageDate">
-        /// The usage date when group_by is "key_and_day".<br/>
+        /// The usage date. Only present when group_by is "key_and_day".<br/>
         /// Example: 2025-09-29T00:00:00Z
         /// </param>
         /// <param name="usage">

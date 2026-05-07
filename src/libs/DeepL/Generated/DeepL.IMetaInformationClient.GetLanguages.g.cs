@@ -5,8 +5,7 @@ namespace DeepL
     public partial interface IMetaInformationClient
     {
         /// <summary>
-        /// Retrieve Supported Languages<br/>
-        /// Retrieve the list of languages that are currently supported for translation, either as source or target language, respectively.
+        /// Retrieve Supported Languages
         /// </summary>
         /// <param name="type">
         /// Default Value: source
@@ -19,8 +18,7 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Retrieve Supported Languages<br/>
-        /// Retrieve the list of languages that are currently supported for translation, either as source or target language, respectively.
+        /// Retrieve Supported Languages
         /// </summary>
         /// <param name="type">
         /// Default Value: source

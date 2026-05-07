@@ -4,7 +4,8 @@
 namespace DeepL
 {
     /// <summary>
-    /// The enabled rules for the style rule list including what option was selected for each rule. This schema combines rules from all supported languages.
+    /// The enabled rules for the style rule list including what option was selected for each rule. This schema combines rules from all supported languages.<br/>
+    /// Example: {"style_and_tone":{"abbreviations":"use_abbreviations_and_symbols","short_vs_long_words":"use_short_words"},"punctuation":{"apostrophe":"use_curly_apostrophes"}}
     /// </summary>
     public sealed partial class ConfiguredRules
     {

@@ -8,7 +8,7 @@ namespace DeepL
     /// - `auto`: Treats source language as a hint; server can override<br/>
     /// - `fixed`: Treats source language as mandatory; server must use this language<br/>
     /// Default Value: auto<br/>
-    /// Example: auto
+    /// Example: fixed
     /// </summary>
     public enum VoiceSourceLanguageMode
     {
