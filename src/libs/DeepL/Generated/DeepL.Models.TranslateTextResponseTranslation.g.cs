@@ -86,5 +86,6 @@ namespace DeepL
         public TranslateTextResponseTranslation()
         {
         }
+
     }
 }

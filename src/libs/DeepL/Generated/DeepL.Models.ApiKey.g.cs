@@ -111,5 +111,6 @@ namespace DeepL
         public ApiKey()
         {
         }
+
     }
 }

@@ -426,5 +426,6 @@ namespace DeepL
         public ConfiguredRulesStyleAndTone()
         {
         }
+
     }
 }

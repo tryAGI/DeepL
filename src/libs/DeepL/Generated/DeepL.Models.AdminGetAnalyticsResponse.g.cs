@@ -41,5 +41,6 @@ namespace DeepL
         public AdminGetAnalyticsResponse()
         {
         }
+
     }
 }

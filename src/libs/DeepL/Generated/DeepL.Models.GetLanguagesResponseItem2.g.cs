@@ -123,5 +123,6 @@ namespace DeepL
         public GetLanguagesResponseItem2()
         {
         }
+
     }
 }

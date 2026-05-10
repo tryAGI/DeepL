@@ -85,5 +85,6 @@ namespace DeepL
         public RephraseTextRequest()
         {
         }
+
     }
 }

@@ -53,5 +53,6 @@ namespace DeepL
         public ListTranslationMemoriesResponse()
         {
         }
+
     }
 }

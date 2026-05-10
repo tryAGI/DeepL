@@ -114,5 +114,6 @@ namespace DeepL
         public GetDocumentStatusResponse()
         {
         }
+
     }
 }

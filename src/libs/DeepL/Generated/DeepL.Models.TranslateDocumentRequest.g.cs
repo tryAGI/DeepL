@@ -176,5 +176,6 @@ namespace DeepL
         public TranslateDocumentRequest()
         {
         }
+
     }
 }

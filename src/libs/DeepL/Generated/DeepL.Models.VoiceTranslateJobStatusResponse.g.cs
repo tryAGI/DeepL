@@ -154,5 +154,6 @@ namespace DeepL
         public VoiceTranslateJobStatusResponse()
         {
         }
+
     }
 }

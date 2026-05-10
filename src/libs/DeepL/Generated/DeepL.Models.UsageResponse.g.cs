@@ -153,5 +153,6 @@ namespace DeepL
         public UsageResponse()
         {
         }
+
     }
 }

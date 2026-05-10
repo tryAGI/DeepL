@@ -45,5 +45,6 @@ namespace DeepL
         public DocumentKey()
         {
         }
+
     }
 }

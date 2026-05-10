@@ -377,5 +377,6 @@ namespace DeepL
         public TranslateTextRequest()
         {
         }
+
     }
 }

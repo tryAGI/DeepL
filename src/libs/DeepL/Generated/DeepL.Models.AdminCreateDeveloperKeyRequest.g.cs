@@ -44,5 +44,6 @@ namespace DeepL
         public AdminCreateDeveloperKeyRequest()
         {
         }
+
     }
 }
