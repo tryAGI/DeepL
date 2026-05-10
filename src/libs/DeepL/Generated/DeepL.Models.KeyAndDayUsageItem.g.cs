@@ -83,5 +83,6 @@ namespace DeepL
         public KeyAndDayUsageItem()
         {
         }
+
     }
 }

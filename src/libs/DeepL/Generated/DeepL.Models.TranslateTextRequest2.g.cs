@@ -324,5 +324,6 @@ namespace DeepL
         public TranslateTextRequest2()
         {
         }
+
     }
 }

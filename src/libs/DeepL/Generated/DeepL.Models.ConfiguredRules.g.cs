@@ -94,5 +94,6 @@ namespace DeepL
         public ConfiguredRules()
         {
         }
+
     }
 }

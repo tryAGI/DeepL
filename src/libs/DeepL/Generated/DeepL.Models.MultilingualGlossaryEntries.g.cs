@@ -97,5 +97,6 @@ namespace DeepL
         public MultilingualGlossaryEntries()
         {
         }
+
     }
 }

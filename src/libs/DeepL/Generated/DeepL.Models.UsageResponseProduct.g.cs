@@ -107,5 +107,6 @@ namespace DeepL
         public UsageResponseProduct()
         {
         }
+
     }
 }

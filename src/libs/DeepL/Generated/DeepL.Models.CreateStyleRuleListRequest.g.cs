@@ -80,5 +80,6 @@ namespace DeepL
         public CreateStyleRuleListRequest()
         {
         }
+
     }
 }

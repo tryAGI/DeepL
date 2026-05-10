@@ -40,5 +40,6 @@ namespace DeepL
         public VoiceTranslateJobParametersRequest()
         {
         }
+
     }
 }

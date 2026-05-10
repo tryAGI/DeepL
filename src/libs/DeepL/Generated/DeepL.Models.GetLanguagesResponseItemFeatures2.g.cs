@@ -43,5 +43,6 @@ namespace DeepL
         public GetLanguagesResponseItemFeatures2()
         {
         }
+
     }
 }

@@ -65,5 +65,6 @@ namespace DeepL
         public UpdateCustomInstructionRequest()
         {
         }
+
     }
 }

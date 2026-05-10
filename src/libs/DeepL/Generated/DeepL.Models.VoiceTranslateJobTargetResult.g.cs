@@ -105,5 +105,6 @@ namespace DeepL
         public VoiceTranslateJobTargetResult()
         {
         }
+
     }
 }

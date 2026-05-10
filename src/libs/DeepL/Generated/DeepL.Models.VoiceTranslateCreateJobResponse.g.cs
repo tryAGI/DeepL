@@ -81,5 +81,6 @@ namespace DeepL
         public VoiceTranslateCreateJobResponse()
         {
         }
+
     }
 }

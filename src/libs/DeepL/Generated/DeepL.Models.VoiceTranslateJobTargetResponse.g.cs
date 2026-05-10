@@ -60,5 +60,6 @@ namespace DeepL
         public VoiceTranslateJobTargetResponse()
         {
         }
+
     }
 }

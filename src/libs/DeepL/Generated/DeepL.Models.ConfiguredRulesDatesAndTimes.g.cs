@@ -186,5 +186,6 @@ namespace DeepL
         public ConfiguredRulesDatesAndTimes()
         {
         }
+
     }
 }

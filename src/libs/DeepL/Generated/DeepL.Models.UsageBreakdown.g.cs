@@ -100,5 +100,6 @@ namespace DeepL
         public UsageBreakdown()
         {
         }
+
     }
 }

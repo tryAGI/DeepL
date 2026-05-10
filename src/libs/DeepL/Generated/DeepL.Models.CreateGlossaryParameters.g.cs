@@ -117,5 +117,6 @@ namespace DeepL
         public CreateGlossaryParameters()
         {
         }
+
     }
 }

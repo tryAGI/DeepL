@@ -57,5 +57,6 @@ namespace DeepL
         public CreateMultilingualGlossaryParameters()
         {
         }
+
     }
 }
