@@ -42,12 +42,12 @@ namespace DeepL
         /// <param name="sourceLang">
         /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
         /// detect the language of the text and translate it.<br/>
-        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: EN
         /// </param>
         /// <param name="targetLang">
         /// The language into which the text should be translated.<br/>
-        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: DE
         /// </param>
         /// <param name="context">
@@ -56,11 +56,11 @@ namespace DeepL
         /// Example: This is context.
         /// </param>
         /// <param name="showBilledCharacters">
-        /// When true, the response will include the billed_characters parameter, giving the <br/>
+        /// When true, the response will include the billed_characters parameter, giving the<br/>
         /// number of characters from the request that will be counted by DeepL for billing purposes.
         /// </param>
         /// <param name="splitSentences">
-        /// Sets whether the translation engine should first split the input into sentences. <br/>
+        /// Sets whether the translation engine should first split the input into sentences.<br/>
         /// Possible values are:<br/>
         ///   * 0 - no splitting at all, whole input is treated as one sentence<br/>
         ///   * 1 (default when tag_handling is not set to html) - splits on punctuation and on newlines<br/>
@@ -69,14 +69,14 @@ namespace DeepL
         /// Example: 1
         /// </param>
         /// <param name="preserveFormatting">
-        /// Sets whether the translation engine should respect the original formatting, even if it would usually <br/>
+        /// Sets whether the translation engine should respect the original formatting, even if it would usually<br/>
         /// correct some aspects.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="formality">
         /// Sets whether the translated text should lean towards formal or informal language.<br/>
-        /// This feature is only available for certain target languages. Setting this parameter <br/>
-        /// with a target language that does not support formality will fail, unless one of the <br/>
+        /// This feature is only available for certain target languages. Setting this parameter<br/>
+        /// with a target language that does not support formality will fail, unless one of the<br/>
         /// `prefer_...` options are used.<br/>
         /// Possible options are:<br/>
         ///   * `default` (default)<br/>
@@ -97,8 +97,8 @@ namespace DeepL
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </param>
         /// <param name="styleId">
-        /// Specify the [style rule list](/api-reference/style-rules) to use for the translation. <br/>
-        /// **Important:**  The target language has to match the language of the style rule list. <br/>
+        /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
+        /// **Important:**  The target language has to match the language of the style rule list.<br/>
         /// **Note:** Any request with the `style_id` parameter enabled will use `quality_optimized` models. Requests combining `style_id` and `model_type: latency_optimized` will be rejected.<br/>
         /// Example: 7ff9bfd6-cd85-4190-8503-d6215a321519
         /// </param>
@@ -129,8 +129,8 @@ namespace DeepL
         /// * `v2`: Improved algorithm released in October 2025 (will become the default in the future).
         /// </param>
         /// <param name="outlineDetection">
-        /// Disable the automatic detection of XML structure by setting the `outline_detection` parameter <br/>
-        /// to `false` and selecting the tags that should be considered structure tags. This will split sentences <br/>
+        /// Disable the automatic detection of XML structure by setting the `outline_detection` parameter<br/>
+        /// to `false` and selecting the tags that should be considered structure tags. This will split sentences<br/>
         /// using the `splitting_tags` parameter.<br/>
         /// Default Value: true
         /// </param>

@@ -4,7 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// Sets whether the translation engine should first split the input into sentences. <br/>
+    /// Sets whether the translation engine should first split the input into sentences.<br/>
     /// Possible values are:<br/>
     ///   * 0 - no splitting at all, whole input is treated as one sentence<br/>
     ///   * 1 (default when tag_handling is not set to html) - splits on punctuation and on newlines<br/>

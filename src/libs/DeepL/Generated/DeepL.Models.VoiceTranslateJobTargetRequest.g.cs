@@ -10,7 +10,7 @@ namespace DeepL
     {
         /// <summary>
         /// The language into which the text should be translated.<br/>
-        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: DE
         /// </summary>
         /// <example>DE</example>
@@ -37,7 +37,7 @@ namespace DeepL
         /// </summary>
         /// <param name="language">
         /// The language into which the text should be translated.<br/>
-        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: DE
         /// </param>
         /// <param name="type">

@@ -40,11 +40,13 @@ namespace DeepL
             };
         partial void PrepareGetLanguagesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::DeepL.GetLanguagesType? type);
+            ref global::DeepL.GetLanguagesResource resource,
+            global::System.Collections.Generic.IList<global::DeepL.GetLanguagesIncludeItem>? include);
         partial void PrepareGetLanguagesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::DeepL.GetLanguagesType? type);
+            global::DeepL.GetLanguagesResource resource,
+            global::System.Collections.Generic.IList<global::DeepL.GetLanguagesIncludeItem>? include);
         partial void ProcessGetLanguagesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -55,21 +57,25 @@ namespace DeepL
             ref string content);
 
         /// <summary>
-        /// Retrieve Supported Languages
+        /// Retrieve Languages<br/>
+        /// Returns languages supported by the specified DeepL API resource. Each language indicates whether it can<br/>
+        /// be used as a source language, a target language, or both, along with the features it supports for that<br/>
+        /// resource.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: source
-        /// </param>
+        /// <param name="resource"></param>
+        /// <param name="include"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>> GetLanguagesAsync(
-            global::DeepL.GetLanguagesType? type = default,
+            global::DeepL.GetLanguagesResource resource,
+            global::System.Collections.Generic.IList<global::DeepL.GetLanguagesIncludeItem>? include = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetLanguagesAsResponseAsync(
-                type: type,
+                resource: resource,
+                include: include,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -77,16 +83,19 @@ namespace DeepL
             return __response.Body;
         }
         /// <summary>
-        /// Retrieve Supported Languages
+        /// Retrieve Languages<br/>
+        /// Returns languages supported by the specified DeepL API resource. Each language indicates whether it can<br/>
+        /// be used as a source language, a target language, or both, along with the features it supports for that<br/>
+        /// resource.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: source
-        /// </param>
+        /// <param name="resource"></param>
+        /// <param name="include"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>>> GetLanguagesAsResponseAsync(
-            global::DeepL.GetLanguagesType? type = default,
+            global::DeepL.GetLanguagesResource resource,
+            global::System.Collections.Generic.IList<global::DeepL.GetLanguagesIncludeItem>? include = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -94,7 +103,8 @@ namespace DeepL
                 client: HttpClient);
             PrepareGetLanguagesArguments(
                 httpClient: HttpClient,
-                type: ref type);
+                resource: ref resource,
+                include: include);
 
 
             var __authorizations = global::DeepL.EndPointSecurityResolver.ResolveAuthorizations(
@@ -120,12 +130,13 @@ namespace DeepL
             {
 
                             var __pathBuilder = new global::DeepL.PathBuilder(
-                                path: "/v2/languages",
+                                path: "/v3/languages",
                                 baseUri: ResolveBaseUri(
                                 servers: s_GetLanguagesServers,
                                 defaultBaseUrl: "https://api.deepl.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("type", type?.ToValueString())
+                                .AddRequiredParameter("resource", resource.ToValueString())
+                                .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::DeepL.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -167,7 +178,8 @@ namespace DeepL
                 PrepareGetLanguagesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    type: type);
+                    resource: resource!,
+                    include: include);
 
                 return __httpRequest;
             }
@@ -186,7 +198,7 @@ namespace DeepL
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetLanguages",
                                 methodName: "GetLanguagesAsync",
-                                pathTemplate: "\"/v2/languages\"",
+                                pathTemplate: "\"/v3/languages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -220,7 +232,7 @@ namespace DeepL
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetLanguages",
                                 methodName: "GetLanguagesAsync",
-                                pathTemplate: "\"/v2/languages\"",
+                                pathTemplate: "\"/v3/languages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -261,7 +273,7 @@ namespace DeepL
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetLanguages",
                                 methodName: "GetLanguagesAsync",
-                                pathTemplate: "\"/v2/languages\"",
+                                pathTemplate: "\"/v3/languages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -309,7 +321,7 @@ namespace DeepL
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetLanguages",
                                 methodName: "GetLanguagesAsync",
-                                pathTemplate: "\"/v2/languages\"",
+                                pathTemplate: "\"/v3/languages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -331,7 +343,7 @@ namespace DeepL
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetLanguages",
                                 methodName: "GetLanguagesAsync",
-                                pathTemplate: "\"/v2/languages\"",
+                                pathTemplate: "\"/v3/languages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -380,6 +392,39 @@ namespace DeepL
                                 };
                             }
                             // 
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+                                throw new global::DeepL.ApiException(
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_401,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
@@ -406,72 +451,6 @@ namespace DeepL
                                     statusCode: __response.StatusCode)
                                 {
                                     ResponseBody = __content_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value),
-                                };
-                            }
-                            // 
-                            if ((int)__response.StatusCode == 404)
-                            {
-                                string? __content_404 = null;
-                                global::System.Exception? __exception_404 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                    else
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_404 = __ex;
-                                }
-
-                                throw new global::DeepL.ApiException(
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value),
-                                };
-                            }
-                            // 
-                            if ((int)__response.StatusCode == 413)
-                            {
-                                string? __content_413 = null;
-                                global::System.Exception? __exception_413 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                    else
-                                    {
-                                        __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_413 = __ex;
-                                }
-
-                                throw new global::DeepL.ApiException(
-                                    message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_413,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_413,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -512,39 +491,6 @@ namespace DeepL
                                 };
                             }
                             // 
-                            if ((int)__response.StatusCode == 456)
-                            {
-                                string? __content_456 = null;
-                                global::System.Exception? __exception_456 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_456 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                    else
-                                    {
-                                        __content_456 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_456 = __ex;
-                                }
-
-                                throw new global::DeepL.ApiException(
-                                    message: __content_456 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_456,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_456,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value),
-                                };
-                            }
-                            // 
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -578,65 +524,32 @@ namespace DeepL
                                 };
                             }
                             // 
-                            if ((int)__response.StatusCode == 504)
+                            if ((int)__response.StatusCode == 503)
                             {
-                                string? __content_504 = null;
-                                global::System.Exception? __exception_504 = null;
+                                string? __content_503 = null;
+                                global::System.Exception? __exception_503 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
                                     }
                                     else
                                     {
-                                        __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_504 = __ex;
+                                    __exception_503 = __ex;
                                 }
 
                                 throw new global::DeepL.ApiException(
-                                    message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_504,
+                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_503,
                                     statusCode: __response.StatusCode)
                                 {
-                                    ResponseBody = __content_504,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value),
-                                };
-                            }
-                            // 
-                            if ((int)__response.StatusCode == 529)
-                            {
-                                string? __content_529 = null;
-                                global::System.Exception? __exception_529 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_529 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                    else
-                                    {
-                                        __content_529 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_529 = __ex;
-                                }
-
-                                throw new global::DeepL.ApiException(
-                                    message: __content_529 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_529,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_529,
+                                    ResponseBody = __content_503,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
