@@ -1128,7 +1128,7 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetLanguagesType? Type275 { get; set; }
+        public global::DeepL.GetLanguagesV2Type? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1280,11 +1280,11 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>? Type313 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.GetLanguagesV2ResponseItem>? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetLanguagesResponseItem? Type314 { get; set; }
+        public global::DeepL.GetLanguagesV2ResponseItem? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1312,11 +1312,11 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem2>? Type321 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetLanguagesResponseItem2? Type322 { get; set; }
+        public global::DeepL.GetLanguagesResponseItem? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1445,7 +1445,7 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.GetLanguagesResponseItem>? ListType23 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.GetLanguagesV2ResponseItem>? ListType23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1457,7 +1457,7 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.GetLanguagesResponseItem2>? ListType26 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.GetLanguagesResponseItem>? ListType26 { get; set; }
         /// <summary>
         /// 
         /// </summary>

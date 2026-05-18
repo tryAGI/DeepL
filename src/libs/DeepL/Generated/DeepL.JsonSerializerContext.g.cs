@@ -781,9 +781,9 @@ namespace DeepL
 
             typeof(global::DeepL.JsonConverters.GetGlossaryEntriesAcceptNullableJsonConverter),
 
-            typeof(global::DeepL.JsonConverters.GetLanguagesTypeJsonConverter),
+            typeof(global::DeepL.JsonConverters.GetLanguagesV2TypeJsonConverter),
 
-            typeof(global::DeepL.JsonConverters.GetLanguagesTypeNullableJsonConverter),
+            typeof(global::DeepL.JsonConverters.GetLanguagesV2TypeNullableJsonConverter),
 
             typeof(global::DeepL.JsonConverters.GetLanguagesResourceJsonConverter),
 
@@ -1103,7 +1103,7 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetVoiceStreamingUrlRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.AdminGetAnalyticsGroupBy), TypeInfoPropertyName = "AdminGetAnalyticsGroupBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetGlossaryEntriesAccept), TypeInfoPropertyName = "GetGlossaryEntriesAccept2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesType), TypeInfoPropertyName = "GetLanguagesType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesV2Type), TypeInfoPropertyName = "GetLanguagesV2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesResource), TypeInfoPropertyName = "GetLanguagesResource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.GetLanguagesIncludeItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesIncludeItem), TypeInfoPropertyName = "GetLanguagesIncludeItem2")]
@@ -1141,16 +1141,16 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.RephraseTextResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.RephraseTextResponseImprovement>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.RephraseTextResponseImprovement))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesResponseItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.GetLanguagesV2ResponseItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesV2ResponseItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.GetLanguageResourcesResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguageResourcesResponseItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguageResourcesResponseItemName), TypeInfoPropertyName = "GetLanguageResourcesResponseItemName2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.GetLanguageResourcesResponseItemFeature>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguageResourcesResponseItemFeature))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguageResourcesResponseItemFeatureName), TypeInfoPropertyName = "GetLanguageResourcesResponseItemFeatureName2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem2>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesResponseItem2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesResponseItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesResponseItemStatus), TypeInfoPropertyName = "GetLanguagesResponseItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::DeepL.GetLanguagesResponseItemFeatures2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesResponseItemFeatures2))]
@@ -1182,10 +1182,10 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.MultilingualGlossary>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.MonolingualGlossary>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.RephraseTextResponseImprovement>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.GetLanguagesResponseItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.GetLanguagesV2ResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.GetLanguageResourcesResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.GetLanguageResourcesResponseItemFeature>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.GetLanguagesResponseItem2>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.GetLanguagesResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.TranslationMemory>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.StyleRuleList>))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext

@@ -4,7 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// Sets whether the translation engine should respect the original formatting, even if it would usually <br/>
+    /// Sets whether the translation engine should respect the original formatting, even if it would usually<br/>
     /// correct some aspects.<br/>
     /// Default Value: 0
     /// </summary>

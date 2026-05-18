@@ -36,12 +36,12 @@ namespace DeepL
         /// <param name="sourceLang">
         /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
         /// detect the language of the text and translate it.<br/>
-        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: EN
         /// </param>
         /// <param name="targetLang">
         /// The language into which the text should be translated.<br/>
-        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: DE
         /// </param>
         /// <param name="file">
@@ -64,8 +64,8 @@ namespace DeepL
         /// </param>
         /// <param name="formality">
         /// Sets whether the translated text should lean towards formal or informal language.<br/>
-        /// This feature is only available for certain target languages. Setting this parameter <br/>
-        /// with a target language that does not support formality will fail, unless one of the <br/>
+        /// This feature is only available for certain target languages. Setting this parameter<br/>
+        /// with a target language that does not support formality will fail, unless one of the<br/>
         /// `prefer_...` options are used.<br/>
         /// Possible options are:<br/>
         ///   * `default` (default)<br/>
@@ -100,12 +100,12 @@ namespace DeepL
         /// <param name="sourceLang">
         /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
         /// detect the language of the text and translate it.<br/>
-        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: EN
         /// </param>
         /// <param name="targetLang">
         /// The language into which the text should be translated.<br/>
-        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: DE
         /// </param>
         /// <param name="file">
@@ -163,12 +163,12 @@ namespace DeepL
         /// <param name="sourceLang">
         /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
         /// detect the language of the text and translate it.<br/>
-        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: EN
         /// </param>
         /// <param name="targetLang">
         /// The language into which the text should be translated.<br/>
-        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource) (beta).<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: DE
         /// </param>
         /// <param name="file">

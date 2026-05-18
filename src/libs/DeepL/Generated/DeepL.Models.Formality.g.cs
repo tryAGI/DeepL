@@ -5,8 +5,8 @@ namespace DeepL
 {
     /// <summary>
     /// Sets whether the translated text should lean towards formal or informal language.<br/>
-    /// This feature is only available for certain target languages. Setting this parameter <br/>
-    /// with a target language that does not support formality will fail, unless one of the <br/>
+    /// This feature is only available for certain target languages. Setting this parameter<br/>
+    /// with a target language that does not support formality will fail, unless one of the<br/>
     /// `prefer_...` options are used.<br/>
     /// Possible options are:<br/>
     ///   * `default` (default)<br/>

@@ -3,10 +3,10 @@
 namespace DeepL.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class GetLanguagesTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::DeepL.GetLanguagesType>
+    public sealed class GetLanguagesV2TypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::DeepL.GetLanguagesV2Type?>
     {
         /// <inheritdoc />
-        public override global::DeepL.GetLanguagesType Read(
+        public override global::DeepL.GetLanguagesV2Type? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace DeepL.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::DeepL.GetLanguagesTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::DeepL.GetLanguagesV2TypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace DeepL.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::DeepL.GetLanguagesType)numValue;
+                    return (global::DeepL.GetLanguagesV2Type)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::DeepL.GetLanguagesType);
+                    return default(global::DeepL.GetLanguagesV2Type?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace DeepL.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::DeepL.GetLanguagesType value,
+            global::DeepL.GetLanguagesV2Type? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::DeepL.GetLanguagesTypeExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::DeepL.GetLanguagesV2TypeExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

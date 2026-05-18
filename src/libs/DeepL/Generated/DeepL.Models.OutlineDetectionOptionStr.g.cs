@@ -4,8 +4,8 @@
 namespace DeepL
 {
     /// <summary>
-    /// Disable the automatic detection of XML structure by setting the `outline_detection` parameter <br/>
-    /// to `false` and selecting the tags that should be considered structure tags. This will split sentences <br/>
+    /// Disable the automatic detection of XML structure by setting the `outline_detection` parameter<br/>
+    /// to `false` and selecting the tags that should be considered structure tags. This will split sentences<br/>
     /// using the `splitting_tags` parameter.<br/>
     /// Default Value: 1
     /// </summary>
