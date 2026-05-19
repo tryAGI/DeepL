@@ -4,7 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    ///  (EAP) The audio format for synthesized target media streaming.<br/>
+    ///  (closed beta) The audio format for synthesized target media streaming.<br/>
     ///  Specifies container, codec, and encoding parameters for the audio returned in target_media_chunk messages.<br/>
     ///  If not specified, defaults to audio/webm;codecs=opus.<br/>
     ///  Only applies when target_media_languages is specified.<br/>

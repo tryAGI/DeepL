@@ -784,55 +784,55 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.ModelType? Type189 { get; set; }
+        public global::System.Guid? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.MonolingualGlossary? Type190 { get; set; }
+        public global::DeepL.ModelType? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.MultilingualGlossary? Type191 { get; set; }
+        public global::DeepL.MonolingualGlossary? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.MultilingualGlossaryEntries? Type192 { get; set; }
+        public global::DeepL.MultilingualGlossary? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.MultilingualGlossaryEntriesResponse? Type193 { get; set; }
+        public global::DeepL.MultilingualGlossaryEntries? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.MultilingualGlossaryEntriesInformation>? Type194 { get; set; }
+        public global::DeepL.MultilingualGlossaryEntriesResponse? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.MultilingualGlossaryEntriesInformation? Type195 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.MultilingualGlossaryEntriesInformation>? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.OutlineDetectionOptionStr? Type196 { get; set; }
+        public global::DeepL.MultilingualGlossaryEntriesInformation? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.PatchMultilingualGlossaryParameters? Type197 { get; set; }
+        public global::DeepL.OutlineDetectionOptionStr? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.PreserveFormattingOptionStr? Type198 { get; set; }
+        public global::DeepL.PatchMultilingualGlossaryParameters? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.SplitSentencesOption? Type199 { get; set; }
+        public global::DeepL.PreserveFormattingOptionStr? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TranslationMemory? Type200 { get; set; }
+        public global::DeepL.SplitSentencesOption? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type201 { get; set; }
+        public global::DeepL.TranslationMemory? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
