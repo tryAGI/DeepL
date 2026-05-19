@@ -4,7 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// (EAP) Target audio voice selection for synthesized speech. The default voice is language dependent.<br/>
+    /// (closed beta) Target audio voice selection for synthesized speech. The default voice is language dependent.<br/>
     /// Example: female
     /// </summary>
     public enum VoiceTargetMediaVoice

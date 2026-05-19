@@ -93,7 +93,7 @@ namespace DeepL
         public global::System.Collections.Generic.IList<global::DeepL.VoiceTargetLanguage>? TargetLanguages { get; set; }
 
         /// <summary>
-        /// (EAP) List of target languages for which to generate synthesized audio. Languages specified here will automatically be added to target_languages if not already present, ensuring you receive both text translation and audio synthesis for these languages. If omitted, only text transcription and translation will be provided (no audio synthesis). The maximum allowed target media languages per stream is 5. Language identifiers must comply with IETF BCP 47.<br/>
+        /// (closed beta) List of target languages for which to generate synthesized audio. Languages specified here will automatically be added to target_languages if not already present, ensuring you receive both text translation and audio synthesis for these languages. If omitted, only text transcription and translation will be provided (no audio synthesis). The maximum allowed target media languages per stream is 5. Language identifiers must comply with IETF BCP 47.<br/>
         /// Note: Some translated audio languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
         /// Default Value: []<br/>
         /// Example: [de, en-GB]
@@ -103,7 +103,7 @@ namespace DeepL
         public global::System.Collections.Generic.IList<global::DeepL.VoiceTargetMediaLanguage>? TargetMediaLanguages { get; set; }
 
         /// <summary>
-        ///  (EAP) The audio format for synthesized target media streaming.<br/>
+        ///  (closed beta) The audio format for synthesized target media streaming.<br/>
         ///  Specifies container, codec, and encoding parameters for the audio returned in target_media_chunk messages.<br/>
         ///  If not specified, defaults to audio/webm;codecs=opus.<br/>
         ///  Only applies when target_media_languages is specified.<br/>
@@ -139,13 +139,21 @@ namespace DeepL
         public global::DeepL.VoiceTargetMediaContentType? TargetMediaContentType { get; set; }
 
         /// <summary>
-        /// (EAP) Target audio voice selection for synthesized speech. The default voice is language dependent.<br/>
+        /// (closed beta) Target audio voice selection for synthesized speech. The default voice is language dependent.<br/>
         /// Example: female
         /// </summary>
         /// <example>female</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_media_voice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::DeepL.JsonConverters.VoiceTargetMediaVoiceJsonConverter))]
         public global::DeepL.VoiceTargetMediaVoice? TargetMediaVoice { get; set; }
+
+        /// <summary>
+        /// (beta) The ID of a spoken terms list used to inform transcription.<br/>
+        /// Example: 7c4f1080-cfe2-41d4-8269-0e6ec15a0354
+        /// </summary>
+        /// <example>7c4f1080-cfe2-41d4-8269-0e6ec15a0354</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spoken_terms_id")]
+        public global::System.Guid? SpokenTermsId { get; set; }
 
         /// <summary>
         /// A unique ID assigned to a glossary.<br/>
@@ -238,13 +246,13 @@ namespace DeepL
         /// Example: [de, fr, es]
         /// </param>
         /// <param name="targetMediaLanguages">
-        /// (EAP) List of target languages for which to generate synthesized audio. Languages specified here will automatically be added to target_languages if not already present, ensuring you receive both text translation and audio synthesis for these languages. If omitted, only text transcription and translation will be provided (no audio synthesis). The maximum allowed target media languages per stream is 5. Language identifiers must comply with IETF BCP 47.<br/>
+        /// (closed beta) List of target languages for which to generate synthesized audio. Languages specified here will automatically be added to target_languages if not already present, ensuring you receive both text translation and audio synthesis for these languages. If omitted, only text transcription and translation will be provided (no audio synthesis). The maximum allowed target media languages per stream is 5. Language identifiers must comply with IETF BCP 47.<br/>
         /// Note: Some translated audio languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
         /// Default Value: []<br/>
         /// Example: [de, en-GB]
         /// </param>
         /// <param name="targetMediaContentType">
-        ///  (EAP) The audio format for synthesized target media streaming.<br/>
+        ///  (closed beta) The audio format for synthesized target media streaming.<br/>
         ///  Specifies container, codec, and encoding parameters for the audio returned in target_media_chunk messages.<br/>
         ///  If not specified, defaults to audio/webm;codecs=opus.<br/>
         ///  Only applies when target_media_languages is specified.<br/>
@@ -275,8 +283,12 @@ namespace DeepL
         /// Example: audio/webm;codecs=opus
         /// </param>
         /// <param name="targetMediaVoice">
-        /// (EAP) Target audio voice selection for synthesized speech. The default voice is language dependent.<br/>
+        /// (closed beta) Target audio voice selection for synthesized speech. The default voice is language dependent.<br/>
         /// Example: female
+        /// </param>
+        /// <param name="spokenTermsId">
+        /// (beta) The ID of a spoken terms list used to inform transcription.<br/>
+        /// Example: 7c4f1080-cfe2-41d4-8269-0e6ec15a0354
         /// </param>
         /// <param name="glossaryId">
         /// A unique ID assigned to a glossary.<br/>
@@ -303,6 +315,7 @@ namespace DeepL
             global::System.Collections.Generic.IList<global::DeepL.VoiceTargetMediaLanguage>? targetMediaLanguages,
             global::DeepL.VoiceTargetMediaContentType? targetMediaContentType,
             global::DeepL.VoiceTargetMediaVoice? targetMediaVoice,
+            global::System.Guid? spokenTermsId,
             string? glossaryId,
             global::DeepL.VoiceFormality? formality)
         {
@@ -314,6 +327,7 @@ namespace DeepL
             this.TargetMediaLanguages = targetMediaLanguages;
             this.TargetMediaContentType = targetMediaContentType;
             this.TargetMediaVoice = targetMediaVoice;
+            this.SpokenTermsId = spokenTermsId;
             this.GlossaryId = glossaryId;
             this.Formality = formality;
         }
