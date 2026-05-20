@@ -46,6 +46,17 @@
     },
     {
       "Order": 5,
+      "Title": "Get custom tag usage statistics as an admin",
+      "Slug": "admingetcustomtaganalytics",
+      "Description": "Retrieve usage statistics broken down by custom tags within a specified date range.\nOptionally aggregate results by day or over the entire period.\nResults are paginated; use the \u0060page\u0060 parameter with the \u0060next_page\u0060 value from\na previous response to retrieve subsequent pages.",
+      "Language": "csharp",
+      "Code": "using var client = new DeepLClient(apiKey);\n\nvar response = await client.AdminApi.AdminGetCustomTagAnalyticsAsync(\n    startDate: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.DateTime\u003E(\n    @\u0022\u0022\u00222026-05-17\u0022\u0022\u0022)!,\n    endDate: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.DateTime\u003E(\n    @\u0022\u0022\u00222026-05-18\u0022\u0022\u0022)!,\n    aggregateBy: global::DeepL.AdminGetCustomTagAnalyticsAggregateBy.Day,\n    page: 2\n);\n\n// Example response:\n// {\n//   \u0022custom_tag_usage_report\u0022: {\n//     \u0022aggregate_by\u0022: \u0022day\u0022,\n//     \u0022start_date\u0022: \u00222026-05-17T00:00:00\u0022,\n//     \u0022end_date\u0022: \u00222026-05-18T00:00:00\u0022,\n//     \u0022next_page\u0022: 2,\n//     \u0022usage\u0022: [\n//       {\n//         \u0022custom_tag\u0022: \u0022example-custom-tag\u0022,\n//         \u0022breakdown\u0022: {\n//           \u0022total_characters\u0022: 190,\n//           \u0022text_translation_characters\u0022: 190,\n//           \u0022text_improvement_characters\u0022: 0\n//         }\n//       }\n//     ]\n//   }\n// }",
+      "Format": "sdk",
+      "OperationId": "adminGetCustomTagAnalytics",
+      "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 6,
       "Title": "Create a Glossary",
       "Slug": "createglossary",
       "Description": "Generated from OpenAPI examples.",
@@ -56,7 +67,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 6,
+      "Order": 7,
       "Title": "Delete a Glossary",
       "Slug": "deleteglossary",
       "Description": "Deletes the specified glossary.",
@@ -67,7 +78,7 @@
       "Setup": null
     },
     {
-      "Order": 7,
+      "Order": 8,
       "Title": "Retrieve Glossary Details",
       "Slug": "getglossary",
       "Description": "Retrieve meta information for a single glossary, omitting the glossary entries.",
@@ -78,7 +89,7 @@
       "Setup": null
     },
     {
-      "Order": 8,
+      "Order": 9,
       "Title": "Retrieve Glossary Entries",
       "Slug": "getglossaryentries",
       "Description": "List the entries of a single glossary in the format specified by the \u0060Accept\u0060 header.",
@@ -89,7 +100,7 @@
       "Setup": null
     },
     {
-      "Order": 9,
+      "Order": 10,
       "Title": "List all Glossaries",
       "Slug": "listglossaries",
       "Description": "List all glossaries and their meta-information, but not the glossary entries.",
@@ -100,7 +111,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 10,
+      "Order": 11,
       "Title": "Create a Glossary",
       "Slug": "createmultilingualglossary",
       "Description": "Generated from OpenAPI examples.",
@@ -111,7 +122,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 11,
+      "Order": 12,
       "Title": "Deletes the dictionary associated with the given language pair with the given glossary ID.",
       "Slug": "deletedictionary",
       "Description": "Generated from OpenAPI examples.",
@@ -122,7 +133,7 @@
       "Setup": null
     },
     {
-      "Order": 12,
+      "Order": 13,
       "Title": "Delete a Glossary",
       "Slug": "deletemultilingualglossary",
       "Description": "Deletes the specified glossary.",
@@ -133,7 +144,7 @@
       "Setup": null
     },
     {
-      "Order": 13,
+      "Order": 14,
       "Title": "Retrieve Glossary Details",
       "Slug": "getmultilingualglossary",
       "Description": "Retrieve meta information for a single glossary, omitting the glossary entries.",
@@ -144,7 +155,7 @@
       "Setup": null
     },
     {
-      "Order": 14,
+      "Order": 15,
       "Title": "Retrieve Glossary Entries",
       "Slug": "getmultilingualglossaryentries",
       "Description": "List the entries of a single glossary in tsv format.",
@@ -155,7 +166,7 @@
       "Setup": null
     },
     {
-      "Order": 15,
+      "Order": 16,
       "Title": "List all Glossaries",
       "Slug": "listmultilingualglossaries",
       "Description": "List all glossaries and their meta-information, but not the glossary entries.",
@@ -166,7 +177,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 16,
+      "Order": 17,
       "Title": "Edit glossary details",
       "Slug": "patchmultilingualglossary",
       "Description": "Edit glossary details, such as name or a dictionary for a source and target language.",
@@ -177,7 +188,7 @@
       "Setup": null
     },
     {
-      "Order": 17,
+      "Order": 18,
       "Title": "Replaces or creates a dictionary in the glossary with the specified entries.",
       "Slug": "replacedictionary",
       "Description": "Generated from OpenAPI examples.",
@@ -188,7 +199,7 @@
       "Setup": null
     },
     {
-      "Order": 18,
+      "Order": 19,
       "Title": "Retrieve Language Resources",
       "Slug": "getlanguageresources",
       "Description": "Returns all DeepL API resources and the features they support.\n\nFor each feature, the response indicates which languages must support it for the feature to be\navailable \u2014 source only (\u0060needs_source_support\u0060), target only (\u0060needs_target_support\u0060), or both.\nThis allows clients to determine feature availability for a language pair by checking the\nappropriate language\u0027s \u0060features\u0060 object returned by \u0060GET /v3/languages\u0060.",
@@ -199,7 +210,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 19,
+      "Order": 20,
       "Title": "Retrieve Languages",
       "Slug": "getlanguages",
       "Description": "Returns languages supported by the specified DeepL API resource. Each language indicates whether it can\nbe used as a source language, a target language, or both, along with the features it supports for that\nresource.",
@@ -210,7 +221,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 20,
+      "Order": 21,
       "Title": "Check Usage and Limits",
       "Slug": "getusage",
       "Description": "Generated from OpenAPI examples.",
@@ -221,7 +232,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 21,
+      "Order": 22,
       "Title": "Download Translated Document",
       "Slug": "downloaddocument",
       "Description": "Generated from OpenAPI examples.",
@@ -232,7 +243,7 @@
       "Setup": null
     },
     {
-      "Order": 22,
+      "Order": 23,
       "Title": "Check Document Status",
       "Slug": "getdocumentstatus",
       "Description": "Generated from OpenAPI examples.",
@@ -243,7 +254,7 @@
       "Setup": null
     },
     {
-      "Order": 23,
+      "Order": 24,
       "Title": "Upload and Translate a Document",
       "Slug": "translatedocument",
       "Description": "Generated from OpenAPI examples.",
@@ -254,7 +265,7 @@
       "Setup": null
     },
     {
-      "Order": 24,
+      "Order": 25,
       "Title": "List translation memories",
       "Slug": "listtranslationmemories",
       "Description": "Retrieve a list of translation memories associated with the authenticated account.",
@@ -265,7 +276,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 25,
+      "Order": 26,
       "Title": "Get Streaming URL",
       "Slug": "getvoicestreamingurl",
       "Description": "Generated from OpenAPI examples.",
@@ -276,7 +287,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 26,
+      "Order": 27,
       "Title": "Request Reconnection",
       "Slug": "requestreconnection",
       "Description": "Generated from OpenAPI examples.",
@@ -287,7 +298,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 27,
+      "Order": 28,
       "Title": "Create a voice translation job",
       "Slug": "createvoicetranslatejob",
       "Description": "Creates an async voice translation job. The response includes an upload URL for the source audio file.",
@@ -298,7 +309,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 28,
+      "Order": 29,
       "Title": "Get voice translation job status",
       "Slug": "getvoicetranslatejobstatus",
       "Description": "Returns the current status of a voice translation job, including per-target result statuses.\n\nWhen a target\u0027s status is \u0060complete\u0060, the response includes a \u0060download_url\u0060 and \u0060signature\u0060 for that target. Results are returned in the same order as the targets in the create request.",

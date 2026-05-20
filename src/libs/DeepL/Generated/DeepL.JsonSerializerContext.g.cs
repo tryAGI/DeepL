@@ -761,6 +761,10 @@ namespace DeepL
 
             typeof(global::DeepL.JsonConverters.AdminUsageReportDataGroupByNullableJsonConverter),
 
+            typeof(global::DeepL.JsonConverters.CustomTagUsageReportDataAggregateByJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.CustomTagUsageReportDataAggregateByNullableJsonConverter),
+
             typeof(global::DeepL.JsonConverters.VoiceTranslateJobSourceContentTypeJsonConverter),
 
             typeof(global::DeepL.JsonConverters.VoiceTranslateJobSourceContentTypeNullableJsonConverter),
@@ -776,6 +780,10 @@ namespace DeepL
             typeof(global::DeepL.JsonConverters.AdminGetAnalyticsGroupByJsonConverter),
 
             typeof(global::DeepL.JsonConverters.AdminGetAnalyticsGroupByNullableJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.AdminGetCustomTagAnalyticsAggregateByJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.AdminGetCustomTagAnalyticsAggregateByNullableJsonConverter),
 
             typeof(global::DeepL.JsonConverters.GetGlossaryEntriesAcceptJsonConverter),
 
@@ -1064,6 +1072,12 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.KeyUsageItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.KeyAndDayUsageItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.KeyAndDayUsageItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CustomTagUsageReport))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CustomTagUsageReportData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CustomTagUsageReportDataAggregateBy), TypeInfoPropertyName = "CustomTagUsageReportDataAggregateBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.CustomTagUsageItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CustomTagUsageItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CustomTagBreakdown))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.VoiceTranslateJobSourceContentType), TypeInfoPropertyName = "VoiceTranslateJobSourceContentType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.JobSourceFileRequest))]
@@ -1102,6 +1116,7 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.UpdateCustomInstructionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetVoiceStreamingUrlRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.AdminGetAnalyticsGroupBy), TypeInfoPropertyName = "AdminGetAnalyticsGroupBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.AdminGetCustomTagAnalyticsAggregateBy), TypeInfoPropertyName = "AdminGetCustomTagAnalyticsAggregateBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetGlossaryEntriesAccept), TypeInfoPropertyName = "GetGlossaryEntriesAccept2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesV2Type), TypeInfoPropertyName = "GetLanguagesV2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesResource), TypeInfoPropertyName = "GetLanguagesResource2")]
@@ -1112,6 +1127,7 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.GetVoiceTranslateJobStatusIncludeItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetVoiceTranslateJobStatusIncludeItem), TypeInfoPropertyName = "GetVoiceTranslateJobStatusIncludeItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.AdminGetAnalyticsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.AdminGetCustomTagAnalyticsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.ApiKey>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.TranslateTextResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.TranslateTextResponseTranslation>))]
@@ -1169,6 +1185,7 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.VoiceTargetMediaLanguage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.KeyUsageItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.KeyAndDayUsageItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.CustomTagUsageItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.VoiceTranslateJobTargetRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.VoiceTranslateJobTargetResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.VoiceTranslateJobTargetResult>))]
