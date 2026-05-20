@@ -68,7 +68,7 @@ namespace DeepL
 
 
         /// <summary>
-        /// 
+        /// Endpoints for organization administrators to manage API keys and retrieve usage analytics.
         /// </summary>
         public AdminApiClient AdminApi { get; }
 
