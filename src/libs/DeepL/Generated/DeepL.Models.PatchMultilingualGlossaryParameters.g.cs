@@ -55,5 +55,6 @@ namespace DeepL
         public PatchMultilingualGlossaryParameters()
         {
         }
+
     }
 }

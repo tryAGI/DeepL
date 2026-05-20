@@ -9,7 +9,7 @@ namespace DeepL
     /// `glossary_id` parameter. A glossary contains (several) dictionaries.<br/>
     /// A dictionary is a mapping of source phrases to target phrases for a single language pair.<br/>
     /// If you encounter issues, please let us know at support@DeepL.com.<br/>
-    /// Currently you can create glossaries with any of the languages DeepL supports.<br/>
+    /// Currently you can create glossaries with any of the languages DeepL supports (with the exception of Thai).<br/>
     /// The maximum size limit for a glossary is 10 MiB = 10485760 bytes and each source/target text,<br/>
     /// as well as the name of the glossary, is limited to 1024 UTF-8 bytes.<br/>
     /// A total of 1000 glossaries are allowed per account.<br/>
@@ -104,6 +104,27 @@ namespace DeepL
                 baseUri,
                 authorizations,
                 options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the ManageMultilingualGlossariesClient with explicit options but no base URL override.
+        /// Skips passing <c>baseUri</c> so the default base URL from the OpenAPI spec applies.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public ManageMultilingualGlossariesClient(
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Collections.Generic.List<global::DeepL.EndPointAuthorization>? authorizations,
+            global::DeepL.AutoSDKClientOptions? options,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri: null,
+                authorizations,
+                options,
                 disposeHttpClient: disposeHttpClient)
         {
         }

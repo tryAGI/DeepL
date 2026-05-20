@@ -330,5 +330,6 @@ namespace DeepL
         public ConfiguredRulesNumbers()
         {
         }
+
     }
 }

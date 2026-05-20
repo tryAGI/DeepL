@@ -66,5 +66,6 @@ namespace DeepL
         public ApiKeyUsageLimits()
         {
         }
+
     }
 }

@@ -106,5 +106,6 @@ namespace DeepL
         public AdminUsageReportData()
         {
         }
+
     }
 }

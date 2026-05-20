@@ -748,119 +748,119 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.CustomInstructionRequest? Type180 { get; set; }
+        public global::DeepL.StyleRuleList? Type180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.DocumentTranslationError? Type181 { get; set; }
+        public global::System.DateTime? Type181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.DocumentKey? Type182 { get; set; }
+        public global::DeepL.StyleRuleLanguage? Type182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.Formality? Type183 { get; set; }
+        public int? Type183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GlossaryEntriesFormat? Type184 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.CustomInstruction>? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type185 { get; set; }
+        public global::DeepL.DocumentTranslationError? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.ModelType? Type186 { get; set; }
+        public global::DeepL.DocumentKey? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.MonolingualGlossary? Type187 { get; set; }
+        public global::DeepL.Formality? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type188 { get; set; }
+        public global::DeepL.GlossaryEntriesFormat? Type188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.MultilingualGlossary? Type189 { get; set; }
+        public global::System.Guid? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.MultilingualGlossaryEntries? Type190 { get; set; }
+        public global::DeepL.ModelType? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.MultilingualGlossaryEntriesResponse? Type191 { get; set; }
+        public global::DeepL.MonolingualGlossary? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.MultilingualGlossaryEntriesInformation>? Type192 { get; set; }
+        public global::DeepL.MultilingualGlossary? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.MultilingualGlossaryEntriesInformation? Type193 { get; set; }
+        public global::DeepL.MultilingualGlossaryEntries? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.OutlineDetectionOptionStr? Type194 { get; set; }
+        public global::DeepL.MultilingualGlossaryEntriesResponse? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.PatchMultilingualGlossaryParameters? Type195 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.MultilingualGlossaryEntriesInformation>? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.PreserveFormattingOptionStr? Type196 { get; set; }
+        public global::DeepL.MultilingualGlossaryEntriesInformation? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.SplitSentencesOption? Type197 { get; set; }
+        public global::DeepL.OutlineDetectionOptionStr? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.SourceLanguage? Type198 { get; set; }
+        public global::DeepL.PatchMultilingualGlossaryParameters? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.StyleRuleList? Type199 { get; set; }
+        public global::DeepL.PreserveFormattingOptionStr? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type200 { get; set; }
+        public global::DeepL.SplitSentencesOption? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.StyleRuleLanguage? Type201 { get; set; }
+        public global::DeepL.TranslationMemory? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.CustomInstruction>? Type202 { get; set; }
+        public global::DeepL.TranslationMemorySourceLanguage? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TranslationMemory? Type203 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.TranslationMemoryTargetLanguage>? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TranslationMemorySourceLanguage? Type204 { get; set; }
+        public global::DeepL.TranslationMemoryTargetLanguage? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.TranslationMemoryTargetLanguage>? Type205 { get; set; }
+        public global::DeepL.TagHandlingOption? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TranslationMemoryTargetLanguage? Type206 { get; set; }
+        public global::DeepL.TagHandlingVersionOption? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TagHandlingOption? Type207 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TagHandlingVersionOption? Type208 { get; set; }
+        public global::DeepL.TargetLanguageWrite? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -884,279 +884,471 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type214 { get; set; }
+        public global::DeepL.VoiceFormality? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TargetLanguage? Type215 { get; set; }
+        public global::DeepL.VoiceMessageFormat? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TargetLanguageWrite? Type216 { get; set; }
+        public global::DeepL.VoiceTargetMediaVoice? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.VoiceFormality? Type217 { get; set; }
+        public global::DeepL.VoiceSourceMediaContentType? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.VoiceMediaContentType? Type218 { get; set; }
+        public global::DeepL.VoiceSourceLanguage? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.VoiceSourceLanguage? Type219 { get; set; }
+        public global::DeepL.VoiceSourceLanguageMode? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.VoiceSourceLanguageMode? Type220 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.VoiceTargetLanguage>? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.VoiceStreamingResponse? Type221 { get; set; }
+        public global::DeepL.VoiceTargetLanguage? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.WritingStyle? Type222 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.VoiceTargetMediaLanguage>? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.WritingTone? Type223 { get; set; }
+        public global::DeepL.VoiceTargetMediaLanguage? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.AdminUsageReport? Type224 { get; set; }
+        public global::DeepL.VoiceTargetMediaContentType? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.AdminUsageReportData? Type225 { get; set; }
+        public global::DeepL.VoiceStreamingResponse? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.UsageBreakdown? Type226 { get; set; }
+        public global::DeepL.WritingStyle? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.AdminUsageReportDataGroupBy? Type227 { get; set; }
+        public global::DeepL.WritingTone? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.KeyUsageItem>? Type228 { get; set; }
+        public global::DeepL.AdminUsageReport? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.KeyUsageItem? Type229 { get; set; }
+        public global::DeepL.AdminUsageReportData? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.KeyAndDayUsageItem>? Type230 { get; set; }
+        public global::DeepL.UsageBreakdown? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.KeyAndDayUsageItem? Type231 { get; set; }
+        public global::DeepL.AdminUsageReportDataGroupBy? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TranslateTextRequest? Type232 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.KeyUsageItem>? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TranslateTextRequest2? Type233 { get; set; }
+        public global::DeepL.KeyUsageItem? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TranslateDocumentRequest? Type234 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.KeyAndDayUsageItem>? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type235 { get; set; }
+        public global::DeepL.KeyAndDayUsageItem? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.RephraseTextRequest? Type236 { get; set; }
+        public global::DeepL.ErrorResponse? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.RephraseTextRequest2? Type237 { get; set; }
+        public global::DeepL.VoiceTranslateJobSourceContentType? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.AdminCreateDeveloperKeyRequest? Type238 { get; set; }
+        public global::DeepL.JobSourceFileRequest? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.AdminDeactivateDeveloperKeyRequest? Type239 { get; set; }
+        public global::DeepL.JobSourceFileResponse? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.AdminRenameDeveloperKeyRequest? Type240 { get; set; }
+        public global::DeepL.VoiceTranslateJobTargetOutputType? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.AdminSetDeveloperKeyUsageLimitsRequest? Type241 { get; set; }
+        public global::DeepL.VoiceTranslateJobParametersRequest? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.CreateStyleRuleListRequest? Type242 { get; set; }
+        public global::DeepL.AllOf<string, object>? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.CustomInstructionRequest>? Type243 { get; set; }
+        public object? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.UpdateStyleRuleListRequest? Type244 { get; set; }
+        public global::DeepL.VoiceTranslateJobParametersResponse? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetVoiceStreamingUrlRequest? Type245 { get; set; }
+        public global::DeepL.VoiceTranslateJobTargetRequest? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetGlossaryEntriesAccept? Type246 { get; set; }
+        public global::DeepL.VoiceTranslateJobTargetResponse? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetLanguagesType? Type247 { get; set; }
+        public global::DeepL.VoiceTranslateCreateJobRequest? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.AdminGetAnalyticsGroupBy? Type248 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.VoiceTranslateJobTargetRequest>? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TranslateTextResponse? Type249 { get; set; }
+        public global::DeepL.VoiceTranslateCreateJobResponse? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.TranslateTextResponseTranslation>? Type250 { get; set; }
+        public global::DeepL.JobUsage? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TranslateTextResponseTranslation? Type251 { get; set; }
+        public global::DeepL.ResultStatus? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.TranslateDocumentResponse? Type252 { get; set; }
+        public global::DeepL.VoiceTranslateJobTargetResult? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetDocumentStatusResponse? Type253 { get; set; }
+        public global::DeepL.VoiceTranslateJobStatusResponse? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetDocumentStatusResponseStatus? Type254 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.VoiceTranslateJobTargetResponse>? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.ListGlossaryLanguagesResponse? Type255 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.VoiceTranslateJobTargetResult>? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.ListGlossaryLanguagesResponseSupportedLanguage>? Type256 { get; set; }
+        public global::DeepL.AdminCreateDeveloperKeyRequest? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.ListGlossaryLanguagesResponseSupportedLanguage? Type257 { get; set; }
+        public global::DeepL.AdminDeactivateDeveloperKeyRequest? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.CreateMultilingualGlossaryResponse? Type258 { get; set; }
+        public global::DeepL.AdminRenameDeveloperKeyRequest? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.ListMultilingualGlossariesResponse? Type259 { get; set; }
+        public global::DeepL.AdminSetDeveloperKeyUsageLimitsRequest? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.MultilingualGlossary>? Type260 { get; set; }
+        public global::DeepL.TranslateTextRequest? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.PatchMultilingualGlossaryResponse? Type261 { get; set; }
+        public global::DeepL.TranslateTextRequest2? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.DeleteMultilingualGlossaryResponse? Type262 { get; set; }
+        public global::DeepL.TranslateDocumentRequest? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetMultilingualGlossaryEntriesResponse? Type263 { get; set; }
+        public byte[]? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.DeleteDictionaryResponse? Type264 { get; set; }
+        public global::DeepL.RephraseTextRequest? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.ReplaceDictionaryResponse? Type265 { get; set; }
+        public global::DeepL.RephraseTextRequest2? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.CreateGlossaryResponse? Type266 { get; set; }
+        public global::DeepL.CreateStyleRuleListRequest? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.ListGlossariesResponse? Type267 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.CreateStyleRuleListRequestCustomInstruction>? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.MonolingualGlossary>? Type268 { get; set; }
+        public global::DeepL.CreateStyleRuleListRequestCustomInstruction? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetGlossaryResponse? Type269 { get; set; }
+        public global::DeepL.UpdateStyleRuleListRequest? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.DeleteGlossaryResponse? Type270 { get; set; }
+        public global::DeepL.CreateCustomInstructionRequest? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetGlossaryEntriesResponse? Type271 { get; set; }
+        public global::DeepL.UpdateCustomInstructionRequest? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.RephraseTextResponse? Type272 { get; set; }
+        public global::DeepL.GetVoiceStreamingUrlRequest? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.RephraseTextResponseImprovement>? Type273 { get; set; }
+        public global::DeepL.AdminGetAnalyticsGroupBy? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.RephraseTextResponseImprovement? Type274 { get; set; }
+        public global::DeepL.GetGlossaryEntriesAccept? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>? Type275 { get; set; }
+        public global::DeepL.GetLanguagesV2Type? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetLanguagesResponseItem? Type276 { get; set; }
+        public global::DeepL.GetLanguagesResource? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.ApiKey>? Type277 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.GetLanguagesIncludeItem>? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.AdminGetAnalyticsResponse? Type278 { get; set; }
+        public global::DeepL.GetLanguagesIncludeItem? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.GetStyleRuleListsResponse? Type279 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.CreateVoiceTranslateJobIncludeItem>? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.StyleRuleList>? Type280 { get; set; }
+        public global::DeepL.CreateVoiceTranslateJobIncludeItem? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::DeepL.ListTranslationMemoriesResponse? Type281 { get; set; }
+        public global::System.Collections.Generic.IList<global::DeepL.GetVoiceTranslateJobStatusIncludeItem>? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::DeepL.TranslationMemory>? Type282 { get; set; }
+        public global::DeepL.GetVoiceTranslateJobStatusIncludeItem? Type282 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.AdminGetAnalyticsResponse? Type283 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::DeepL.ApiKey>? Type284 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.TranslateTextResponse? Type285 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::DeepL.TranslateTextResponseTranslation>? Type286 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.TranslateTextResponseTranslation? Type287 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.TranslateDocumentResponse? Type288 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetDocumentStatusResponse? Type289 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetDocumentStatusResponseStatus? Type290 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.ListGlossaryLanguagesResponse? Type291 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::DeepL.ListGlossaryLanguagesResponseSupportedLanguage>? Type292 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.ListGlossaryLanguagesResponseSupportedLanguage? Type293 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.ListGlossaryLanguagesResponse2? Type294 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.CreateMultilingualGlossaryResponse? Type295 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.ListMultilingualGlossariesResponse? Type296 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::DeepL.MultilingualGlossary>? Type297 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.PatchMultilingualGlossaryResponse? Type298 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.DeleteMultilingualGlossaryResponse? Type299 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetMultilingualGlossaryEntriesResponse? Type300 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.DeleteDictionaryResponse? Type301 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.ReplaceDictionaryResponse? Type302 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.CreateGlossaryResponse? Type303 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.ListGlossariesResponse? Type304 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::DeepL.MonolingualGlossary>? Type305 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.ListGlossariesResponse2? Type306 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetGlossaryResponse? Type307 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.DeleteGlossaryResponse? Type308 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetGlossaryEntriesResponse? Type309 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.RephraseTextResponse? Type310 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::DeepL.RephraseTextResponseImprovement>? Type311 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.RephraseTextResponseImprovement? Type312 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::DeepL.GetLanguagesV2ResponseItem>? Type313 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetLanguagesV2ResponseItem? Type314 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::DeepL.GetLanguageResourcesResponseItem>? Type315 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetLanguageResourcesResponseItem? Type316 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetLanguageResourcesResponseItemName? Type317 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::DeepL.GetLanguageResourcesResponseItemFeature>? Type318 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetLanguageResourcesResponseItemFeature? Type319 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetLanguageResourcesResponseItemFeatureName? Type320 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::DeepL.GetLanguagesResponseItem>? Type321 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetLanguagesResponseItem? Type322 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetLanguagesResponseItemStatus? Type323 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.Dictionary<string, global::DeepL.GetLanguagesResponseItemFeatures2>? Type324 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetLanguagesResponseItemFeatures2? Type325 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetLanguagesResponseItemFeaturesStatus? Type326 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.ListTranslationMemoriesResponse? Type327 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::DeepL.TranslationMemory>? Type328 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::DeepL.GetStyleRuleListsResponse? Type329 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::DeepL.StyleRuleList>? Type330 { get; set; }
 
         /// <summary>
         /// 
@@ -1165,11 +1357,11 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.MultilingualGlossaryEntriesInformation>? ListType1 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.CustomInstruction>? ListType1 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.CustomInstruction>? ListType2 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.MultilingualGlossaryEntriesInformation>? ListType2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1177,58 +1369,102 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.UsageResponseProduct>? ListType4 { get; set; }
+        public global::System.Collections.Generic.List<string>? ListType4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<string>? ListType5 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.UsageResponseProduct>? ListType5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.KeyUsageItem>? ListType6 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.VoiceTargetLanguage>? ListType6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.KeyAndDayUsageItem>? ListType7 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.VoiceTargetMediaLanguage>? ListType7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.CustomInstructionRequest>? ListType8 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.KeyUsageItem>? ListType8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.TranslateTextResponseTranslation>? ListType9 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.KeyAndDayUsageItem>? ListType9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.ListGlossaryLanguagesResponseSupportedLanguage>? ListType10 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.VoiceTranslateJobTargetRequest>? ListType10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.MultilingualGlossary>? ListType11 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.VoiceTranslateJobTargetResponse>? ListType11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.MonolingualGlossary>? ListType12 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.VoiceTranslateJobTargetResult>? ListType12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.RephraseTextResponseImprovement>? ListType13 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.CreateStyleRuleListRequestCustomInstruction>? ListType13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.GetLanguagesResponseItem>? ListType14 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.GetLanguagesIncludeItem>? ListType14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.ApiKey>? ListType15 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.CreateVoiceTranslateJobIncludeItem>? ListType15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.StyleRuleList>? ListType16 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.GetVoiceTranslateJobStatusIncludeItem>? ListType16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::DeepL.TranslationMemory>? ListType17 { get; set; }
+        public global::System.Collections.Generic.List<global::DeepL.ApiKey>? ListType17 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::DeepL.TranslateTextResponseTranslation>? ListType18 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::DeepL.ListGlossaryLanguagesResponseSupportedLanguage>? ListType19 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::DeepL.MultilingualGlossary>? ListType20 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::DeepL.MonolingualGlossary>? ListType21 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::DeepL.RephraseTextResponseImprovement>? ListType22 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::DeepL.GetLanguagesV2ResponseItem>? ListType23 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::DeepL.GetLanguageResourcesResponseItem>? ListType24 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::DeepL.GetLanguageResourcesResponseItemFeature>? ListType25 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::DeepL.GetLanguagesResponseItem>? ListType26 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::DeepL.TranslationMemory>? ListType27 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::DeepL.StyleRuleList>? ListType28 { get; set; }
     }
 }

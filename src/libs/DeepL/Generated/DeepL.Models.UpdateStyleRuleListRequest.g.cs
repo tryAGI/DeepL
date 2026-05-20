@@ -9,10 +9,8 @@ namespace DeepL
     public sealed partial class UpdateStyleRuleListRequest
     {
         /// <summary>
-        /// Name of the style rule list<br/>
-        /// Example: New Technical Documentation Rules
+        /// Name associated with the style rule list.
         /// </summary>
-        /// <example>New Technical Documentation Rules</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
@@ -26,8 +24,7 @@ namespace DeepL
         /// Initializes a new instance of the <see cref="UpdateStyleRuleListRequest" /> class.
         /// </summary>
         /// <param name="name">
-        /// Name of the style rule list<br/>
-        /// Example: New Technical Documentation Rules
+        /// Name associated with the style rule list.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,5 +41,6 @@ namespace DeepL
         public UpdateStyleRuleListRequest()
         {
         }
+
     }
 }

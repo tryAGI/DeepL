@@ -8,7 +8,8 @@ namespace DeepL
     ///  * `queued` - the translation job is waiting in line to be processed<br/>
     ///  * `translating` - the translation is currently ongoing<br/>
     ///  * `done` - the translation is done and the translated document is ready for download<br/>
-    ///  * `error` - an irrecoverable error occurred while translating the document
+    ///  * `error` - an irrecoverable error occurred while translating the document<br/>
+    /// Example: done
     /// </summary>
     public enum GetDocumentStatusResponseStatus
     {

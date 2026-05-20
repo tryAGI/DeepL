@@ -13,15 +13,7 @@ namespace DeepL
     ///   * `txt` - Plain Text Document<br/>
     ///   * `xlf / xliff` - XLIFF Document, version 2.1<br/>
     ///   * `srt` - SRT Document<br/>
-    ///   * `jpeg / jpg / png` - Image<br/>
-    /// Please note that with every submitted document of type .pptx, .docx, .xlsx, or .pdf,<br/>
-    /// you are billed a minimum of 50,000 characters with the DeepL API plan,<br/>
-    /// no matter how many characters are included in the document.<br/>
-    /// Translating a document usually involves three types of HTTP requests:<br/>
-    ///   - [upload](https://www.deepl.com/docs-api/documents/translate-document) the document to be translated,<br/>
-    ///   - periodically [check the status](https://www.deepl.com/docs-api/documents/get-document-status) of the document translation,<br/>
-    ///   - once the status call reports `done`, [download](https://www.deepl.com/docs-api/documents/download-document) the translated document.<br/>
-    /// To learn more about context in DeepL API translations, we recommend [this article](https://www.deepl.com/docs-api/general/working-with-context).<br/>
+    ///   * `jpeg` / `jpg` / `png` - Image (currently in beta)<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -106,6 +98,27 @@ namespace DeepL
                 baseUri,
                 authorizations,
                 options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the TranslateDocumentsClient with explicit options but no base URL override.
+        /// Skips passing <c>baseUri</c> so the default base URL from the OpenAPI spec applies.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public TranslateDocumentsClient(
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Collections.Generic.List<global::DeepL.EndPointAuthorization>? authorizations,
+            global::DeepL.AutoSDKClientOptions? options,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri: null,
+                authorizations,
+                options,
                 disposeHttpClient: disposeHttpClient)
         {
         }

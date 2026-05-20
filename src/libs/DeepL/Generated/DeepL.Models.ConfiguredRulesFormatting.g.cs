@@ -102,5 +102,6 @@ namespace DeepL
         public ConfiguredRulesFormatting()
         {
         }
+
     }
 }

@@ -9,24 +9,59 @@ namespace DeepL
     public sealed partial class GetLanguagesResponseItem
     {
         /// <summary>
-        /// The language code of the given language.
+        /// The language code (BCP 47).<br/>
+        /// Example: de
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("language")]
+        /// <example>de</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lang")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Language { get; set; }
+        public required string Lang { get; set; }
 
         /// <summary>
-        /// Name of the language in English.
+        /// Name of the language in English.<br/>
+        /// Example: German
         /// </summary>
+        /// <example>German</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// Denotes formality support in case of a target language listing.
+        /// Whether this language can be used as a source language with the specified resource.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("supports_formality")]
-        public bool? SupportsFormality { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("usable_as_source")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool UsableAsSource { get; set; }
+
+        /// <summary>
+        /// Whether this language can be used as a target language with the specified resource.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usable_as_target")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool UsableAsTarget { get; set; }
+
+        /// <summary>
+        /// Availability status of this language.<br/>
+        /// Example: stable
+        /// </summary>
+        /// <example>stable</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::DeepL.JsonConverters.GetLanguagesResponseItemStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::DeepL.GetLanguagesResponseItemStatus Status { get; set; }
+
+        /// <summary>
+        /// Features supported for this language with the specified resource. Always present;<br/>
+        /// empty object if no optional features are supported. Each key is a feature name;<br/>
+        /// the value is an object with at least a `status` field. Consult `GET /v3/languages/resources`<br/>
+        /// to determine whether a feature must be present on the source language, target language,<br/>
+        /// or both for a given resource.<br/>
+        /// Example: {"formality":{"status":"stable"},"tag_handling":{"status":"stable"},"glossary":{"status":"stable"}}
+        /// </summary>
+        /// <example>{"formality":{"status":"stable"},"tag_handling":{"status":"stable"},"glossary":{"status":"stable"}}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("features")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.Dictionary<string, global::DeepL.GetLanguagesResponseItemFeatures2> Features { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,26 +72,49 @@ namespace DeepL
         /// <summary>
         /// Initializes a new instance of the <see cref="GetLanguagesResponseItem" /> class.
         /// </summary>
-        /// <param name="language">
-        /// The language code of the given language.
+        /// <param name="lang">
+        /// The language code (BCP 47).<br/>
+        /// Example: de
         /// </param>
         /// <param name="name">
-        /// Name of the language in English.
+        /// Name of the language in English.<br/>
+        /// Example: German
         /// </param>
-        /// <param name="supportsFormality">
-        /// Denotes formality support in case of a target language listing.
+        /// <param name="usableAsSource">
+        /// Whether this language can be used as a source language with the specified resource.
+        /// </param>
+        /// <param name="usableAsTarget">
+        /// Whether this language can be used as a target language with the specified resource.
+        /// </param>
+        /// <param name="status">
+        /// Availability status of this language.<br/>
+        /// Example: stable
+        /// </param>
+        /// <param name="features">
+        /// Features supported for this language with the specified resource. Always present;<br/>
+        /// empty object if no optional features are supported. Each key is a feature name;<br/>
+        /// the value is an object with at least a `status` field. Consult `GET /v3/languages/resources`<br/>
+        /// to determine whether a feature must be present on the source language, target language,<br/>
+        /// or both for a given resource.<br/>
+        /// Example: {"formality":{"status":"stable"},"tag_handling":{"status":"stable"},"glossary":{"status":"stable"}}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetLanguagesResponseItem(
-            string language,
+            string lang,
             string name,
-            bool? supportsFormality)
+            bool usableAsSource,
+            bool usableAsTarget,
+            global::DeepL.GetLanguagesResponseItemStatus status,
+            global::System.Collections.Generic.Dictionary<string, global::DeepL.GetLanguagesResponseItemFeatures2> features)
         {
-            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
+            this.Lang = lang ?? throw new global::System.ArgumentNullException(nameof(lang));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.SupportsFormality = supportsFormality;
+            this.UsableAsSource = usableAsSource;
+            this.UsableAsTarget = usableAsTarget;
+            this.Status = status;
+            this.Features = features ?? throw new global::System.ArgumentNullException(nameof(features));
         }
 
         /// <summary>
@@ -65,5 +123,6 @@ namespace DeepL
         public GetLanguagesResponseItem()
         {
         }
+
     }
 }

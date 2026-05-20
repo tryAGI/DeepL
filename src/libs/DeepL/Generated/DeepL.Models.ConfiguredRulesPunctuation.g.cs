@@ -654,5 +654,6 @@ namespace DeepL
         public ConfiguredRulesPunctuation()
         {
         }
+
     }
 }

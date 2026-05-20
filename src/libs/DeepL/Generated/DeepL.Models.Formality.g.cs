@@ -5,27 +5,17 @@ namespace DeepL
 {
     /// <summary>
     /// Sets whether the translated text should lean towards formal or informal language.<br/>
-    /// This feature currently only works for target languages<br/>
-    /// `DE` (German),<br/>
-    /// `FR` (French),<br/>
-    /// `IT` (Italian),<br/>
-    /// `ES` (Spanish),<br/>
-    /// `ES-419` (Latin American Spanish),<br/>
-    /// `NL` (Dutch),<br/>
-    /// `PL` (Polish),<br/>
-    /// `PT-BR` and `PT-PT` (Portuguese),<br/>
-    /// `JA` (Japanese),<br/>
-    /// and `RU` (Russian).<br/>
-    /// Learn more about the plain/polite feature for Japanese [here](https://support.deepl.com/hc/en-us/articles/6306700061852-About-the-plain-polite-feature-in-Japanese).<br/>
-    /// Setting this parameter with a target language that does not support formality will fail,<br/>
-    /// unless one of the `prefer_...` options are used.<br/>
+    /// This feature is only available for certain target languages. Setting this parameter<br/>
+    /// with a target language that does not support formality will fail, unless one of the<br/>
+    /// `prefer_...` options are used.<br/>
     /// Possible options are:<br/>
     ///   * `default` (default)<br/>
     ///   * `more` - for a more formal language<br/>
     ///   * `less` - for a more informal language<br/>
     ///   * `prefer_more` - for a more formal language if available, otherwise fallback to default formality<br/>
     ///   * `prefer_less` - for a more informal language if available, otherwise fallback to default formality<br/>
-    /// Default Value: default
+    /// Default Value: default<br/>
+    /// Example: prefer_more
     /// </summary>
     public enum Formality
     {
@@ -38,7 +28,7 @@ namespace DeepL
         /// </summary>
         Less,
         /// <summary>
-        /// //support.deepl.com/hc/en-us/articles/6306700061852-About-the-plain-polite-feature-in-Japanese).
+        /// 
         /// </summary>
         More,
         /// <summary>

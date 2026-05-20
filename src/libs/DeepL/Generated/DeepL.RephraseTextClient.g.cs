@@ -5,7 +5,6 @@ namespace DeepL
 {
     /// <summary>
     /// The `rephrase` endpoint  is used to make corrections and adjustments to texts based on style or tone.<br/>
-    /// For more details, visit [this documentation page](https://developers.deepl.com/docs/api-reference/improve-text)<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -90,6 +89,27 @@ namespace DeepL
                 baseUri,
                 authorizations,
                 options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the RephraseTextClient with explicit options but no base URL override.
+        /// Skips passing <c>baseUri</c> so the default base URL from the OpenAPI spec applies.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public RephraseTextClient(
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Collections.Generic.List<global::DeepL.EndPointAuthorization>? authorizations,
+            global::DeepL.AutoSDKClientOptions? options,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri: null,
+                authorizations,
+                options,
                 disposeHttpClient: disposeHttpClient)
         {
         }

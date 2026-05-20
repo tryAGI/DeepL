@@ -9,7 +9,7 @@ namespace DeepL
     public sealed partial class VoiceStreamingResponse
     {
         /// <summary>
-        /// The WebSocket URL to use for establishing the streaming connection. This URL is ephemeral and valid for one-time use only.<br/>
+        /// The WebSocket URL to use for establishing [the stream connection](/api-reference/voice/websocket-streaming).<br/>
         /// Example: wss://api.deepl.com/v3/voice/realtime/connect
         /// </summary>
         /// <example>wss://api.deepl.com/v3/voice/realtime/connect</example>
@@ -18,7 +18,7 @@ namespace DeepL
         public required string StreamingUrl { get; set; }
 
         /// <summary>
-        /// A unique ephemeral token for authentication with the streaming endpoint. Pass this as a query parameter when connecting to the WebSocket URL.<br/>
+        /// A unique ephemeral token for authentication with the streaming endpoint. Pass this as a query parameter when connecting to [the streaming URL](/api-reference/voice/websocket-streaming). This token is ephemeral and valid for a short time and one-time use only.<br/>
         /// Example: VGhpcyBpcyBhIGZha2UgdG9rZW4K
         /// </summary>
         /// <example>VGhpcyBpcyBhIGZha2UgdG9rZW4K</example>
@@ -44,11 +44,11 @@ namespace DeepL
         /// Initializes a new instance of the <see cref="VoiceStreamingResponse" /> class.
         /// </summary>
         /// <param name="streamingUrl">
-        /// The WebSocket URL to use for establishing the streaming connection. This URL is ephemeral and valid for one-time use only.<br/>
+        /// The WebSocket URL to use for establishing [the stream connection](/api-reference/voice/websocket-streaming).<br/>
         /// Example: wss://api.deepl.com/v3/voice/realtime/connect
         /// </param>
         /// <param name="token">
-        /// A unique ephemeral token for authentication with the streaming endpoint. Pass this as a query parameter when connecting to the WebSocket URL.<br/>
+        /// A unique ephemeral token for authentication with the streaming endpoint. Pass this as a query parameter when connecting to [the streaming URL](/api-reference/voice/websocket-streaming). This token is ephemeral and valid for a short time and one-time use only.<br/>
         /// Example: VGhpcyBpcyBhIGZha2UgdG9rZW4K
         /// </param>
         /// <param name="sessionId">
@@ -74,5 +74,6 @@ namespace DeepL
         public VoiceStreamingResponse()
         {
         }
+
     }
 }

@@ -71,5 +71,6 @@ namespace DeepL
         public MultilingualGlossaryEntriesInformation()
         {
         }
+
     }
 }

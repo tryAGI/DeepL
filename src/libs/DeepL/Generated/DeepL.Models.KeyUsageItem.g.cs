@@ -4,7 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// Usage statistics for a specific API key (without date grouping).
+    /// Usage statistics for a specific API key and optionally a specific date.
     /// </summary>
     public sealed partial class KeyUsageItem
     {
@@ -69,5 +69,6 @@ namespace DeepL
         public KeyUsageItem()
         {
         }
+
     }
 }

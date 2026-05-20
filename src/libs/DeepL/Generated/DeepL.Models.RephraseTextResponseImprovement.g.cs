@@ -58,5 +58,6 @@ namespace DeepL
         public RephraseTextResponseImprovement()
         {
         }
+
     }
 }

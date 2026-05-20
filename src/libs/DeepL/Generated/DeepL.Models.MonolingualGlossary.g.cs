@@ -122,5 +122,6 @@ namespace DeepL
         public MonolingualGlossary()
         {
         }
+
     }
 }

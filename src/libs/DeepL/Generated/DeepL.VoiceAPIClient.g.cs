@@ -12,7 +12,7 @@ namespace DeepL
     public sealed partial class VoiceAPIClient : global::DeepL.IVoiceAPIClient, global::System.IDisposable
     {
         /// <summary>
-        /// DeepL API Pro
+        /// Override base path for all operations with the /v3/voice path
         /// </summary>
         public const string DefaultBaseUrl = "https://api.deepl.com/";
 
@@ -22,7 +22,7 @@ namespace DeepL
         public global::System.Net.Http.HttpClient HttpClient { get; }
 
         /// <inheritdoc/>
-        public System.Uri? BaseUri => ResolveDisplayedBaseUri();
+        public System.Uri? BaseUri => HttpClient.BaseAddress;
 
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::DeepL.EndPointAuthorization> Authorizations { get; }
@@ -44,34 +44,6 @@ namespace DeepL
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::DeepL.SourceGenerationContext.Default;
 
 
-
-        private static readonly global::DeepL.AutoSDKServer[] s_availableServers = new global::DeepL.AutoSDKServer[]
-        {            new global::DeepL.AutoSDKServer(
-                id: "https-api-deepl-com",
-                name: "DeepL API Pro",
-                url: "https://api.deepl.com/",
-                description: "DeepL API Pro"),
-            new global::DeepL.AutoSDKServer(
-                id: "https-api-free-deepl-com",
-                name: "DeepL API Free",
-                url: "https://api-free.deepl.com/",
-                description: "DeepL API Free"),
-        };
-
-        /// <summary>
-        /// The server options available for this client.
-        /// </summary>
-        public global::System.Collections.Generic.IReadOnlyList<global::DeepL.AutoSDKServer> AvailableServers => s_availableServers;
-
-        /// <summary>
-        /// The currently selected server for this client, if any.
-        /// </summary>
-        public global::DeepL.AutoSDKServer? SelectedServer
-        {
-            get => ResolveSelectedServer();
-            set => SelectServer(value);
-        }
-
         /// <summary>
         /// Creates a new instance of the VoiceAPIClient.
         /// If no httpClient is provided, a new one will be created.
@@ -90,6 +62,27 @@ namespace DeepL
                 baseUri,
                 authorizations,
                 options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the VoiceAPIClient with explicit options but no base URL override.
+        /// Skips passing <c>baseUri</c> so the default base URL from the OpenAPI spec applies.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public VoiceAPIClient(
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Collections.Generic.List<global::DeepL.EndPointAuthorization>? authorizations,
+            global::DeepL.AutoSDKClientOptions? options,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri: null,
+                authorizations,
+                options,
                 disposeHttpClient: disposeHttpClient)
         {
         }

@@ -1,6 +1,8 @@
 
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace DeepL
 {
     public partial class TranslateDocumentsClient
@@ -55,18 +57,7 @@ namespace DeepL
             ref string content);
 
         /// <summary>
-        /// Upload and Translate a Document<br/>
-        /// This call uploads a document and queues it for translation.<br/>
-        /// The call returns once the upload is complete, returning a document ID and key which can be used to<br/>
-        /// [query the translation status](https://www.deepl.com/docs-api/documents/get-document-status)<br/>
-        /// and to [download the translated document](https://www.deepl.com/docs-api/documents/download-document) once translation is complete.<br/>
-        /// Because the request includes a file upload, it must be an HTTP POST request with content type `multipart/form-data`.<br/>
-        /// Please be aware that the uploaded document is automatically removed from the server once the translated document has been downloaded.<br/>
-        /// You have to upload the document again in order to restart the translation.<br/>
-        /// The maximum upload limit for documents is [available here](https://support.deepl.com/hc/articles/360020582359-Document-formats)<br/>
-        /// and may vary based on API plan and document type.<br/>
-        /// You may specify the glossary to use for the document translation using the `glossary_id` parameter.<br/>
-        /// **Important:** This requires the `source_lang` parameter to be set and the language pair of the glossary has to match the language pair of the request.
+        /// Upload and Translate a Document
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -88,18 +79,7 @@ namespace DeepL
             return __response.Body;
         }
         /// <summary>
-        /// Upload and Translate a Document<br/>
-        /// This call uploads a document and queues it for translation.<br/>
-        /// The call returns once the upload is complete, returning a document ID and key which can be used to<br/>
-        /// [query the translation status](https://www.deepl.com/docs-api/documents/get-document-status)<br/>
-        /// and to [download the translated document](https://www.deepl.com/docs-api/documents/download-document) once translation is complete.<br/>
-        /// Because the request includes a file upload, it must be an HTTP POST request with content type `multipart/form-data`.<br/>
-        /// Please be aware that the uploaded document is automatically removed from the server once the translated document has been downloaded.<br/>
-        /// You have to upload the document again in order to restart the translation.<br/>
-        /// The maximum upload limit for documents is [available here](https://support.deepl.com/hc/articles/360020582359-Document-formats)<br/>
-        /// and may vary based on API plan and document type.<br/>
-        /// You may specify the glossary to use for the document translation using the `glossary_id` parameter.<br/>
-        /// **Important:** This requires the `source_lang` parameter to be set and the language pair of the glossary has to match the language pair of the request.
+        /// Upload and Translate a Document
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -182,12 +162,12 @@ namespace DeepL
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.SourceLang).HasValue ? (request.SourceLang).GetValueOrDefault().ToValueString() : string.Empty),
+                                    content: new global::System.Net.Http.StringContent(request.SourceLang ?? string.Empty),
                                     name: "\"source_lang\"");
 
                             }
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(request.TargetLang.ToValueString()),
+                                content: new global::System.Net.Http.StringContent(request.TargetLang ?? string.Empty),
                                 name: "\"target_lang\"");
 
                             var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
@@ -258,6 +238,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.GlossaryId ?? string.Empty),
                                     name: "\"glossary_id\"");
+
+                            }
+                            if (request.EnableBetaLanguages != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EnableBetaLanguages, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"enable_beta_languages\"");
 
                             }
 
@@ -851,27 +839,17 @@ namespace DeepL
             }
         }
         /// <summary>
-        /// Upload and Translate a Document<br/>
-        /// This call uploads a document and queues it for translation.<br/>
-        /// The call returns once the upload is complete, returning a document ID and key which can be used to<br/>
-        /// [query the translation status](https://www.deepl.com/docs-api/documents/get-document-status)<br/>
-        /// and to [download the translated document](https://www.deepl.com/docs-api/documents/download-document) once translation is complete.<br/>
-        /// Because the request includes a file upload, it must be an HTTP POST request with content type `multipart/form-data`.<br/>
-        /// Please be aware that the uploaded document is automatically removed from the server once the translated document has been downloaded.<br/>
-        /// You have to upload the document again in order to restart the translation.<br/>
-        /// The maximum upload limit for documents is [available here](https://support.deepl.com/hc/articles/360020582359-Document-formats)<br/>
-        /// and may vary based on API plan and document type.<br/>
-        /// You may specify the glossary to use for the document translation using the `glossary_id` parameter.<br/>
-        /// **Important:** This requires the `source_lang` parameter to be set and the language pair of the glossary has to match the language pair of the request.
+        /// Upload and Translate a Document
         /// </summary>
         /// <param name="sourceLang">
-        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to detect the language of the text and translate it.<br/>
-        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
+        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
+        /// detect the language of the text and translate it.<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: EN
         /// </param>
         /// <param name="targetLang">
         /// The language into which the text should be translated.<br/>
-        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: DE
         /// </param>
         /// <param name="file">
@@ -884,38 +862,27 @@ namespace DeepL
         ///   * `txt` - Plain Text Document<br/>
         ///   * `xlf / xliff` - XLIFF Document, version 2.1<br/>
         ///   * `srt` - SRT Document<br/>
-        ///   * `jpeg / jpg / png` - Image
+        ///   * `jpeg` / `jpg` / `png` - Image (currently in beta)
         /// </param>
         /// <param name="filename">
         /// The name of the uploaded file. Can be used as an alternative to including the file name in the file part's content disposition.
         /// </param>
         /// <param name="outputFormat">
-        /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.<br/>
-        /// Note: Not all combinations of input file and translation file extensions are permitted. See [Document Format Conversions](https://www.deepl.com/docs-api/documents/format-conversions) for the permitted combinations.
+        /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.
         /// </param>
         /// <param name="formality">
         /// Sets whether the translated text should lean towards formal or informal language.<br/>
-        /// This feature currently only works for target languages<br/>
-        /// `DE` (German),<br/>
-        /// `FR` (French),<br/>
-        /// `IT` (Italian),<br/>
-        /// `ES` (Spanish),<br/>
-        /// `ES-419` (Latin American Spanish),<br/>
-        /// `NL` (Dutch),<br/>
-        /// `PL` (Polish),<br/>
-        /// `PT-BR` and `PT-PT` (Portuguese),<br/>
-        /// `JA` (Japanese),<br/>
-        /// and `RU` (Russian).<br/>
-        /// Learn more about the plain/polite feature for Japanese [here](https://support.deepl.com/hc/en-us/articles/6306700061852-About-the-plain-polite-feature-in-Japanese).<br/>
-        /// Setting this parameter with a target language that does not support formality will fail,<br/>
-        /// unless one of the `prefer_...` options are used.<br/>
+        /// This feature is only available for certain target languages. Setting this parameter<br/>
+        /// with a target language that does not support formality will fail, unless one of the<br/>
+        /// `prefer_...` options are used.<br/>
         /// Possible options are:<br/>
         ///   * `default` (default)<br/>
         ///   * `more` - for a more formal language<br/>
         ///   * `less` - for a more informal language<br/>
         ///   * `prefer_more` - for a more formal language if available, otherwise fallback to default formality<br/>
         ///   * `prefer_less` - for a more informal language if available, otherwise fallback to default formality<br/>
-        /// Default Value: default
+        /// Default Value: default<br/>
+        /// Example: prefer_more
         /// </param>
         /// <param name="glossaryId">
         /// A unique ID assigned to a glossary.<br/>
@@ -925,9 +892,9 @@ namespace DeepL
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::DeepL.TranslateDocumentResponse> TranslateDocumentAsync(
-            global::DeepL.TargetLanguage targetLang,
+            string targetLang,
             byte[] file,
-            global::DeepL.SourceLanguage? sourceLang = default,
+            string? sourceLang = default,
             string? filename = default,
             string? outputFormat = default,
             global::DeepL.Formality? formality = default,
@@ -953,27 +920,17 @@ namespace DeepL
         }
 
         /// <summary>
-        /// Upload and Translate a Document<br/>
-        /// This call uploads a document and queues it for translation.<br/>
-        /// The call returns once the upload is complete, returning a document ID and key which can be used to<br/>
-        /// [query the translation status](https://www.deepl.com/docs-api/documents/get-document-status)<br/>
-        /// and to [download the translated document](https://www.deepl.com/docs-api/documents/download-document) once translation is complete.<br/>
-        /// Because the request includes a file upload, it must be an HTTP POST request with content type `multipart/form-data`.<br/>
-        /// Please be aware that the uploaded document is automatically removed from the server once the translated document has been downloaded.<br/>
-        /// You have to upload the document again in order to restart the translation.<br/>
-        /// The maximum upload limit for documents is [available here](https://support.deepl.com/hc/articles/360020582359-Document-formats)<br/>
-        /// and may vary based on API plan and document type.<br/>
-        /// You may specify the glossary to use for the document translation using the `glossary_id` parameter.<br/>
-        /// **Important:** This requires the `source_lang` parameter to be set and the language pair of the glossary has to match the language pair of the request.
+        /// Upload and Translate a Document
         /// </summary>
         /// <param name="sourceLang">
-        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to detect the language of the text and translate it.<br/>
-        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
+        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
+        /// detect the language of the text and translate it.<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: EN
         /// </param>
         /// <param name="targetLang">
         /// The language into which the text should be translated.<br/>
-        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: DE
         /// </param>
         /// <param name="file">
@@ -986,38 +943,27 @@ namespace DeepL
         /// * `txt` - Plain Text Document<br/>
         /// * `xlf / xliff` - XLIFF Document, version 2.1<br/>
         /// * `srt` - SRT Document<br/>
-        /// * `jpeg / jpg / png` - Image
+        /// * `jpeg` / `jpg` / `png` - Image (currently in beta)
         /// </param>
         /// <param name="filename">
         /// The name of the uploaded file. Can be used as an alternative to including the file name in the file part's content disposition.
         /// </param>
         /// <param name="outputFormat">
-        /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.<br/>
-        /// Note: Not all combinations of input file and translation file extensions are permitted. See [Document Format Conversions](https://www.deepl.com/docs-api/documents/format-conversions) for the permitted combinations.
+        /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.
         /// </param>
         /// <param name="formality">
         /// Sets whether the translated text should lean towards formal or informal language.<br/>
-        /// This feature currently only works for target languages<br/>
-        /// `DE` (German),<br/>
-        /// `FR` (French),<br/>
-        /// `IT` (Italian),<br/>
-        /// `ES` (Spanish),<br/>
-        /// `ES-419` (Latin American Spanish),<br/>
-        /// `NL` (Dutch),<br/>
-        /// `PL` (Polish),<br/>
-        /// `PT-BR` and `PT-PT` (Portuguese),<br/>
-        /// `JA` (Japanese),<br/>
-        /// and `RU` (Russian).<br/>
-        /// Learn more about the plain/polite feature for Japanese [here](https://support.deepl.com/hc/en-us/articles/6306700061852-About-the-plain-polite-feature-in-Japanese).<br/>
-        /// Setting this parameter with a target language that does not support formality will fail,<br/>
-        /// unless one of the `prefer_...` options are used.<br/>
+        /// This feature is only available for certain target languages. Setting this parameter<br/>
+        /// with a target language that does not support formality will fail, unless one of the<br/>
+        /// `prefer_...` options are used.<br/>
         /// Possible options are:<br/>
         /// * `default` (default)<br/>
         /// * `more` - for a more formal language<br/>
         /// * `less` - for a more informal language<br/>
         /// * `prefer_more` - for a more formal language if available, otherwise fallback to default formality<br/>
         /// * `prefer_less` - for a more informal language if available, otherwise fallback to default formality<br/>
-        /// Default Value: default
+        /// Default Value: default<br/>
+        /// Example: prefer_more
         /// </param>
         /// <param name="glossaryId">
         /// A unique ID assigned to a glossary.<br/>
@@ -1027,9 +973,9 @@ namespace DeepL
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::DeepL.TranslateDocumentResponse> TranslateDocumentAsync(
-            global::DeepL.TargetLanguage targetLang,
+            string targetLang,
             global::System.IO.Stream file,
-            global::DeepL.SourceLanguage? sourceLang = default,
+            string? sourceLang = default,
             string? filename = default,
             string? outputFormat = default,
             global::DeepL.Formality? formality = default,
@@ -1118,12 +1064,12 @@ namespace DeepL
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.SourceLang).HasValue ? (request.SourceLang).GetValueOrDefault().ToValueString() : string.Empty),
+                                    content: new global::System.Net.Http.StringContent(request.SourceLang ?? string.Empty),
                                     name: "\"source_lang\"");
 
                             }
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(request.TargetLang.ToValueString()),
+                                content: new global::System.Net.Http.StringContent(request.TargetLang ?? string.Empty),
                                 name: "\"target_lang\"");
 
                             var __contentFile = new global::System.Net.Http.StreamContent(file);
@@ -1194,6 +1140,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.GlossaryId ?? string.Empty),
                                     name: "\"glossary_id\"");
+
+                            }
+                            if (request.EnableBetaLanguages != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EnableBetaLanguages, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"enable_beta_languages\"");
 
                             }
 
@@ -1779,27 +1733,17 @@ namespace DeepL
             }
         }
         /// <summary>
-        /// Upload and Translate a Document<br/>
-        /// This call uploads a document and queues it for translation.<br/>
-        /// The call returns once the upload is complete, returning a document ID and key which can be used to<br/>
-        /// [query the translation status](https://www.deepl.com/docs-api/documents/get-document-status)<br/>
-        /// and to [download the translated document](https://www.deepl.com/docs-api/documents/download-document) once translation is complete.<br/>
-        /// Because the request includes a file upload, it must be an HTTP POST request with content type `multipart/form-data`.<br/>
-        /// Please be aware that the uploaded document is automatically removed from the server once the translated document has been downloaded.<br/>
-        /// You have to upload the document again in order to restart the translation.<br/>
-        /// The maximum upload limit for documents is [available here](https://support.deepl.com/hc/articles/360020582359-Document-formats)<br/>
-        /// and may vary based on API plan and document type.<br/>
-        /// You may specify the glossary to use for the document translation using the `glossary_id` parameter.<br/>
-        /// **Important:** This requires the `source_lang` parameter to be set and the language pair of the glossary has to match the language pair of the request.
+        /// Upload and Translate a Document
         /// </summary>
         /// <param name="sourceLang">
-        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to detect the language of the text and translate it.<br/>
-        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
+        /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
+        /// detect the language of the text and translate it.<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: EN
         /// </param>
         /// <param name="targetLang">
         /// The language into which the text should be translated.<br/>
-        /// **Note:** Some languages only work with `model_type` set to `quality_optimized`. See [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) for more details.<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
         /// Example: DE
         /// </param>
         /// <param name="file">
@@ -1812,38 +1756,27 @@ namespace DeepL
         /// * `txt` - Plain Text Document<br/>
         /// * `xlf / xliff` - XLIFF Document, version 2.1<br/>
         /// * `srt` - SRT Document<br/>
-        /// * `jpeg / jpg / png` - Image
+        /// * `jpeg` / `jpg` / `png` - Image (currently in beta)
         /// </param>
         /// <param name="filename">
         /// The name of the uploaded file. Can be used as an alternative to including the file name in the file part's content disposition.
         /// </param>
         /// <param name="outputFormat">
-        /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.<br/>
-        /// Note: Not all combinations of input file and translation file extensions are permitted. See [Document Format Conversions](https://www.deepl.com/docs-api/documents/format-conversions) for the permitted combinations.
+        /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.
         /// </param>
         /// <param name="formality">
         /// Sets whether the translated text should lean towards formal or informal language.<br/>
-        /// This feature currently only works for target languages<br/>
-        /// `DE` (German),<br/>
-        /// `FR` (French),<br/>
-        /// `IT` (Italian),<br/>
-        /// `ES` (Spanish),<br/>
-        /// `ES-419` (Latin American Spanish),<br/>
-        /// `NL` (Dutch),<br/>
-        /// `PL` (Polish),<br/>
-        /// `PT-BR` and `PT-PT` (Portuguese),<br/>
-        /// `JA` (Japanese),<br/>
-        /// and `RU` (Russian).<br/>
-        /// Learn more about the plain/polite feature for Japanese [here](https://support.deepl.com/hc/en-us/articles/6306700061852-About-the-plain-polite-feature-in-Japanese).<br/>
-        /// Setting this parameter with a target language that does not support formality will fail,<br/>
-        /// unless one of the `prefer_...` options are used.<br/>
+        /// This feature is only available for certain target languages. Setting this parameter<br/>
+        /// with a target language that does not support formality will fail, unless one of the<br/>
+        /// `prefer_...` options are used.<br/>
         /// Possible options are:<br/>
         /// * `default` (default)<br/>
         /// * `more` - for a more formal language<br/>
         /// * `less` - for a more informal language<br/>
         /// * `prefer_more` - for a more formal language if available, otherwise fallback to default formality<br/>
         /// * `prefer_less` - for a more informal language if available, otherwise fallback to default formality<br/>
-        /// Default Value: default
+        /// Default Value: default<br/>
+        /// Example: prefer_more
         /// </param>
         /// <param name="glossaryId">
         /// A unique ID assigned to a glossary.<br/>
@@ -1853,9 +1786,9 @@ namespace DeepL
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.TranslateDocumentResponse>> TranslateDocumentAsResponseAsync(
-            global::DeepL.TargetLanguage targetLang,
+            string targetLang,
             global::System.IO.Stream file,
-            global::DeepL.SourceLanguage? sourceLang = default,
+            string? sourceLang = default,
             string? filename = default,
             string? outputFormat = default,
             global::DeepL.Formality? formality = default,
@@ -1944,12 +1877,12 @@ namespace DeepL
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.SourceLang).HasValue ? (request.SourceLang).GetValueOrDefault().ToValueString() : string.Empty),
+                                    content: new global::System.Net.Http.StringContent(request.SourceLang ?? string.Empty),
                                     name: "\"source_lang\"");
 
                             }
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(request.TargetLang.ToValueString()),
+                                content: new global::System.Net.Http.StringContent(request.TargetLang ?? string.Empty),
                                 name: "\"target_lang\"");
 
                             var __contentFile = new global::System.Net.Http.StreamContent(file);
@@ -2020,6 +1953,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.GlossaryId ?? string.Empty),
                                     name: "\"glossary_id\"");
+
+                            }
+                            if (request.EnableBetaLanguages != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EnableBetaLanguages, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"enable_beta_languages\"");
 
                             }
 

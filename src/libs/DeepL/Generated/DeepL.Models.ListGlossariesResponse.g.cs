@@ -39,5 +39,6 @@ namespace DeepL
         public ListGlossariesResponse()
         {
         }
+
     }
 }
