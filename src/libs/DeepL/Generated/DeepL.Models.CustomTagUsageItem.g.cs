@@ -17,6 +17,14 @@ namespace DeepL
         public string? CustomTag { get; set; }
 
         /// <summary>
+        /// The day the usage was recorded. Only returned when `aggregate_by` is `day`.<br/>
+        /// Example: 2026-05-04T00:00:00Z
+        /// </summary>
+        /// <example>2026-05-04T00:00:00Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage_date")]
+        public global::System.DateTime? UsageDate { get; set; }
+
+        /// <summary>
         /// Breakdown of character usage by category for a custom tag.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("breakdown")]
@@ -35,6 +43,10 @@ namespace DeepL
         /// The custom tag identifier.<br/>
         /// Example: example-custom-tag
         /// </param>
+        /// <param name="usageDate">
+        /// The day the usage was recorded. Only returned when `aggregate_by` is `day`.<br/>
+        /// Example: 2026-05-04T00:00:00Z
+        /// </param>
         /// <param name="breakdown">
         /// Breakdown of character usage by category for a custom tag.
         /// </param>
@@ -43,9 +55,11 @@ namespace DeepL
 #endif
         public CustomTagUsageItem(
             string? customTag,
+            global::System.DateTime? usageDate,
             global::DeepL.CustomTagBreakdown? breakdown)
         {
             this.CustomTag = customTag;
+            this.UsageDate = usageDate;
             this.Breakdown = breakdown;
         }
 
