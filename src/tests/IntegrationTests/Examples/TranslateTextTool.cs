@@ -30,7 +30,7 @@ public partial class Tests
 
         //// You can specify a default target language and formality level.
         var tool = client.AsTranslateTool(
-            defaultTargetLanguage: TargetLanguage.De,
+            defaultTargetLanguage: "DE",
             formality: Formality.More);
         tool.Name.Should().Be("TranslateText");
         tool.Description.Should().NotBeNullOrEmpty();
@@ -42,7 +42,7 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         //// Invoke the translation tool directly to translate text.
-        var tool = client.AsTranslateTool(defaultTargetLanguage: TargetLanguage.De);
+        var tool = client.AsTranslateTool(defaultTargetLanguage: "DE");
         var result = await tool.InvokeAsync(
             new AIFunctionArguments(new Dictionary<string, object?>
             {

@@ -22,7 +22,7 @@ public partial class Tests
         //// ## Create a style rule list
 
         //// Create a new style rule list for English with punctuation rules:
-        var created = await client.StyleRules.CreateStyleRuleListAsync(
+        var created = await client.CreateStyleRuleListAsync(
             name: "SDK Test Rules",
             language: StyleRuleLanguage.En);
 
@@ -33,7 +33,7 @@ public partial class Tests
         //// ## List style rule lists
 
         //// Retrieve all style rule lists:
-        var lists = await client.StyleRules.GetStyleRuleListsAsync(detailed: true);
+        var lists = await client.GetStyleRuleListsAsync(detailed: true);
 
         lists.StyleRules.Should().NotBeNull();
         lists.StyleRules!.Count.Should().BeGreaterThanOrEqualTo(1);
@@ -43,7 +43,7 @@ public partial class Tests
         //// Configure specific rule categories (7 available: DatesAndTimes,
         //// Formatting, Numbers, Punctuation, SpellingAndGrammar,
         //// StyleAndTone, Vocabulary):
-        var updated = await client.StyleRules.UpdateStyleRuleConfiguredRulesAsync(
+        var updated = await client.UpdateStyleRuleConfiguredRulesAsync(
             styleId: created.StyleId.ToString(),
             punctuation: new ConfiguredRulesPunctuation());
 
@@ -51,7 +51,7 @@ public partial class Tests
 
         //// ## Clean up
 
-        await client.StyleRules.DeleteStyleRuleListAsync(
+        await client.DeleteStyleRuleListAsync(
             styleId: created.StyleId.ToString());
     }
 }

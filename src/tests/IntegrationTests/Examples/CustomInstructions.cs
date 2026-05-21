@@ -22,14 +22,14 @@ public partial class Tests
 
         //// ## Create a style rule list
 
-        var styleRule = await client.StyleRules.CreateStyleRuleListAsync(
+        var styleRule = await client.CreateStyleRuleListAsync(
             name: "Custom Instruction Demo",
             language: StyleRuleLanguage.En);
 
         //// ## Add a custom instruction
 
         //// Each instruction has a label and a prompt describing the rule:
-        var instruction = await client.StyleRules.CreateCustomInstructionAsync(
+        var instruction = await client.CreateCustomInstructionAsync(
             styleId: styleRule.StyleId.ToString(),
             label: "Currency formatting",
             prompt: "Always place the currency symbol before the number (e.g. $100, €50).");
@@ -40,7 +40,7 @@ public partial class Tests
 
         //// ## Retrieve the instruction
 
-        var retrieved = await client.StyleRules.GetCustomInstructionAsync(
+        var retrieved = await client.GetCustomInstructionAsync(
             styleId: styleRule.StyleId.ToString(),
             instructionId: instruction.Id);
 
@@ -50,7 +50,7 @@ public partial class Tests
 
         //// You can optionally restrict an instruction to a specific
         //// source language:
-        var deInstruction = await client.StyleRules.CreateCustomInstructionAsync(
+        var deInstruction = await client.CreateCustomInstructionAsync(
             styleId: styleRule.StyleId.ToString(),
             label: "German compound nouns",
             prompt: "Keep German compound nouns as a single word in the translation.",
@@ -60,15 +60,15 @@ public partial class Tests
 
         //// ## Clean up
 
-        await client.StyleRules.DeleteCustomInstructionAsync(
+        await client.DeleteCustomInstructionAsync(
             styleId: styleRule.StyleId.ToString(),
             instructionId: deInstruction.Id);
 
-        await client.StyleRules.DeleteCustomInstructionAsync(
+        await client.DeleteCustomInstructionAsync(
             styleId: styleRule.StyleId.ToString(),
             instructionId: instruction.Id);
 
-        await client.StyleRules.DeleteStyleRuleListAsync(
+        await client.DeleteStyleRuleListAsync(
             styleId: styleRule.StyleId.ToString());
     }
 }

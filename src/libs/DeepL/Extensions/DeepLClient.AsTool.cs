@@ -14,12 +14,12 @@ public static class DeepLToolExtensions
     /// suitable for use as a tool with any IChatClient.
     /// </summary>
     /// <param name="client">The DeepL client to use for translations.</param>
-    /// <param name="defaultTargetLanguage">Default target language when not specified by the model (default: EN).</param>
+    /// <param name="defaultTargetLanguage">Default target language code when not specified by the model (default: EN).</param>
     /// <param name="formality">Formality level for translations (default: null, uses DeepL default).</param>
     /// <returns>An AIFunction that can be passed to ChatOptions.Tools.</returns>
     public static AIFunction AsTranslateTool(
         this DeepLClient client,
-        TargetLanguage defaultTargetLanguage = TargetLanguage.En,
+        string defaultTargetLanguage = "EN",
         Formality? formality = null)
     {
         ArgumentNullException.ThrowIfNull(client);
@@ -28,11 +28,11 @@ public static class DeepLToolExtensions
             async (string text, string? targetLanguage, string? sourceLanguage, CancellationToken cancellationToken) =>
             {
                 var targetLang = targetLanguage is { Length: > 0 }
-                    ? TargetLanguageExtensions.ToEnum(targetLanguage) ?? defaultTargetLanguage
+                    ? targetLanguage
                     : defaultTargetLanguage;
 
                 var sourceLang = sourceLanguage is { Length: > 0 }
-                    ? SourceLanguageExtensions.ToEnum(sourceLanguage)
+                    ? sourceLanguage
                     : null;
 
                 var response = await client.TranslateText.TranslateTextAsync(
@@ -89,13 +89,13 @@ public static class DeepLToolExtensions
     /// Handles the full 3-step workflow: upload, poll for completion, and download.
     /// </summary>
     /// <param name="client">The DeepL client to use for document translation.</param>
-    /// <param name="defaultTargetLanguage">Default target language when not specified by the model (default: EN).</param>
+    /// <param name="defaultTargetLanguage">Default target language code when not specified by the model (default: EN).</param>
     /// <param name="formality">Formality level for translations (default: null, uses DeepL default).</param>
     /// <param name="pollIntervalMs">Polling interval in milliseconds when waiting for translation (default: 1000).</param>
     /// <returns>An AIFunction that can be passed to ChatOptions.Tools.</returns>
     public static AIFunction AsTranslateDocumentTool(
         this DeepLClient client,
-        TargetLanguage defaultTargetLanguage = TargetLanguage.En,
+        string defaultTargetLanguage = "EN",
         Formality? formality = null,
         int pollIntervalMs = 1000)
     {
@@ -105,7 +105,7 @@ public static class DeepLToolExtensions
             async (string base64Content, string filename, string? targetLanguage, CancellationToken cancellationToken) =>
             {
                 var targetLang = targetLanguage is { Length: > 0 }
-                    ? TargetLanguageExtensions.ToEnum(targetLanguage) ?? defaultTargetLanguage
+                    ? targetLanguage
                     : defaultTargetLanguage;
 
                 var fileBytes = Convert.FromBase64String(base64Content);
@@ -175,7 +175,7 @@ public static class DeepLToolExtensions
 
         if (translation.DetectedSourceLanguage is { } detected)
         {
-            parts.Add($"(Detected source language: {detected.ToValueString()})");
+            parts.Add($"(Detected source language: {detected})");
         }
 
         return string.Join("\n", parts);

@@ -16,10 +16,10 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         //// List all supported source and target languages.
-        var languages = await client.MetaInformation.GetLanguagesAsync();
+        var languages = await client.MetaInformation.GetLanguagesAsync(resource: GetLanguagesResource.TranslateText);
 
         languages.Should().NotBeEmpty();
-        languages[0].Language.Should().NotBeNullOrEmpty();
+        languages[0].Lang.Should().NotBeNullOrEmpty();
         languages[0].Name.Should().NotBeNullOrEmpty();
     }
 }

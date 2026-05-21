@@ -20,9 +20,9 @@ public partial class Tests
         var response = await client.VoiceAPI.GetVoiceStreamingUrlAsync(
             request: new GetVoiceStreamingUrlRequest
             {
-                SourceMediaContentType = VoiceMediaContentType.AudioPcm_Encoding_s16le_Rate_16000,
+                SourceMediaContentType = VoiceSourceMediaContentType.AudioPcm_encoding_s16le_rate_16000,
                 SourceLanguage = VoiceSourceLanguage.En,
-                TargetLanguages = ["de"],
+                TargetLanguages = [VoiceTargetLanguage.De],
             });
 
         response.StreamingUrl.Should().NotBeNullOrEmpty();

@@ -53,8 +53,8 @@ public partial class Tests
                 request: new TranslateTextRequest
                 {
                     Text = ["The API and SDK are well documented."],
-                    SourceLang = SourceLanguage.En,
-                    TargetLang = TargetLanguage.De,
+                    SourceLang = "EN",
+                    TargetLang = "DE",
                     GlossaryId = glossary.GlossaryId,
                 });
 
@@ -74,9 +74,9 @@ public partial class Tests
     {
         using var client = GetAuthenticatedClient();
 
-        //// List all supported glossary language pairs (v2 API).
-        var pairs = await client.ManageGlossaries.ListGlossaryLanguagesAsync();
+        //// List all supported glossary languages.
+        var pairs = await client.MetaInformation.GetLanguagesAsync(resource: GetLanguagesResource.Glossary);
 
-        pairs.SupportedLanguages.Should().NotBeEmpty();
+        pairs.Should().NotBeEmpty();
     }
 }

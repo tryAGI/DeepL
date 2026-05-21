@@ -23,7 +23,7 @@ public partial class Tests
         //// Step 1: Upload a text file for translation.
         var content = "Hello, world! This is a test document for translation."u8.ToArray();
         var uploadResponse = await client.TranslateDocuments.TranslateDocumentAsync(
-            targetLang: TargetLanguage.De,
+            targetLang: "DE",
             file: content,
             filename: "test.txt");
 

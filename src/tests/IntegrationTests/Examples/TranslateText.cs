@@ -20,7 +20,7 @@ public partial class Tests
             request: new TranslateTextRequest
             {
                 Text = ["Hello, world!"],
-                TargetLang = TargetLanguage.De,
+                TargetLang = "DE",
             });
 
         response.Translations.Should().NotBeEmpty();

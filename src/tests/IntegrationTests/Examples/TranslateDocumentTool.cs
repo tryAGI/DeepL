@@ -31,7 +31,7 @@ public partial class Tests
 
         //// You can specify default target language, formality, and polling interval.
         var tool = client.AsTranslateDocumentTool(
-            defaultTargetLanguage: TargetLanguage.Fr,
+            defaultTargetLanguage: "FR",
             formality: Formality.More,
             pollIntervalMs: 2000);
         tool.Name.Should().Be("TranslateDocument");
@@ -44,7 +44,7 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         //// Invoke the document translation tool with a base64-encoded text file.
-        var tool = client.AsTranslateDocumentTool(defaultTargetLanguage: TargetLanguage.De);
+        var tool = client.AsTranslateDocumentTool(defaultTargetLanguage: "DE");
         var content = Convert.ToBase64String(Encoding.UTF8.GetBytes("Hello, world!"));
 
         var result = await tool.InvokeAsync(
