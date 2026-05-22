@@ -3,10 +3,10 @@
 
 namespace DeepL
 {
-    public partial class RephraseTextClient
+    public partial class CorrectTextClient
     {
 
-        private static readonly global::DeepL.AutoSDKServer[] s_RephraseTextServers = new global::DeepL.AutoSDKServer[]
+        private static readonly global::DeepL.AutoSDKServer[] s_CorrectTextServers = new global::DeepL.AutoSDKServer[]
         {            new global::DeepL.AutoSDKServer(
                 id: "https-api-deepl-com",
                 name: "DeepL API Pro",
@@ -20,7 +20,7 @@ namespace DeepL
         };
 
 
-        private static readonly global::DeepL.EndPointSecurityRequirement s_RephraseTextSecurityRequirement0 =
+        private static readonly global::DeepL.EndPointSecurityRequirement s_CorrectTextSecurityRequirement0 =
             new global::DeepL.EndPointSecurityRequirement
             {
                 Authorizations = new global::DeepL.EndPointAuthorizationRequirement[]
@@ -34,40 +34,42 @@ namespace DeepL
                     },
                 },
             };
-        private static readonly global::DeepL.EndPointSecurityRequirement[] s_RephraseTextSecurityRequirements =
+        private static readonly global::DeepL.EndPointSecurityRequirement[] s_CorrectTextSecurityRequirements =
             new global::DeepL.EndPointSecurityRequirement[]
-            {                s_RephraseTextSecurityRequirement0,
+            {                s_CorrectTextSecurityRequirement0,
             };
-        partial void PrepareRephraseTextArguments(
+        partial void PrepareCorrectTextArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::DeepL.RephraseTextRequest request);
-        partial void PrepareRephraseTextRequest(
+            global::DeepL.CorrectTextRequest request);
+        partial void PrepareCorrectTextRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::DeepL.RephraseTextRequest request);
-        partial void ProcessRephraseTextResponse(
+            global::DeepL.CorrectTextRequest request);
+        partial void ProcessCorrectTextResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessRephraseTextResponseContent(
+        partial void ProcessCorrectTextResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Improve text
+        /// Correct text<br/>
+        /// Fix spelling and grammar errors in one or more texts. Unlike `/v2/write/rephrase`, this endpoint applies<br/>
+        /// a minimal-change correction pass and does not rewrite the text for style or tone.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::DeepL.RephraseTextResponse> RephraseTextAsync(
+        public async global::System.Threading.Tasks.Task<global::DeepL.CorrectTextResponse> CorrectTextAsync(
 
-            global::DeepL.RephraseTextRequest request,
+            global::DeepL.CorrectTextRequest request,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await RephraseTextAsResponseAsync(
+            var __response = await CorrectTextAsResponseAsync(
 
                 request: request,
                 requestOptions: requestOptions,
@@ -77,15 +79,17 @@ namespace DeepL
             return __response.Body;
         }
         /// <summary>
-        /// Improve text
+        /// Correct text<br/>
+        /// Fix spelling and grammar errors in one or more texts. Unlike `/v2/write/rephrase`, this endpoint applies<br/>
+        /// a minimal-change correction pass and does not rewrite the text for style or tone.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.RephraseTextResponse>> RephraseTextAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.CorrectTextResponse>> CorrectTextAsResponseAsync(
 
-            global::DeepL.RephraseTextRequest request,
+            global::DeepL.CorrectTextRequest request,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -93,15 +97,15 @@ namespace DeepL
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareRephraseTextArguments(
+            PrepareCorrectTextArguments(
                 httpClient: HttpClient,
                 request: request);
 
 
             var __authorizations = global::DeepL.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_RephraseTextSecurityRequirements,
-                operationName: "RephraseTextAsync");
+                securityRequirements: s_CorrectTextSecurityRequirements,
+                operationName: "CorrectTextAsync");
 
             using var __timeoutCancellationTokenSource = global::DeepL.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -121,9 +125,9 @@ namespace DeepL
             {
 
                             var __pathBuilder = new global::DeepL.PathBuilder(
-                                path: "/v2/write/rephrase",
+                                path: "/v2/write/correct",
                                 baseUri: ResolveBaseUri(
-                                servers: s_RephraseTextServers,
+                                servers: s_CorrectTextServers,
                                 defaultBaseUrl: "https://api.deepl.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::DeepL.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -168,7 +172,7 @@ namespace DeepL
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareRephraseTextRequest(
+                PrepareCorrectTextRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     request: request);
@@ -188,9 +192,9 @@ namespace DeepL
                     await global::DeepL.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RephraseText",
-                                methodName: "RephraseTextAsync",
-                                pathTemplate: "\"/v2/write/rephrase\"",
+                                operationId: "CorrectText",
+                                methodName: "CorrectTextAsync",
+                                pathTemplate: "\"/v2/write/correct\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -222,9 +226,9 @@ namespace DeepL
                         await global::DeepL.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RephraseText",
-                                methodName: "RephraseTextAsync",
-                                pathTemplate: "\"/v2/write/rephrase\"",
+                                operationId: "CorrectText",
+                                methodName: "CorrectTextAsync",
+                                pathTemplate: "\"/v2/write/correct\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -263,9 +267,9 @@ namespace DeepL
                         await global::DeepL.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RephraseText",
-                                methodName: "RephraseTextAsync",
-                                pathTemplate: "\"/v2/write/rephrase\"",
+                                operationId: "CorrectText",
+                                methodName: "CorrectTextAsync",
+                                pathTemplate: "\"/v2/write/correct\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -303,7 +307,7 @@ namespace DeepL
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessRephraseTextResponse(
+                ProcessCorrectTextResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -311,9 +315,9 @@ namespace DeepL
                     await global::DeepL.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RephraseText",
-                                methodName: "RephraseTextAsync",
-                                pathTemplate: "\"/v2/write/rephrase\"",
+                                operationId: "CorrectText",
+                                methodName: "CorrectTextAsync",
+                                pathTemplate: "\"/v2/write/correct\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -333,9 +337,9 @@ namespace DeepL
                     await global::DeepL.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RephraseText",
-                                methodName: "RephraseTextAsync",
-                                pathTemplate: "\"/v2/write/rephrase\"",
+                                operationId: "CorrectText",
+                                methodName: "CorrectTextAsync",
+                                pathTemplate: "\"/v2/write/correct\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -350,6 +354,270 @@ namespace DeepL
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // 
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+                                throw new global::DeepL.ApiException(
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_400,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+                                throw new global::DeepL.ApiException(
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_403,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 413)
+                            {
+                                string? __content_413 = null;
+                                global::System.Exception? __exception_413 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_413 = __ex;
+                                }
+
+                                throw new global::DeepL.ApiException(
+                                    message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_413,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_413,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 415)
+                            {
+                                string? __content_415 = null;
+                                global::System.Exception? __exception_415 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_415 = __ex;
+                                }
+
+                                throw new global::DeepL.ApiException(
+                                    message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_415,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_415,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+                                throw new global::DeepL.ApiException(
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_429,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 456)
+                            {
+                                string? __content_456 = null;
+                                global::System.Exception? __exception_456 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_456 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_456 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_456 = __ex;
+                                }
+
+                                throw new global::DeepL.ApiException(
+                                    message: __content_456 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_456,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_456,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 500)
+                            {
+                                string? __content_500 = null;
+                                global::System.Exception? __exception_500 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_500 = __ex;
+                                }
+
+                                throw new global::DeepL.ApiException(
+                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_500,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_500,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 504)
+                            {
+                                string? __content_504 = null;
+                                global::System.Exception? __exception_504 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_504 = __ex;
+                                }
+
+                                throw new global::DeepL.ApiException(
+                                    message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_504,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_504,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -363,7 +631,7 @@ namespace DeepL
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessRephraseTextResponseContent(
+                                ProcessCorrectTextResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -372,9 +640,9 @@ namespace DeepL
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::DeepL.RephraseTextResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::DeepL.CorrectTextResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.RephraseTextResponse>(
+                                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.CorrectTextResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -406,9 +674,9 @@ namespace DeepL
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::DeepL.RephraseTextResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::DeepL.CorrectTextResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.RephraseTextResponse>(
+                                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.CorrectTextResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -451,43 +719,33 @@ namespace DeepL
             }
         }
         /// <summary>
-        /// Improve text
+        /// Correct text<br/>
+        /// Fix spelling and grammar errors in one or more texts. Unlike `/v2/write/rephrase`, this endpoint applies<br/>
+        /// a minimal-change correction pass and does not rewrite the text for style or tone.
         /// </summary>
         /// <param name="text">
-        /// Text to be improved. Only UTF-8-encoded plain text is supported. Improvements are returned in the same order as they are requested.
+        /// Text to be corrected. Only UTF-8-encoded plain text is supported. Corrections are returned in the same order as they are requested.
         /// </param>
         /// <param name="targetLang">
         /// The language for the text improvement.<br/>
         /// Example: de
         /// </param>
-        /// <param name="writingStyle">
-        /// Specify a style to rephrase your text in a way that fits your audience and goals.<br/>
-        /// The `prefer_` prefix allows falling back to the default style if the language does not yet support styles.
-        /// </param>
-        /// <param name="tone">
-        /// Specify the desired tone for your text.<br/>
-        /// The `prefer_` prefix allows falling back to the default tone if the language does not yet support tones.
-        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::DeepL.RephraseTextResponse> RephraseTextAsync(
+        public async global::System.Threading.Tasks.Task<global::DeepL.CorrectTextResponse> CorrectTextAsync(
             global::System.Collections.Generic.IList<string> text,
             global::DeepL.TargetLanguageWrite? targetLang = default,
-            global::DeepL.WritingStyle? writingStyle = default,
-            global::DeepL.WritingTone? tone = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::DeepL.RephraseTextRequest
+            var __request = new global::DeepL.CorrectTextRequest
             {
                 Text = text,
                 TargetLang = targetLang,
-                WritingStyle = writingStyle,
-                Tone = tone,
             };
 
-            return await RephraseTextAsync(
+            return await CorrectTextAsync(
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

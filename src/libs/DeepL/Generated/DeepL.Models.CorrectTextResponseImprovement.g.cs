@@ -6,7 +6,7 @@ namespace DeepL
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class RephraseTextResponseImprovement
+    public sealed partial class CorrectTextResponseImprovement
     {
         /// <summary>
         /// The language detected in the source text.<br/>
@@ -25,7 +25,7 @@ namespace DeepL
         public string? TargetLanguage { get; set; }
 
         /// <summary>
-        /// The improved text.<br/>
+        /// The corrected text.<br/>
         /// Example: This is a sample sentence to improve.
         /// </summary>
         /// <example>This is a sample sentence to improve.</example>
@@ -39,7 +39,7 @@ namespace DeepL
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RephraseTextResponseImprovement" /> class.
+        /// Initializes a new instance of the <see cref="CorrectTextResponseImprovement" /> class.
         /// </summary>
         /// <param name="detectedSourceLanguage">
         /// The language detected in the source text.<br/>
@@ -50,13 +50,13 @@ namespace DeepL
         /// Example: en-US
         /// </param>
         /// <param name="text">
-        /// The improved text.<br/>
+        /// The corrected text.<br/>
         /// Example: This is a sample sentence to improve.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public RephraseTextResponseImprovement(
+        public CorrectTextResponseImprovement(
             string? detectedSourceLanguage,
             string? targetLanguage,
             string? text)
@@ -67,9 +67,9 @@ namespace DeepL
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RephraseTextResponseImprovement" /> class.
+        /// Initializes a new instance of the <see cref="CorrectTextResponseImprovement" /> class.
         /// </summary>
-        public RephraseTextResponseImprovement()
+        public CorrectTextResponseImprovement()
         {
         }
 

@@ -4,12 +4,12 @@
 namespace DeepL
 {
     /// <summary>
-    /// The DeepL API provides programmatic access to DeepL’s language AI technology.<br/>
-    /// Note: this OpenAPI spec is embedded into our API documentation and has shortened descriptions.<br/>
+    /// The `correct` endpoint fixes spelling and grammar errors without broader rephrasing. Use it when you want<br/>
+    /// a minimal-change correction pass rather than the broader rewriting performed by `rephrase`.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public sealed partial class DeepLClient : global::DeepL.IDeepLClient, global::System.IDisposable
+    public sealed partial class CorrectTextClient : global::DeepL.ICorrectTextClient, global::System.IDisposable
     {
         /// <summary>
         /// DeepL API Pro
@@ -44,152 +44,6 @@ namespace DeepL
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::DeepL.SourceGenerationContext.Default;
 
 
-        /// <summary>
-        /// Endpoints for organization administrators to manage API keys and retrieve usage analytics.
-        /// </summary>
-        public AdminApiClient AdminApi => new AdminApiClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// The `correct` endpoint fixes spelling and grammar errors without broader rephrasing. Use it when you want<br/>
-        /// a minimal-change correction pass rather than the broader rewriting performed by `rephrase`.
-        /// </summary>
-        public CorrectTextClient CorrectText => new CorrectTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// Please note that this is the spec for the (old) v2 glossary endpoint.<br/>
-        /// We recommend users switch to the newer v3 glossary endpoints, which support editability and multilinguality.<br/>
-        /// The *glossary* functions allow you to create, inspect, and delete glossaries.<br/>
-        /// Glossaries created with the glossary function can be used in translate requests by specifying the<br/>
-        /// `glossary_id` parameter.<br/>
-        /// If you encounter issues, please let us know at support@DeepL.com.<br/>
-        /// Currently you can create glossaries with any of the languages DeepL supports (with the exception of Thai).
-        /// </summary>
-        public ManageGlossariesClient ManageGlossaries => new ManageGlossariesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// The *glossary* functions allow you to create, inspect, edit and delete glossaries.<br/>
-        /// Glossaries created with the glossary function can be used in translate requests by specifying the<br/>
-        /// `glossary_id` parameter. A glossary contains (several) dictionaries.<br/>
-        /// A dictionary is a mapping of source phrases to target phrases for a single language pair.<br/>
-        /// If you encounter issues, please let us know at support@DeepL.com.<br/>
-        /// Currently you can create glossaries with any of the languages DeepL supports (with the exception of Thai).<br/>
-        /// The maximum size limit for a glossary is 10 MiB = 10485760 bytes and each source/target text,<br/>
-        /// as well as the name of the glossary, is limited to 1024 UTF-8 bytes.<br/>
-        /// A total of 1000 glossaries are allowed per account.<br/>
-        /// When creating a dictionary with target language `EN`, `PT`, or `ZH`, it's not necessary to specify a variant<br/>
-        /// (e.g. `EN-US`, `EN-GB`, `PT-PT`, `PT-BR`, or `ZH-HANS`).<br/>
-        /// Dictionaries with target language `EN` can be used in translations with either English variant.<br/>
-        /// Similarly `PT`, and `ZH` dictionaries can be used in translations with their corresponding variants.<br/>
-        /// (When you provide the ID of a glossary to a translation, the appropriate dictionary is automatically applied. Currently glossaries can not yet be used with source language detection.)<br/>
-        /// Glossaries created via the DeepL API are now unified with glossaries created via the DeepL website and DeepL apps.<br/>
-        /// Please only use the v3 glossary API in conjunction with multilingual or edited glossaries from the website.
-        /// </summary>
-        public ManageMultilingualGlossariesClient ManageMultilingualGlossaries => new ManageMultilingualGlossariesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// Information about API usage and value ranges.
-        /// </summary>
-        public MetaInformationClient MetaInformation => new MetaInformationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// The `rephrase` endpoint  is used to make corrections and adjustments to texts based on style or tone.
-        /// </summary>
-        public RephraseTextClient RephraseText => new RephraseTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// The document translation API allows you to translate whole documents and supports the following file types and extensions:<br/>
-        ///   * `docx` - Microsoft Word Document<br/>
-        ///   * `pptx` - Microsoft PowerPoint Document<br/>
-        ///   * `xlsx` - Microsoft Excel Document<br/>
-        ///   * `pdf` - Portable Document Format<br/>
-        ///   * `htm / html` - HTML Document<br/>
-        ///   * `txt` - Plain Text Document<br/>
-        ///   * `xlf / xliff` - XLIFF Document, version 2.1<br/>
-        ///   * `srt` - SRT Document<br/>
-        ///   * `jpeg` / `jpg` / `png` - Image (currently in beta).
-        /// </summary>
-        public TranslateDocumentsClient TranslateDocuments => new TranslateDocumentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// The text-translation API currently consists of a single endpoint, `translate`, which is described below.
-        /// </summary>
-        public TranslateTextClient TranslateText => new TranslateTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// The translation memory endpoints allow you to interact with your account's translation memories, used to store<br/>
-        /// and reuse previously created translations. Translation memories can be used in text translation requests by<br/>
-        /// specifying the `translation_memory_id` parameter to denote a specific translation memory and the<br/>
-        /// `translation_memory_threshold` which defines the minimum matching percentage required for a translation memory<br/>
-        /// segment to be applied (recommended to be 75% or higher).
-        /// </summary>
-        public TranslationMemoriesClient TranslationMemories => new TranslationMemoriesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// The Voice API provides real-time voice transcription and translation services.<br/>
-        /// Use a two-step flow: first request a streaming URL via REST, then establish a WebSocket connection for streaming audio and receiving transcriptions.
-        /// </summary>
-        public VoiceAPIClient VoiceAPI => new VoiceAPIClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// **Alpha.** Async voice translation jobs. This API may change without notice.
-        /// </summary>
-        public VoiceTranslateJobClient VoiceTranslateJob => new VoiceTranslateJobClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
 
         private static readonly global::DeepL.AutoSDKServer[] s_availableServers = new global::DeepL.AutoSDKServer[]
         {            new global::DeepL.AutoSDKServer(
@@ -219,7 +73,7 @@ namespace DeepL
         }
 
         /// <summary>
-        /// Creates a new instance of the DeepLClient.
+        /// Creates a new instance of the CorrectTextClient.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
@@ -227,7 +81,7 @@ namespace DeepL
         /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
         /// <param name="authorizations">The authorizations to use for the requests.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
-        public DeepLClient(
+        public CorrectTextClient(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::DeepL.EndPointAuthorization>? authorizations = null,
@@ -241,14 +95,14 @@ namespace DeepL
         }
 
         /// <summary>
-        /// Creates a new instance of the DeepLClient with explicit options but no base URL override.
+        /// Creates a new instance of the CorrectTextClient with explicit options but no base URL override.
         /// Skips passing <c>baseUri</c> so the default base URL from the OpenAPI spec applies.
         /// </summary>
         /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
         /// <param name="authorizations">The authorizations to use for the requests.</param>
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
-        public DeepLClient(
+        public CorrectTextClient(
             global::System.Net.Http.HttpClient? httpClient,
             global::System.Collections.Generic.List<global::DeepL.EndPointAuthorization>? authorizations,
             global::DeepL.AutoSDKClientOptions? options,
@@ -262,7 +116,7 @@ namespace DeepL
         }
 
         /// <summary>
-        /// Creates a new instance of the DeepLClient.
+        /// Creates a new instance of the CorrectTextClient.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
@@ -271,7 +125,7 @@ namespace DeepL
         /// <param name="authorizations">The authorizations to use for the requests.</param>
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
-        public DeepLClient(
+        public CorrectTextClient(
             global::System.Net.Http.HttpClient? httpClient,
             global::System.Uri? baseUri,
             global::System.Collections.Generic.List<global::DeepL.EndPointAuthorization>? authorizations,

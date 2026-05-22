@@ -2,58 +2,54 @@
 
 namespace DeepL
 {
-    public partial interface IRephraseTextClient
+    public partial interface ICorrectTextClient
     {
         /// <summary>
-        /// Improve text
+        /// Correct text<br/>
+        /// Fix spelling and grammar errors in one or more texts. Unlike `/v2/write/rephrase`, this endpoint applies<br/>
+        /// a minimal-change correction pass and does not rewrite the text for style or tone.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::DeepL.RephraseTextResponse> RephraseTextAsync(
+        global::System.Threading.Tasks.Task<global::DeepL.CorrectTextResponse> CorrectTextAsync(
 
-            global::DeepL.RephraseTextRequest request,
+            global::DeepL.CorrectTextRequest request,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Improve text
+        /// Correct text<br/>
+        /// Fix spelling and grammar errors in one or more texts. Unlike `/v2/write/rephrase`, this endpoint applies<br/>
+        /// a minimal-change correction pass and does not rewrite the text for style or tone.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.RephraseTextResponse>> RephraseTextAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.CorrectTextResponse>> CorrectTextAsResponseAsync(
 
-            global::DeepL.RephraseTextRequest request,
+            global::DeepL.CorrectTextRequest request,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Improve text
+        /// Correct text<br/>
+        /// Fix spelling and grammar errors in one or more texts. Unlike `/v2/write/rephrase`, this endpoint applies<br/>
+        /// a minimal-change correction pass and does not rewrite the text for style or tone.
         /// </summary>
         /// <param name="text">
-        /// Text to be improved. Only UTF-8-encoded plain text is supported. Improvements are returned in the same order as they are requested.
+        /// Text to be corrected. Only UTF-8-encoded plain text is supported. Corrections are returned in the same order as they are requested.
         /// </param>
         /// <param name="targetLang">
         /// The language for the text improvement.<br/>
         /// Example: de
         /// </param>
-        /// <param name="writingStyle">
-        /// Specify a style to rephrase your text in a way that fits your audience and goals.<br/>
-        /// The `prefer_` prefix allows falling back to the default style if the language does not yet support styles.
-        /// </param>
-        /// <param name="tone">
-        /// Specify the desired tone for your text.<br/>
-        /// The `prefer_` prefix allows falling back to the default tone if the language does not yet support tones.
-        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::DeepL.RephraseTextResponse> RephraseTextAsync(
+        global::System.Threading.Tasks.Task<global::DeepL.CorrectTextResponse> CorrectTextAsync(
             global::System.Collections.Generic.IList<string> text,
             global::DeepL.TargetLanguageWrite? targetLang = default,
-            global::DeepL.WritingStyle? writingStyle = default,
-            global::DeepL.WritingTone? tone = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
