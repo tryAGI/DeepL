@@ -73,6 +73,12 @@ namespace DeepL
         public AdminApiClient AdminApi { get; }
 
         /// <summary>
+        /// The `correct` endpoint fixes spelling and grammar errors without broader rephrasing. Use it when you want<br/>
+        /// a minimal-change correction pass rather than the broader rewriting performed by `rephrase`.
+        /// </summary>
+        public CorrectTextClient CorrectText { get; }
+
+        /// <summary>
         /// Please note that this is the spec for the (old) v2 glossary endpoint.<br/>
         /// We recommend users switch to the newer v3 glossary endpoints, which support editability and multilinguality.<br/>
         /// The *glossary* functions allow you to create, inspect, and delete glossaries.<br/>
