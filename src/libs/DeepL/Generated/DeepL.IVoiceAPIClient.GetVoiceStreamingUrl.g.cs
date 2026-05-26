@@ -86,15 +86,15 @@ namespace DeepL
         /// Example: fixed
         /// </param>
         /// <param name="targetLanguages">
-        /// List of target languages for translation. The stream will emit translations for each language. The maximum allowed target languages per stream is 5. Language identifiers must comply with IETF BCP 47. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
+        /// List of target languages for translation. The stream will emit translations for each language. Language identifiers must comply with IETF BCP 47. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
         /// Default Value: []<br/>
         /// Example: [de, fr, es]
         /// </param>
         /// <param name="targetMediaLanguages">
-        /// (closed beta) List of target languages for which to generate synthesized audio. Languages specified here will automatically be added to target_languages if not already present, ensuring you receive both text translation and audio synthesis for these languages. If omitted, only text transcription and translation will be provided (no audio synthesis). The maximum allowed target media languages per stream is 5. Language identifiers must comply with IETF BCP 47.<br/>
+        /// (closed beta) List of target languages for which to generate synthesized audio. Languages specified here will automatically be added to target_languages if not already present, ensuring you receive both text translation and audio synthesis for these languages. If omitted, only text transcription and translation will be provided (no audio synthesis). Language identifiers must comply with IETF BCP 47.<br/>
         /// Note: Some translated audio languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
         /// Default Value: []<br/>
-        /// Example: [de, en-GB]
+        /// Example: [de]
         /// </param>
         /// <param name="targetMediaContentType">
         ///  (closed beta) The audio format for synthesized target media streaming.<br/>
