@@ -240,6 +240,30 @@ namespace DeepL
                                     name: "\"glossary_id\"");
 
                             }
+                            if (request.StyleId != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.StyleId ?? string.Empty),
+                                    name: "\"style_id\"");
+
+                            }
+                            if (request.TranslationMemoryId != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.TranslationMemoryId.ToString() ?? string.Empty),
+                                    name: "\"translation_memory_id\"");
+
+                            }
+                            if (request.TranslationMemoryThreshold != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.TranslationMemoryThreshold, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"translation_memory_threshold\"");
+
+                            }
                             if (request.EnableBetaLanguages != default)
                             {
 
@@ -910,6 +934,21 @@ namespace DeepL
         /// A unique ID assigned to a glossary.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </param>
+        /// <param name="styleId">
+        /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
+        /// **Important:** The target language has to match the language of the style rule list.<br/>
+        /// Example: 7ff9bfd6-cd85-4190-8503-d6215a321519
+        /// </param>
+        /// <param name="translationMemoryId">
+        /// A unique ID assigned to a translation memory.<br/>
+        /// **Note:** Requests with the `translation_memory_id` parameter must use the `quality_optimized` model type. Requests combining `translation_memory_id` and `model_type: latency_optimized` will be rejected.<br/>
+        /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
+        /// </param>
+        /// <param name="translationMemoryThreshold">
+        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher).<br/>
+        /// Default Value: 75<br/>
+        /// Example: 75
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -921,6 +960,9 @@ namespace DeepL
             string? outputFormat = default,
             global::DeepL.Formality? formality = default,
             string? glossaryId = default,
+            string? styleId = default,
+            global::System.Guid? translationMemoryId = default,
+            int? translationMemoryThreshold = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -933,6 +975,9 @@ namespace DeepL
                 OutputFormat = outputFormat,
                 Formality = formality,
                 GlossaryId = glossaryId,
+                StyleId = styleId,
+                TranslationMemoryId = translationMemoryId,
+                TranslationMemoryThreshold = translationMemoryThreshold,
             };
 
             return await TranslateDocumentAsync(
@@ -991,6 +1036,21 @@ namespace DeepL
         /// A unique ID assigned to a glossary.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </param>
+        /// <param name="styleId">
+        /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
+        /// **Important:** The target language has to match the language of the style rule list.<br/>
+        /// Example: 7ff9bfd6-cd85-4190-8503-d6215a321519
+        /// </param>
+        /// <param name="translationMemoryId">
+        /// A unique ID assigned to a translation memory.<br/>
+        /// **Note:** Requests with the `translation_memory_id` parameter must use the `quality_optimized` model type. Requests combining `translation_memory_id` and `model_type: latency_optimized` will be rejected.<br/>
+        /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
+        /// </param>
+        /// <param name="translationMemoryThreshold">
+        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher).<br/>
+        /// Default Value: 75<br/>
+        /// Example: 75
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
@@ -1002,6 +1062,9 @@ namespace DeepL
             string? outputFormat = default,
             global::DeepL.Formality? formality = default,
             string? glossaryId = default,
+            string? styleId = default,
+            global::System.Guid? translationMemoryId = default,
+            int? translationMemoryThreshold = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1016,6 +1079,9 @@ namespace DeepL
                 OutputFormat = outputFormat,
                 Formality = formality,
                 GlossaryId = glossaryId,
+                StyleId = styleId,
+                TranslationMemoryId = translationMemoryId,
+                TranslationMemoryThreshold = translationMemoryThreshold,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -1162,6 +1228,30 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.GlossaryId ?? string.Empty),
                                     name: "\"glossary_id\"");
+
+                            }
+                            if (request.StyleId != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.StyleId ?? string.Empty),
+                                    name: "\"style_id\"");
+
+                            }
+                            if (request.TranslationMemoryId != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.TranslationMemoryId.ToString() ?? string.Empty),
+                                    name: "\"translation_memory_id\"");
+
+                            }
+                            if (request.TranslationMemoryThreshold != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.TranslationMemoryThreshold, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"translation_memory_threshold\"");
 
                             }
                             if (request.EnableBetaLanguages != default)
@@ -1826,6 +1916,21 @@ namespace DeepL
         /// A unique ID assigned to a glossary.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </param>
+        /// <param name="styleId">
+        /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
+        /// **Important:** The target language has to match the language of the style rule list.<br/>
+        /// Example: 7ff9bfd6-cd85-4190-8503-d6215a321519
+        /// </param>
+        /// <param name="translationMemoryId">
+        /// A unique ID assigned to a translation memory.<br/>
+        /// **Note:** Requests with the `translation_memory_id` parameter must use the `quality_optimized` model type. Requests combining `translation_memory_id` and `model_type: latency_optimized` will be rejected.<br/>
+        /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
+        /// </param>
+        /// <param name="translationMemoryThreshold">
+        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher).<br/>
+        /// Default Value: 75<br/>
+        /// Example: 75
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
@@ -1837,6 +1942,9 @@ namespace DeepL
             string? outputFormat = default,
             global::DeepL.Formality? formality = default,
             string? glossaryId = default,
+            string? styleId = default,
+            global::System.Guid? translationMemoryId = default,
+            int? translationMemoryThreshold = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1851,6 +1959,9 @@ namespace DeepL
                 OutputFormat = outputFormat,
                 Formality = formality,
                 GlossaryId = glossaryId,
+                StyleId = styleId,
+                TranslationMemoryId = translationMemoryId,
+                TranslationMemoryThreshold = translationMemoryThreshold,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -1997,6 +2108,30 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.GlossaryId ?? string.Empty),
                                     name: "\"glossary_id\"");
+
+                            }
+                            if (request.StyleId != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.StyleId ?? string.Empty),
+                                    name: "\"style_id\"");
+
+                            }
+                            if (request.TranslationMemoryId != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.TranslationMemoryId.ToString() ?? string.Empty),
+                                    name: "\"translation_memory_id\"");
+
+                            }
+                            if (request.TranslationMemoryThreshold != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.TranslationMemoryThreshold, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"translation_memory_threshold\"");
 
                             }
                             if (request.EnableBetaLanguages != default)
