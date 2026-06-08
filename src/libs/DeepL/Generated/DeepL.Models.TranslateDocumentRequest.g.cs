@@ -86,6 +86,33 @@ namespace DeepL
         public string? GlossaryId { get; set; }
 
         /// <summary>
+        /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
+        /// **Important:** The target language has to match the language of the style rule list.<br/>
+        /// Example: 7ff9bfd6-cd85-4190-8503-d6215a321519
+        /// </summary>
+        /// <example>7ff9bfd6-cd85-4190-8503-d6215a321519</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("style_id")]
+        public string? StyleId { get; set; }
+
+        /// <summary>
+        /// A unique ID assigned to a translation memory.<br/>
+        /// **Note:** Requests with the `translation_memory_id` parameter must use the `quality_optimized` model type. Requests combining `translation_memory_id` and `model_type: latency_optimized` will be rejected.<br/>
+        /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
+        /// </summary>
+        /// <example>a74d88fb-ed2a-4943-a664-a4512398b994</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("translation_memory_id")]
+        public global::System.Guid? TranslationMemoryId { get; set; }
+
+        /// <summary>
+        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher).<br/>
+        /// Default Value: 75<br/>
+        /// Example: 75
+        /// </summary>
+        /// <example>75</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("translation_memory_threshold")]
+        public int? TranslationMemoryThreshold { get; set; }
+
+        /// <summary>
         /// This parameter is maintained for backward compatibility and has no effect.<br/>
         /// Default Value: false
         /// </summary>
@@ -149,6 +176,21 @@ namespace DeepL
         /// A unique ID assigned to a glossary.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </param>
+        /// <param name="styleId">
+        /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
+        /// **Important:** The target language has to match the language of the style rule list.<br/>
+        /// Example: 7ff9bfd6-cd85-4190-8503-d6215a321519
+        /// </param>
+        /// <param name="translationMemoryId">
+        /// A unique ID assigned to a translation memory.<br/>
+        /// **Note:** Requests with the `translation_memory_id` parameter must use the `quality_optimized` model type. Requests combining `translation_memory_id` and `model_type: latency_optimized` will be rejected.<br/>
+        /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
+        /// </param>
+        /// <param name="translationMemoryThreshold">
+        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher).<br/>
+        /// Default Value: 75<br/>
+        /// Example: 75
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -159,7 +201,10 @@ namespace DeepL
             string? filename,
             string? outputFormat,
             global::DeepL.Formality? formality,
-            string? glossaryId)
+            string? glossaryId,
+            string? styleId,
+            global::System.Guid? translationMemoryId,
+            int? translationMemoryThreshold)
         {
             this.SourceLang = sourceLang;
             this.TargetLang = targetLang ?? throw new global::System.ArgumentNullException(nameof(targetLang));
@@ -168,6 +213,9 @@ namespace DeepL
             this.OutputFormat = outputFormat;
             this.Formality = formality;
             this.GlossaryId = glossaryId;
+            this.StyleId = styleId;
+            this.TranslationMemoryId = translationMemoryId;
+            this.TranslationMemoryThreshold = translationMemoryThreshold;
         }
 
         /// <summary>
