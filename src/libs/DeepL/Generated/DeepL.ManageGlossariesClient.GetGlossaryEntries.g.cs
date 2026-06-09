@@ -41,12 +41,12 @@ namespace DeepL
         partial void PrepareGetGlossaryEntriesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string glossaryId,
-            ref global::DeepL.GetGlossaryEntriesAccept? accept);
+            ref string? accept);
         partial void PrepareGetGlossaryEntriesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string glossaryId,
-            global::DeepL.GetGlossaryEntriesAccept? accept);
+            string? accept);
         partial void ProcessGetGlossaryEntriesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -64,7 +64,7 @@ namespace DeepL
         /// <exception cref="global::DeepL.ApiException"></exception>
         public async global::System.Threading.Tasks.Task GetGlossaryEntriesAsync(
             string glossaryId,
-            global::DeepL.GetGlossaryEntriesAccept? accept = default,
+            string? accept = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -88,7 +88,7 @@ namespace DeepL
         /// <exception cref="global::DeepL.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse> GetGlossaryEntriesAsResponseAsync(
             string glossaryId,
-            global::DeepL.GetGlossaryEntriesAccept? accept = default,
+            string? accept = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -159,7 +159,7 @@ namespace DeepL
 
             if (accept != default)
             {
-                __httpRequest.Headers.TryAddWithoutValidation("Accept", accept?.ToValueString() ?? string.Empty);
+                __httpRequest.Headers.TryAddWithoutValidation("Accept", accept.ToString());
             }
 
                 global::DeepL.AutoSDKRequestOptionsSupport.ApplyHeaders(
