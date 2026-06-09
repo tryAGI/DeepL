@@ -785,10 +785,6 @@ namespace DeepL
 
             typeof(global::DeepL.JsonConverters.AdminGetCustomTagAnalyticsAggregateByNullableJsonConverter),
 
-            typeof(global::DeepL.JsonConverters.GetGlossaryEntriesAcceptJsonConverter),
-
-            typeof(global::DeepL.JsonConverters.GetGlossaryEntriesAcceptNullableJsonConverter),
-
             typeof(global::DeepL.JsonConverters.GetLanguagesV2TypeJsonConverter),
 
             typeof(global::DeepL.JsonConverters.GetLanguagesV2TypeNullableJsonConverter),
@@ -1119,7 +1115,6 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetVoiceStreamingUrlRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.AdminGetAnalyticsGroupBy), TypeInfoPropertyName = "AdminGetAnalyticsGroupBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.AdminGetCustomTagAnalyticsAggregateBy), TypeInfoPropertyName = "AdminGetCustomTagAnalyticsAggregateBy2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetGlossaryEntriesAccept), TypeInfoPropertyName = "GetGlossaryEntriesAccept2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesV2Type), TypeInfoPropertyName = "GetLanguagesV2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetLanguagesResource), TypeInfoPropertyName = "GetLanguagesResource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.GetLanguagesIncludeItem>))]
