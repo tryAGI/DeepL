@@ -233,6 +233,28 @@
     },
     {
       "Order": 22,
+      "Title": "Poll for the evaluation result",
+      "Slug": "pollqualityevaluation",
+      "Description": "Returns the current state of an evaluation job. While the job is in progress the response contains only status information. Once complete the response includes the full evaluation report.",
+      "Language": "http",
+      "Code": "### Poll for the evaluation result\n# @name pollQualityEvaluation\nGET {{host}}/v1/quality-evaluation/{{job_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Polling result. The response shape depends on the \u0060status\u0060 field. \u0060done\u0060 returns the full evaluation report; \u0060error\u0060 returns error details.\n# Content-Type: application/json\n# 202\n# Description: Job is still processing. Continue polling after the time suggested by the \u0060Retry-After\u0060 header.\n# Content-Type: application/json\n# 400\n# Description: Invalid \u0060job_id\u0060 format. The \u0060job_id\u0060 must be a valid UUID.\n# Content-Type: application/json\n# 404\n# Description: Job not found. The \u0060job_id\u0060 is well-formed but no job exists with that ID, or it has expired. Jobs are retained for 24 hours after reaching \u0060done\u0060 or \u0060error\u0060 state.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "pollQualityEvaluation",
+      "Setup": null
+    },
+    {
+      "Order": 23,
+      "Title": "Submit an evaluation job",
+      "Slug": "submitqualityevaluation",
+      "Description": "Starts an evaluation job for the given segments. Returns a \u0060poll_url\u0060 that can be used to retrieve the result.",
+      "Language": "csharp",
+      "Code": "using var client = new DeepLClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::DeepL.QualityEvaluationRequest\u003E(\n    @\u0022{\n  \u0022\u0022metadata\u0022\u0022: {\n    \u0022\u0022source_language\u0022\u0022: \u0022\u0022en\u0022\u0022,\n    \u0022\u0022target_language\u0022\u0022: \u0022\u0022de\u0022\u0022\n  },\n  \u0022\u0022segments\u0022\u0022: [\n    {\n      \u0022\u0022source\u0022\u0022: \u0022\u0022Our Q3 revenue came in 5% above forecast.\u0022\u0022,\n      \u0022\u0022target\u0022\u0022: \u0022\u0022Unser Q3-Umsatz lag 5 % unter der Prognose.\u0022\u0022\n    },\n    {\n      \u0022\u0022source\u0022\u0022: \u0022\u0022Please share these results with your teams by Friday.\u0022\u0022,\n      \u0022\u0022target\u0022\u0022: \u0022\u0022Bitte teilen Sie diese Ergebnisse mit Ihrem Team.\u0022\u0022\n    }\n  ]\n}\u0022)!;\n\nvar response = await client.QualityEvaluation.SubmitQualityEvaluationAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022job_id\u0022: \u0022f3a8c5e1-9b7d-4e62-a1c4-8f5d2b6e3c19\u0022,\n//   \u0022poll_url\u0022: \u0022/v1/quality-evaluation/f3a8c5e1-9b7d-4e62-a1c4-8f5d2b6e3c19\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "submitQualityEvaluation",
+      "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 24,
       "Title": "Download Translated Document",
       "Slug": "downloaddocument",
       "Description": "Generated from OpenAPI examples.",
@@ -243,7 +265,7 @@
       "Setup": null
     },
     {
-      "Order": 23,
+      "Order": 25,
       "Title": "Check Document Status",
       "Slug": "getdocumentstatus",
       "Description": "Generated from OpenAPI examples.",
@@ -254,7 +276,7 @@
       "Setup": null
     },
     {
-      "Order": 24,
+      "Order": 26,
       "Title": "Upload and Translate a Document",
       "Slug": "translatedocument",
       "Description": "Generated from OpenAPI examples.",
@@ -265,7 +287,7 @@
       "Setup": null
     },
     {
-      "Order": 25,
+      "Order": 27,
       "Title": "List translation memories",
       "Slug": "listtranslationmemories",
       "Description": "Retrieve a list of translation memories associated with the authenticated account.",
@@ -276,7 +298,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 26,
+      "Order": 28,
       "Title": "Get Streaming URL",
       "Slug": "getvoicestreamingurl",
       "Description": "Generated from OpenAPI examples.",
@@ -287,7 +309,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 27,
+      "Order": 29,
       "Title": "Request Reconnection",
       "Slug": "requestreconnection",
       "Description": "Generated from OpenAPI examples.",
@@ -298,7 +320,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 28,
+      "Order": 30,
       "Title": "Create a voice translation job",
       "Slug": "createvoicetranslatejob",
       "Description": "Creates an async voice translation job. The response includes an upload URL for the source audio file.",
@@ -309,7 +331,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 29,
+      "Order": 31,
       "Title": "Get voice translation job status",
       "Slug": "getvoicetranslatejobstatus",
       "Description": "Returns the current status of a voice translation job, including per-target result statuses.\n\nWhen a target\u0027s status is \u0060complete\u0060, the response includes a \u0060download_url\u0060 and \u0060signature\u0060 for that target. Results are returned in the same order as the targets in the create request.",

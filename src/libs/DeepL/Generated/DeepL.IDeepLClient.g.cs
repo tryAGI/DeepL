@@ -115,6 +115,11 @@ namespace DeepL
         public MetaInformationClient MetaInformation { get; }
 
         /// <summary>
+        /// **Closed alpha.** Evaluate translation quality. Submit source/target segment pairs and retrieve per-segment quality issues categorized by error type and severity, with character spans pointing to where each issue occurs.
+        /// </summary>
+        public QualityEvaluationClient QualityEvaluation { get; }
+
+        /// <summary>
         /// The `rephrase` endpoint  is used to make corrections and adjustments to texts based on style or tone.
         /// </summary>
         public RephraseTextClient RephraseText { get; }
