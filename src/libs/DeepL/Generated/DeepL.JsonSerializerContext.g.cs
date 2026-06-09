@@ -777,6 +777,30 @@ namespace DeepL
 
             typeof(global::DeepL.JsonConverters.ResultStatusNullableJsonConverter),
 
+            typeof(global::DeepL.JsonConverters.QualityEvaluationProcessingStatusJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.QualityEvaluationProcessingStatusNullableJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.QualityEvaluationDoneStatusJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.QualityEvaluationDoneStatusNullableJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.QualityEvaluationFailedStatusJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.QualityEvaluationFailedStatusNullableJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.QualityEvaluationIssueTypeJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.QualityEvaluationIssueTypeNullableJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.QualityEvaluationIssueSubTypeJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.QualityEvaluationIssueSubTypeNullableJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.QualityEvaluationIssueSeverityJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.QualityEvaluationIssueSeverityNullableJsonConverter),
+
             typeof(global::DeepL.JsonConverters.AdminGetAnalyticsGroupByJsonConverter),
 
             typeof(global::DeepL.JsonConverters.AdminGetAnalyticsGroupByNullableJsonConverter),
@@ -828,6 +852,8 @@ namespace DeepL
             typeof(global::DeepL.JsonConverters.AllOfJsonConverter<string, object>),
 
             typeof(global::DeepL.JsonConverters.AllOfJsonConverter<string, object>),
+
+            typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.QualityEvaluationDone, global::DeepL.QualityEvaluationFailed>),
 
             typeof(global::DeepL.JsonConverters.UnixTimestampJsonConverter),
         })]
@@ -1094,6 +1120,29 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.VoiceTranslateJobStatusResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.VoiceTranslateJobTargetResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.VoiceTranslateJobTargetResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationRequestMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.QualityEvaluationRequestSegment>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationRequestSegment))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationJobCreated))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationProcessing))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationProcessingStatus), TypeInfoPropertyName = "QualityEvaluationProcessingStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationDone))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationDoneStatus), TypeInfoPropertyName = "QualityEvaluationDoneStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.QualityEvaluationSegment>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationSegment))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationDoneSummary))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationFailed))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationFailedStatus), TypeInfoPropertyName = "QualityEvaluationFailedStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationFailedError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.QualityEvaluationIssue>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationIssue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationIssueType), TypeInfoPropertyName = "QualityEvaluationIssueType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationIssueSubType), TypeInfoPropertyName = "QualityEvaluationIssueSubType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationIssueSeverity), TypeInfoPropertyName = "QualityEvaluationIssueSeverity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.QualityEvaluationSpan>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationSpan))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.QualityEvaluationApiError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.AdminCreateDeveloperKeyRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.AdminDeactivateDeveloperKeyRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.AdminRenameDeveloperKeyRequest))]
@@ -1175,6 +1224,7 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.TranslationMemory>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetStyleRuleListsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.StyleRuleList>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.OneOf<global::DeepL.QualityEvaluationDone, global::DeepL.QualityEvaluationFailed>), TypeInfoPropertyName = "OneOfQualityEvaluationDoneQualityEvaluationFailed2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.GlossaryDictionary>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.CustomInstruction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.MultilingualGlossaryEntriesInformation>))]
@@ -1189,6 +1239,10 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.VoiceTranslateJobTargetRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.VoiceTranslateJobTargetResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.VoiceTranslateJobTargetResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.QualityEvaluationRequestSegment>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.QualityEvaluationSegment>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.QualityEvaluationIssue>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.QualityEvaluationSpan>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.CreateStyleRuleListRequestCustomInstruction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.GetLanguagesIncludeItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.CreateVoiceTranslateJobIncludeItem>))]
