@@ -4,10 +4,19 @@
 namespace DeepL
 {
     /// <summary>
-    /// Aggregate counts of issues across all segments.
+    /// Aggregate quality results across all segments.
     /// </summary>
     public sealed partial class QualityEvaluationDoneSummary
     {
+        /// <summary>
+        /// Overall translation quality, from 0 (lowest) to 100 (highest). See [Summary](/api-reference/quality-evaluation/poll#summary).<br/>
+        /// Example: 72
+        /// </summary>
+        /// <example>72</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("overall_score")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int OverallScore { get; set; }
+
         /// <summary>
         /// Nested counts keyed by `type`, then `sub_type`, then `severity`. Leaf values are integer counts.<br/>
         /// Example: {"Accuracy":{"Mistranslation":{"Critical":1,"Minor":1},"Omission":{"Major":1}}}
@@ -26,6 +35,10 @@ namespace DeepL
         /// <summary>
         /// Initializes a new instance of the <see cref="QualityEvaluationDoneSummary" /> class.
         /// </summary>
+        /// <param name="overallScore">
+        /// Overall translation quality, from 0 (lowest) to 100 (highest). See [Summary](/api-reference/quality-evaluation/poll#summary).<br/>
+        /// Example: 72
+        /// </param>
         /// <param name="granularCounts">
         /// Nested counts keyed by `type`, then `sub_type`, then `severity`. Leaf values are integer counts.<br/>
         /// Example: {"Accuracy":{"Mistranslation":{"Critical":1,"Minor":1},"Omission":{"Major":1}}}
@@ -34,8 +47,10 @@ namespace DeepL
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QualityEvaluationDoneSummary(
+            int overallScore,
             object granularCounts)
         {
+            this.OverallScore = overallScore;
             this.GranularCounts = granularCounts ?? throw new global::System.ArgumentNullException(nameof(granularCounts));
         }
 
