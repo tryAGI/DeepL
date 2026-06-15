@@ -739,7 +739,7 @@ paths:
         400:
           $ref: '#/components/responses/BadRequest'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         413:
@@ -873,7 +873,7 @@ paths:
         400:
           $ref: '#/components/responses/BadRequest'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         413:
@@ -987,7 +987,7 @@ paths:
         400:
           $ref: '#/components/responses/BadRequest'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         413:
@@ -1044,7 +1044,7 @@ paths:
         400:
           $ref: '#/components/responses/BadRequest'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound404DocTransDownload'
         413:
@@ -1886,7 +1886,7 @@ paths:
         400:
           $ref: '#/components/responses/BadRequest'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         413:
           $ref: '#/components/responses/PayloadTooLarge'
         415:
@@ -1973,7 +1973,7 @@ paths:
         400:
           $ref: '#/components/responses/BadRequest'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         413:
           $ref: '#/components/responses/PayloadTooLarge'
         415:
@@ -2043,7 +2043,7 @@ paths:
         400:
           $ref: '#/components/responses/BadRequest'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         413:
@@ -2185,7 +2185,7 @@ paths:
         400:
           $ref: '#/components/responses/BadRequest'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         413:
@@ -2296,7 +2296,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         429:
           $ref: '#/components/responses/TooManyRequests'
         500:
@@ -2461,7 +2461,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         429:
           $ref: '#/components/responses/TooManyRequests'
         500:
@@ -2535,7 +2535,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         429:
           $ref: '#/components/responses/TooManyRequests'
         500:
@@ -2587,7 +2587,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         429:
           $ref: '#/components/responses/TooManyRequests'
         500:
@@ -2663,7 +2663,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         429:
           $ref: '#/components/responses/TooManyRequests'
         456:
@@ -2698,7 +2698,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         429:
@@ -2743,7 +2743,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         429:
@@ -2775,7 +2775,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         429:
@@ -2823,7 +2823,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         429:
@@ -2884,7 +2884,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         429:
@@ -2927,7 +2927,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         429:
@@ -2990,7 +2990,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         429:
@@ -3026,7 +3026,7 @@ paths:
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
-          $ref: '#/components/responses/Forbidden'
+          $ref: '#/components/responses/ForbiddenScoped'
         404:
           $ref: '#/components/responses/NotFound'
         429:
@@ -3616,8 +3616,14 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
+    ForbiddenScoped:
+      description: Authorization failed. Please supply a valid `DeepL-Auth-Key` via the `Authorization` header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
     ForbiddenGlossaries:
-      description: Forbidden. The access to the requested resource is denied, because of insufficient access rights.
+      description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.
     NotFound:
       description: The requested resource could not be found.
       content:
