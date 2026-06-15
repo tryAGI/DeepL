@@ -433,7 +433,7 @@ namespace DeepL
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Authorization failed. Please supply a valid `DeepL-Auth-Key` via the `Authorization` header.
+                            // Authorization failed. Please supply a valid `DeepL-Auth-Key` via the `Authorization` header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
