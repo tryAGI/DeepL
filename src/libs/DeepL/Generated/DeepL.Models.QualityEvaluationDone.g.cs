@@ -32,7 +32,7 @@ namespace DeepL
         public required global::System.Collections.Generic.IList<global::DeepL.QualityEvaluationSegment> Segments { get; set; }
 
         /// <summary>
-        /// Aggregate counts of issues across all segments.
+        /// Aggregate quality results across all segments.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -54,7 +54,7 @@ namespace DeepL
         /// One entry per submitted segment, in request order.
         /// </param>
         /// <param name="summary">
-        /// Aggregate counts of issues across all segments.
+        /// Aggregate quality results across all segments.
         /// </param>
         /// <param name="status">
         /// Example: done
