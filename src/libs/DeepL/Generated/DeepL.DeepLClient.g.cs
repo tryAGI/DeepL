@@ -117,6 +117,16 @@ namespace DeepL
         };
 
         /// <summary>
+        /// **Closed alpha.** Evaluate translation quality. Submit source/target segment pairs and retrieve per-segment quality issues categorized by error type and severity, with character spans pointing to where each issue occurs.
+        /// </summary>
+        public QualityEvaluationClient QualityEvaluation => new QualityEvaluationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
         /// The `rephrase` endpoint  is used to make corrections and adjustments to texts based on style or tone.
         /// </summary>
         public RephraseTextClient RephraseText => new RephraseTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)

@@ -17,7 +17,7 @@ namespace DeepL
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task GetGlossaryEntriesAsync(
             string glossaryId,
-            global::DeepL.GetGlossaryEntriesAccept? accept = default,
+            string? accept = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -33,7 +33,7 @@ namespace DeepL
         /// <exception cref="global::DeepL.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse> GetGlossaryEntriesAsResponseAsync(
             string glossaryId,
-            global::DeepL.GetGlossaryEntriesAccept? accept = default,
+            string? accept = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

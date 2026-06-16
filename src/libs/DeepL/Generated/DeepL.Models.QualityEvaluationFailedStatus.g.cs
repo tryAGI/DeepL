@@ -4,40 +4,40 @@
 namespace DeepL
 {
     /// <summary>
-    /// Default Value: text/tab-separated-values
+    /// Example: error
     /// </summary>
-    public enum GetGlossaryEntriesAccept
+    public enum QualityEvaluationFailedStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        TextTabSeparatedValues,
+        Error,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class GetGlossaryEntriesAcceptExtensions
+    public static class QualityEvaluationFailedStatusExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this GetGlossaryEntriesAccept value)
+        public static string ToValueString(this QualityEvaluationFailedStatus value)
         {
             return value switch
             {
-                GetGlossaryEntriesAccept.TextTabSeparatedValues => "text/tab-separated-values",
+                QualityEvaluationFailedStatus.Error => "error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetGlossaryEntriesAccept? ToEnum(string value)
+        public static QualityEvaluationFailedStatus? ToEnum(string value)
         {
             return value switch
             {
-                "text/tab-separated-values" => GetGlossaryEntriesAccept.TextTabSeparatedValues,
+                "error" => QualityEvaluationFailedStatus.Error,
                 _ => null,
             };
         }

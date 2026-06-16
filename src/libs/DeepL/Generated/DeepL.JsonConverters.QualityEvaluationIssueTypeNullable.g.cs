@@ -3,10 +3,10 @@
 namespace DeepL.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class GetGlossaryEntriesAcceptNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::DeepL.GetGlossaryEntriesAccept?>
+    public sealed class QualityEvaluationIssueTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::DeepL.QualityEvaluationIssueType?>
     {
         /// <inheritdoc />
-        public override global::DeepL.GetGlossaryEntriesAccept? Read(
+        public override global::DeepL.QualityEvaluationIssueType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace DeepL.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::DeepL.GetGlossaryEntriesAcceptExtensions.ToEnum(stringValue);
+                        return global::DeepL.QualityEvaluationIssueTypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace DeepL.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::DeepL.GetGlossaryEntriesAccept)numValue;
+                    return (global::DeepL.QualityEvaluationIssueType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::DeepL.GetGlossaryEntriesAccept?);
+                    return default(global::DeepL.QualityEvaluationIssueType?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace DeepL.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::DeepL.GetGlossaryEntriesAccept? value,
+            global::DeepL.QualityEvaluationIssueType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace DeepL.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::DeepL.GetGlossaryEntriesAcceptExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::DeepL.QualityEvaluationIssueTypeExtensions.ToValueString(value.Value));
             }
         }
     }
