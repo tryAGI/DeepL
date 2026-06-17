@@ -872,12 +872,11 @@ namespace DeepL
         /// <param name="styleId">
         /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
         /// **Important:**  The target language has to match the language of the style rule list.<br/>
-        /// **Note:** Any request with the `style_id` parameter enabled will use `quality_optimized` models. Requests combining `style_id` and `model_type: latency_optimized` will be rejected.<br/>
+        /// All `model_type` values are supported.<br/>
         /// Example: 7ff9bfd6-cd85-4190-8503-d6215a321519
         /// </param>
         /// <param name="translationMemoryId">
         /// A unique ID assigned to a translation memory.<br/>
-        /// **Note:** Requests with the `translation_memory_id` parameter must use the `quality_optimized` model type. Requests combining `translation_memory_id` and `model_type: latency_optimized` will be rejected.<br/>
         /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
         /// </param>
         /// <param name="translationMemoryThreshold">
@@ -887,8 +886,7 @@ namespace DeepL
         /// </param>
         /// <param name="customInstructions">
         /// Specify a list of instructions to customize the translation behavior. Up to 10 custom instructions can be specified, each with a maximum of 300 characters.<br/>
-        /// **Important:**  The target language must be `de`, `en`, `es`, `fr`, `it`, `ja`, `ko`, `zh` or any variants of these languages.<br/>
-        /// **Note:** Any request with the `custom_instructions` parameter enabled will default to use the `quality_optimized` model type. Requests combining `custom_instructions` and `model_type: latency_optimized` will be rejected.
+        /// **Important:**  The target language must be `de`, `en`, `es`, `fr`, `it`, `ja`, `ko`, `zh` or any variants of these languages.
         /// </param>
         /// <param name="tagHandling">
         /// Sets which kind of tags should be handled. Options currently available:<br/>
