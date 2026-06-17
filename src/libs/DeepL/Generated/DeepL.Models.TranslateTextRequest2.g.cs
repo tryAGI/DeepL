@@ -114,7 +114,6 @@ namespace DeepL
 
         /// <summary>
         /// A unique ID assigned to a translation memory.<br/>
-        /// **Note:** Requests with the `translation_memory_id` parameter must use the `quality_optimized` model type. Requests combining `translation_memory_id` and `model_type: latency_optimized` will be rejected.<br/>
         /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
         /// </summary>
         /// <example>a74d88fb-ed2a-4943-a664-a4512398b994</example>
@@ -248,7 +247,6 @@ namespace DeepL
         /// </param>
         /// <param name="translationMemoryId">
         /// A unique ID assigned to a translation memory.<br/>
-        /// **Note:** Requests with the `translation_memory_id` parameter must use the `quality_optimized` model type. Requests combining `translation_memory_id` and `model_type: latency_optimized` will be rejected.<br/>
         /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
         /// </param>
         /// <param name="translationMemoryThreshold">
