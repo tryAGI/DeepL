@@ -23,6 +23,10 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
+        SpokenTerms,
+        /// <summary>
+        /// 
+        /// </summary>
         StyleRules,
         /// <summary>
         /// 
@@ -32,6 +36,18 @@ namespace DeepL
         /// 
         /// </summary>
         Tone,
+        /// <summary>
+        /// 
+        /// </summary>
+        Transcription,
+        /// <summary>
+        /// 
+        /// </summary>
+        TranslatedSpeech,
+        /// <summary>
+        /// 
+        /// </summary>
+        TranslationMemory,
         /// <summary>
         /// 
         /// </summary>
@@ -53,9 +69,13 @@ namespace DeepL
                 GetLanguageResourcesResponseItemFeatureName.AutoDetection => "auto_detection",
                 GetLanguageResourcesResponseItemFeatureName.Formality => "formality",
                 GetLanguageResourcesResponseItemFeatureName.Glossary => "glossary",
+                GetLanguageResourcesResponseItemFeatureName.SpokenTerms => "spoken_terms",
                 GetLanguageResourcesResponseItemFeatureName.StyleRules => "style_rules",
                 GetLanguageResourcesResponseItemFeatureName.TagHandling => "tag_handling",
                 GetLanguageResourcesResponseItemFeatureName.Tone => "tone",
+                GetLanguageResourcesResponseItemFeatureName.Transcription => "transcription",
+                GetLanguageResourcesResponseItemFeatureName.TranslatedSpeech => "translated_speech",
+                GetLanguageResourcesResponseItemFeatureName.TranslationMemory => "translation_memory",
                 GetLanguageResourcesResponseItemFeatureName.WritingStyle => "writing_style",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -70,9 +90,13 @@ namespace DeepL
                 "auto_detection" => GetLanguageResourcesResponseItemFeatureName.AutoDetection,
                 "formality" => GetLanguageResourcesResponseItemFeatureName.Formality,
                 "glossary" => GetLanguageResourcesResponseItemFeatureName.Glossary,
+                "spoken_terms" => GetLanguageResourcesResponseItemFeatureName.SpokenTerms,
                 "style_rules" => GetLanguageResourcesResponseItemFeatureName.StyleRules,
                 "tag_handling" => GetLanguageResourcesResponseItemFeatureName.TagHandling,
                 "tone" => GetLanguageResourcesResponseItemFeatureName.Tone,
+                "transcription" => GetLanguageResourcesResponseItemFeatureName.Transcription,
+                "translated_speech" => GetLanguageResourcesResponseItemFeatureName.TranslatedSpeech,
+                "translation_memory" => GetLanguageResourcesResponseItemFeatureName.TranslationMemory,
                 "writing_style" => GetLanguageResourcesResponseItemFeatureName.WritingStyle,
                 _ => null,
             };

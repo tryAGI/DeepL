@@ -28,6 +28,10 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
+        TranslationMemory,
+        /// <summary>
+        /// 
+        /// </summary>
         Voice,
         /// <summary>
         /// 
@@ -51,6 +55,7 @@ namespace DeepL
                 GetLanguageResourcesResponseItemName.StyleRules => "style_rules",
                 GetLanguageResourcesResponseItemName.TranslateDocument => "translate_document",
                 GetLanguageResourcesResponseItemName.TranslateText => "translate_text",
+                GetLanguageResourcesResponseItemName.TranslationMemory => "translation_memory",
                 GetLanguageResourcesResponseItemName.Voice => "voice",
                 GetLanguageResourcesResponseItemName.Write => "write",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -67,6 +72,7 @@ namespace DeepL
                 "style_rules" => GetLanguageResourcesResponseItemName.StyleRules,
                 "translate_document" => GetLanguageResourcesResponseItemName.TranslateDocument,
                 "translate_text" => GetLanguageResourcesResponseItemName.TranslateText,
+                "translation_memory" => GetLanguageResourcesResponseItemName.TranslationMemory,
                 "voice" => GetLanguageResourcesResponseItemName.Voice,
                 "write" => GetLanguageResourcesResponseItemName.Write,
                 _ => null,
