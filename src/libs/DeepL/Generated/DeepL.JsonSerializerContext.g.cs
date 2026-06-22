@@ -829,6 +829,10 @@ namespace DeepL
 
             typeof(global::DeepL.JsonConverters.GetVoiceTranslateJobStatusIncludeItemNullableJsonConverter),
 
+            typeof(global::DeepL.JsonConverters.TranslateTextResponseTranslationTagHandlingVersionJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.TranslateTextResponseTranslationTagHandlingVersionNullableJsonConverter),
+
             typeof(global::DeepL.JsonConverters.GetDocumentStatusResponseStatusJsonConverter),
 
             typeof(global::DeepL.JsonConverters.GetDocumentStatusResponseStatusNullableJsonConverter),
@@ -1178,6 +1182,7 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.TranslateTextResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.TranslateTextResponseTranslation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.TranslateTextResponseTranslation))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.TranslateTextResponseTranslationTagHandlingVersion), TypeInfoPropertyName = "TranslateTextResponseTranslationTagHandlingVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.TranslateDocumentResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetDocumentStatusResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetDocumentStatusResponseStatus), TypeInfoPropertyName = "GetDocumentStatusResponseStatus2")]

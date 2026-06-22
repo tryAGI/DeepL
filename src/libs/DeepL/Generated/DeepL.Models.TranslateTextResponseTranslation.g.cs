@@ -41,6 +41,15 @@ namespace DeepL
         public string? ModelTypeUsed { get; set; }
 
         /// <summary>
+        /// The version of the tag handling algorithm used for the translation. Only present when the `tag_handling` parameter (`xml` or `html`) is set. If you don't specify `tag_handling_version`, this shows the default that was applied.<br/>
+        /// Example: v2
+        /// </summary>
+        /// <example>v2</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tag_handling_version")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::DeepL.JsonConverters.TranslateTextResponseTranslationTagHandlingVersionJsonConverter))]
+        public global::DeepL.TranslateTextResponseTranslationTagHandlingVersion? TagHandlingVersion { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -65,6 +74,10 @@ namespace DeepL
         /// Indicates the translation model used. Only present if model_type parameter is included in the request.<br/>
         /// Example: quality_optimized
         /// </param>
+        /// <param name="tagHandlingVersion">
+        /// The version of the tag handling algorithm used for the translation. Only present when the `tag_handling` parameter (`xml` or `html`) is set. If you don't specify `tag_handling_version`, this shows the default that was applied.<br/>
+        /// Example: v2
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -72,12 +85,14 @@ namespace DeepL
             string? detectedSourceLanguage,
             string? text,
             int? billedCharacters,
-            string? modelTypeUsed)
+            string? modelTypeUsed,
+            global::DeepL.TranslateTextResponseTranslationTagHandlingVersion? tagHandlingVersion)
         {
             this.DetectedSourceLanguage = detectedSourceLanguage;
             this.Text = text;
             this.BilledCharacters = billedCharacters;
             this.ModelTypeUsed = modelTypeUsed;
+            this.TagHandlingVersion = tagHandlingVersion;
         }
 
         /// <summary>
