@@ -78,12 +78,21 @@ namespace DeepL
         public global::DeepL.Formality? Formality { get; set; }
 
         /// <summary>
-        /// A unique ID assigned to a glossary.<br/>
+        /// A unique ID assigned to a glossary. To check glossary support for a language pair, call `GET /v3/languages?resource=translate_document` and verify the `glossary` feature key is present on both the source and target language.<br/>
+        /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </summary>
         /// <example>def3a26b-3e84-45b3-84ae-0c0aaf3525f7</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("glossary_id")]
         public string? GlossaryId { get; set; }
+
+        /// <summary>
+        /// Comma-separated list of up to 5 glossary IDs to use for the translation. Each glossary's matching terms are applied to the translated document. May also be sent as a repeated parameter.<br/>
+        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Cannot be used together with `glossary_id`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("glossary_ids")]
+        public global::System.Collections.Generic.IList<string>? GlossaryIds { get; set; }
 
         /// <summary>
         /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
@@ -172,8 +181,14 @@ namespace DeepL
         /// Example: prefer_more
         /// </param>
         /// <param name="glossaryId">
-        /// A unique ID assigned to a glossary.<br/>
+        /// A unique ID assigned to a glossary. To check glossary support for a language pair, call `GET /v3/languages?resource=translate_document` and verify the `glossary` feature key is present on both the source and target language.<br/>
+        /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
+        /// </param>
+        /// <param name="glossaryIds">
+        /// Comma-separated list of up to 5 glossary IDs to use for the translation. Each glossary's matching terms are applied to the translated document. May also be sent as a repeated parameter.<br/>
+        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Cannot be used together with `glossary_id`.
         /// </param>
         /// <param name="styleId">
         /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
@@ -200,6 +215,7 @@ namespace DeepL
             string? outputFormat,
             global::DeepL.Formality? formality,
             string? glossaryId,
+            global::System.Collections.Generic.IList<string>? glossaryIds,
             string? styleId,
             global::System.Guid? translationMemoryId,
             int? translationMemoryThreshold)
@@ -211,6 +227,7 @@ namespace DeepL
             this.OutputFormat = outputFormat;
             this.Formality = formality;
             this.GlossaryId = glossaryId;
+            this.GlossaryIds = glossaryIds;
             this.StyleId = styleId;
             this.TranslationMemoryId = translationMemoryId;
             this.TranslationMemoryThreshold = translationMemoryThreshold;

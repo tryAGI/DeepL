@@ -94,7 +94,13 @@ namespace DeepL
         /// Specify the glossary to use for the translation. **Important:** This requires the `source_lang`<br/>
         /// parameter to be set. The language pair of the glossary has to match the language pair of the<br/>
         /// request.<br/>
+        /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
+        /// </param>
+        /// <param name="glossaryIds">
+        /// Specify up to 5 glossaries to use for the translation, as an array of glossary IDs. Each glossary's matching terms are applied to the translation.<br/>
+        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Cannot be used together with `glossary_id`.
         /// </param>
         /// <param name="styleId">
         /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
@@ -155,6 +161,7 @@ namespace DeepL
             global::DeepL.Formality? formality = default,
             global::DeepL.ModelType? modelType = default,
             string? glossaryId = default,
+            global::System.Collections.Generic.IList<string>? glossaryIds = default,
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
