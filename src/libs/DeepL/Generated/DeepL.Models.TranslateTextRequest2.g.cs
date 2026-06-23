@@ -106,11 +106,20 @@ namespace DeepL
         /// Specify the glossary to use for the translation. **Important:** This requires the `source_lang`<br/>
         /// parameter to be set. The language pair of the glossary has to match the language pair of the<br/>
         /// request.<br/>
+        /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </summary>
         /// <example>def3a26b-3e84-45b3-84ae-0c0aaf3525f7</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("glossary_id")]
         public string? GlossaryId { get; set; }
+
+        /// <summary>
+        /// Comma-separated list of up to 5 glossary IDs to use for the translation. Each glossary's matching terms are applied to the translation. May also be sent as a repeated parameter.<br/>
+        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Cannot be used together with `glossary_id`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("glossary_ids")]
+        public global::System.Collections.Generic.IList<string>? GlossaryIds { get; set; }
 
         /// <summary>
         /// A unique ID assigned to a translation memory.<br/>
@@ -243,7 +252,13 @@ namespace DeepL
         /// Specify the glossary to use for the translation. **Important:** This requires the `source_lang`<br/>
         /// parameter to be set. The language pair of the glossary has to match the language pair of the<br/>
         /// request.<br/>
+        /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
+        /// </param>
+        /// <param name="glossaryIds">
+        /// Comma-separated list of up to 5 glossary IDs to use for the translation. Each glossary's matching terms are applied to the translation. May also be sent as a repeated parameter.<br/>
+        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Cannot be used together with `glossary_id`.
         /// </param>
         /// <param name="translationMemoryId">
         /// A unique ID assigned to a translation memory.<br/>
@@ -289,6 +304,7 @@ namespace DeepL
             global::DeepL.Formality? formality,
             global::DeepL.ModelType? modelType,
             string? glossaryId,
+            global::System.Collections.Generic.IList<string>? glossaryIds,
             global::System.Guid? translationMemoryId,
             int? translationMemoryThreshold,
             global::DeepL.TagHandlingOption? tagHandling,
@@ -307,6 +323,7 @@ namespace DeepL
             this.Formality = formality;
             this.ModelType = modelType;
             this.GlossaryId = glossaryId;
+            this.GlossaryIds = glossaryIds;
             this.TranslationMemoryId = translationMemoryId;
             this.TranslationMemoryThreshold = translationMemoryThreshold;
             this.TagHandling = tagHandling;

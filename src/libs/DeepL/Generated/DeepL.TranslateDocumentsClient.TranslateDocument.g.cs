@@ -240,6 +240,14 @@ namespace DeepL
                                     name: "\"glossary_id\"");
 
                             }
+                            if (request.GlossaryIds != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.GlossaryIds, x => x))}]"),
+                                    name: "\"glossary_ids\"");
+
+                            }
                             if (request.StyleId != default)
                             {
 
@@ -931,8 +939,14 @@ namespace DeepL
         /// Example: prefer_more
         /// </param>
         /// <param name="glossaryId">
-        /// A unique ID assigned to a glossary.<br/>
+        /// A unique ID assigned to a glossary. To check glossary support for a language pair, call `GET /v3/languages?resource=translate_document` and verify the `glossary` feature key is present on both the source and target language.<br/>
+        /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
+        /// </param>
+        /// <param name="glossaryIds">
+        /// Comma-separated list of up to 5 glossary IDs to use for the translation. Each glossary's matching terms are applied to the translated document. May also be sent as a repeated parameter.<br/>
+        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Cannot be used together with `glossary_id`.
         /// </param>
         /// <param name="styleId">
         /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
@@ -959,6 +973,7 @@ namespace DeepL
             string? outputFormat = default,
             global::DeepL.Formality? formality = default,
             string? glossaryId = default,
+            global::System.Collections.Generic.IList<string>? glossaryIds = default,
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
@@ -974,6 +989,7 @@ namespace DeepL
                 OutputFormat = outputFormat,
                 Formality = formality,
                 GlossaryId = glossaryId,
+                GlossaryIds = glossaryIds,
                 StyleId = styleId,
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
@@ -1032,8 +1048,14 @@ namespace DeepL
         /// Example: prefer_more
         /// </param>
         /// <param name="glossaryId">
-        /// A unique ID assigned to a glossary.<br/>
+        /// A unique ID assigned to a glossary. To check glossary support for a language pair, call `GET /v3/languages?resource=translate_document` and verify the `glossary` feature key is present on both the source and target language.<br/>
+        /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
+        /// </param>
+        /// <param name="glossaryIds">
+        /// Comma-separated list of up to 5 glossary IDs to use for the translation. Each glossary's matching terms are applied to the translated document. May also be sent as a repeated parameter.<br/>
+        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Cannot be used together with `glossary_id`.
         /// </param>
         /// <param name="styleId">
         /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
@@ -1060,6 +1082,7 @@ namespace DeepL
             string? outputFormat = default,
             global::DeepL.Formality? formality = default,
             string? glossaryId = default,
+            global::System.Collections.Generic.IList<string>? glossaryIds = default,
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
@@ -1077,6 +1100,7 @@ namespace DeepL
                 OutputFormat = outputFormat,
                 Formality = formality,
                 GlossaryId = glossaryId,
+                GlossaryIds = glossaryIds,
                 StyleId = styleId,
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
@@ -1226,6 +1250,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.GlossaryId ?? string.Empty),
                                     name: "\"glossary_id\"");
+
+                            }
+                            if (request.GlossaryIds != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.GlossaryIds, x => x))}]"),
+                                    name: "\"glossary_ids\"");
 
                             }
                             if (request.StyleId != default)
@@ -1911,8 +1943,14 @@ namespace DeepL
         /// Example: prefer_more
         /// </param>
         /// <param name="glossaryId">
-        /// A unique ID assigned to a glossary.<br/>
+        /// A unique ID assigned to a glossary. To check glossary support for a language pair, call `GET /v3/languages?resource=translate_document` and verify the `glossary` feature key is present on both the source and target language.<br/>
+        /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
+        /// </param>
+        /// <param name="glossaryIds">
+        /// Comma-separated list of up to 5 glossary IDs to use for the translation. Each glossary's matching terms are applied to the translated document. May also be sent as a repeated parameter.<br/>
+        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Cannot be used together with `glossary_id`.
         /// </param>
         /// <param name="styleId">
         /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
@@ -1939,6 +1977,7 @@ namespace DeepL
             string? outputFormat = default,
             global::DeepL.Formality? formality = default,
             string? glossaryId = default,
+            global::System.Collections.Generic.IList<string>? glossaryIds = default,
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
@@ -1956,6 +1995,7 @@ namespace DeepL
                 OutputFormat = outputFormat,
                 Formality = formality,
                 GlossaryId = glossaryId,
+                GlossaryIds = glossaryIds,
                 StyleId = styleId,
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
@@ -2105,6 +2145,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.GlossaryId ?? string.Empty),
                                     name: "\"glossary_id\"");
+
+                            }
+                            if (request.GlossaryIds != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.GlossaryIds, x => x))}]"),
+                                    name: "\"glossary_ids\"");
 
                             }
                             if (request.StyleId != default)
