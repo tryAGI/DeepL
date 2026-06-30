@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace DeepL
@@ -47,20 +49,38 @@ namespace DeepL
         public long? ApiKeyCharacterLimit { get; set; }
 
         /// <summary>
-        /// Only present for API Pro users. Milliseconds of speech-to-text used in the current period.<br/>
-        /// Example: 1800000
+        /// Deprecated. Always returns 0. Use speech_to_text_minutes_count instead.<br/>
+        /// Example: 0
         /// </summary>
-        /// <example>1800000</example>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("speech_to_text_milliseconds_count")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? SpeechToTextMillisecondsCount { get; set; }
 
         /// <summary>
-        /// Only present for API Pro users. Milliseconds of speech-to-text limit in the current period.<br/>
-        /// Example: 36000000
+        /// Deprecated. Always returns 0. Use speech_to_text_minutes_limit instead.<br/>
+        /// Example: 0
         /// </summary>
-        /// <example>36000000</example>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("speech_to_text_milliseconds_limit")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? SpeechToTextMillisecondsLimit { get; set; }
+
+        /// <summary>
+        /// Only present for API Pro users. Minutes of speech-to-text used in the current period. Milliseconds are rounded up to the nearest minute.<br/>
+        /// Example: 30
+        /// </summary>
+        /// <example>30</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speech_to_text_minutes_count")]
+        public int? SpeechToTextMinutesCount { get; set; }
+
+        /// <summary>
+        /// Only present for API Pro users. Maximum minutes of speech-to-text that can be used in the current billing period.<br/>
+        /// Example: 600
+        /// </summary>
+        /// <example>600</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speech_to_text_minutes_limit")]
+        public int? SpeechToTextMinutesLimit { get; set; }
 
         /// <summary>
         /// Only present for API Pro users. Start time of the current billing period (ISO 8601).<br/>
@@ -106,13 +126,13 @@ namespace DeepL
         /// Only present for API Pro users. Character limit for this API key in the current period.<br/>
         /// Example: 1000000000000
         /// </param>
-        /// <param name="speechToTextMillisecondsCount">
-        /// Only present for API Pro users. Milliseconds of speech-to-text used in the current period.<br/>
-        /// Example: 1800000
+        /// <param name="speechToTextMinutesCount">
+        /// Only present for API Pro users. Minutes of speech-to-text used in the current period. Milliseconds are rounded up to the nearest minute.<br/>
+        /// Example: 30
         /// </param>
-        /// <param name="speechToTextMillisecondsLimit">
-        /// Only present for API Pro users. Milliseconds of speech-to-text limit in the current period.<br/>
-        /// Example: 36000000
+        /// <param name="speechToTextMinutesLimit">
+        /// Only present for API Pro users. Maximum minutes of speech-to-text that can be used in the current billing period.<br/>
+        /// Example: 600
         /// </param>
         /// <param name="startTime">
         /// Only present for API Pro users. Start time of the current billing period (ISO 8601).<br/>
@@ -131,8 +151,8 @@ namespace DeepL
             global::System.Collections.Generic.IList<global::DeepL.UsageResponseProduct>? products,
             int? apiKeyCharacterCount,
             long? apiKeyCharacterLimit,
-            int? speechToTextMillisecondsCount,
-            int? speechToTextMillisecondsLimit,
+            int? speechToTextMinutesCount,
+            int? speechToTextMinutesLimit,
             global::System.DateTime? startTime,
             global::System.DateTime? endTime)
         {
@@ -141,8 +161,8 @@ namespace DeepL
             this.Products = products;
             this.ApiKeyCharacterCount = apiKeyCharacterCount;
             this.ApiKeyCharacterLimit = apiKeyCharacterLimit;
-            this.SpeechToTextMillisecondsCount = speechToTextMillisecondsCount;
-            this.SpeechToTextMillisecondsLimit = speechToTextMillisecondsLimit;
+            this.SpeechToTextMinutesCount = speechToTextMinutesCount;
+            this.SpeechToTextMinutesLimit = speechToTextMinutesLimit;
             this.StartTime = startTime;
             this.EndTime = endTime;
         }
