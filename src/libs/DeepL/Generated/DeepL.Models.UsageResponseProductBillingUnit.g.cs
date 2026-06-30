@@ -16,7 +16,7 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
-        Milliseconds,
+        Minutes,
     }
 
     /// <summary>
@@ -32,7 +32,7 @@ namespace DeepL
             return value switch
             {
                 UsageResponseProductBillingUnit.Characters => "characters",
-                UsageResponseProductBillingUnit.Milliseconds => "milliseconds",
+                UsageResponseProductBillingUnit.Minutes => "minutes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,7 +44,7 @@ namespace DeepL
             return value switch
             {
                 "characters" => UsageResponseProductBillingUnit.Characters,
-                "milliseconds" => UsageResponseProductBillingUnit.Milliseconds,
+                "minutes" => UsageResponseProductBillingUnit.Minutes,
                 _ => null,
             };
         }
