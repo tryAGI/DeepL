@@ -5783,6 +5783,7 @@ components:
         - fr
         - ga
         - he
+        - hi
         - hr
         - hu
         - id
@@ -5791,6 +5792,7 @@ components:
         - ko
         - lt
         - lv
+        - ms
         - mt
         - nb
         - nl
@@ -5801,6 +5803,7 @@ components:
         - sk
         - sl
         - sv
+        - ta
         - th
         - tl
         - tr
@@ -5844,6 +5847,7 @@ components:
           - fr
           - ga
           - he
+          - hi
           - hr
           - hu
           - id
@@ -5852,6 +5856,7 @@ components:
           - ko
           - lt
           - lv
+          - ms
           - mt
           - nb
           - nl
@@ -5864,6 +5869,7 @@ components:
           - sk
           - sl
           - sv
+          - ta
           - th
           - tl
           - tr
@@ -5897,11 +5903,13 @@ components:
           - es
           - fi
           - fr
+          - hi
           - hu
           - id
           - it
           - ja
           - ko
+          - ms
           - nb
           - nl
           - pl
@@ -5912,6 +5920,7 @@ components:
           - ru
           - sk
           - sv
+          - ta
           - tr
           - uk
           - vi

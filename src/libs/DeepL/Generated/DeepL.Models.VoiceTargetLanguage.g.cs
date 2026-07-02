@@ -75,6 +75,10 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
+        Hi,
+        /// <summary>
+        /// 
+        /// </summary>
         Hr,
         /// <summary>
         /// 
@@ -104,6 +108,10 @@ namespace DeepL
         /// 
         /// </summary>
         Lv,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ms,
         /// <summary>
         /// 
         /// </summary>
@@ -152,6 +160,10 @@ namespace DeepL
         /// 
         /// </summary>
         Sv,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ta,
         /// <summary>
         /// 
         /// </summary>
@@ -214,6 +226,7 @@ namespace DeepL
                 VoiceTargetLanguage.Fr => "fr",
                 VoiceTargetLanguage.Ga => "ga",
                 VoiceTargetLanguage.He => "he",
+                VoiceTargetLanguage.Hi => "hi",
                 VoiceTargetLanguage.Hr => "hr",
                 VoiceTargetLanguage.Hu => "hu",
                 VoiceTargetLanguage.Id => "id",
@@ -222,6 +235,7 @@ namespace DeepL
                 VoiceTargetLanguage.Ko => "ko",
                 VoiceTargetLanguage.Lt => "lt",
                 VoiceTargetLanguage.Lv => "lv",
+                VoiceTargetLanguage.Ms => "ms",
                 VoiceTargetLanguage.Mt => "mt",
                 VoiceTargetLanguage.Nb => "nb",
                 VoiceTargetLanguage.Nl => "nl",
@@ -234,6 +248,7 @@ namespace DeepL
                 VoiceTargetLanguage.Sk => "sk",
                 VoiceTargetLanguage.Sl => "sl",
                 VoiceTargetLanguage.Sv => "sv",
+                VoiceTargetLanguage.Ta => "ta",
                 VoiceTargetLanguage.Th => "th",
                 VoiceTargetLanguage.Tl => "tl",
                 VoiceTargetLanguage.Tr => "tr",
@@ -268,6 +283,7 @@ namespace DeepL
                 "fr" => VoiceTargetLanguage.Fr,
                 "ga" => VoiceTargetLanguage.Ga,
                 "he" => VoiceTargetLanguage.He,
+                "hi" => VoiceTargetLanguage.Hi,
                 "hr" => VoiceTargetLanguage.Hr,
                 "hu" => VoiceTargetLanguage.Hu,
                 "id" => VoiceTargetLanguage.Id,
@@ -276,6 +292,7 @@ namespace DeepL
                 "ko" => VoiceTargetLanguage.Ko,
                 "lt" => VoiceTargetLanguage.Lt,
                 "lv" => VoiceTargetLanguage.Lv,
+                "ms" => VoiceTargetLanguage.Ms,
                 "mt" => VoiceTargetLanguage.Mt,
                 "nb" => VoiceTargetLanguage.Nb,
                 "nl" => VoiceTargetLanguage.Nl,
@@ -288,6 +305,7 @@ namespace DeepL
                 "sk" => VoiceTargetLanguage.Sk,
                 "sl" => VoiceTargetLanguage.Sl,
                 "sv" => VoiceTargetLanguage.Sv,
+                "ta" => VoiceTargetLanguage.Ta,
                 "th" => VoiceTargetLanguage.Th,
                 "tl" => VoiceTargetLanguage.Tl,
                 "tr" => VoiceTargetLanguage.Tr,
