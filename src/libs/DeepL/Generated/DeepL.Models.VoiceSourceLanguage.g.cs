@@ -67,6 +67,10 @@ namespace DeepL
         /// </summary>
         He,
         /// <summary>
+        /// 
+        /// </summary>
+        Hi,
+        /// <summary>
         /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
         /// </summary>
         Hr,
@@ -98,6 +102,10 @@ namespace DeepL
         /// 
         /// </summary>
         Lv,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ms,
         /// <summary>
         /// 
         /// </summary>
@@ -138,6 +146,10 @@ namespace DeepL
         /// 
         /// </summary>
         Sv,
+        /// <summary>
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// </summary>
+        Ta,
         /// <summary>
         /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
         /// </summary>
@@ -190,6 +202,7 @@ namespace DeepL
                 VoiceSourceLanguage.Fr => "fr",
                 VoiceSourceLanguage.Ga => "ga",
                 VoiceSourceLanguage.He => "he",
+                VoiceSourceLanguage.Hi => "hi",
                 VoiceSourceLanguage.Hr => "hr",
                 VoiceSourceLanguage.Hu => "hu",
                 VoiceSourceLanguage.Id => "id",
@@ -198,6 +211,7 @@ namespace DeepL
                 VoiceSourceLanguage.Ko => "ko",
                 VoiceSourceLanguage.Lt => "lt",
                 VoiceSourceLanguage.Lv => "lv",
+                VoiceSourceLanguage.Ms => "ms",
                 VoiceSourceLanguage.Mt => "mt",
                 VoiceSourceLanguage.Nb => "nb",
                 VoiceSourceLanguage.Nl => "nl",
@@ -208,6 +222,7 @@ namespace DeepL
                 VoiceSourceLanguage.Sk => "sk",
                 VoiceSourceLanguage.Sl => "sl",
                 VoiceSourceLanguage.Sv => "sv",
+                VoiceSourceLanguage.Ta => "ta",
                 VoiceSourceLanguage.Th => "th",
                 VoiceSourceLanguage.Tl => "tl",
                 VoiceSourceLanguage.Tr => "tr",
@@ -238,6 +253,7 @@ namespace DeepL
                 "fr" => VoiceSourceLanguage.Fr,
                 "ga" => VoiceSourceLanguage.Ga,
                 "he" => VoiceSourceLanguage.He,
+                "hi" => VoiceSourceLanguage.Hi,
                 "hr" => VoiceSourceLanguage.Hr,
                 "hu" => VoiceSourceLanguage.Hu,
                 "id" => VoiceSourceLanguage.Id,
@@ -246,6 +262,7 @@ namespace DeepL
                 "ko" => VoiceSourceLanguage.Ko,
                 "lt" => VoiceSourceLanguage.Lt,
                 "lv" => VoiceSourceLanguage.Lv,
+                "ms" => VoiceSourceLanguage.Ms,
                 "mt" => VoiceSourceLanguage.Mt,
                 "nb" => VoiceSourceLanguage.Nb,
                 "nl" => VoiceSourceLanguage.Nl,
@@ -256,6 +273,7 @@ namespace DeepL
                 "sk" => VoiceSourceLanguage.Sk,
                 "sl" => VoiceSourceLanguage.Sl,
                 "sv" => VoiceSourceLanguage.Sv,
+                "ta" => VoiceSourceLanguage.Ta,
                 "th" => VoiceSourceLanguage.Th,
                 "tl" => VoiceSourceLanguage.Tl,
                 "tr" => VoiceSourceLanguage.Tr,

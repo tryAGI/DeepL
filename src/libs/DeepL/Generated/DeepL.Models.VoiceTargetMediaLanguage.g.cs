@@ -59,6 +59,10 @@ namespace DeepL
         /// <summary>
         /// 
         /// </summary>
+        Hi,
+        /// <summary>
+        /// 
+        /// </summary>
         Hu,
         /// <summary>
         /// 
@@ -76,6 +80,10 @@ namespace DeepL
         /// 
         /// </summary>
         Ko,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ms,
         /// <summary>
         /// 
         /// </summary>
@@ -116,6 +124,10 @@ namespace DeepL
         /// 
         /// </summary>
         Sv,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ta,
         /// <summary>
         /// 
         /// </summary>
@@ -166,11 +178,13 @@ namespace DeepL
                 VoiceTargetMediaLanguage.Es => "es",
                 VoiceTargetMediaLanguage.Fi => "fi",
                 VoiceTargetMediaLanguage.Fr => "fr",
+                VoiceTargetMediaLanguage.Hi => "hi",
                 VoiceTargetMediaLanguage.Hu => "hu",
                 VoiceTargetMediaLanguage.Id => "id",
                 VoiceTargetMediaLanguage.It => "it",
                 VoiceTargetMediaLanguage.Ja => "ja",
                 VoiceTargetMediaLanguage.Ko => "ko",
+                VoiceTargetMediaLanguage.Ms => "ms",
                 VoiceTargetMediaLanguage.Nb => "nb",
                 VoiceTargetMediaLanguage.Nl => "nl",
                 VoiceTargetMediaLanguage.Pl => "pl",
@@ -181,6 +195,7 @@ namespace DeepL
                 VoiceTargetMediaLanguage.Ru => "ru",
                 VoiceTargetMediaLanguage.Sk => "sk",
                 VoiceTargetMediaLanguage.Sv => "sv",
+                VoiceTargetMediaLanguage.Ta => "ta",
                 VoiceTargetMediaLanguage.Tr => "tr",
                 VoiceTargetMediaLanguage.Uk => "uk",
                 VoiceTargetMediaLanguage.Vi => "vi",
@@ -209,11 +224,13 @@ namespace DeepL
                 "es" => VoiceTargetMediaLanguage.Es,
                 "fi" => VoiceTargetMediaLanguage.Fi,
                 "fr" => VoiceTargetMediaLanguage.Fr,
+                "hi" => VoiceTargetMediaLanguage.Hi,
                 "hu" => VoiceTargetMediaLanguage.Hu,
                 "id" => VoiceTargetMediaLanguage.Id,
                 "it" => VoiceTargetMediaLanguage.It,
                 "ja" => VoiceTargetMediaLanguage.Ja,
                 "ko" => VoiceTargetMediaLanguage.Ko,
+                "ms" => VoiceTargetMediaLanguage.Ms,
                 "nb" => VoiceTargetMediaLanguage.Nb,
                 "nl" => VoiceTargetMediaLanguage.Nl,
                 "pl" => VoiceTargetMediaLanguage.Pl,
@@ -224,6 +241,7 @@ namespace DeepL
                 "ru" => VoiceTargetMediaLanguage.Ru,
                 "sk" => VoiceTargetMediaLanguage.Sk,
                 "sv" => VoiceTargetMediaLanguage.Sv,
+                "ta" => VoiceTargetMediaLanguage.Ta,
                 "tr" => VoiceTargetMediaLanguage.Tr,
                 "uk" => VoiceTargetMediaLanguage.Uk,
                 "vi" => VoiceTargetMediaLanguage.Vi,
