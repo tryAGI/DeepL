@@ -6,6 +6,14 @@ namespace DeepL
     public partial class VoiceAPIClient
     {
 
+        private static readonly global::DeepL.AutoSDKServer[] s_RequestReconnectionServers = new global::DeepL.AutoSDKServer[]
+        {            new global::DeepL.AutoSDKServer(
+                id: "https-api-deepl-com",
+                name: "Override base path for all operations with the /v3/voice path",
+                url: "https://api.deepl.com/",
+                description: "Override base path for all operations with the /v3/voice path"),
+        };
+
 
         private static readonly global::DeepL.EndPointSecurityRequirement s_RequestReconnectionSecurityRequirement0 =
             new global::DeepL.EndPointSecurityRequirement
@@ -104,7 +112,9 @@ namespace DeepL
 
                             var __pathBuilder = new global::DeepL.PathBuilder(
                                 path: "/v3/voice/realtime",
-                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.deepl.com/", global::System.UriKind.RelativeOrAbsolute));
+                                baseUri: ResolveBaseUri(
+                                servers: s_RequestReconnectionServers,
+                                defaultBaseUrl: "https://api.deepl.com/"));
                             __pathBuilder
                                 .AddRequiredParameter("token", token)
                                 ;
