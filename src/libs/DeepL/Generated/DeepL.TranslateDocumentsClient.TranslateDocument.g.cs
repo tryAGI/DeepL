@@ -914,8 +914,13 @@ namespace DeepL
         ///   * `pdf` - Portable Document Format<br/>
         ///   * `htm / html` - HTML Document<br/>
         ///   * `txt` - Plain Text Document<br/>
-        ///   * `xlf / xliff` - XLIFF Document, version 2.1<br/>
+        ///   * `xlf / xliff` - XLIFF Document (versions 1.2, 2.0, and 2.1)<br/>
         ///   * `srt` - SRT Document<br/>
+        ///   * `idml` - Adobe InDesign Markup Language<br/>
+        ///   * `xml` - XML Document<br/>
+        ///   * `json` - JSON Document<br/>
+        ///   * `dita` - DITA topic (Darwin Information Typing Architecture)<br/>
+        ///   * `mif` - Adobe FrameMaker Interchange Format<br/>
         ///   * `jpeg` / `jpg` / `png` - Image (currently in beta)
         /// </param>
         /// <param name="filename">
@@ -1023,8 +1028,13 @@ namespace DeepL
         /// * `pdf` - Portable Document Format<br/>
         /// * `htm / html` - HTML Document<br/>
         /// * `txt` - Plain Text Document<br/>
-        /// * `xlf / xliff` - XLIFF Document, version 2.1<br/>
+        /// * `xlf / xliff` - XLIFF Document (versions 1.2, 2.0, and 2.1)<br/>
         /// * `srt` - SRT Document<br/>
+        /// * `idml` - Adobe InDesign Markup Language<br/>
+        /// * `xml` - XML Document<br/>
+        /// * `json` - JSON Document<br/>
+        /// * `dita` - DITA topic (Darwin Information Typing Architecture)<br/>
+        /// * `mif` - Adobe FrameMaker Interchange Format<br/>
         /// * `jpeg` / `jpg` / `png` - Image (currently in beta)
         /// </param>
         /// <param name="filename">
@@ -1918,8 +1928,13 @@ namespace DeepL
         /// * `pdf` - Portable Document Format<br/>
         /// * `htm / html` - HTML Document<br/>
         /// * `txt` - Plain Text Document<br/>
-        /// * `xlf / xliff` - XLIFF Document, version 2.1<br/>
+        /// * `xlf / xliff` - XLIFF Document (versions 1.2, 2.0, and 2.1)<br/>
         /// * `srt` - SRT Document<br/>
+        /// * `idml` - Adobe InDesign Markup Language<br/>
+        /// * `xml` - XML Document<br/>
+        /// * `json` - JSON Document<br/>
+        /// * `dita` - DITA topic (Darwin Information Typing Architecture)<br/>
+        /// * `mif` - Adobe FrameMaker Interchange Format<br/>
         /// * `jpeg` / `jpg` / `png` - Image (currently in beta)
         /// </param>
         /// <param name="filename">
