@@ -27,6 +27,30 @@ namespace DeepL
         public long? CharacterLimit { get; set; }
 
         /// <summary>
+        /// Documents translated so far in the current billing period. Only present for accounts with a document limit.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("document_count")]
+        public long? DocumentCount { get; set; }
+
+        /// <summary>
+        /// Current maximum number of documents that can be translated per billing period. Only present for accounts with a document limit.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("document_limit")]
+        public long? DocumentLimit { get; set; }
+
+        /// <summary>
+        /// Documents translated by all users in the team so far in the current billing period. Only present for accounts with a team document limit.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("team_document_count")]
+        public long? TeamDocumentCount { get; set; }
+
+        /// <summary>
+        /// Current maximum number of documents that can be translated by the team per billing period. Only present for accounts with a team document limit.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("team_document_limit")]
+        public long? TeamDocumentLimit { get; set; }
+
+        /// <summary>
         /// Only present for API Pro users. Per-product usage details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("products")]
@@ -131,6 +155,18 @@ namespace DeepL
         /// Current maximum number of characters that can be translated per billing period. If cost control is set, the cost control limit will be returned in this field.<br/>
         /// Example: 1250000
         /// </param>
+        /// <param name="documentCount">
+        /// Documents translated so far in the current billing period. Only present for accounts with a document limit.
+        /// </param>
+        /// <param name="documentLimit">
+        /// Current maximum number of documents that can be translated per billing period. Only present for accounts with a document limit.
+        /// </param>
+        /// <param name="teamDocumentCount">
+        /// Documents translated by all users in the team so far in the current billing period. Only present for accounts with a team document limit.
+        /// </param>
+        /// <param name="teamDocumentLimit">
+        /// Current maximum number of documents that can be translated by the team per billing period. Only present for accounts with a team document limit.
+        /// </param>
         /// <param name="products">
         /// Only present for API Pro users. Per-product usage details.
         /// </param>
@@ -172,6 +208,10 @@ namespace DeepL
         public UsageResponse(
             long? characterCount,
             long? characterLimit,
+            long? documentCount,
+            long? documentLimit,
+            long? teamDocumentCount,
+            long? teamDocumentLimit,
             global::System.Collections.Generic.IList<global::DeepL.UsageResponseProduct>? products,
             int? apiKeyCharacterCount,
             long? apiKeyCharacterLimit,
@@ -184,6 +224,10 @@ namespace DeepL
         {
             this.CharacterCount = characterCount;
             this.CharacterLimit = characterLimit;
+            this.DocumentCount = documentCount;
+            this.DocumentLimit = documentLimit;
+            this.TeamDocumentCount = teamDocumentCount;
+            this.TeamDocumentLimit = teamDocumentLimit;
             this.Products = products;
             this.ApiKeyCharacterCount = apiKeyCharacterCount;
             this.ApiKeyCharacterLimit = apiKeyCharacterLimit;

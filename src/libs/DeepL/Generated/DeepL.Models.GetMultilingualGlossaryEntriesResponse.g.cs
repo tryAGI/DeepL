@@ -9,16 +9,10 @@ namespace DeepL
     public sealed partial class GetMultilingualGlossaryEntriesResponse
     {
         /// <summary>
-        /// Generic description of the error.
+        /// The dictionaries of the glossary, each with its entries in the requested format.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        public string? Message { get; set; }
-
-        /// <summary>
-        /// More specific description of the error.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public string? Detail { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("dictionaries")]
+        public global::System.Collections.Generic.IList<global::DeepL.MultilingualGlossaryEntries>? Dictionaries { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,21 +23,16 @@ namespace DeepL
         /// <summary>
         /// Initializes a new instance of the <see cref="GetMultilingualGlossaryEntriesResponse" /> class.
         /// </summary>
-        /// <param name="message">
-        /// Generic description of the error.
-        /// </param>
-        /// <param name="detail">
-        /// More specific description of the error.
+        /// <param name="dictionaries">
+        /// The dictionaries of the glossary, each with its entries in the requested format.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetMultilingualGlossaryEntriesResponse(
-            string? message,
-            string? detail)
+            global::System.Collections.Generic.IList<global::DeepL.MultilingualGlossaryEntries>? dictionaries)
         {
-            this.Message = message;
-            this.Detail = detail;
+            this.Dictionaries = dictionaries;
         }
 
         /// <summary>

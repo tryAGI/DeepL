@@ -20,7 +20,7 @@ namespace DeepL
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::DeepL.GlossaryDictionary> GetMultilingualGlossaryEntriesAsync(
+        global::System.Threading.Tasks.Task<global::DeepL.GetMultilingualGlossaryEntriesResponse> GetMultilingualGlossaryEntriesAsync(
             string glossaryId,
             global::DeepL.GlossarySourceLanguage sourceLang,
             global::DeepL.GlossaryTargetLanguage targetLang,
@@ -42,7 +42,7 @@ namespace DeepL
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.GlossaryDictionary>> GetMultilingualGlossaryEntriesAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.GetMultilingualGlossaryEntriesResponse>> GetMultilingualGlossaryEntriesAsResponseAsync(
             string glossaryId,
             global::DeepL.GlossarySourceLanguage sourceLang,
             global::DeepL.GlossaryTargetLanguage targetLang,

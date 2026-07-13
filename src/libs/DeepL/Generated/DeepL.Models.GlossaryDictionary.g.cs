@@ -48,6 +48,12 @@ namespace DeepL
         public global::DeepL.GlossaryEntriesFormat? EntriesFormat { get; set; }
 
         /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("entry_count")]
+        public int? EntryCount { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -76,6 +82,9 @@ namespace DeepL
         /// Default Value: tsv<br/>
         /// Example: tsv
         /// </param>
+        /// <param name="entryCount">
+        /// Included only in responses
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -83,12 +92,14 @@ namespace DeepL
             global::DeepL.GlossarySourceLanguage? sourceLang,
             global::DeepL.GlossaryTargetLanguage? targetLang,
             string? entries,
-            global::DeepL.GlossaryEntriesFormat? entriesFormat)
+            global::DeepL.GlossaryEntriesFormat? entriesFormat,
+            int? entryCount)
         {
             this.SourceLang = sourceLang;
             this.TargetLang = targetLang;
             this.Entries = entries;
             this.EntriesFormat = entriesFormat;
+            this.EntryCount = entryCount;
         }
 
         /// <summary>
