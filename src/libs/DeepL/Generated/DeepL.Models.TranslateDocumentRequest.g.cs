@@ -13,7 +13,7 @@ namespace DeepL
         /// <summary>
         /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
         /// detect the language of the text and translate it.<br/>
-        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/docs/languages/using-the-languages-api).<br/>
         /// Example: EN
         /// </summary>
         /// <example>EN</example>
@@ -22,7 +22,7 @@ namespace DeepL
 
         /// <summary>
         /// The language into which the text should be translated.<br/>
-        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/docs/languages/using-the-languages-api).<br/>
         /// Example: DE
         /// </summary>
         /// <example>DE</example>
@@ -100,7 +100,7 @@ namespace DeepL
         public global::System.Collections.Generic.IList<string>? GlossaryIds { get; set; }
 
         /// <summary>
-        /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
+        /// Specify the [style rule list](/docs/customize/using-style-rules) to use for the translation.<br/>
         /// **Important:** The target language has to match the language of the style rule list.<br/>
         /// Example: 7ff9bfd6-cd85-4190-8503-d6215a321519
         /// </summary>
@@ -144,7 +144,7 @@ namespace DeepL
         /// </summary>
         /// <param name="targetLang">
         /// The language into which the text should be translated.<br/>
-        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/docs/languages/using-the-languages-api).<br/>
         /// Example: DE
         /// </param>
         /// <param name="file">
@@ -167,7 +167,7 @@ namespace DeepL
         /// <param name="sourceLang">
         /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
         /// detect the language of the text and translate it.<br/>
-        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/docs/languages/using-the-languages-api).<br/>
         /// Example: EN
         /// </param>
         /// <param name="filename">
@@ -201,7 +201,7 @@ namespace DeepL
         /// Cannot be used together with `glossary_id`.
         /// </param>
         /// <param name="styleId">
-        /// Specify the [style rule list](/api-reference/style-rules) to use for the translation.<br/>
+        /// Specify the [style rule list](/docs/customize/using-style-rules) to use for the translation.<br/>
         /// **Important:** The target language has to match the language of the style rule list.<br/>
         /// Example: 7ff9bfd6-cd85-4190-8503-d6215a321519
         /// </param>

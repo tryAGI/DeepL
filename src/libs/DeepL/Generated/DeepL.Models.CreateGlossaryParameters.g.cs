@@ -50,7 +50,7 @@ namespace DeepL
         /// The format in which the glossary entries are provided. Formats currently available:<br/>
         /// - `tsv` (default) - tab-separated values<br/>
         /// - `csv` - comma-separated values<br/>
-        /// See [Supported Glossary Formats](/api-reference/multilingual-glossaries#formats) for details about each format.<br/>
+        /// See [Supported Glossary Formats](/docs/customize/managing-glossaries#entry-formats) for details about each format.<br/>
         /// Default Value: tsv<br/>
         /// Example: tsv
         /// </summary>
@@ -90,7 +90,7 @@ namespace DeepL
         /// The format in which the glossary entries are provided. Formats currently available:<br/>
         /// - `tsv` (default) - tab-separated values<br/>
         /// - `csv` - comma-separated values<br/>
-        /// See [Supported Glossary Formats](/api-reference/multilingual-glossaries#formats) for details about each format.<br/>
+        /// See [Supported Glossary Formats](/docs/customize/managing-glossaries#entry-formats) for details about each format.<br/>
         /// Default Value: tsv<br/>
         /// Example: tsv
         /// </param>
