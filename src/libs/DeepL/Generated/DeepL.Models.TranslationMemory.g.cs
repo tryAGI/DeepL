@@ -55,6 +55,22 @@ namespace DeepL
         public required int SegmentCount { get; set; }
 
         /// <summary>
+        /// The creation time of the translation memory in the ISO 8601-1:2019 format (e.g.: `2021-08-03T14:16:18.329Z`).<br/>
+        /// Example: 2026-04-01T16:34:25.223Z
+        /// </summary>
+        /// <example>2026-04-01T16:34:25.223Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("creation_time")]
+        public global::System.DateTime? CreationTime { get; set; }
+
+        /// <summary>
+        /// The time of the last update to the translation memory in the ISO 8601-1:2019 format (e.g.: `2021-08-03T14:16:18.329Z`).<br/>
+        /// Example: 2026-04-01T16:34:25.264Z
+        /// </summary>
+        /// <example>2026-04-01T16:34:25.264Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("updated_time")]
+        public global::System.DateTime? UpdatedTime { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -83,6 +99,14 @@ namespace DeepL
         /// The number of segments stored in the translation memory.<br/>
         /// Example: 34
         /// </param>
+        /// <param name="creationTime">
+        /// The creation time of the translation memory in the ISO 8601-1:2019 format (e.g.: `2021-08-03T14:16:18.329Z`).<br/>
+        /// Example: 2026-04-01T16:34:25.223Z
+        /// </param>
+        /// <param name="updatedTime">
+        /// The time of the last update to the translation memory in the ISO 8601-1:2019 format (e.g.: `2021-08-03T14:16:18.329Z`).<br/>
+        /// Example: 2026-04-01T16:34:25.264Z
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -91,13 +115,17 @@ namespace DeepL
             string name,
             global::DeepL.TranslationMemorySourceLanguage sourceLanguage,
             global::System.Collections.Generic.IList<global::DeepL.TranslationMemoryTargetLanguage> targetLanguages,
-            int segmentCount)
+            int segmentCount,
+            global::System.DateTime? creationTime,
+            global::System.DateTime? updatedTime)
         {
             this.TranslationMemoryId = translationMemoryId;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.SourceLanguage = sourceLanguage;
             this.TargetLanguages = targetLanguages ?? throw new global::System.ArgumentNullException(nameof(targetLanguages));
             this.SegmentCount = segmentCount;
+            this.CreationTime = creationTime;
+            this.UpdatedTime = updatedTime;
         }
 
         /// <summary>

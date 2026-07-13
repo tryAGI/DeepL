@@ -74,7 +74,7 @@ namespace DeepL
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::DeepL.GlossaryDictionary> GetMultilingualGlossaryEntriesAsync(
+        public async global::System.Threading.Tasks.Task<global::DeepL.GetMultilingualGlossaryEntriesResponse> GetMultilingualGlossaryEntriesAsync(
             string glossaryId,
             global::DeepL.GlossarySourceLanguage sourceLang,
             global::DeepL.GlossaryTargetLanguage targetLang,
@@ -107,7 +107,7 @@ namespace DeepL
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.GlossaryDictionary>> GetMultilingualGlossaryEntriesAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.GetMultilingualGlossaryEntriesResponse>> GetMultilingualGlossaryEntriesAsResponseAsync(
             string glossaryId,
             global::DeepL.GlossarySourceLanguage sourceLang,
             global::DeepL.GlossaryTargetLanguage targetLang,
@@ -380,19 +380,19 @@ namespace DeepL
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::DeepL.GetMultilingualGlossaryEntriesResponse? __value_400 = null;
+                                global::DeepL.GetMultilingualGlossaryEntriesResponse2? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::DeepL.GetMultilingualGlossaryEntriesResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::DeepL.GetMultilingualGlossaryEntriesResponse2.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::DeepL.GetMultilingualGlossaryEntriesResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::DeepL.GetMultilingualGlossaryEntriesResponse2.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -401,7 +401,7 @@ namespace DeepL
                                 }
 
 
-                                throw global::DeepL.ApiException<global::DeepL.GetMultilingualGlossaryEntriesResponse>.Create(
+                                throw global::DeepL.ApiException<global::DeepL.GetMultilingualGlossaryEntriesResponse2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -779,9 +779,9 @@ namespace DeepL
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::DeepL.GlossaryDictionary.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::DeepL.GetMultilingualGlossaryEntriesResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.GlossaryDictionary>(
+                                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.GetMultilingualGlossaryEntriesResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -811,9 +811,9 @@ namespace DeepL
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::DeepL.GlossaryDictionary.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::DeepL.GetMultilingualGlossaryEntriesResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.GlossaryDictionary>(
+                                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.GetMultilingualGlossaryEntriesResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
