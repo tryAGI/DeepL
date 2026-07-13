@@ -83,6 +83,22 @@ namespace DeepL
         public int? SpeechToTextMinutesLimit { get; set; }
 
         /// <summary>
+        /// Only present for API Pro users. Minutes of speech-to-speech used in the current period. Milliseconds are rounded up to the nearest minute.<br/>
+        /// Example: 12
+        /// </summary>
+        /// <example>12</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speech_to_speech_minutes_count")]
+        public int? SpeechToSpeechMinutesCount { get; set; }
+
+        /// <summary>
+        /// Only present for API Pro users. Maximum minutes of speech-to-speech that can be used in the current billing period.<br/>
+        /// Example: 600
+        /// </summary>
+        /// <example>600</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speech_to_speech_minutes_limit")]
+        public int? SpeechToSpeechMinutesLimit { get; set; }
+
+        /// <summary>
         /// Only present for API Pro users. Start time of the current billing period (ISO 8601).<br/>
         /// Example: 2025-05-13T09:18:42Z
         /// </summary>
@@ -134,6 +150,14 @@ namespace DeepL
         /// Only present for API Pro users. Maximum minutes of speech-to-text that can be used in the current billing period.<br/>
         /// Example: 600
         /// </param>
+        /// <param name="speechToSpeechMinutesCount">
+        /// Only present for API Pro users. Minutes of speech-to-speech used in the current period. Milliseconds are rounded up to the nearest minute.<br/>
+        /// Example: 12
+        /// </param>
+        /// <param name="speechToSpeechMinutesLimit">
+        /// Only present for API Pro users. Maximum minutes of speech-to-speech that can be used in the current billing period.<br/>
+        /// Example: 600
+        /// </param>
         /// <param name="startTime">
         /// Only present for API Pro users. Start time of the current billing period (ISO 8601).<br/>
         /// Example: 2025-05-13T09:18:42Z
@@ -153,6 +177,8 @@ namespace DeepL
             long? apiKeyCharacterLimit,
             int? speechToTextMinutesCount,
             int? speechToTextMinutesLimit,
+            int? speechToSpeechMinutesCount,
+            int? speechToSpeechMinutesLimit,
             global::System.DateTime? startTime,
             global::System.DateTime? endTime)
         {
@@ -163,6 +189,8 @@ namespace DeepL
             this.ApiKeyCharacterLimit = apiKeyCharacterLimit;
             this.SpeechToTextMinutesCount = speechToTextMinutesCount;
             this.SpeechToTextMinutesLimit = speechToTextMinutesLimit;
+            this.SpeechToSpeechMinutesCount = speechToSpeechMinutesCount;
+            this.SpeechToSpeechMinutesLimit = speechToSpeechMinutesLimit;
             this.StartTime = startTime;
             this.EndTime = endTime;
         }
