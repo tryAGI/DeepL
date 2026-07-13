@@ -20,7 +20,7 @@ namespace DeepL
         /// <summary>
         /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
         /// detect the language of the text and translate it.<br/>
-        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/docs/languages/using-the-languages-api).<br/>
         /// Example: EN
         /// </summary>
         /// <example>EN</example>
@@ -29,7 +29,7 @@ namespace DeepL
 
         /// <summary>
         /// The language into which the text should be translated.<br/>
-        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/docs/languages/using-the-languages-api).<br/>
         /// Example: DE
         /// </summary>
         /// <example>DE</example>
@@ -199,13 +199,13 @@ namespace DeepL
         /// </param>
         /// <param name="targetLang">
         /// The language into which the text should be translated.<br/>
-        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
+        /// For the full list of supported target languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/docs/languages/using-the-languages-api).<br/>
         /// Example: DE
         /// </param>
         /// <param name="sourceLang">
         /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
         /// detect the language of the text and translate it.<br/>
-        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/api-reference/languages/retrieve-supported-languages-by-resource).<br/>
+        /// For the full list of supported source languages, see [supported languages](https://developers.deepl.com/docs/getting-started/supported-languages) or query the [`GET /v3/languages` endpoint](https://developers.deepl.com/docs/languages/using-the-languages-api).<br/>
         /// Example: EN
         /// </param>
         /// <param name="context">
