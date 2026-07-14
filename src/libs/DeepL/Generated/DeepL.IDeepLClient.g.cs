@@ -110,6 +110,11 @@ namespace DeepL
         public ManageMultilingualGlossariesClient ManageMultilingualGlossaries { get; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public ManageSpokenTermsClient ManageSpokenTerms { get; }
+
+        /// <summary>
         /// Information about API usage and value ranges.
         /// </summary>
         public MetaInformationClient MetaInformation { get; }

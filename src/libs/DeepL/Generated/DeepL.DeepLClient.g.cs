@@ -107,6 +107,16 @@ namespace DeepL
         };
 
         /// <summary>
+        /// 
+        /// </summary>
+        public ManageSpokenTermsClient ManageSpokenTerms => new ManageSpokenTermsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
         /// Information about API usage and value ranges.
         /// </summary>
         public MetaInformationClient MetaInformation => new MetaInformationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)

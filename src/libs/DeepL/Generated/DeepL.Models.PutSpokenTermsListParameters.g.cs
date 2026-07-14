@@ -1,0 +1,76 @@
+
+#nullable enable
+
+namespace DeepL
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class PutSpokenTermsListParameters
+    {
+        /// <summary>
+        /// Language code (ISO 639-1) for this term list.<br/>
+        /// Example: en
+        /// </summary>
+        /// <example>en</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lang")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Lang { get; set; }
+
+        /// <summary>
+        /// Newline-separated list of terms. Maximum 300 characters total.<br/>
+        /// Example: DeepL<br/>
+        /// API<br/>
+        /// webhook<br/>
+        /// integration
+        /// </summary>
+        /// <example>
+        /// DeepL<br/>
+        /// API<br/>
+        /// webhook<br/>
+        /// integration
+        /// </example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("entries")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Entries { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PutSpokenTermsListParameters" /> class.
+        /// </summary>
+        /// <param name="lang">
+        /// Language code (ISO 639-1) for this term list.<br/>
+        /// Example: en
+        /// </param>
+        /// <param name="entries">
+        /// Newline-separated list of terms. Maximum 300 characters total.<br/>
+        /// Example: DeepL<br/>
+        /// API<br/>
+        /// webhook<br/>
+        /// integration
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public PutSpokenTermsListParameters(
+            string lang,
+            string entries)
+        {
+            this.Lang = lang ?? throw new global::System.ArgumentNullException(nameof(lang));
+            this.Entries = entries ?? throw new global::System.ArgumentNullException(nameof(entries));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PutSpokenTermsListParameters" /> class.
+        /// </summary>
+        public PutSpokenTermsListParameters()
+        {
+        }
+
+    }
+}

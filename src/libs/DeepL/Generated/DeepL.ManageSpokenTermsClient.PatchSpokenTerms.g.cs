@@ -3,19 +3,24 @@
 
 namespace DeepL
 {
-    public partial class VoiceAPIClient
+    public partial class ManageSpokenTermsClient
     {
 
-        private static readonly global::DeepL.AutoSDKServer[] s_GetVoiceStreamingUrlServers = new global::DeepL.AutoSDKServer[]
+        private static readonly global::DeepL.AutoSDKServer[] s_PatchSpokenTermsServers = new global::DeepL.AutoSDKServer[]
         {            new global::DeepL.AutoSDKServer(
                 id: "https-api-deepl-com",
-                name: "Override base path for all operations with the /v3/voice path",
+                name: "DeepL API Pro",
                 url: "https://api.deepl.com/",
-                description: "Override base path for all operations with the /v3/voice path"),
+                description: "DeepL API Pro"),
+            new global::DeepL.AutoSDKServer(
+                id: "https-api-free-deepl-com",
+                name: "DeepL API Free",
+                url: "https://api-free.deepl.com/",
+                description: "DeepL API Free"),
         };
 
 
-        private static readonly global::DeepL.EndPointSecurityRequirement s_GetVoiceStreamingUrlSecurityRequirement0 =
+        private static readonly global::DeepL.EndPointSecurityRequirement s_PatchSpokenTermsSecurityRequirement0 =
             new global::DeepL.EndPointSecurityRequirement
             {
                 Authorizations = new global::DeepL.EndPointAuthorizationRequirement[]
@@ -29,40 +34,46 @@ namespace DeepL
                     },
                 },
             };
-        private static readonly global::DeepL.EndPointSecurityRequirement[] s_GetVoiceStreamingUrlSecurityRequirements =
+        private static readonly global::DeepL.EndPointSecurityRequirement[] s_PatchSpokenTermsSecurityRequirements =
             new global::DeepL.EndPointSecurityRequirement[]
-            {                s_GetVoiceStreamingUrlSecurityRequirement0,
+            {                s_PatchSpokenTermsSecurityRequirement0,
             };
-        partial void PrepareGetVoiceStreamingUrlArguments(
+        partial void PreparePatchSpokenTermsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::DeepL.GetVoiceStreamingUrlRequest request);
-        partial void PrepareGetVoiceStreamingUrlRequest(
+            ref string spokenTermsId,
+            global::DeepL.PatchSpokenTermsParameters request);
+        partial void PreparePatchSpokenTermsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::DeepL.GetVoiceStreamingUrlRequest request);
-        partial void ProcessGetVoiceStreamingUrlResponse(
+            string spokenTermsId,
+            global::DeepL.PatchSpokenTermsParameters request);
+        partial void ProcessPatchSpokenTermsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetVoiceStreamingUrlResponseContent(
+        partial void ProcessPatchSpokenTermsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get Streaming URL
+        /// Edit Spoken Terms collection details<br/>
+        /// Update the name of a Spoken Terms collection or merge new entries into an existing term list.
         /// </summary>
+        /// <param name="spokenTermsId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::DeepL.VoiceStreamingResponse> GetVoiceStreamingUrlAsync(
+        public async global::System.Threading.Tasks.Task<global::DeepL.SpokenTerms> PatchSpokenTermsAsync(
+            string spokenTermsId,
 
-            global::DeepL.GetVoiceStreamingUrlRequest request,
+            global::DeepL.PatchSpokenTermsParameters request,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GetVoiceStreamingUrlAsResponseAsync(
+            var __response = await PatchSpokenTermsAsResponseAsync(
+                spokenTermsId: spokenTermsId,
 
                 request: request,
                 requestOptions: requestOptions,
@@ -72,15 +83,18 @@ namespace DeepL
             return __response.Body;
         }
         /// <summary>
-        /// Get Streaming URL
+        /// Edit Spoken Terms collection details<br/>
+        /// Update the name of a Spoken Terms collection or merge new entries into an existing term list.
         /// </summary>
+        /// <param name="spokenTermsId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.VoiceStreamingResponse>> GetVoiceStreamingUrlAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.SpokenTerms>> PatchSpokenTermsAsResponseAsync(
+            string spokenTermsId,
 
-            global::DeepL.GetVoiceStreamingUrlRequest request,
+            global::DeepL.PatchSpokenTermsParameters request,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -88,15 +102,16 @@ namespace DeepL
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetVoiceStreamingUrlArguments(
+            PreparePatchSpokenTermsArguments(
                 httpClient: HttpClient,
+                spokenTermsId: ref spokenTermsId,
                 request: request);
 
 
             var __authorizations = global::DeepL.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetVoiceStreamingUrlSecurityRequirements,
-                operationName: "GetVoiceStreamingUrlAsync");
+                securityRequirements: s_PatchSpokenTermsSecurityRequirements,
+                operationName: "PatchSpokenTermsAsync");
 
             using var __timeoutCancellationTokenSource = global::DeepL.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -116,9 +131,9 @@ namespace DeepL
             {
 
                             var __pathBuilder = new global::DeepL.PathBuilder(
-                                path: "/v3/voice/realtime",
+                                path: $"/v3/spoken-terms/{spokenTermsId}",
                                 baseUri: ResolveBaseUri(
-                                servers: s_GetVoiceStreamingUrlServers,
+                                servers: s_PatchSpokenTermsServers,
                                 defaultBaseUrl: "https://api.deepl.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::DeepL.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -126,7 +141,7 @@ namespace DeepL
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: new global::System.Net.Http.HttpMethod("PATCH"),
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -163,9 +178,10 @@ namespace DeepL
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetVoiceStreamingUrlRequest(
+                PreparePatchSpokenTermsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    spokenTermsId: spokenTermsId!,
                     request: request);
 
                 return __httpRequest;
@@ -183,10 +199,10 @@ namespace DeepL
                     await global::DeepL.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetVoiceStreamingUrl",
-                                methodName: "GetVoiceStreamingUrlAsync",
-                                pathTemplate: "\"/v3/voice/realtime\"",
-                                httpMethod: "POST",
+                                operationId: "PatchSpokenTerms",
+                                methodName: "PatchSpokenTermsAsync",
+                                pathTemplate: "$\"/v3/spoken-terms/{spokenTermsId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -217,10 +233,10 @@ namespace DeepL
                         await global::DeepL.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetVoiceStreamingUrl",
-                                methodName: "GetVoiceStreamingUrlAsync",
-                                pathTemplate: "\"/v3/voice/realtime\"",
-                                httpMethod: "POST",
+                                operationId: "PatchSpokenTerms",
+                                methodName: "PatchSpokenTermsAsync",
+                                pathTemplate: "$\"/v3/spoken-terms/{spokenTermsId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -258,10 +274,10 @@ namespace DeepL
                         await global::DeepL.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetVoiceStreamingUrl",
-                                methodName: "GetVoiceStreamingUrlAsync",
-                                pathTemplate: "\"/v3/voice/realtime\"",
-                                httpMethod: "POST",
+                                operationId: "PatchSpokenTerms",
+                                methodName: "PatchSpokenTermsAsync",
+                                pathTemplate: "$\"/v3/spoken-terms/{spokenTermsId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -298,7 +314,7 @@ namespace DeepL
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetVoiceStreamingUrlResponse(
+                ProcessPatchSpokenTermsResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -306,10 +322,10 @@ namespace DeepL
                     await global::DeepL.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetVoiceStreamingUrl",
-                                methodName: "GetVoiceStreamingUrlAsync",
-                                pathTemplate: "\"/v3/voice/realtime\"",
-                                httpMethod: "POST",
+                                operationId: "PatchSpokenTerms",
+                                methodName: "PatchSpokenTermsAsync",
+                                pathTemplate: "$\"/v3/spoken-terms/{spokenTermsId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -328,10 +344,10 @@ namespace DeepL
                     await global::DeepL.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetVoiceStreamingUrl",
-                                methodName: "GetVoiceStreamingUrlAsync",
-                                pathTemplate: "\"/v3/voice/realtime\"",
-                                httpMethod: "POST",
+                                operationId: "PatchSpokenTerms",
+                                methodName: "PatchSpokenTermsAsync",
+                                pathTemplate: "$\"/v3/spoken-terms/{spokenTermsId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -419,7 +435,7 @@ namespace DeepL
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Authorization failed. Please supply a valid `DeepL-Auth-Key` via the `Authorization` header.
+                            // Forbidden. Authorization failed or feature not available for your plan.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
@@ -451,6 +467,117 @@ namespace DeepL
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The requested resource could not be found.
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::DeepL.ErrorResponse? __value_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::DeepL.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_404 = global::DeepL.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+
+                                throw global::DeepL.ApiException<global::DeepL.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The request size exceeds the limit.
+                            if ((int)__response.StatusCode == 413)
+                            {
+                                string? __content_413 = null;
+                                global::System.Exception? __exception_413 = null;
+                                global::DeepL.ErrorResponse? __value_413 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_413 = global::DeepL.ErrorResponse.FromJson(__content_413, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_413 = global::DeepL.ErrorResponse.FromJson(__content_413, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_413 = __ex;
+                                }
+
+
+                                throw global::DeepL.ApiException<global::DeepL.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_413,
+                                    responseBody: __content_413,
+                                    responseObject: __value_413,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Unsupported Media Type. Must be application/json or application/x-www-form-urlencoded.
+                            if ((int)__response.StatusCode == 415)
+                            {
+                                string? __content_415 = null;
+                                global::System.Exception? __exception_415 = null;
+                                global::DeepL.ErrorResponse? __value_415 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_415 = global::DeepL.ErrorResponse.FromJson(__content_415, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_415 = global::DeepL.ErrorResponse.FromJson(__content_415, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_415 = __ex;
+                                }
+
+
+                                throw global::DeepL.ApiException<global::DeepL.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_415,
+                                    responseBody: __content_415,
+                                    responseObject: __value_415,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -493,107 +620,6 @@ namespace DeepL
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Quota exceeded. The character limit has been reached.
-                            if ((int)__response.StatusCode == 456)
-                            {
-                                string? __content_456 = null;
-                                global::System.Exception? __exception_456 = null;
-                                global::DeepL.ErrorResponse? __value_456 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_456 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_456 = global::DeepL.ErrorResponse.FromJson(__content_456, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_456 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_456 = global::DeepL.ErrorResponse.FromJson(__content_456, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_456 = __ex;
-                                }
-
-
-                                throw global::DeepL.ApiException<global::DeepL.ErrorResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_456 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_456,
-                                    responseBody: __content_456,
-                                    responseObject: __value_456,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // 
-                            if ((int)__response.StatusCode == 500)
-                            {
-                                string? __content_500 = null;
-                                global::System.Exception? __exception_500 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                    else
-                                    {
-                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_500 = __ex;
-                                }
-
-
-                                throw global::DeepL.ApiException.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_500,
-                                    responseBody: __content_500,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // 
-                            if ((int)__response.StatusCode == 503)
-                            {
-                                string? __content_503 = null;
-                                global::System.Exception? __exception_503 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                    else
-                                    {
-                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_503 = __ex;
-                                }
-
-
-                                throw global::DeepL.ApiException.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_503,
-                                    responseBody: __content_503,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -607,7 +633,7 @@ namespace DeepL
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetVoiceStreamingUrlResponseContent(
+                                ProcessPatchSpokenTermsResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -616,9 +642,9 @@ namespace DeepL
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::DeepL.VoiceStreamingResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::DeepL.SpokenTerms.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.VoiceStreamingResponse>(
+                                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.SpokenTerms>(
                                         statusCode: __response.StatusCode,
                                         headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -648,9 +674,9 @@ namespace DeepL
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::DeepL.VoiceStreamingResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::DeepL.SpokenTerms.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.VoiceStreamingResponse>(
+                                    return new global::DeepL.AutoSDKHttpResponse<global::DeepL.SpokenTerms>(
                                         statusCode: __response.StatusCode,
                                         headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -691,159 +717,35 @@ namespace DeepL
             }
         }
         /// <summary>
-        /// Get Streaming URL
+        /// Edit Spoken Terms collection details<br/>
+        /// Update the name of a Spoken Terms collection or merge new entries into an existing term list.
         /// </summary>
-        /// <param name="messageFormat">
-        /// Message encoding format for WebSocket communication. Determines how messages are serialized and transmitted.<br/>
-        /// Using `json`,  messages are JSON-encoded and sent as TEXT WebSocket frames. All binary fields (such as audio data) are base64-encoded strings.<br/>
-        /// Using `msgpack`, messages are MessagePack-encoded and sent as BINARY WebSocket frames. All binary fields (such as audio data) contain raw binary data.<br/>
-        /// For more details, see [Message Encoding](/api-reference/voice#message-encoding).<br/>
-        /// Default Value: json<br/>
-        /// Example: json
+        /// <param name="spokenTermsId"></param>
+        /// <param name="name">
+        /// New name for the Spoken Terms collection.<br/>
+        /// Example: Updated Technical Terms
         /// </param>
-        /// <param name="sourceMediaContentType">
-        ///  The audio format for streaming, which specifies container, codec, and encoding parameters. See the table below for supported formats. If `audio/auto` is specified, the server will auto-detect the container and codec for all supported combinations, except PCM. That requires explicit encoding parameters. All formats need to be single channel audio.<br/>
-        ///  <br/>
-        ///  | Content Type                          | Container                                         | Codec                                     |<br/>
-        ///  | :------------------------------------ | :------------------------------------------------ | :---------------------------------------- |<br/>
-        ///  | `audio/auto`                          | Auto-detect: FLAC / Matroska / MPEG / Ogg / WebM  | Auto-detect AAC / FLAC / MP3 / OPUS       |<br/>
-        ///  | `audio/flac`                          | FLAC (flac)                                       | FLAC                                      |<br/>
-        ///  | `audio/mpeg`                          | MPEG (mp3/m4a)                                    | MP3                                       |<br/>
-        ///  | `audio/ogg`                           | Ogg (ogg/oga)                                     | Auto-detect FLAC / OPUS                   |<br/>
-        ///  | `audio/webm`                          | WebM (webm)                                       | OPUS                                      |<br/>
-        ///  | `audio/x-matroska`                    | Matroska (mkv/mka)                                | Auto-detect: AAC / FLAC / MP3 / OPUS      |<br/>
-        ///  | `audio/ogg;codecs=flac`               | Ogg (ogg/oga)                                     | FLAC                                      |<br/>
-        ///  | `audio/ogg;codecs=opus`               | Ogg (ogg/oga)                                     | OPUS                                      |<br/>
-        ///  | `audio/pcm;encoding=alaw;rate=8000`   | -                                                 | PCM A-Law 8000 Hz (G.711)                 |<br/>
-        ///  | `audio/pcm;encoding=ulaw;rate=8000`   | -                                                 | PCM µ-Law 8000 Hz (G.711)                 |<br/>
-        ///  | `audio/pcm;encoding=s16le;rate=8000`  | -                                                 | PCM signed 16-bit little-endian 8000 Hz   |<br/>
-        ///  | `audio/pcm;encoding=s16le;rate=16000` | -                                                 | PCM signed 16-bit little-endian 16000 Hz  |<br/>
-        ///  | `audio/pcm;encoding=s16le;rate=44100` | -                                                 | PCM signed 16-bit little-endian 44100 Hz  |<br/>
-        ///  | `audio/pcm;encoding=s16le;rate=48000` | -                                                 | PCM signed 16-bit little-endian 48000 Hz  |<br/>
-        ///  | `audio/webm;codecs=opus`              | WebM (webm)                                       | OPUS                                      |<br/>
-        ///  | `audio/x-matroska;codecs=aac`         | Matroska (mkv/mka)                                | AAC                                       |<br/>
-        ///  | `audio/x-matroska;codecs=flac`        | Matroska (mkv/mka)                                | FLAC                                      |<br/>
-        ///  | `audio/x-matroska;codecs=mp3`         | Matroska (mkv/mka)                                | MP3                                       |<br/>
-        ///  | `audio/x-matroska;codecs=opus`        | Matroska (mkv/mka)                                | OPUS                                      |<br/>
-        ///  <br/>
-        /// We recommend the following bitrates as good tradeoff between quality and bandwidth:<br/>
-        ///  - AAC: 96 kbps<br/>
-        ///  - FLAC: 256 kbps  (16000 Hz)<br/>
-        ///  - MP3: 128 kbps<br/>
-        ///  - OPUS: 32 kbps (recommendation for low bandwidth scenarios)<br/>
-        ///  - PCM: 256 kbps (16000 Hz, default recommendation)<br/>
-        ///  <br/>
-        /// Example: audio/ogg;codecs=opus
-        /// </param>
-        /// <param name="sourceLanguage">
-        /// The source language of the audio stream. It can be left empty or must be one of the supported Voice API source languages and comply with IETF BCP 47 language tags.<br/>
-        /// Note: Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
-        /// Example: en
-        /// </param>
-        /// <param name="sourceLanguageMode">
-        /// Controls how the source_language value is used.<br/>
-        /// - `auto`: Treats source language as a hint; server can override<br/>
-        /// - `fixed`: Treats source language as mandatory; server must use this language<br/>
-        /// Default Value: auto<br/>
-        /// Example: fixed
-        /// </param>
-        /// <param name="targetLanguages">
-        /// List of target languages for translation. The stream will emit translations for each language. Language identifiers must comply with IETF BCP 47. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
-        /// Default Value: []<br/>
-        /// Example: [de, fr, es]
-        /// </param>
-        /// <param name="targetMediaLanguages">
-        /// (closed beta) List of target languages for which to generate synthesized audio. Languages specified here will automatically be added to target_languages if not already present, ensuring you receive both text translation and audio synthesis for these languages. If omitted, only text transcription and translation will be provided (no audio synthesis). Language identifiers must comply with IETF BCP 47.<br/>
-        /// Note: Some translated audio languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
-        /// Default Value: []<br/>
-        /// Example: [de]
-        /// </param>
-        /// <param name="targetMediaContentType">
-        ///  (closed beta) The audio format for synthesized target media streaming.<br/>
-        ///  Specifies container, codec, and encoding parameters for the audio returned in target_media_chunk messages.<br/>
-        ///  If not specified, defaults to audio/webm;codecs=opus.<br/>
-        ///  Only applies when target_media_languages is specified.<br/>
-        ///  <br/>
-        ///  | Content Type | Container | Codec |<br/>
-        ///  | :--- | :--- | :--- |<br/>
-        ///  | `audio/flac` | FLAC (flac) | FLAC 24000 Hz |<br/>
-        ///  | `video/mp2t;codecs=aac` | MPEG Transport Stream (Audio only) | AAC 70 kbit/s |<br/>
-        ///  | `video/mp2t;codecs=opus` | MPEG Transport Stream (Audio only) | OPUS 32 kbit/s |<br/>
-        ///  | `audio/ogg` | Ogg (ogg/oga) | OPUS 32 kbit/s |<br/>
-        ///  | `audio/ogg;codecs=flac` | Ogg (ogg/oga) | FLAC 24000 Hz |<br/>
-        ///  | `audio/ogg;codecs=opus` | Ogg (ogg/oga) | OPUS 32 kbit/s |<br/>
-        ///  | `audio/opus` | - | OPUS 32 kbit/s |<br/>
-        ///  | `audio/pcm;encoding=alaw;rate=8000` | - | PCM A-Law 8000 Hz (G.711) |<br/>
-        ///  | `audio/pcm;encoding=ulaw;rate=8000` | - | PCM µ-Law 8000 Hz (G.711) |<br/>
-        ///  | `audio/pcm;encoding=s16le;rate=16000` | - | PCM signed 16-bit little-endian 16000 Hz |<br/>
-        ///  | `audio/pcm;encoding=s16le;rate=24000` | - | PCM signed 16-bit little-endian 24000 Hz |<br/>
-        ///  | `audio/webm` | WebM (webm) | OPUS 32 kbit/s  |<br/>
-        ///  | `audio/webm;codecs=opus` | WebM (webm) | OPUS 32 kbit/s |<br/>
-        ///  | `audio/x-matroska;codecs=aac` | Matroska (mkv/mka) | AAC 70 kbit/s |<br/>
-        ///  | `audio/x-matroska;codecs=flac` | Matroska (mkv/mka) | FLAC 24000 Hz |<br/>
-        ///  | `audio/x-matroska;codecs=opus` | Matroska (mkv/mka) | OPUS 32 kbit/s |<br/>
-        ///  <br/>
-        ///  We recommend the following formats as good tradeoffs between quality and bandwidth:<br/>
-        ///  - OPUS (WebM): 32 kbps, recommended for low bandwidth scenarios (default)<br/>
-        ///  - PCM 24kHz: 384 kbps, high quality<br/>
-        /// Default Value: audio/webm;codecs=opus<br/>
-        /// Example: audio/webm;codecs=opus
-        /// </param>
-        /// <param name="targetMediaVoice">
-        /// (closed beta) Target audio voice selection for synthesized speech. The default voice is language dependent.<br/>
-        /// Example: female
-        /// </param>
-        /// <param name="spokenTermsId">
-        /// (beta) The ID of a Spoken Terms collection used to inform transcription.<br/>
-        /// Example: 7c4f1080-cfe2-41d4-8269-0e6ec15a0354
-        /// </param>
-        /// <param name="glossaryId">
-        /// A unique ID assigned to a glossary.<br/>
-        /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
-        /// </param>
-        /// <param name="formality">
-        /// Sets whether the translated text should lean towards formal or informal language.<br/>
-        /// Possible options are:<br/>
-        ///   * `default` - use the default formality for the target language<br/>
-        ///   * `formal`/`more` - for a more formal language<br/>
-        ///   * `informal`/`less` - for a more informal language<br/>
-        /// Default Value: default<br/>
-        /// Example: formal
+        /// <param name="termLists">
+        /// Term lists to merge with existing lists.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::DeepL.VoiceStreamingResponse> GetVoiceStreamingUrlAsync(
-            global::DeepL.VoiceSourceMediaContentType sourceMediaContentType,
-            global::DeepL.VoiceMessageFormat? messageFormat = default,
-            global::DeepL.VoiceSourceLanguage? sourceLanguage = default,
-            global::DeepL.VoiceSourceLanguageMode? sourceLanguageMode = default,
-            global::System.Collections.Generic.IList<global::DeepL.VoiceTargetLanguage>? targetLanguages = default,
-            global::System.Collections.Generic.IList<global::DeepL.VoiceTargetMediaLanguage>? targetMediaLanguages = default,
-            global::DeepL.VoiceTargetMediaContentType? targetMediaContentType = default,
-            global::DeepL.VoiceTargetMediaVoice? targetMediaVoice = default,
-            global::System.Guid? spokenTermsId = default,
-            string? glossaryId = default,
-            global::DeepL.VoiceFormality? formality = default,
+        public async global::System.Threading.Tasks.Task<global::DeepL.SpokenTerms> PatchSpokenTermsAsync(
+            string spokenTermsId,
+            string? name = default,
+            global::System.Collections.Generic.IList<global::DeepL.SpokenTermsListInput>? termLists = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::DeepL.GetVoiceStreamingUrlRequest
+            var __request = new global::DeepL.PatchSpokenTermsParameters
             {
-                MessageFormat = messageFormat,
-                SourceMediaContentType = sourceMediaContentType,
-                SourceLanguage = sourceLanguage,
-                SourceLanguageMode = sourceLanguageMode,
-                TargetLanguages = targetLanguages,
-                TargetMediaLanguages = targetMediaLanguages,
-                TargetMediaContentType = targetMediaContentType,
-                TargetMediaVoice = targetMediaVoice,
-                SpokenTermsId = spokenTermsId,
-                GlossaryId = glossaryId,
-                Formality = formality,
+                Name = name,
+                TermLists = termLists,
             };
 
-            return await GetVoiceStreamingUrlAsync(
+            return await PatchSpokenTermsAsync(
+                spokenTermsId: spokenTermsId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

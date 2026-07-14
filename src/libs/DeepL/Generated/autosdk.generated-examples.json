@@ -200,6 +200,94 @@
     },
     {
       "Order": 19,
+      "Title": "Create Spoken Terms collection",
+      "Slug": "createspokenterms",
+      "Description": "Create a new Spoken Terms collection with one or more term lists. Each term list contains terms for a single language.",
+      "Language": "csharp",
+      "Code": "using var client = new DeepLClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::DeepL.CreateSpokenTermsParameters\u003E(\n    @\u0022{\n  \u0022\u0022name\u0022\u0022: \u0022\u0022Technical Terms\u0022\u0022,\n  \u0022\u0022term_lists\u0022\u0022: [\n    {\n      \u0022\u0022lang\u0022\u0022: \u0022\u0022en\u0022\u0022,\n      \u0022\u0022entries\u0022\u0022: \u0022\u0022DeepL\\nAPI\\nwebhook\u0022\u0022\n    }\n  ]\n}\u0022)!;\n\nvar response = await client.ManageSpokenTerms.CreateSpokenTermsAsync(\n    request: request\n);",
+      "Format": "sdk",
+      "OperationId": "createSpokenTerms",
+      "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 20,
+      "Title": "Delete Spoken Terms collection",
+      "Slug": "deletespokenterms",
+      "Description": "Delete the entire Spoken Terms collection.",
+      "Language": "http",
+      "Code": "### Delete Spoken Terms collection\n# @name deleteSpokenTerms\nDELETE {{host}}/v3/spoken-terms/{{spoken_terms_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 204\n# Description: Successfully deleted Spoken Terms collection.\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. Authorization failed or feature not available for your plan.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "deleteSpokenTerms",
+      "Setup": null
+    },
+    {
+      "Order": 21,
+      "Title": "Delete a term list",
+      "Slug": "deletespokentermslist",
+      "Description": "Delete a term list for a specific language from the Spoken Terms collection.",
+      "Language": "http",
+      "Code": "### Delete a term list\n# @name deleteSpokenTermsList\nDELETE {{host}}/v3/spoken-terms/{{spoken_terms_id}}/term-lists?lang={{lang}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 204\n# Description: Successfully deleted term list.\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. Authorization failed or feature not available for your plan.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "deleteSpokenTermsList",
+      "Setup": null
+    },
+    {
+      "Order": 22,
+      "Title": "Retrieve Spoken Terms collection details",
+      "Slug": "getspokenterms",
+      "Description": "Retrieve metadata for a Spoken Terms collection, including term list information but not the actual terms.",
+      "Language": "http",
+      "Code": "### Retrieve Spoken Terms collection details\n# @name getSpokenTerms\nGET {{host}}/v3/spoken-terms/{{spoken_terms_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: JSON object containing the Spoken Terms metadata.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. Authorization failed or feature not available for your plan.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getSpokenTerms",
+      "Setup": null
+    },
+    {
+      "Order": 23,
+      "Title": "Retrieve Spoken Terms entries",
+      "Slug": "getspokentermsentries",
+      "Description": "Retrieve the actual terms for a specific language from a Spoken Terms collection.",
+      "Language": "http",
+      "Code": "### Retrieve Spoken Terms entries\n# @name getSpokenTermsEntries\nGET {{host}}/v3/spoken-terms/{{spoken_terms_id}}/entries?lang={{lang}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: JSON object containing the term list entries.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. Authorization failed or feature not available for your plan.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getSpokenTermsEntries",
+      "Setup": null
+    },
+    {
+      "Order": 24,
+      "Title": "List all Spoken Terms collections",
+      "Slug": "listspokenterms",
+      "Description": "List all Spoken Terms collections and their metadata, but not the actual terms.",
+      "Language": "csharp",
+      "Code": "using var client = new DeepLClient(apiKey);\nvar response = await client.ManageSpokenTerms.ListSpokenTermsAsync();\n\n// Example response:\n// {\n//   \u0022spoken_terms\u0022: [\n//     {\n//       \u0022spoken_terms_id\u0022: \u0022def3a26b-3e84-45b3-84ae-0c0aaf3525f7\u0022,\n//       \u0022name\u0022: \u0022Technical Terms\u0022,\n//       \u0022term_lists\u0022: [\n//         {\n//           \u0022lang\u0022: \u0022en\u0022,\n//           \u0022entry_count\u0022: 3\n//         }\n//       ],\n//       \u0022creation_time\u0022: \u00222025-08-03T14:16:18.329Z\u0022\n//     }\n//   ]\n// }",
+      "Format": "sdk",
+      "OperationId": "listSpokenTerms",
+      "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 25,
+      "Title": "Edit Spoken Terms collection details",
+      "Slug": "patchspokenterms",
+      "Description": "Update the name of a Spoken Terms collection or merge new entries into an existing term list.",
+      "Language": "http",
+      "Code": "### Edit Spoken Terms collection details\n# @name patchSpokenTerms\nPATCH {{host}}/v3/spoken-terms/{{spoken_terms_id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022term_lists\u0022: [\n    {\n      \u0022lang\u0022: \u0022en\u0022,\n      \u0022entries\u0022: \u0022authentication\\nendpoint\u0022\n    }\n  ]\n}\n\n## Responses\n# 200\n# Description: Successfully updated Spoken Terms collection.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. Authorization failed or feature not available for your plan.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type. Must be application/json or application/x-www-form-urlencoded.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "patchSpokenTerms",
+      "Setup": null
+    },
+    {
+      "Order": 26,
+      "Title": "Replace or create a term list",
+      "Slug": "putspokentermslist",
+      "Description": "Replace an existing term list for a language, or create a new one if it doesn\u0027t exist.",
+      "Language": "http",
+      "Code": "### Replace or create a term list\n# @name putSpokenTermsList\nPUT {{host}}/v3/spoken-terms/{{spoken_terms_id}}/term-lists\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022lang\u0022: \u0022en\u0022,\n  \u0022entries\u0022: \u0022DeepL\\nAPI\\nwebhook\\nintegration\u0022\n}\n\n## Responses\n# 200\n# Description: Successfully replaced or created term list.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. Authorization failed or feature not available for your plan.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type. Must be application/json or application/x-www-form-urlencoded.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "putSpokenTermsList",
+      "Setup": null
+    },
+    {
+      "Order": 27,
       "Title": "Retrieve Language Resources",
       "Slug": "getlanguageresources",
       "Description": "Returns all DeepL API resources and the features they support.\n\nFor each feature, the response indicates which languages must support it for the feature to be\navailable \u2014 source only (\u0060needs_source_support\u0060), target only (\u0060needs_target_support\u0060), or both.\nThis allows clients to determine feature availability for a language pair by checking the\nappropriate language\u0027s \u0060features\u0060 object returned by \u0060GET /v3/languages\u0060.",
@@ -210,7 +298,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 20,
+      "Order": 28,
       "Title": "Retrieve Languages",
       "Slug": "getlanguages",
       "Description": "Returns languages supported by the specified DeepL API resource. Each language indicates whether it can\nbe used as a source language, a target language, or both, along with the features it supports for that\nresource.",
@@ -221,7 +309,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 21,
+      "Order": 29,
       "Title": "Check Usage and Limits",
       "Slug": "getusage",
       "Description": "Generated from OpenAPI examples.",
@@ -232,7 +320,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 22,
+      "Order": 30,
       "Title": "Poll for the evaluation result",
       "Slug": "pollqualityevaluation",
       "Description": "Returns the current state of an evaluation job. While the job is in progress the response contains only status information. Once complete the response includes the full evaluation report.",
@@ -243,7 +331,7 @@
       "Setup": null
     },
     {
-      "Order": 23,
+      "Order": 31,
       "Title": "Submit an evaluation job",
       "Slug": "submitqualityevaluation",
       "Description": "Starts an evaluation job for the given segments. Returns a \u0060poll_url\u0060 that can be used to retrieve the result.",
@@ -254,7 +342,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 24,
+      "Order": 32,
       "Title": "Download Translated Document",
       "Slug": "downloaddocument",
       "Description": "Generated from OpenAPI examples.",
@@ -265,7 +353,7 @@
       "Setup": null
     },
     {
-      "Order": 25,
+      "Order": 33,
       "Title": "Check Document Status",
       "Slug": "getdocumentstatus",
       "Description": "Generated from OpenAPI examples.",
@@ -276,7 +364,7 @@
       "Setup": null
     },
     {
-      "Order": 26,
+      "Order": 34,
       "Title": "Upload and Translate a Document",
       "Slug": "translatedocument",
       "Description": "Generated from OpenAPI examples.",
@@ -287,7 +375,7 @@
       "Setup": null
     },
     {
-      "Order": 27,
+      "Order": 35,
       "Title": "List translation memories",
       "Slug": "listtranslationmemories",
       "Description": "Retrieve a list of translation memories associated with the authenticated account.",
@@ -298,7 +386,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 28,
+      "Order": 36,
       "Title": "Get Streaming URL",
       "Slug": "getvoicestreamingurl",
       "Description": "Generated from OpenAPI examples.",
@@ -309,7 +397,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 29,
+      "Order": 37,
       "Title": "Request Reconnection",
       "Slug": "requestreconnection",
       "Description": "Generated from OpenAPI examples.",
@@ -320,7 +408,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 30,
+      "Order": 38,
       "Title": "Create a voice translation job",
       "Slug": "createvoicetranslatejob",
       "Description": "Creates an async voice translation job. The response includes an upload URL for the source audio file.",
@@ -331,7 +419,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 31,
+      "Order": 39,
       "Title": "Get voice translation job status",
       "Slug": "getvoicetranslatejobstatus",
       "Description": "Returns the current status of a voice translation job, including per-target result statuses.\n\nWhen a target\u0027s status is \u0060complete\u0060, the response includes a \u0060download_url\u0060 and \u0060signature\u0060 for that target. Results are returned in the same order as the targets in the create request.",
