@@ -148,7 +148,7 @@ namespace DeepL
         public global::DeepL.VoiceTargetMediaVoice? TargetMediaVoice { get; set; }
 
         /// <summary>
-        /// (beta) The ID of a spoken terms list used to inform transcription.<br/>
+        /// (beta) The ID of a Spoken Terms collection used to inform transcription.<br/>
         /// Example: 7c4f1080-cfe2-41d4-8269-0e6ec15a0354
         /// </summary>
         /// <example>7c4f1080-cfe2-41d4-8269-0e6ec15a0354</example>
@@ -287,7 +287,7 @@ namespace DeepL
         /// Example: female
         /// </param>
         /// <param name="spokenTermsId">
-        /// (beta) The ID of a spoken terms list used to inform transcription.<br/>
+        /// (beta) The ID of a Spoken Terms collection used to inform transcription.<br/>
         /// Example: 7c4f1080-cfe2-41d4-8269-0e6ec15a0354
         /// </param>
         /// <param name="glossaryId">
