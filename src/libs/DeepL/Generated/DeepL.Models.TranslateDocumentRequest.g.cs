@@ -126,6 +126,14 @@ namespace DeepL
         public int? TranslationMemoryThreshold { get; set; }
 
         /// <summary>
+        /// When `true`, adds a "Translated by DeepL" watermark to the translated document.<br/>
+        /// Only supported for `docx` and `pdf` output. For all other output formats the parameter is ignored and the document is returned without a watermark.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_watermark")]
+        public bool? EnableWatermark { get; set; }
+
+        /// <summary>
         /// This parameter is maintained for backward compatibility and has no effect.<br/>
         /// Default Value: false
         /// </summary>
@@ -214,6 +222,11 @@ namespace DeepL
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
+        /// <param name="enableWatermark">
+        /// When `true`, adds a "Translated by DeepL" watermark to the translated document.<br/>
+        /// Only supported for `docx` and `pdf` output. For all other output formats the parameter is ignored and the document is returned without a watermark.<br/>
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -228,7 +241,8 @@ namespace DeepL
             global::System.Collections.Generic.IList<string>? glossaryIds,
             string? styleId,
             global::System.Guid? translationMemoryId,
-            int? translationMemoryThreshold)
+            int? translationMemoryThreshold,
+            bool? enableWatermark)
         {
             this.SourceLang = sourceLang;
             this.TargetLang = targetLang ?? throw new global::System.ArgumentNullException(nameof(targetLang));
@@ -241,6 +255,7 @@ namespace DeepL
             this.StyleId = styleId;
             this.TranslationMemoryId = translationMemoryId;
             this.TranslationMemoryThreshold = translationMemoryThreshold;
+            this.EnableWatermark = enableWatermark;
         }
 
         /// <summary>

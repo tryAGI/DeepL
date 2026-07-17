@@ -272,6 +272,14 @@ namespace DeepL
                                     name: "\"translation_memory_threshold\"");
 
                             }
+                            if (request.EnableWatermark != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EnableWatermark, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"enable_watermark\"");
+
+                            }
                             if (request.EnableBetaLanguages != default)
                             {
 
@@ -967,6 +975,11 @@ namespace DeepL
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
+        /// <param name="enableWatermark">
+        /// When `true`, adds a "Translated by DeepL" watermark to the translated document.<br/>
+        /// Only supported for `docx` and `pdf` output. For all other output formats the parameter is ignored and the document is returned without a watermark.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -982,6 +995,7 @@ namespace DeepL
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
+            bool? enableWatermark = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -998,6 +1012,7 @@ namespace DeepL
                 StyleId = styleId,
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
+                EnableWatermark = enableWatermark,
             };
 
             return await TranslateDocumentAsync(
@@ -1081,6 +1096,11 @@ namespace DeepL
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
+        /// <param name="enableWatermark">
+        /// When `true`, adds a "Translated by DeepL" watermark to the translated document.<br/>
+        /// Only supported for `docx` and `pdf` output. For all other output formats the parameter is ignored and the document is returned without a watermark.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
@@ -1096,6 +1116,7 @@ namespace DeepL
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
+            bool? enableWatermark = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1114,6 +1135,7 @@ namespace DeepL
                 StyleId = styleId,
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
+                EnableWatermark = enableWatermark,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -1292,6 +1314,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.TranslationMemoryThreshold, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"translation_memory_threshold\"");
+
+                            }
+                            if (request.EnableWatermark != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EnableWatermark, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"enable_watermark\"");
 
                             }
                             if (request.EnableBetaLanguages != default)
@@ -1981,6 +2011,11 @@ namespace DeepL
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
+        /// <param name="enableWatermark">
+        /// When `true`, adds a "Translated by DeepL" watermark to the translated document.<br/>
+        /// Only supported for `docx` and `pdf` output. For all other output formats the parameter is ignored and the document is returned without a watermark.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
@@ -1996,6 +2031,7 @@ namespace DeepL
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
+            bool? enableWatermark = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -2014,6 +2050,7 @@ namespace DeepL
                 StyleId = styleId,
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
+                EnableWatermark = enableWatermark,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -2192,6 +2229,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.TranslationMemoryThreshold, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"translation_memory_threshold\"");
+
+                            }
+                            if (request.EnableWatermark != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EnableWatermark, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"enable_watermark\"");
 
                             }
                             if (request.EnableBetaLanguages != default)
