@@ -93,7 +93,7 @@ namespace DeepL
         public global::System.Collections.Generic.IList<global::DeepL.VoiceTargetLanguage>? TargetLanguages { get; set; }
 
         /// <summary>
-        /// (closed beta) List of target languages for which to generate synthesized audio. Languages specified here will automatically be added to target_languages if not already present, ensuring you receive both text translation and audio synthesis for these languages. If omitted, only text transcription and translation will be provided (no audio synthesis). Language identifiers must comply with IETF BCP 47.<br/>
+        /// List of target languages for which to generate synthesized audio. Languages specified here will automatically be added to target_languages if not already present, ensuring you receive both text translation and audio synthesis for these languages. If omitted, only text transcription and translation will be provided (no audio synthesis). Language identifiers must comply with IETF BCP 47.<br/>
         /// Note: Some translated audio languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
         /// Default Value: []<br/>
         /// Example: [de]
@@ -103,7 +103,7 @@ namespace DeepL
         public global::System.Collections.Generic.IList<global::DeepL.VoiceTargetMediaLanguage>? TargetMediaLanguages { get; set; }
 
         /// <summary>
-        ///  (closed beta) The audio format for synthesized target media streaming.<br/>
+        ///  The audio format for synthesized target media streaming.<br/>
         ///  Specifies container, codec, and encoding parameters for the audio returned in target_media_chunk messages.<br/>
         ///  If not specified, defaults to audio/webm;codecs=opus.<br/>
         ///  Only applies when target_media_languages is specified.<br/>
@@ -139,7 +139,7 @@ namespace DeepL
         public global::DeepL.VoiceTargetMediaContentType? TargetMediaContentType { get; set; }
 
         /// <summary>
-        /// (closed beta) Target audio voice selection for synthesized speech. The default voice is language dependent.<br/>
+        /// Target audio voice selection for synthesized speech. The default voice is language dependent.<br/>
         /// Example: female
         /// </summary>
         /// <example>female</example>
@@ -246,13 +246,13 @@ namespace DeepL
         /// Example: [de, fr, es]
         /// </param>
         /// <param name="targetMediaLanguages">
-        /// (closed beta) List of target languages for which to generate synthesized audio. Languages specified here will automatically be added to target_languages if not already present, ensuring you receive both text translation and audio synthesis for these languages. If omitted, only text transcription and translation will be provided (no audio synthesis). Language identifiers must comply with IETF BCP 47.<br/>
+        /// List of target languages for which to generate synthesized audio. Languages specified here will automatically be added to target_languages if not already present, ensuring you receive both text translation and audio synthesis for these languages. If omitted, only text transcription and translation will be provided (no audio synthesis). Language identifiers must comply with IETF BCP 47.<br/>
         /// Note: Some translated audio languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
         /// Default Value: []<br/>
         /// Example: [de]
         /// </param>
         /// <param name="targetMediaContentType">
-        ///  (closed beta) The audio format for synthesized target media streaming.<br/>
+        ///  The audio format for synthesized target media streaming.<br/>
         ///  Specifies container, codec, and encoding parameters for the audio returned in target_media_chunk messages.<br/>
         ///  If not specified, defaults to audio/webm;codecs=opus.<br/>
         ///  Only applies when target_media_languages is specified.<br/>
@@ -283,7 +283,7 @@ namespace DeepL
         /// Example: audio/webm;codecs=opus
         /// </param>
         /// <param name="targetMediaVoice">
-        /// (closed beta) Target audio voice selection for synthesized speech. The default voice is language dependent.<br/>
+        /// Target audio voice selection for synthesized speech. The default voice is language dependent.<br/>
         /// Example: female
         /// </param>
         /// <param name="spokenTermsId">
