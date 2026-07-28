@@ -56,7 +56,7 @@ namespace DeepL
 
         /// <summary>
         /// Create Spoken Terms collection<br/>
-        /// Create a new Spoken Terms collection with one or more term lists. Each term list contains terms for a single language.
+        /// Create a new Spoken Terms collection with one or more term lists. Each term list contains terms for a single language. The number of collections per account is limited by your plan.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -79,7 +79,7 @@ namespace DeepL
         }
         /// <summary>
         /// Create Spoken Terms collection<br/>
-        /// Create a new Spoken Terms collection with one or more term lists. Each term list contains terms for a single language.
+        /// Create a new Spoken Terms collection with one or more term lists. Each term list contains terms for a single language. The number of collections per account is limited by your plan.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -709,7 +709,7 @@ namespace DeepL
         }
         /// <summary>
         /// Create Spoken Terms collection<br/>
-        /// Create a new Spoken Terms collection with one or more term lists. Each term list contains terms for a single language.
+        /// Create a new Spoken Terms collection with one or more term lists. Each term list contains terms for a single language. The number of collections per account is limited by your plan.
         /// </summary>
         /// <param name="name">
         /// Name for the Spoken Terms collection.<br/>

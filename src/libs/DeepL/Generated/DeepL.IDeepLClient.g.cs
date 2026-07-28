@@ -110,7 +110,11 @@ namespace DeepL
         public ManageMultilingualGlossariesClient ManageMultilingualGlossaries { get; }
 
         /// <summary>
-        /// 
+        /// The *Spoken Terms* functions allow you to create, inspect, edit and delete Spoken Terms collections.<br/>
+        /// Spoken Terms improve speech recognition in the Voice API: they ensure specific words and phrases,<br/>
+        /// such as company names, acronyms, and product names, are transcribed correctly. A collection contains<br/>
+        /// one or more term lists, each holding terms for a single language, and is applied to a voice session<br/>
+        /// via the `spoken_terms_id` parameter.
         /// </summary>
         public ManageSpokenTermsClient ManageSpokenTerms { get; }
 
