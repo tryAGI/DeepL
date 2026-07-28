@@ -202,7 +202,7 @@
       "Order": 19,
       "Title": "Create Spoken Terms collection",
       "Slug": "createspokenterms",
-      "Description": "Create a new Spoken Terms collection with one or more term lists. Each term list contains terms for a single language.",
+      "Description": "Create a new Spoken Terms collection with one or more term lists. Each term list contains terms for a single language. The number of collections per account is limited by your plan.",
       "Language": "csharp",
       "Code": "using var client = new DeepLClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::DeepL.CreateSpokenTermsParameters\u003E(\n    @\u0022{\n  \u0022\u0022name\u0022\u0022: \u0022\u0022Technical Terms\u0022\u0022,\n  \u0022\u0022term_lists\u0022\u0022: [\n    {\n      \u0022\u0022lang\u0022\u0022: \u0022\u0022en\u0022\u0022,\n      \u0022\u0022entries\u0022\u0022: \u0022\u0022DeepL\\nAPI\\nwebhook\u0022\u0022\n    }\n  ]\n}\u0022)!;\n\nvar response = await client.ManageSpokenTerms.CreateSpokenTermsAsync(\n    request: request\n);",
       "Format": "sdk",

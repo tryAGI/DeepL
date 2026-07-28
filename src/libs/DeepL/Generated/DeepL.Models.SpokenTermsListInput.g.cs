@@ -18,7 +18,8 @@ namespace DeepL
         public required string Lang { get; set; }
 
         /// <summary>
-        /// Newline-separated list of terms. Maximum 300 characters total.<br/>
+        /// Newline-separated list of terms, one term per line. Maximum 300 characters total.<br/>
+        /// Terms are case-sensitive. Each term must be non-empty, must not contain C0 or C1 control characters (such as tabs or newlines within a term), and must not have leading or trailing whitespace. Duplicate terms within a list are not allowed (comparison is case-sensitive).<br/>
         /// Example: DeepL<br/>
         /// API<br/>
         /// webhook
@@ -46,7 +47,8 @@ namespace DeepL
         /// Example: en
         /// </param>
         /// <param name="entries">
-        /// Newline-separated list of terms. Maximum 300 characters total.<br/>
+        /// Newline-separated list of terms, one term per line. Maximum 300 characters total.<br/>
+        /// Terms are case-sensitive. Each term must be non-empty, must not contain C0 or C1 control characters (such as tabs or newlines within a term), and must not have leading or trailing whitespace. Duplicate terms within a list are not allowed (comparison is case-sensitive).<br/>
         /// Example: DeepL<br/>
         /// API<br/>
         /// webhook
