@@ -185,11 +185,17 @@ namespace DeepL
         };
 
         /// <summary>
-        /// The translation memory endpoints allow you to interact with your account's translation memories, used to store<br/>
-        /// and reuse previously created translations. Translation memories can be used in text translation requests by<br/>
+        /// The translation memory endpoints allow you to manage your account's translation memories, used to store<br/>
+        /// and reuse previously created translations. You can list and retrieve translation memories, page through<br/>
+        /// their stored segments, create one by importing a TMX file, export one back to TMX, and delete one.<br/>
+        /// Editing the contents of an existing translation memory is not supported; import a new one instead.<br/>
+        /// Importing and exporting run as background jobs. Create the job, then poll<br/>
+        /// `GET /v3/translation_memories/jobs/{job_id}` until it reports `completed`.<br/>
+        /// Translation memories can be used in text translation requests by<br/>
         /// specifying the `translation_memory_id` parameter to denote a specific translation memory and the<br/>
         /// `translation_memory_threshold` which defines the minimum matching percentage required for a translation memory<br/>
-        /// segment to be applied (recommended to be 75% or higher).
+        /// segment to be applied (recommended to be 75% or higher). A translation request fails with `404` if the<br/>
+        /// translation memory does not exist or does not cover the requested language pair.
         /// </summary>
         public TranslationMemoriesClient TranslationMemories => new TranslationMemoriesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
