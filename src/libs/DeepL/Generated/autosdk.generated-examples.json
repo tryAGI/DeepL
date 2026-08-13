@@ -376,6 +376,61 @@
     },
     {
       "Order": 35,
+      "Title": "Export a translation memory",
+      "Slug": "createtranslationmemoryexport",
+      "Description": "Export a translation memory as a TMX file.\n\nThe export runs as a background job. Poll\n[Retrieve an import or export job](/api-reference/translation-memory/retrieve-a-translation-memory-job)\nuntil the status is \u0060completed\u0060, then download the file from the \u0060download_url\u0060 on the job result.\nThat URL is short-lived, so download the file rather than storing the link.\n\nIf a recent export of the same translation memory is still available, DeepL reuses it and returns\n\u0060200 OK\u0060 with that job instead of starting a new one. Handle both \u0060200\u0060 and \u0060202\u0060 as success. If a\ndifferent export of the same translation memory is still running, the request returns\n\u0060409 Conflict\u0060.\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
+      "Language": "http",
+      "Code": "### Export a translation memory\n# @name createTranslationMemoryExport\nPOST {{host}}/v3/translation_memories/{{translation_memory_id}}/export\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: An existing export was reused. Poll the returned \u0060job_id\u0060 for the download URL.\n# Content-Type: application/json\n# 202\n# Description: The export job was created. Poll the returned \u0060job_id\u0060 for the download URL.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The translation memory could not be found. This is also returned for a translation memory that\nbelongs to another account.\n# Content-Type: application/json\n# 409\n# Description: An export of this translation memory is already in progress. Poll that job instead of starting\nanother export.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.",
+      "Format": "http",
+      "OperationId": "createTranslationMemoryExport",
+      "Setup": null
+    },
+    {
+      "Order": 36,
+      "Title": "Import a translation memory",
+      "Slug": "createtranslationmemoryimport",
+      "Description": "Create a translation memory by importing a TMX file.\n\nThis endpoint does not accept the file itself. It returns a short-lived \u0060upload_url\u0060, and you\nupload the TMX file to that URL with a separate \u0060PUT\u0060 request. Processing starts automatically\nonce the upload completes, so there is no third call to confirm it.\n\n1. \u0060POST /v3/translation_memories/import\u0060 with the file\u0027s name and size. The response returns a\n   \u0060job_id\u0060, an \u0060upload_url\u0060, and the \u0060expires_at\u0060 time after which the URL stops working.\n2. \u0060PUT\u0060 the TMX file to \u0060upload_url\u0060. Do not send your \u0060Authorization\u0060 header on this request,\n   because the URL is already signed.\n3. Poll [Retrieve an import or export job](/api-reference/translation-memory/retrieve-a-translation-memory-job)\n   until the status is \u0060completed\u0060. The new \u0060translation_memory_id\u0060 is on the job result.\n\nRequires an API key with the \u0060translation_memories:write\u0060 scope.",
+      "Language": "csharp",
+      "Code": "using var client = new DeepLClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::DeepL.CreateTranslationMemoryImportRequest\u003E(\n    @\u0022{\n  \u0022\u0022source_file\u0022\u0022: {\n    \u0022\u0022file_name\u0022\u0022: \u0022\u0022legal.tmx\u0022\u0022,\n    \u0022\u0022content_type\u0022\u0022: \u0022\u0022application/xml\u0022\u0022,\n    \u0022\u0022content_length\u0022\u0022: 1024\n  },\n  \u0022\u0022parameters\u0022\u0022: {\n    \u0022\u0022display_name\u0022\u0022: \u0022\u0022Legal\u0022\u0022\n  }\n}\u0022)!;\n\nvar response = await client.TranslationMemories.CreateTranslationMemoryImportAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022job_id\u0022: \u00220f8b6c1e-4d2a-4c77-9a3e-1b5d8c9e2f40\u0022,\n//   \u0022upload_url\u0022: \u0022https://assets.deepl.com/upload/0f8b6c1e-4d2a-4c77-9a3e-1b5d8c9e2f40\u0022,\n//   \u0022expires_at\u0022: \u00222026-08-06T15:34:25.223Z\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "createTranslationMemoryImport",
+      "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 37,
+      "Title": "Retrieve a translation memory",
+      "Slug": "gettranslationmemory",
+      "Description": "Retrieve a single translation memory by its ID, including its languages and segment count.\n\nTo read the stored segments themselves, use\n[List translation memory segments](/api-reference/translation-memory/list-translation-memory-segments).\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
+      "Language": "http",
+      "Code": "### Retrieve a translation memory\n# @name getTranslationMemory\nGET {{host}}/v3/translation_memories/{{translation_memory_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Returns the translation memory.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The translation memory could not be found. This is also returned for a translation memory that\nbelongs to another account.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.",
+      "Format": "http",
+      "OperationId": "getTranslationMemory",
+      "Setup": null
+    },
+    {
+      "Order": 38,
+      "Title": "Retrieve an import or export job",
+      "Slug": "gettranslationmemoryjob",
+      "Description": "Retrieve the status of a translation memory import or export job.\n\nPoll this endpoint after creating a job. The \u0060operation\u0060 field tells you which kind of job it is,\nand the single entry in \u0060results\u0060 carries the status and, once the job finishes, its output: the\nnew \u0060translation_memory_id\u0060 for an import, or a \u0060download_url\u0060 for an export.\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
+      "Language": "csharp",
+      "Code": "using var client = new DeepLClient(apiKey);\n\nvar response = await client.TranslationMemories.GetTranslationMemoryJobAsync(\n    jobId: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.Guid\u003E(\n    @\u0022\u0022\u00220f8b6c1e-4d2a-4c77-9a3e-1b5d8c9e2f40\u0022\u0022\u0022)!\n);\n\n// Example response:\n// {\n//   \u0022job_id\u0022: \u00227c2e5a91-3b8d-4f16-8e0a-6d4c2b7f9a13\u0022,\n//   \u0022product\u0022: \u0022translation_memory\u0022,\n//   \u0022operation\u0022: \u0022export\u0022,\n//   \u0022creation_time\u0022: \u00222026-08-06T15:04:25.223Z\u0022,\n//   \u0022updated_time\u0022: \u00222026-08-06T15:05:02.771Z\u0022,\n//   \u0022parameters\u0022: {\n//     \u0022translation_memory_id\u0022: \u0022a74d88fb-ed2a-4943-a664-a4512398b994\u0022\n//   },\n//   \u0022results\u0022: [\n//     {\n//       \u0022status\u0022: \u0022completed\u0022,\n//       \u0022download_url\u0022: \u0022https://assets.deepl.com/download/7c2e5a91-3b8d-4f16-8e0a-6d4c2b7f9a13\u0022,\n//       \u0022expires_at\u0022: \u00222026-08-06T16:05:02.771Z\u0022\n//     }\n//   ]\n// }",
+      "Format": "sdk",
+      "OperationId": "getTranslationMemoryJob",
+      "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 39,
+      "Title": "List translation memory segments",
+      "Slug": "gettranslationmemorysegments",
+      "Description": "List the segments stored in a translation memory, one page at a time. Each entry is a source\nsegment with its translations in every target language.\n\nThis endpoint uses cursor-based pagination rather than the numbered pages used by\n[List translation memories](/api-reference/translation-memory/list-translation-memories). Omit\n\u0060page_cursor\u0060 on your first call, then pass the \u0060next_page_cursor\u0060 from each response to get the\nfollowing page. When a response has no \u0060next_page_cursor\u0060, you have reached the last page.\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
+      "Language": "http",
+      "Code": "### List translation memory segments\n# @name getTranslationMemorySegments\nGET {{host}}/v3/translation_memories/{{translation_memory_id}}/segments?page_size=50\u0026page_cursor={{page_cursor}}\u0026filter_text={{filter_text}}\u0026filter_case_sensitive=false\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Returns a page of segments.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The translation memory could not be found. This is also returned for a translation memory that\nbelongs to another account.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.",
+      "Format": "http",
+      "OperationId": "getTranslationMemorySegments",
+      "Setup": null
+    },
+    {
+      "Order": 40,
       "Title": "List translation memories",
       "Slug": "listtranslationmemories",
       "Description": "Retrieve a list of translation memories associated with the authenticated account.",
@@ -386,7 +441,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 36,
+      "Order": 41,
       "Title": "Get Streaming URL",
       "Slug": "getvoicestreamingurl",
       "Description": "Generated from OpenAPI examples.",
@@ -397,7 +452,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 37,
+      "Order": 42,
       "Title": "Request Reconnection",
       "Slug": "requestreconnection",
       "Description": "Generated from OpenAPI examples.",
@@ -408,7 +463,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 38,
+      "Order": 43,
       "Title": "Create a voice translation job",
       "Slug": "createvoicetranslatejob",
       "Description": "Creates an async voice translation job. The response includes an upload URL for the source audio file.",
@@ -419,7 +474,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 39,
+      "Order": 44,
       "Title": "Get voice translation job status",
       "Slug": "getvoicetranslatejobstatus",
       "Description": "Returns the current status of a voice translation job, including per-target result statuses.\n\nWhen a target\u0027s status is \u0060complete\u0060, the response includes a \u0060download_url\u0060 and \u0060signature\u0060 for that target. Results are returned in the same order as the targets in the create request.",
