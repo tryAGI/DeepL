@@ -7,6 +7,7 @@ namespace DeepL
         /// <summary>
         /// Get Streaming URL
         /// </summary>
+        /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -14,11 +15,13 @@ namespace DeepL
         global::System.Threading.Tasks.Task<global::DeepL.VoiceStreamingResponse> GetVoiceStreamingUrlAsync(
 
             global::DeepL.GetVoiceStreamingUrlRequest request,
+            string? xDeepLReportingTag = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Streaming URL
         /// </summary>
+        /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -26,11 +29,13 @@ namespace DeepL
         global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.VoiceStreamingResponse>> GetVoiceStreamingUrlAsResponseAsync(
 
             global::DeepL.GetVoiceStreamingUrlRequest request,
+            string? xDeepLReportingTag = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Streaming URL
         /// </summary>
+        /// <param name="xDeepLReportingTag"></param>
         /// <param name="messageFormat">
         /// Message encoding format for WebSocket communication. Determines how messages are serialized and transmitted.<br/>
         /// Using `json`,  messages are JSON-encoded and sent as TEXT WebSocket frames. All binary fields (such as audio data) are base64-encoded strings.<br/>
@@ -153,6 +158,7 @@ namespace DeepL
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::DeepL.VoiceStreamingResponse> GetVoiceStreamingUrlAsync(
             global::DeepL.VoiceSourceMediaContentType sourceMediaContentType,
+            string? xDeepLReportingTag = default,
             global::DeepL.VoiceMessageFormat? messageFormat = default,
             global::DeepL.VoiceSourceLanguage? sourceLanguage = default,
             global::DeepL.VoiceSourceLanguageMode? sourceLanguageMode = default,

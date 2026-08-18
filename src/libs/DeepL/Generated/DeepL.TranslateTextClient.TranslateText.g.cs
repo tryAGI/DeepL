@@ -42,10 +42,12 @@ namespace DeepL
             };
         partial void PrepareTranslateTextArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string? xDeepLReportingTag,
             global::DeepL.TranslateTextRequest request);
         partial void PrepareTranslateTextRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? xDeepLReportingTag,
             global::DeepL.TranslateTextRequest request);
         partial void ProcessTranslateTextResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -59,6 +61,7 @@ namespace DeepL
         /// <summary>
         /// Request Translation
         /// </summary>
+        /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -66,12 +69,14 @@ namespace DeepL
         public async global::System.Threading.Tasks.Task<global::DeepL.TranslateTextResponse> TranslateTextAsync(
 
             global::DeepL.TranslateTextRequest request,
+            string? xDeepLReportingTag = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await TranslateTextAsResponseAsync(
 
                 request: request,
+                xDeepLReportingTag: xDeepLReportingTag,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -81,6 +86,7 @@ namespace DeepL
         /// <summary>
         /// Request Translation
         /// </summary>
+        /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -88,6 +94,7 @@ namespace DeepL
         public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.TranslateTextResponse>> TranslateTextAsResponseAsync(
 
             global::DeepL.TranslateTextRequest request,
+            string? xDeepLReportingTag = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -97,6 +104,7 @@ namespace DeepL
                 client: HttpClient);
             PrepareTranslateTextArguments(
                 httpClient: HttpClient,
+                xDeepLReportingTag: ref xDeepLReportingTag,
                 request: request);
 
 
@@ -156,6 +164,12 @@ namespace DeepL
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
+
+            if (xDeepLReportingTag != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("X-DeepL-Reporting-Tag", xDeepLReportingTag.ToString());
+            }
+
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
                                 content: __httpRequestContentBody,
@@ -173,6 +187,7 @@ namespace DeepL
                 PrepareTranslateTextRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    xDeepLReportingTag: xDeepLReportingTag,
                     request: request);
 
                 return __httpRequest;
@@ -806,6 +821,7 @@ namespace DeepL
         /// <summary>
         /// Request Translation
         /// </summary>
+        /// <param name="xDeepLReportingTag"></param>
         /// <param name="text">
         /// Text to be translated. Only UTF-8-encoded plain text is supported. The parameter may be specified<br/>
         /// many times in a single request, within the request size limit (128KiB). Translations are returned<br/>
@@ -926,6 +942,7 @@ namespace DeepL
         public async global::System.Threading.Tasks.Task<global::DeepL.TranslateTextResponse> TranslateTextAsync(
             global::System.Collections.Generic.IList<string> text,
             string targetLang,
+            string? xDeepLReportingTag = default,
             string? sourceLang = default,
             string? context = default,
             bool? showBilledCharacters = default,
@@ -974,6 +991,7 @@ namespace DeepL
             };
 
             return await TranslateTextAsync(
+                xDeepLReportingTag: xDeepLReportingTag,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

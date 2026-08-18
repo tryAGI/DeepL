@@ -25,7 +25,7 @@ namespace DeepL
         public global::System.DateTime? UsageDate { get; set; }
 
         /// <summary>
-        /// Breakdown of character usage by category for a custom tag.
+        /// Breakdown of usage by category for a custom tag.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("breakdown")]
         public global::DeepL.CustomTagBreakdown? Breakdown { get; set; }
@@ -48,7 +48,7 @@ namespace DeepL
         /// Example: 2026-05-04T00:00:00Z
         /// </param>
         /// <param name="breakdown">
-        /// Breakdown of character usage by category for a custom tag.
+        /// Breakdown of usage by category for a custom tag.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

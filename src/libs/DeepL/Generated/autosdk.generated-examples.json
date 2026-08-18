@@ -50,7 +50,7 @@
       "Slug": "admingetcustomtaganalytics",
       "Description": "Retrieve usage statistics broken down by custom tags within a specified date range.\nOptionally aggregate results by day or over the entire period.\nResults are paginated; use the \u0060page\u0060 parameter with the \u0060next_page\u0060 value from\na previous response to retrieve subsequent pages.",
       "Language": "csharp",
-      "Code": "using var client = new DeepLClient(apiKey);\n\nvar response = await client.AdminApi.AdminGetCustomTagAnalyticsAsync(\n    startDate: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.DateTime\u003E(\n    @\u0022\u0022\u00222026-05-17\u0022\u0022\u0022)!,\n    endDate: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.DateTime\u003E(\n    @\u0022\u0022\u00222026-05-18\u0022\u0022\u0022)!,\n    aggregateBy: global::DeepL.AdminGetCustomTagAnalyticsAggregateBy.Day,\n    page: 2\n);\n\n// Example response:\n// {\n//   \u0022custom_tag_usage_report\u0022: {\n//     \u0022aggregate_by\u0022: \u0022day\u0022,\n//     \u0022start_date\u0022: \u00222026-05-03T00:00:00\u0022,\n//     \u0022end_date\u0022: \u00222026-05-15T00:00:00\u0022,\n//     \u0022next_page\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022usage\u0022: [\n//       {\n//         \u0022custom_tag\u0022: \u0022example-custom-tag\u0022,\n//         \u0022usage_date\u0022: \u00222026-05-04T00:00:00Z\u0022,\n//         \u0022breakdown\u0022: {\n//           \u0022total_characters\u0022: 380,\n//           \u0022text_translation_characters\u0022: 380,\n//           \u0022text_improvement_characters\u0022: 0\n//         }\n//       },\n//       {\n//         \u0022custom_tag\u0022: \u0022example-custom-tag\u0022,\n//         \u0022usage_date\u0022: \u00222026-05-11T00:00:00Z\u0022,\n//         \u0022breakdown\u0022: {\n//           \u0022total_characters\u0022: 595,\n//           \u0022text_translation_characters\u0022: 595,\n//           \u0022text_improvement_characters\u0022: 0\n//         }\n//       }\n//     ]\n//   }\n// }",
+      "Code": "using var client = new DeepLClient(apiKey);\n\nvar response = await client.AdminApi.AdminGetCustomTagAnalyticsAsync(\n    startDate: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.DateTime\u003E(\n    @\u0022\u0022\u00222026-05-17\u0022\u0022\u0022)!,\n    endDate: global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::System.DateTime\u003E(\n    @\u0022\u0022\u00222026-05-18\u0022\u0022\u0022)!,\n    aggregateBy: global::DeepL.AdminGetCustomTagAnalyticsAggregateBy.Day,\n    page: 2\n);\n\n// Example response:\n// {\n//   \u0022custom_tag_usage_report\u0022: {\n//     \u0022aggregate_by\u0022: \u0022day\u0022,\n//     \u0022start_date\u0022: \u00222026-05-03T00:00:00\u0022,\n//     \u0022end_date\u0022: \u00222026-05-15T00:00:00\u0022,\n//     \u0022next_page\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//     \u0022usage\u0022: [\n//       {\n//         \u0022custom_tag\u0022: \u0022example-custom-tag\u0022,\n//         \u0022usage_date\u0022: \u00222026-05-04T00:00:00Z\u0022,\n//         \u0022breakdown\u0022: {\n//           \u0022total_characters\u0022: 380,\n//           \u0022text_translation_characters\u0022: 380,\n//           \u0022text_improvement_characters\u0022: 0,\n//           \u0022speech_to_text_minutes\u0022: 12.5,\n//           \u0022speech_to_speech_minutes\u0022: 4.2\n//         }\n//       },\n//       {\n//         \u0022custom_tag\u0022: \u0022example-custom-tag\u0022,\n//         \u0022usage_date\u0022: \u00222026-05-11T00:00:00Z\u0022,\n//         \u0022breakdown\u0022: {\n//           \u0022total_characters\u0022: 595,\n//           \u0022text_translation_characters\u0022: 595,\n//           \u0022text_improvement_characters\u0022: 0,\n//           \u0022speech_to_text_minutes\u0022: 0,\n//           \u0022speech_to_speech_minutes\u0022: 0\n//         }\n//       }\n//     ]\n//   }\n// }",
       "Format": "sdk",
       "OperationId": "adminGetCustomTagAnalytics",
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
@@ -376,6 +376,17 @@
     },
     {
       "Order": 35,
+      "Title": "Request Translation",
+      "Slug": "translatetext",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Request Translation\n# @name translateText\nPOST {{host}}/v2/translate\nAuthorization: Bearer {{token}}\nX-DeepL-Reporting-Tag: team-billing\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022text\u0022: [\n    \u0022Hello, World!\u0022\n  ],\n  \u0022source_lang\u0022: \u0022EN\u0022,\n  \u0022target_lang\u0022: \u0022DE\u0022,\n  \u0022context\u0022: \u0022This is context.\u0022,\n  \u0022show_billed_characters\u0022: true,\n  \u0022split_sentences\u0022: \u00221\u0022,\n  \u0022preserve_formatting\u0022: false,\n  \u0022formality\u0022: \u0022prefer_more\u0022,\n  \u0022model_type\u0022: \u0022quality_optimized\u0022,\n  \u0022glossary_id\u0022: \u0022def3a26b-3e84-45b3-84ae-0c0aaf3525f7\u0022,\n  \u0022glossary_ids\u0022: [\n    \u0022def3a26b-3e84-45b3-84ae-0c0aaf3525f7\u0022\n  ],\n  \u0022style_id\u0022: \u00227ff9bfd6-cd85-4190-8503-d6215a321519\u0022,\n  \u0022translation_memory_id\u0022: \u0022a74d88fb-ed2a-4943-a664-a4512398b994\u0022,\n  \u0022translation_memory_threshold\u0022: 75,\n  \u0022custom_instructions\u0022: [\n    \u0022Use a friendly, diplomatic tone\u0022\n  ],\n  \u0022tag_handling\u0022: \u0022html\u0022,\n  \u0022tag_handling_version\u0022: \u0022v2\u0022,\n  \u0022outline_detection\u0022: true,\n  \u0022enable_beta_languages\u0022: false,\n  \u0022non_splitting_tags\u0022: [\n    \u0022non_splitting_tag\u0022\n  ],\n  \u0022splitting_tags\u0022: [\n    \u0022splitting_tag\u0022\n  ],\n  \u0022ignore_tags\u0022: [\n    \u0022ignore_tag\u0022\n  ]\n}\n\n## Responses\n# 200\n# Description: The translate function returns a JSON representation of the translations in the order the text parameters have been specified.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 414\n# Description: The request URL is too long. You can avoid this error by using a POST request instead of a GET request, and sending the parameters in the HTTP body.\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 504\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "translateText",
+      "Setup": null
+    },
+    {
+      "Order": 36,
       "Title": "Export a translation memory",
       "Slug": "createtranslationmemoryexport",
       "Description": "Export a translation memory as a TMX file.\n\nThe export runs as a background job. Poll\n[Retrieve an import or export job](/api-reference/translation-memory/retrieve-a-translation-memory-job)\nuntil the status is \u0060completed\u0060, then download the file from the \u0060download_url\u0060 on the job result.\nThat URL is short-lived, so download the file rather than storing the link.\n\nIf a recent export of the same translation memory is still available, DeepL reuses it and returns\n\u0060200 OK\u0060 with that job instead of starting a new one. Handle both \u0060200\u0060 and \u0060202\u0060 as success. If a\ndifferent export of the same translation memory is still running, the request returns\n\u0060409 Conflict\u0060.\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
@@ -386,7 +397,7 @@
       "Setup": null
     },
     {
-      "Order": 36,
+      "Order": 37,
       "Title": "Import a translation memory",
       "Slug": "createtranslationmemoryimport",
       "Description": "Create a translation memory by importing a TMX file.\n\nThis endpoint does not accept the file itself. It returns a short-lived \u0060upload_url\u0060, and you\nupload the TMX file to that URL with a separate \u0060PUT\u0060 request. Processing starts automatically\nonce the upload completes, so there is no third call to confirm it.\n\n1. \u0060POST /v3/translation_memories/import\u0060 with the file\u0027s name and size. The response returns a\n   \u0060job_id\u0060, an \u0060upload_url\u0060, and the \u0060expires_at\u0060 time after which the URL stops working.\n2. \u0060PUT\u0060 the TMX file to \u0060upload_url\u0060. Do not send your \u0060Authorization\u0060 header on this request,\n   because the URL is already signed.\n3. Poll [Retrieve an import or export job](/api-reference/translation-memory/retrieve-a-translation-memory-job)\n   until the status is \u0060completed\u0060. The new \u0060translation_memory_id\u0060 is on the job result.\n\nRequires an API key with the \u0060translation_memories:write\u0060 scope.",
@@ -397,7 +408,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 37,
+      "Order": 38,
       "Title": "Retrieve a translation memory",
       "Slug": "gettranslationmemory",
       "Description": "Retrieve a single translation memory by its ID, including its languages and segment count.\n\nTo read the stored segments themselves, use\n[List translation memory segments](/api-reference/translation-memory/list-translation-memory-segments).\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
@@ -408,7 +419,7 @@
       "Setup": null
     },
     {
-      "Order": 38,
+      "Order": 39,
       "Title": "Retrieve an import or export job",
       "Slug": "gettranslationmemoryjob",
       "Description": "Retrieve the status of a translation memory import or export job.\n\nPoll this endpoint after creating a job. The \u0060operation\u0060 field tells you which kind of job it is,\nand the single entry in \u0060results\u0060 carries the status and, once the job finishes, its output: the\nnew \u0060translation_memory_id\u0060 for an import, or a \u0060download_url\u0060 for an export.\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
@@ -419,7 +430,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 39,
+      "Order": 40,
       "Title": "List translation memory segments",
       "Slug": "gettranslationmemorysegments",
       "Description": "List the segments stored in a translation memory, one page at a time. Each entry is a source\nsegment with its translations in every target language.\n\nThis endpoint uses cursor-based pagination rather than the numbered pages used by\n[List translation memories](/api-reference/translation-memory/list-translation-memories). Omit\n\u0060page_cursor\u0060 on your first call, then pass the \u0060next_page_cursor\u0060 from each response to get the\nfollowing page. When a response has no \u0060next_page_cursor\u0060, you have reached the last page.\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
@@ -430,7 +441,7 @@
       "Setup": null
     },
     {
-      "Order": 40,
+      "Order": 41,
       "Title": "List translation memories",
       "Slug": "listtranslationmemories",
       "Description": "Retrieve a list of translation memories associated with the authenticated account.",
@@ -441,18 +452,18 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 41,
+      "Order": 42,
       "Title": "Get Streaming URL",
       "Slug": "getvoicestreamingurl",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new DeepLClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::DeepL.GetVoiceStreamingUrlRequest\u003E(\n    @\u0022{\n  \u0022\u0022source_media_content_type\u0022\u0022: \u0022\u0022audio/ogg; codecs=opus\u0022\u0022,\n  \u0022\u0022source_language\u0022\u0022: \u0022\u0022en\u0022\u0022,\n  \u0022\u0022source_language_mode\u0022\u0022: \u0022\u0022auto\u0022\u0022,\n  \u0022\u0022target_languages\u0022\u0022: [\n    \u0022\u0022de\u0022\u0022,\n    \u0022\u0022fr\u0022\u0022,\n    \u0022\u0022es\u0022\u0022\n  ],\n  \u0022\u0022message_format\u0022\u0022: \u0022\u0022json\u0022\u0022\n}\u0022)!;\n\nvar response = await client.VoiceAPI.GetVoiceStreamingUrlAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022streaming_url\u0022: \u0022wss://api.deepl.com/v3/voice/realtime/connect\u0022,\n//   \u0022token\u0022: \u0022VGhpcyBpcyBhIGZha2UgdG9rZW4K\u0022,\n//   \u0022session_id\u0022: \u00224f911080-cfe2-41d4-8269-0e6ec15a0354\u0022\n// }",
+      "Code": "using var client = new DeepLClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::DeepL.GetVoiceStreamingUrlRequest\u003E(\n    @\u0022{\n  \u0022\u0022source_media_content_type\u0022\u0022: \u0022\u0022audio/ogg; codecs=opus\u0022\u0022,\n  \u0022\u0022source_language\u0022\u0022: \u0022\u0022en\u0022\u0022,\n  \u0022\u0022source_language_mode\u0022\u0022: \u0022\u0022auto\u0022\u0022,\n  \u0022\u0022target_languages\u0022\u0022: [\n    \u0022\u0022de\u0022\u0022,\n    \u0022\u0022fr\u0022\u0022,\n    \u0022\u0022es\u0022\u0022\n  ],\n  \u0022\u0022message_format\u0022\u0022: \u0022\u0022json\u0022\u0022\n}\u0022)!;\n\nvar response = await client.VoiceAPI.GetVoiceStreamingUrlAsync(\n    request: request,\n    xDeepLReportingTag: \u0022team-billing\u0022\n);\n\n// Example response:\n// {\n//   \u0022streaming_url\u0022: \u0022wss://api.deepl.com/v3/voice/realtime/connect\u0022,\n//   \u0022token\u0022: \u0022VGhpcyBpcyBhIGZha2UgdG9rZW4K\u0022,\n//   \u0022session_id\u0022: \u00224f911080-cfe2-41d4-8269-0e6ec15a0354\u0022\n// }",
       "Format": "sdk",
       "OperationId": "getVoiceStreamingUrl",
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 42,
+      "Order": 43,
       "Title": "Request Reconnection",
       "Slug": "requestreconnection",
       "Description": "Generated from OpenAPI examples.",
@@ -463,7 +474,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 43,
+      "Order": 44,
       "Title": "Create a voice translation job",
       "Slug": "createvoicetranslatejob",
       "Description": "Creates an async voice translation job. The response includes an upload URL for the source audio file.",
@@ -474,7 +485,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 44,
+      "Order": 45,
       "Title": "Get voice translation job status",
       "Slug": "getvoicetranslatejobstatus",
       "Description": "Returns the current status of a voice translation job, including per-target result statuses.\n\nWhen a target\u0027s status is \u0060complete\u0060, the response includes a \u0060download_url\u0060 and \u0060signature\u0060 for that target. Results are returned in the same order as the targets in the create request.",
