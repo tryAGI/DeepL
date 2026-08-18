@@ -9,6 +9,7 @@ namespace DeepL
         /// <summary>
         /// Request Translation
         /// </summary>
+        /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -16,11 +17,13 @@ namespace DeepL
         global::System.Threading.Tasks.Task<global::DeepL.TranslateTextResponse> TranslateTextAsync(
 
             global::DeepL.TranslateTextRequest request,
+            string? xDeepLReportingTag = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Request Translation
         /// </summary>
+        /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -28,11 +31,13 @@ namespace DeepL
         global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.TranslateTextResponse>> TranslateTextAsResponseAsync(
 
             global::DeepL.TranslateTextRequest request,
+            string? xDeepLReportingTag = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Request Translation
         /// </summary>
+        /// <param name="xDeepLReportingTag"></param>
         /// <param name="text">
         /// Text to be translated. Only UTF-8-encoded plain text is supported. The parameter may be specified<br/>
         /// many times in a single request, within the request size limit (128KiB). Translations are returned<br/>
@@ -153,6 +158,7 @@ namespace DeepL
         global::System.Threading.Tasks.Task<global::DeepL.TranslateTextResponse> TranslateTextAsync(
             global::System.Collections.Generic.IList<string> text,
             string targetLang,
+            string? xDeepLReportingTag = default,
             string? sourceLang = default,
             string? context = default,
             bool? showBilledCharacters = default,

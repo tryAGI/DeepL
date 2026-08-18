@@ -35,10 +35,12 @@ namespace DeepL
             };
         partial void PrepareGetVoiceStreamingUrlArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string? xDeepLReportingTag,
             global::DeepL.GetVoiceStreamingUrlRequest request);
         partial void PrepareGetVoiceStreamingUrlRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? xDeepLReportingTag,
             global::DeepL.GetVoiceStreamingUrlRequest request);
         partial void ProcessGetVoiceStreamingUrlResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -52,6 +54,7 @@ namespace DeepL
         /// <summary>
         /// Get Streaming URL
         /// </summary>
+        /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -59,12 +62,14 @@ namespace DeepL
         public async global::System.Threading.Tasks.Task<global::DeepL.VoiceStreamingResponse> GetVoiceStreamingUrlAsync(
 
             global::DeepL.GetVoiceStreamingUrlRequest request,
+            string? xDeepLReportingTag = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetVoiceStreamingUrlAsResponseAsync(
 
                 request: request,
+                xDeepLReportingTag: xDeepLReportingTag,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -74,6 +79,7 @@ namespace DeepL
         /// <summary>
         /// Get Streaming URL
         /// </summary>
+        /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -81,6 +87,7 @@ namespace DeepL
         public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.VoiceStreamingResponse>> GetVoiceStreamingUrlAsResponseAsync(
 
             global::DeepL.GetVoiceStreamingUrlRequest request,
+            string? xDeepLReportingTag = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -90,6 +97,7 @@ namespace DeepL
                 client: HttpClient);
             PrepareGetVoiceStreamingUrlArguments(
                 httpClient: HttpClient,
+                xDeepLReportingTag: ref xDeepLReportingTag,
                 request: request);
 
 
@@ -149,6 +157,12 @@ namespace DeepL
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
+
+            if (xDeepLReportingTag != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("X-DeepL-Reporting-Tag", xDeepLReportingTag.ToString());
+            }
+
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
                                 content: __httpRequestContentBody,
@@ -166,6 +180,7 @@ namespace DeepL
                 PrepareGetVoiceStreamingUrlRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    xDeepLReportingTag: xDeepLReportingTag,
                     request: request);
 
                 return __httpRequest;
@@ -693,6 +708,7 @@ namespace DeepL
         /// <summary>
         /// Get Streaming URL
         /// </summary>
+        /// <param name="xDeepLReportingTag"></param>
         /// <param name="messageFormat">
         /// Message encoding format for WebSocket communication. Determines how messages are serialized and transmitted.<br/>
         /// Using `json`,  messages are JSON-encoded and sent as TEXT WebSocket frames. All binary fields (such as audio data) are base64-encoded strings.<br/>
@@ -815,6 +831,7 @@ namespace DeepL
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::DeepL.VoiceStreamingResponse> GetVoiceStreamingUrlAsync(
             global::DeepL.VoiceSourceMediaContentType sourceMediaContentType,
+            string? xDeepLReportingTag = default,
             global::DeepL.VoiceMessageFormat? messageFormat = default,
             global::DeepL.VoiceSourceLanguage? sourceLanguage = default,
             global::DeepL.VoiceSourceLanguageMode? sourceLanguageMode = default,
@@ -844,6 +861,7 @@ namespace DeepL
             };
 
             return await GetVoiceStreamingUrlAsync(
+                xDeepLReportingTag: xDeepLReportingTag,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
