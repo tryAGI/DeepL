@@ -814,8 +814,19 @@ namespace DeepL
         /// Example: 7c4f1080-cfe2-41d4-8269-0e6ec15a0354
         /// </param>
         /// <param name="glossaryId">
-        /// A unique ID assigned to a glossary.<br/>
+        /// Specify the glossary to use for the target transcripts (translations). For new integrations we<br/>
+        /// recommend the more general `glossary_ids`.<br/>
+        /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
+        /// </param>
+        /// <param name="glossaryIds">
+        /// Specify the glossaries to use for the target transcripts (translations), as an array of<br/>
+        /// glossary IDs ordered by priority (highest first). Each glossary's matching terms are applied to<br/>
+        /// the translation; where entries conflict, the higher-priority glossary wins. Unknown glossary IDs<br/>
+        /// are ignored.<br/>
+        /// Cannot be used together with `glossary_id`. Requests that exceed the session limit, contain<br/>
+        /// duplicates, or combine `glossary_ids` with `glossary_id` are rejected with a `400 Bad Request`<br/>
+        /// before a session is created.
         /// </param>
         /// <param name="formality">
         /// Sets whether the translated text should lean towards formal or informal language.<br/>
@@ -841,6 +852,7 @@ namespace DeepL
             global::DeepL.VoiceTargetMediaVoice? targetMediaVoice = default,
             global::System.Guid? spokenTermsId = default,
             string? glossaryId = default,
+            global::System.Collections.Generic.IList<string>? glossaryIds = default,
             global::DeepL.VoiceFormality? formality = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -857,6 +869,7 @@ namespace DeepL
                 TargetMediaVoice = targetMediaVoice,
                 SpokenTermsId = spokenTermsId,
                 GlossaryId = glossaryId,
+                GlossaryIds = glossaryIds,
                 Formality = formality,
             };
 
