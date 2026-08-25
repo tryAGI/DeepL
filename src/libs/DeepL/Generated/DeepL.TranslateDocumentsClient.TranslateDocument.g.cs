@@ -244,7 +244,7 @@ namespace DeepL
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.GlossaryIds, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.GlossaryIds!, x => x))}]"),
                                     name: "\"glossary_ids\"");
 
                             }
@@ -1288,7 +1288,7 @@ namespace DeepL
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.GlossaryIds, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.GlossaryIds!, x => x))}]"),
                                     name: "\"glossary_ids\"");
 
                             }
@@ -2203,7 +2203,7 @@ namespace DeepL
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.GlossaryIds, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.GlossaryIds!, x => x))}]"),
                                     name: "\"glossary_ids\"");
 
                             }
