@@ -51,6 +51,11 @@ namespace DeepL
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+        partial void ProcessGetGlossaryEntriesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Retrieve Glossary Entries<br/>
         /// List the entries of a single glossary in the format specified by the `Accept` header.
@@ -62,18 +67,20 @@ namespace DeepL
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task GetGlossaryEntriesAsync(
+        public async global::System.Threading.Tasks.Task<string> GetGlossaryEntriesAsync(
             string glossaryId,
             string? accept = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            await GetGlossaryEntriesAsResponseAsync(
+            var __response = await GetGlossaryEntriesAsResponseAsync(
                 glossaryId: glossaryId,
                 accept: accept,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
+
+            return __response.Body;
         }
         /// <summary>
         /// Retrieve Glossary Entries<br/>
@@ -86,7 +93,7 @@ namespace DeepL
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse> GetGlossaryEntriesAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<string>> GetGlossaryEntriesAsResponseAsync(
             string glossaryId,
             string? accept = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
@@ -753,15 +760,20 @@ namespace DeepL
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
+                                ProcessGetGlossaryEntriesResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
 
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                return new global::DeepL.AutoSDKHttpResponse(
+                                    return new global::DeepL.AutoSDKHttpResponse<string>(
                                         statusCode: __response.StatusCode,
                                         headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri);
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -781,10 +793,17 @@ namespace DeepL
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    return new global::DeepL.AutoSDKHttpResponse(
+                                    var __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    return new global::DeepL.AutoSDKHttpResponse<string>(
                                         statusCode: __response.StatusCode,
                                         headers: global::DeepL.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri);
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

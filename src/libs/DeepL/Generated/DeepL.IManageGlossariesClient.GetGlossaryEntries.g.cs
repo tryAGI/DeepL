@@ -15,7 +15,7 @@ namespace DeepL
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        global::System.Threading.Tasks.Task GetGlossaryEntriesAsync(
+        global::System.Threading.Tasks.Task<string> GetGlossaryEntriesAsync(
             string glossaryId,
             string? accept = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
@@ -31,7 +31,7 @@ namespace DeepL
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse> GetGlossaryEntriesAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<string>> GetGlossaryEntriesAsResponseAsync(
             string glossaryId,
             string? accept = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
