@@ -15,23 +15,23 @@ namespace DeepL
     public enum VoiceFormality
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Formal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Informal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Less,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         More,
     }

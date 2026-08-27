@@ -9,27 +9,27 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationQuotationMarkAndApostrophe
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCurlyQuotationMarksAndApostrophes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleAndSingleCurlyQuotationMarksAndCurlyApostrophes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleAndSingleStraightQuotationMarksAndStraightApostrophes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGuillemetsAndCurlyApostrophes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGuillemetsAndStraightApostrophes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseStraightQuotationMarksAndApostrophes,
     }

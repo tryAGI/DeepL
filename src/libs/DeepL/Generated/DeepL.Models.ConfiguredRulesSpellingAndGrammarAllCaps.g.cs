@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarAllCaps
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseAllCapsExceptForAcronymsInitialismsOrProperNouns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseAllCapsExceptForAcronymsOrBrandNames,
     }

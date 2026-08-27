@@ -9,23 +9,23 @@ namespace DeepL
     public enum ConfiguredRulesNumbersDecimalSeparator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCommaAndDoNotUseThousandsSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCommaAsDecimalSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCommaDoNotUseThousandsSeparatorAndUsePeriodOnlyForRadioStations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePeriodAndDoNotUseThousandsSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePeriodAsDecimalSeparator,
     }

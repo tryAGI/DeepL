@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneFormality
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCasualTone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFormalTone,
     }

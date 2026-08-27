@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarAccentsAndCedillas
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseOnCapitalLetters,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NeverUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEvenOnCapitalLetters,
     }

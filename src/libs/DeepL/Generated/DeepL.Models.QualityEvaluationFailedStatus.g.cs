@@ -9,7 +9,7 @@ namespace DeepL
     public enum QualityEvaluationFailedStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
     }

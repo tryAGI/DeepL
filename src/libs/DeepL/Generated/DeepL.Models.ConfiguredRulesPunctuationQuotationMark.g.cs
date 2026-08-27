@@ -9,23 +9,23 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationQuotationMark
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCurlyQuotationMarks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleCurlyQuotationMarks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleStraightQuotationMarks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGuillemets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseStraightQuotationMarks,
     }

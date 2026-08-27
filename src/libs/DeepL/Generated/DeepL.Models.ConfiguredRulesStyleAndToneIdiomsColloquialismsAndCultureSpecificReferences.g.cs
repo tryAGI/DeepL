@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneIdiomsColloquialismsAndCultureSpecificReferences
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUse,
     }

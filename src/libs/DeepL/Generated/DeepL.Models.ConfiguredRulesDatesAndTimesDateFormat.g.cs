@@ -9,115 +9,115 @@ namespace DeepL
     public enum ConfiguredRulesDatesAndTimesDateFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdPeriodMmPeriodYyWithLeadingZerosForSingleDigitDaysAndMonths,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdPeriodMmPeriodYyyy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdPeriodMmPeriodYyyyWithLeadingZerosForSingleDigitDaysAndMonths,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdPeriodSpaceAbbreviatedMonthYyyyWithAbbreviationsJanPeriodFebPeriodMrzPeriodAprPeriodMaiJunPeriodJulPeriodAugPeriodSepPeriodOktPeriodNovPeriodDezPeriodWithoutLeadingZerosForSingleDigitDays,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdPeriodSpaceAbbreviatedMonthYyyyWithAbbreviationsJanPeriodFebrPeriodMaerzAprPeriodMaiJuniJuliAugPeriodSeptPeriodOktPeriodNovPeriodDezPeriodWithoutLeadingZerosForSingleDigitDays,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdPeriodSpaceMonthYyyyWithoutLeadingZerosForSingleDigitDays,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdSlashMmSlashYyyy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdSlashMmSlashYyyyWithLeadingZerosForSingleDigitDaysAndMonths,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdSpaceSpelledOutMonthSpaceYyyy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdSpaceSpelledOutMonthSpaceYyyyAndUseSpanishWordSeptiembreForNinthMonth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdSpaceSpelledOutMonthSpaceYyyyAndUseSpanishWordSetiembreForNinthMonth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdSpaceSpelledOutMonthSpaceYyyyWithoutLeadingZerosForSingleDigitDays,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHistoricalErasAndWriteNumbersInChineseFollowedByChineseWord公元前Or公元后WithArabicNumeralsInParentheses,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseMmSlashDdSlashYyyyWithLeadingZerosForSingleDigitDaysAndMonths,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsOnlyWithLeadingZeroForSingleDigits,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsOnlyWithoutLeadingZeroForSingleDigits,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpelledOutMonthSpaceDdCommaSpaceYyyyAndUseSpanishWordSeptiembreForNinthMonth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpelledOutMonthSpaceDdCommaSpaceYyyyWithoutLeadingZerosForSingleDigitDays,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseTraditionalCalendarSystemWithChineseNumbers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyyyChineseWord年MmChineseWord月DdChineseWord日WithChineseNumbers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyyyChineseWord年MmChineseWord月DdChineseWord日WithoutLeadingZeroForSingleDigitMonthsAndDays,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyyyHyphenMmHyphenDdWithLeadingZeroForSingleDigitDaysAndMonths,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyyyHyphenMmHyphenDdWithLeadingZerosForSingleDigitDaysAndMonths,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyyyKoreanWord년SpaceMmKoreanWord월SpaceDdKoreanWord일WithoutLeadingZeroForSingleDigitDaysAndMonths,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyyyPeriodMmPeriodDd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyyyPeriodSpaceMmPeriodSpaceDdPeriodSpaceWithoutLeadingZeroForSingleDigitDaysAndMonths,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyyySlashMmSlashDd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyyySlashMmSlashDdWithLeadingZeroForSingleDigitDaysAndMonths,
     }

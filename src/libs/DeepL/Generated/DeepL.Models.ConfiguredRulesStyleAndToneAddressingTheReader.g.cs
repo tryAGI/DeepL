@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneAddressingTheReader
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFormalFrenchWordVous,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFormalItalianWordLei,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseInformalFrenchWordTu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseInformalItalianWordTu,
     }

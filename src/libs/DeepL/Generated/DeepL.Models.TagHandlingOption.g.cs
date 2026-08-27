@@ -12,11 +12,11 @@ namespace DeepL
     public enum TagHandlingOption
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Html,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xml,
     }

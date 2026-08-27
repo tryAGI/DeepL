@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneComplexSentences
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AvoidUnnecessarilyComplexSentences,
     }

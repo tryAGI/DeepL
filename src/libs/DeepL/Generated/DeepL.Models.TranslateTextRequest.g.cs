@@ -6,7 +6,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TranslateTextRequest
     {

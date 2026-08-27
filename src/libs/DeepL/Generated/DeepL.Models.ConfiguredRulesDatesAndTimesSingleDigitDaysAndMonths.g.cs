@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesDatesAndTimesSingleDigitDaysAndMonths
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseLeadingZero,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseLeadingZero,
     }

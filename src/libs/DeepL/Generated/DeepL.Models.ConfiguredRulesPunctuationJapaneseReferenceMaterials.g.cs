@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationJapaneseReferenceMaterials
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleCornerBrackets,
     }

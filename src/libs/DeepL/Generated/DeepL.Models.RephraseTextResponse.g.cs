@@ -4,12 +4,12 @@
 namespace DeepL
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RephraseTextResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("improvements")]
         public global::System.Collections.Generic.IList<global::DeepL.RephraseTextResponseImprovement>? Improvements { get; set; }

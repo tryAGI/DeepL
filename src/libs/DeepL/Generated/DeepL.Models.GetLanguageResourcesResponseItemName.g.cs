@@ -10,31 +10,31 @@ namespace DeepL
     public enum GetLanguageResourcesResponseItemName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Glossary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StyleRules,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranslateDocument,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranslateText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranslationMemory,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Voice,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Write,
     }

@@ -9,27 +9,27 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarForeignWordTranslation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEquivalentExpressionsInChinese,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseForeignFormsOrAbbreviationsForTechnicalTermsOrBrandNames,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseLiteralTranslation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseLocalizedNamesForBrandsWithOfficialChineseTranslations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseMixtureOfTransliterationAndTranslation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseTransliteration,
     }

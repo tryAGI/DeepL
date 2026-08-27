@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesNumbersListOfMeasurementsWithUnits
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RepeatUnitForEachMeasurementInList,
     }

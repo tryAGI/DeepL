@@ -9,27 +9,27 @@ namespace DeepL
     public enum ConfiguredRulesNumbersNumbersOf5DigitsOrMore
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCommaAsDecimalSeparatorAndPeriodAsThousandsSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCommaAsDecimalSeparatorAndSpaceAsThousandsSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCommaAsDecimalSeparatorPeriodAsThousandsSeparatorAndPeriodForRadioStations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCommaAsDecimalSeparatorSpaceAsThousandsSeparatorAndPeriodForRadioStations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePeriodAsDecimalSeparatorAndCommaAsThousandsSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePeriodAsDecimalSeparatorAndSpaceAsThousandsSeparator,
     }

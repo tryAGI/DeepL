@@ -10,43 +10,43 @@ namespace DeepL
     public sealed partial class ConfiguredRules
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dates_and_times")]
         public global::DeepL.ConfiguredRulesDatesAndTimes? DatesAndTimes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("formatting")]
         public global::DeepL.ConfiguredRulesFormatting? Formatting { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("numbers")]
         public global::DeepL.ConfiguredRulesNumbers? Numbers { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("punctuation")]
         public global::DeepL.ConfiguredRulesPunctuation? Punctuation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spelling_and_grammar")]
         public global::DeepL.ConfiguredRulesSpellingAndGrammar? SpellingAndGrammar { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style_and_tone")]
         public global::DeepL.ConfiguredRulesStyleAndTone? StyleAndTone { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vocabulary")]
         public global::DeepL.ConfiguredRulesVocabulary? Vocabulary { get; set; }

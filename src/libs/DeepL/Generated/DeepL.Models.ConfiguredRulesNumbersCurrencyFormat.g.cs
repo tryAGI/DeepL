@@ -9,91 +9,91 @@ namespace DeepL
     public enum ConfiguredRulesNumbersCurrencyFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOutCurrencyNameFollowedByAmountInArabicNumeralsWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOutCurrencyNameFollowedByAmountInChinese,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAmountFollowedByCurrencySymbolWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAmountFollowedBySpaceThenCurrencySymbol,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAmountFollowedBySpaceThenIsoCode,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAmountFollowedBySpaceThenSpellOutCurrencyName,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAmountFollowedBySpaceThenSpellOutCurrencyNameInLowercase,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAmountFollowedBySpelledOutCurrencyNameInJapaneseWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAmountFollowedBySpelledOutCurrencyNameWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCurrencySymbolButSpellOutIfNoSymbolExists,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCurrencySymbolButUseIsoCodeIfNoSymbolExists,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCurrencySymbolFollowedByAmountInArabicNumeralsWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCurrencySymbolFollowedByAmountWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCurrencySymbolFollowedBySpaceThenAmount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCurrencySymbolFollowedBySpaceThenAmountInArabicNumerals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFullWidthCurrencySymbolFollowedByAmountWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHalfWidthCurrencySymbolFollowedByAmountWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHalfWidthCurrencySymbolFollowedBySpaceThenAmount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseIsoCode,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseIsoCodeFollowedBySpaceThenAmount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseIsoCodeFollowedBySpaceThenAmountInArabicNumerals,
     }

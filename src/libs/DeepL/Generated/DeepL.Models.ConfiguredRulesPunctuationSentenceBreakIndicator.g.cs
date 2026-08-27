@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationSentenceBreakIndicator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEmDashWithSpaceOnEitherSide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEmDashWithoutSpaceOnEitherSide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEnDashWithSpaceOnEitherSide,
     }

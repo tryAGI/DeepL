@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationCommaAfterIEAndEG
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use,
     }

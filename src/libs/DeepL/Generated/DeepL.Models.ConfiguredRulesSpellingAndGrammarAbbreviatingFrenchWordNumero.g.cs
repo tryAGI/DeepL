@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarAbbreviatingFrenchWordNumero
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbbreviateAsNThenDegreeSymbol,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbbreviateAsNThenOInSuperscript,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbbreviateAsNo,
     }

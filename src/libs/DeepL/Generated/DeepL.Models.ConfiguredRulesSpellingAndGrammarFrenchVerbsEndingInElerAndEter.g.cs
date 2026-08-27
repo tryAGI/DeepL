@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarFrenchVerbsEndingInElerAndEter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscribeOpenESoundByDoublingNextConsonant,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscribeOpenESoundWithGraveAccent,
     }

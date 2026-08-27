@@ -9,23 +9,23 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneDeclarativeEndings
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MixHapshoAndHaeyoStyles,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHaeStyle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHaeyoStyle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHapshoStyle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHaraStyle,
     }

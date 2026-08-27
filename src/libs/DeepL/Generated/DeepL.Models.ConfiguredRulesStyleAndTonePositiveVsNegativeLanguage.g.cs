@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndTonePositiveVsNegativeLanguage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePositiveLanguage,
     }

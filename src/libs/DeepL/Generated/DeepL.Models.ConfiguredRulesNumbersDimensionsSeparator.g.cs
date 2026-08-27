@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesNumbersDimensionsSeparator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseMultiplicationSignBetweenDimensionsWithSpaceOnEitherSide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseMultiplicationSignBetweenDimensionsWithoutSpaceOnEitherSide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseXBetweenDimensionsWithSpaceOnEitherSide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseXBetweenDimensionsWithoutSpaceOnEitherSide,
     }

@@ -9,7 +9,7 @@ namespace DeepL
     public sealed partial class VoiceTranslateJobParametersRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_language")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::DeepL.JsonConverters.AllOfJsonConverter<string, object>))]

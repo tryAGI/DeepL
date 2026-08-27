@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneDefaultSecondPersonPronoun
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseSecondPersonPronouns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSecondPersonPronouns,
     }

@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesDatesAndTimesHoursMinutesSecondsSeparator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseColon,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePeriod,
     }

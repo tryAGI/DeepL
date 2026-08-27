@@ -155,7 +155,7 @@ namespace DeepL
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
 
             if (xDeepLReportingTag != default)
@@ -545,7 +545,7 @@ namespace DeepL
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // 
+                            //
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -577,7 +577,7 @@ namespace DeepL
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // 
+                            //
                             if ((int)__response.StatusCode == 503)
                             {
                                 string? __content_503 = null;

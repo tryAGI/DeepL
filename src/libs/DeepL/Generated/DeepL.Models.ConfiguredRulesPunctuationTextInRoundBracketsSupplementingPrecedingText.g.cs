@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationTextInRoundBracketsSupplementingPrecedingText
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddPeriodAfterClosingRoundBracket,
     }

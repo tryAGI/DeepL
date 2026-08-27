@@ -9,43 +9,43 @@ namespace DeepL
     public enum ConfiguredRulesNumbersThousandsSeparator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseThousandsSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseComma,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCommaToSeparateLargeNumbersIntoUnitsOfThree,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePeriod,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePeriodAsThousandsSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpaceAsThousandsSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpaceToSeparateLargeNumbersIntoUnitsOfThree,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseStraightApostropheAsThousandsSeparator,
     }

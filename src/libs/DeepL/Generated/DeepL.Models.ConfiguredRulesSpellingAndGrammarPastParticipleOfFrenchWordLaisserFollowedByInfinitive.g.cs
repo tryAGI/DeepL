@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarPastParticipleOfFrenchWordLaisserFollowedByInfinitive
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MakeFrenchWordLaisserAgreeWithDirectObjectComplementIfItAppearsBeforeVerb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseInvariableFormFrenchWordLaissé,
     }

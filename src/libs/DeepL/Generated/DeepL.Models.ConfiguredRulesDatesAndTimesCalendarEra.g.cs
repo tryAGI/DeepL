@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesDatesAndTimesCalendarEra
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseBcAndAd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseBceAndCe,
     }

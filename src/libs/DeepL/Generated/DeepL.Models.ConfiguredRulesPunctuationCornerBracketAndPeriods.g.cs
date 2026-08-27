@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationCornerBracketAndPeriods
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddPeriodAfterClosingCornerBracketAtEndOfSentence,
     }

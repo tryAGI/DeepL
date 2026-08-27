@@ -10,11 +10,11 @@ namespace DeepL
     public enum AdminUsageReportDataGroupBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Key,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KeyAndDay,
     }

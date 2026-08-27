@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarContractions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseContractions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseContractions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseContractionsButAvoidNegativeContractions,
     }

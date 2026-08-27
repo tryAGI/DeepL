@@ -4,12 +4,12 @@
 namespace DeepL
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListMultilingualGlossariesResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("glossaries")]
         public global::System.Collections.Generic.IList<global::DeepL.MultilingualGlossary>? Glossaries { get; set; }

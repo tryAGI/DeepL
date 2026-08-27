@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationAbbreviations
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotSeparateAbbreviatedWords,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SeparateEachAbbreviatedWordWithPeriodAndSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SeparateEachAbbreviatedWordWithPeriodWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SeparateEachAbbreviatedWordWithSpaceWithoutPeriod,
     }

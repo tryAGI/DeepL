@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesNumbersZeroFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseChineseWord_ForNumbering,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseChineseWord零ForMeasurement,
     }

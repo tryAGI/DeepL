@@ -4,16 +4,16 @@
 namespace DeepL
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetLanguagesResource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Glossary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StyleRules,
         /// <summary>
@@ -25,15 +25,15 @@ namespace DeepL
         /// </summary>
         TranslateText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranslationMemory,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Voice,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Write,
     }

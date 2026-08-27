@@ -4,12 +4,12 @@
 namespace DeepL
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListTranslationMemoriesResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("translation_memories")]
         public global::System.Collections.Generic.IList<global::DeepL.TranslationMemory>? TranslationMemories { get; set; }

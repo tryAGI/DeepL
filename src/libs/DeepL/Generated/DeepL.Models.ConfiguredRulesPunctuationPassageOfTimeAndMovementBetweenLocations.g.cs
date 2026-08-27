@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationPassageOfTimeAndMovementBetweenLocations
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleEmDash,
     }

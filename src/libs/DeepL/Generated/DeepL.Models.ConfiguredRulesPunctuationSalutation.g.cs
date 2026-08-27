@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationSalutation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseCommaAfterSalutationCapitalizeFollowingWord,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseColonAfterSalutation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCommaAfterSalutation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseExclamationMarkAfterSalutation,
     }

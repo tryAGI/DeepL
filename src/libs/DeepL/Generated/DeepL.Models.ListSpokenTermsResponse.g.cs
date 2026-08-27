@@ -4,12 +4,12 @@
 namespace DeepL
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListSpokenTermsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spoken_terms")]
         public global::System.Collections.Generic.IList<global::DeepL.SpokenTerms>? SpokenTerms { get; set; }

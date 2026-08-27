@@ -10,11 +10,11 @@ namespace DeepL
     public enum CustomTagUsageReportDataAggregateBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Day,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Period,
     }

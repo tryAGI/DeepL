@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneCountryNames
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseLongForm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseShortForm,
     }

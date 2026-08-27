@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneDirectionalLanguage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseDirectionalLanguage,
     }

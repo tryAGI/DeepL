@@ -9,123 +9,123 @@ namespace DeepL
     public enum ConfiguredRulesDatesAndTimesTimeFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOutTimeInWords,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndDoNotSpecifyMorningOrEvening,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndLowercaseAmOrPmWithPeriods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndLowercaseAmOrPmWithPeriodsExceptUseNoonAndMidnightInsteadOf12AmAnd12Pm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndLowercaseAmOrPmWithoutPeriods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndLowercaseAmOrPmWithoutPeriodsExceptUseNoonAndMidnightInsteadOf12AmAnd12Pm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndSpecifyMorningOrEvening,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndUppercaseAmOrPmWithPeriods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndUppercaseAmOrPmWithPeriodsExceptUseNoonAndMidnightInsteadOf12AmAnd12Pm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndUppercaseAmOrPmWithoutPeriods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndUppercaseAmOrPmWithoutPeriodsExceptUseNoonAndMidnightInsteadOf12AmAnd12Pm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByArabicNumerals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByArabicNumeralsWithChineseWord点ForHours,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByArabicNumeralsWithChineseWords时And分ForHoursAndMinutes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByChineseNumbersWithChineseWords时And分ForHoursAndMinutes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockWithArabicNumeralsAndColon,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockWithKoreanWords시And분,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockWithoutLeadingZeroOrMinutesForFullHoursUseColonAsSeparatorAndLowercaseAmOrPmWithoutPeriods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockWithoutLeadingZeroOrMinutesForFullHoursUseColonAsSeparatorAndUppercaseAmOrPmWithoutPeriods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use12HourClockWithoutLeadingZeroUsePeriodAsSeparatorAndLowercaseAmOrPmWithPeriodsAndSpaces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use24HourClock,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use24HourClockWithArabicNumeralsAndColon,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use24HourClockWithColonAsSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use24HourClockWithKoreanWords시And분,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use24HourClockWithPeriodAsSeparator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHhColonMmGermanWordUhrWithLeadingZerosForSingleDigitHours,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHhColonMmGermanWordUhrWithoutLeadingZerosForSingleDigitHours,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHhPeriodMmGermanWordUhrWithLeadingZerosForSingleDigitHours,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHhPeriodMmGermanWordUhrWithoutLeadingZerosForSingleDigitHours,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHhPeriodMmGermanWordUhrWithoutLeadingZerosForSingleDigitHoursAndForFullHoursStateHourOnly,
     }

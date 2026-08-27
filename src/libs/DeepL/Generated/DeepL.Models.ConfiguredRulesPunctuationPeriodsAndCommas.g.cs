@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationPeriodsAndCommas
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFullWidthJapanesePeriodsAndFullWidthJapaneseCommas,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFullWidthJapanesePeriodsAndFullWidthNonJapaneseCommas,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFullWidthNonJapanesePeriodsAndFullWidthJapaneseCommas,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFullWidthNonJapanesePeriodsAndFullWidthNonJapaneseCommas,
     }

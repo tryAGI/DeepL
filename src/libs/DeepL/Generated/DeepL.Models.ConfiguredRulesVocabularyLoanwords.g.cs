@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesVocabularyLoanwords
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddExplanationToLoanwordIfDifficultToRephrase,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RephraseLoanwordInDailyUseChineseOrJapaneseWordsIfPossible,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RephraseLoanwordWithAnotherExpressionIfNotEstablished,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseLoanwordAsIsIfWellEstablished,
     }

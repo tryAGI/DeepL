@@ -10,15 +10,15 @@ namespace DeepL
     public enum QualityEvaluationIssueSeverity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Critical,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Major,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minor,
     }

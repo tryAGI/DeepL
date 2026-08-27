@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarQuotationModification
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotModifyTextInQuotationMarks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModifyTextInQuotationMarksAccordingToCustomRules,
     }

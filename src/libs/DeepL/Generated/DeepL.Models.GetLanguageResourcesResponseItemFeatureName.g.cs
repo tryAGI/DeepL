@@ -9,47 +9,47 @@ namespace DeepL
     public enum GetLanguageResourcesResponseItemFeatureName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AutoDetection,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Formality,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Glossary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpokenTerms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StyleRules,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TagHandling,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Transcription,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranslatedSpeech,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranslationMemory,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WritingStyle,
     }

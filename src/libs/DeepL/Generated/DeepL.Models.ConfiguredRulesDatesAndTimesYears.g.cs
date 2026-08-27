@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesDatesAndTimesYears
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseApostropheYy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCommonEra,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseJapaneseImperialEra,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyyy,
     }

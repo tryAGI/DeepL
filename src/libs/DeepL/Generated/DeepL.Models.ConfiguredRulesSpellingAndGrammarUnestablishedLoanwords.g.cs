@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarUnestablishedLoanwords
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParaphraseInKorean,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAsIs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAsIsWithExplanationInParentheses,
     }

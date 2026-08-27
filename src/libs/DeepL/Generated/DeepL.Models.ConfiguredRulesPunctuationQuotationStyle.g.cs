@@ -9,55 +9,55 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationQuotationStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCornerBracketsForPrimaryQuotationsAndDoubleCornerBracketsForSecondaryQuotations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleCurlyQuotationMarksForPrimaryQuotationsAndSingleCurlyQuotationMarksForSecondaryQuotations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleCurlyQuotationMarksForPrimaryQuotationsThenAlternateWithSingleCurlyQuotationMarksForNestedQuotations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleGermanQuotationMarksForPrimaryQuotationsAndSingleGermanQuotationMarksForSecondaryQuotations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleQuotationMarksForPrimaryQuotationsAndSingleQuotationMarksForSecondaryQuotations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleStraightQuotationMarksForPrimaryQuotationsAndSingleStraightQuotationMarksForSecondaryQuotations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleStraightQuotationMarksForPrimaryQuotationsThenAlternateWithSingleStraightQuotationMarksForNestedQuotations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGuillemetsForPrimaryQuotationsAndDoubleCurlyQuotationMarksForSecondaryQuotations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGuillemetsForPrimaryQuotationsAndDoubleStraightQuotationMarksForSecondaryQuotations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGuillemetsForPrimaryQuotationsAndSingleGuillemetsForSecondaryQuotations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGuillemetsForPrimaryQuotationsDoubleCurlyQuotationMarksForSecondaryQuotationsAndSingleCurlyQuotationMarksForFurtherNestedQuotations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseReversedGuillemetsForPrimaryQuotationsAndSingleReversedGuillemetsForSecondaryQuotations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSingleQuotationMarksForPrimaryQuotationsAndDoubleQuotationMarksForSecondaryQuotations,
     }

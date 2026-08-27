@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarPersonalTitles
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Abbreviate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotAbbreviate,
     }

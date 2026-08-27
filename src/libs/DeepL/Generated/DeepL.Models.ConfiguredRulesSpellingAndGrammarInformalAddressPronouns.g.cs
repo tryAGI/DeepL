@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarInformalAddressPronouns
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CapitalizeInformalAddressPronouns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotCapitalizeInformalAddressPronouns,
     }

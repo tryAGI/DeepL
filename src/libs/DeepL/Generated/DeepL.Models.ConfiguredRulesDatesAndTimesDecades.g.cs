@@ -9,23 +9,23 @@ namespace DeepL
     public enum ConfiguredRulesDatesAndTimesDecades
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseApostropheYy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyFor20thCenturyButYyyyForOtherCenturies,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyWithoutApostrophe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYyyy,
     }

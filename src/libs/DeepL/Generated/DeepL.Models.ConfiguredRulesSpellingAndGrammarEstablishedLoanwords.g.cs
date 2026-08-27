@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarEstablishedLoanwords
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAsIs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNativeOrSinoKoreanEquivalents,
     }

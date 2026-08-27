@@ -9,35 +9,35 @@ namespace DeepL
     public enum ConfiguredRulesNumbersSpellingOutUnits
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbbreviateUnitsOfMeasureWhenUsedWithNumeralButSpellOutWhenUsedWithoutNumeral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AlwaysAbbreviateUnitsOfMeasure,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AlwaysSpellOutUnitsOfMeasure,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOutUnitsInKorean,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOutUnitsOfMeasureWhenUsedWithSpelledOutNumbersButAbbreviateWhenUsedWithNumeral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOutUnitsOfMeasureWithKatakanaOrKatakanaAndKanji,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSiSymbols,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseUnitSymbols,
     }

@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationApostrophe
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCurlyApostrophes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseStraightApostrophes,
     }

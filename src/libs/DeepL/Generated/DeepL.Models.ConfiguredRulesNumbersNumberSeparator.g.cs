@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesNumbersNumberSeparator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseChineseCommaToSeparateNumbersIndicatingApproximateValue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseChineseCommaToSeparateNumbersInAbbreviations,
     }

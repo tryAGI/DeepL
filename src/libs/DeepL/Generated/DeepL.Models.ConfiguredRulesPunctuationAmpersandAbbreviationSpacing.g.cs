@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationAmpersandAbbreviationSpacing
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseSpacesBeforeAndAfterAmpersandAsPartOfAbbreviation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpacesBeforeAndAfterAmpersandAsPartOfAbbreviation,
     }

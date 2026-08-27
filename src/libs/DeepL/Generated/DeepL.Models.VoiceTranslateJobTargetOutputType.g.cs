@@ -9,75 +9,75 @@ namespace DeepL
     public enum VoiceTranslateJobTargetOutputType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationXSubrip,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioFlac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioOgg_codecs_flac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioOgg_codecs_opus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioOpus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioPcm_encoding_alaw_rate_8000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioPcm_encoding_s16le_rate_16000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioPcm_encoding_s16le_rate_24000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioPcm_encoding_ulaw_rate_8000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioWebm_codecs_opus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioXMatroska_codecs_aac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioXMatroska_codecs_flac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioXMatroska_codecs_opus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioXMatroska_codecs_pcmS16le_rate_16000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioXMatroska_codecs_pcmS16le_rate_24000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextPlain,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VideoMp2t_codecs_aac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VideoMp2t_codecs_opus,
     }

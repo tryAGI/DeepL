@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesNumbersWritingNumbers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AlwaysUseKanjiNumbers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseArabicNumerals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFullWidthArabicNumeralsAndOnlyUseKanjiNumbersWhereItWouldOtherwiseSoundUnnatural,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHalfWidthArabicNumeralsAndOnlyUseKanjiNumbersWhereItWouldOtherwiseSoundUnnatural,
     }

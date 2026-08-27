@@ -4,16 +4,16 @@
 namespace DeepL
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AdminGetAnalyticsGroupBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Key,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KeyAndDay,
     }

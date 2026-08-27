@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationCommaAfterShortIntroductoryPhrase
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use,
     }

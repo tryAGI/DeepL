@@ -9,47 +9,47 @@ namespace DeepL
     public enum ConfiguredRulesFormattingPhoneNumberFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseSpaces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseSpacesOrSpecialCharactersBetweenDigitsOfPhoneNumber,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KeepOriginalFormat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PlaceAreaCodeInParenthesesFollowedBySpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SeparateAreaCodeAndPhoneNumberWithSlash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SeparateAreaCodeAndPhoneNumberWithSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SeparateCountryCodeAreaCodeLocalPrefixAndLastFourDigitsWithHyphens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SeparateCountryCodeAreaCodeLocalPrefixAndLastFourDigitsWithPeriods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SeparateCountryCodeAreaCodeLocalPrefixAndLastFourDigitsWithSpaces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNorthAmericanNumberingPlanFormat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpaceAfterCountryCode,
     }

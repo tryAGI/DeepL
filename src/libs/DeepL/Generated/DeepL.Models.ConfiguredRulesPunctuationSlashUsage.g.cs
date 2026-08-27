@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationSlashUsage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseSlashToSymbolizeEnglishWordOr,
     }

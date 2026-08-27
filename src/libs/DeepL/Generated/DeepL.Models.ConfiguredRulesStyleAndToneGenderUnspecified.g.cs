@@ -9,27 +9,27 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneGenderUnspecified
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseBothMasculineAndFeminineForms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGenderNeutralTerms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseMasculineFormOnly,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseMiddleDots,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseParentheses,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePeriods,
     }

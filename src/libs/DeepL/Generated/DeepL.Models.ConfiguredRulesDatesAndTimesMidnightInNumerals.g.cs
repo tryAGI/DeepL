@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesDatesAndTimesMidnightInNumerals
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use0000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use2400,
     }

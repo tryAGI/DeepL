@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationEmphasis
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleCornerBrackets,
     }

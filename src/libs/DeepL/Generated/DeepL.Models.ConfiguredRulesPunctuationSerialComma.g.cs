@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationSerialComma
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseSerialCommaWhenUsingChineseComma,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSerialCommaWhenUsingComma,
     }

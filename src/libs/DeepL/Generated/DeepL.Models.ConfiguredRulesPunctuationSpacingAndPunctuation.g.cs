@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationSpacingAndPunctuation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseRegularSpace,
     }

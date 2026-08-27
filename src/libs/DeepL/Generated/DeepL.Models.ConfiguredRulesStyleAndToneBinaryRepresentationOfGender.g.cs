@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneBinaryRepresentationOfGender
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AvoidBinaryRepresentationOfGenderWhenGenderNeutralLanguageCanBeUsed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReplaceBinaryRepresentationsOfGenderWithGenderNeutralLanguage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNeutralPronouns,
     }

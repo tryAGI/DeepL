@@ -9,11 +9,11 @@ namespace DeepL
     public enum GetLanguagesV2Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Source,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Target,
     }

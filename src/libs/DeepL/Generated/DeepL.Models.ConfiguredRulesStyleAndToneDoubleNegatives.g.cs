@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneDoubleNegatives
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseDoubleNegatives,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleNegatives,
     }

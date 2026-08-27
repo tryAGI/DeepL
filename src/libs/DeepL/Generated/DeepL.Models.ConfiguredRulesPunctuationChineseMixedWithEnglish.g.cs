@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationChineseMixedWithEnglish
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotPlaceEnglishInQuotationMarks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PlaceEnglishInQuotationMarks,
     }

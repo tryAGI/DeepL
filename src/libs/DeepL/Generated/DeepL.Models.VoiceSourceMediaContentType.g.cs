@@ -44,55 +44,55 @@ namespace DeepL
         /// </summary>
         AudioAuto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioFlac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioMpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioOgg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioOgg_codecs_flac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioOgg_codecs_opus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioPcm_encoding_alaw_rate_8000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioPcm_encoding_s16le_rate_16000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioPcm_encoding_s16le_rate_44100,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioPcm_encoding_s16le_rate_48000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioPcm_encoding_s16le_rate_8000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioPcm_encoding_ulaw_rate_8000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioWebm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioWebm_codecs_opus,
         /// <summary>
@@ -100,19 +100,19 @@ namespace DeepL
         /// </summary>
         AudioXMatroska,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioXMatroska_codecs_aac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioXMatroska_codecs_flac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioXMatroska_codecs_mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioXMatroska_codecs_opus,
     }

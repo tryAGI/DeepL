@@ -12,7 +12,7 @@ namespace DeepL
     public enum OutlineDetectionOptionStr
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x0,
     }

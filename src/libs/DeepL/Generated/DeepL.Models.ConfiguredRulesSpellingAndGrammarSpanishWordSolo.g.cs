@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarSpanishWordSolo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NeverUseAcuteAccent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAcuteAccentWhenUsedAsAdverb,
     }

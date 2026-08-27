@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationPlusSignUsage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUsePlusSignToSymbolizeEnglishWordAndUnlessItIsPartOfAProperNoun,
     }

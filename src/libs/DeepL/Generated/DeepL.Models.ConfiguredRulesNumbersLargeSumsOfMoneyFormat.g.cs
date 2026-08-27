@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesNumbersLargeSumsOfMoneyFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAmountFollowedByAbbreviationForMillionOrBillionWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAmountFollowedBySpaceThenAbbreviationForMillionOrBillion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAmountFollowedBySpaceThenEnglishWordMillionOrBillion,
     }

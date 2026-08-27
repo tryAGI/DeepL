@@ -11,11 +11,11 @@ namespace DeepL
     public enum PreserveFormattingOptionStr
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x0,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1,
     }

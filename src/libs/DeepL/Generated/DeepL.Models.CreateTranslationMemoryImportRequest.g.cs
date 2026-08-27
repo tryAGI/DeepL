@@ -4,19 +4,19 @@
 namespace DeepL
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateTranslationMemoryImportRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_file")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::DeepL.CreateTranslationMemoryImportRequestSourceFile SourceFile { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::DeepL.CreateTranslationMemoryImportRequestParameters? Parameters { get; set; }

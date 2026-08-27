@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesNumbersMathematicalExpressionSpacing
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpaceBetweenElementsOfMathematicalExpressionOrEquation,
     }
