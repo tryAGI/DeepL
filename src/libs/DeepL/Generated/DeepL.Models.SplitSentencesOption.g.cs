@@ -15,15 +15,15 @@ namespace DeepL
     public enum SplitSentencesOption
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x0,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nonewlines,
     }

@@ -9,75 +9,75 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationRangeIndicator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEnDashWithSpaces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEnDashWithoutSpaceOnEitherSide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEnDashWithoutSpaces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEnglishWordTo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFullWidthDash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFullWidthWaveDash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGermanWordBis,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHalfWidthDash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHyphen,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHyphenWithSpaceOnEitherSide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHyphenWithSpaces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHyphenWithoutSpaceOnEitherSide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHyphenWithoutSpaces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseItalianWordsDaA,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseJapaneseWordから,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseKoreanWords부터까지,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpanishWordsDeA,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseTilde,
     }

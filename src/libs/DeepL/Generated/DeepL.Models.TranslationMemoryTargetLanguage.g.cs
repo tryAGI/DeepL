@@ -10,51 +10,51 @@ namespace DeepL
     public enum TranslationMemoryTargetLanguage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         De,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         En,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EnGb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EnUs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Es,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Es419,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         It,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ja,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ko,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Zh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZhHans,
     }

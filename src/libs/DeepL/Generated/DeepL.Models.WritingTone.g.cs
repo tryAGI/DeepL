@@ -10,39 +10,39 @@ namespace DeepL
     public enum WritingTone
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Confident,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Diplomatic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Enthusiastic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Friendly,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreferConfident,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreferDiplomatic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreferEnthusiastic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreferFriendly,
     }

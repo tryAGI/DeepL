@@ -9,27 +9,27 @@ namespace DeepL
     public enum VoiceTranslateJobSourceContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioFlac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioMp4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioMpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioOgg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioWav,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioWebm,
     }

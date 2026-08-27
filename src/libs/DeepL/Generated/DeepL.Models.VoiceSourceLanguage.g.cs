@@ -15,19 +15,19 @@ namespace DeepL
         /// </summary>
         Ar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Da,
         /// <summary>
@@ -35,7 +35,7 @@ namespace DeepL
         /// </summary>
         De,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         El,
         /// <summary>
@@ -51,15 +51,15 @@ namespace DeepL
         /// </summary>
         Et,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ga,
         /// <summary>
@@ -67,7 +67,7 @@ namespace DeepL
         /// </summary>
         He,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hi,
         /// <summary>
@@ -75,7 +75,7 @@ namespace DeepL
         /// </summary>
         Hr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hu,
         /// <summary>
@@ -83,43 +83,43 @@ namespace DeepL
         /// </summary>
         Id,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         It,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ja,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ko,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pl,
         /// <summary>
@@ -131,19 +131,19 @@ namespace DeepL
         /// </summary>
         Ro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ru,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sv,
         /// <summary>
@@ -155,7 +155,7 @@ namespace DeepL
         /// </summary>
         Th,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tl,
         /// <summary>
@@ -163,7 +163,7 @@ namespace DeepL
         /// </summary>
         Tr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uk,
         /// <summary>
@@ -171,7 +171,7 @@ namespace DeepL
         /// </summary>
         Vi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Zh,
     }

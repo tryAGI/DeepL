@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneAbbreviations
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AvoidAbbreviationsAndSymbolsThatCanBeSpelledOutEasily,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAbbreviationsAndSymbols,
     }

@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneReaderActionRequired
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseYouMustWhenActionIsRequiredFromReader,
     }

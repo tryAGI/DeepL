@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneReferringToNonBinaryPeople
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseTheSingularAndPluralSchwa,
     }

@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesDatesAndTimesCenturies
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseArabicNumerals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumerals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseRomanNumerals,
     }

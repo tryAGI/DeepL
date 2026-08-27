@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneDefaultFirstPersonPronoun
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseFirstPersonPronouns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OmitFirstPersonSubjectWhenClearFromContext,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFirstPersonPronouns,
     }

@@ -10,11 +10,11 @@ namespace DeepL
     public enum TranslateTextResponseTranslationTagHandlingVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V2,
     }

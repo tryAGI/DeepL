@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesNumbersReferenceToSymbol
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOutSymbolNameFollowedBySymbolInParentheses,
     }

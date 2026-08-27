@@ -9,15 +9,15 @@ namespace DeepL
     public enum ModelType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyOptimized,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreferQualityOptimized,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QualityOptimized,
     }

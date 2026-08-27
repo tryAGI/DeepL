@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationPeriodsInAcademicDegrees
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use,
     }

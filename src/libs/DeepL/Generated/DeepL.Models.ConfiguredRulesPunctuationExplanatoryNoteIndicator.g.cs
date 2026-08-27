@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationExplanatoryNoteIndicator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleEmDash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseParentheses,
     }

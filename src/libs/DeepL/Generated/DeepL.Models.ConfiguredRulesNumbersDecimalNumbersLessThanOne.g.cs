@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesNumbersDecimalNumbersLessThanOne
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AlwaysUse0BeforeDecimalSeparator,
     }

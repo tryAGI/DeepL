@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationCommaAndSemicolon
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCommaBetweenClauses,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSemicolonBetweenClauses,
     }

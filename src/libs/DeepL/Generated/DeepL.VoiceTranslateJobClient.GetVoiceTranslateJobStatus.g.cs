@@ -166,7 +166,7 @@ namespace DeepL
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::DeepL.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

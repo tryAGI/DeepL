@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneRedundantPhrases
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AvoidRelativizingAndRedundantPhrases,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseRedundantPhrases,
     }

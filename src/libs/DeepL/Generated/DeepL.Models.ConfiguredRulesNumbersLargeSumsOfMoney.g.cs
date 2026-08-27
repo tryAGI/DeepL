@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesNumbersLargeSumsOfMoney
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOutItalianWordsMilioneAndMiliardo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseItalianWordsMioAndMrdInsteadOfItalianWordsMilioneAndMiliardo,
     }

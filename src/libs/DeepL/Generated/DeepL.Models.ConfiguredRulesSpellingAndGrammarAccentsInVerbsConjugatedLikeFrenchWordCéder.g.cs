@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAcuteAccent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGraveAccent,
     }

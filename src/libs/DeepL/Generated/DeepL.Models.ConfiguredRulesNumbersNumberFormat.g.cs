@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesNumbersNumberFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHalfWidthCommaToSeparateLargeNumbersIntoUnitsOfThreeExceptForCalendarYearsAndUseHalfWidthPeriodAsDecimalSeparator,
     }

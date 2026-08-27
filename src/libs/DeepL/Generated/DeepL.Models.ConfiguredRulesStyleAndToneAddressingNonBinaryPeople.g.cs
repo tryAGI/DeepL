@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneAddressingNonBinaryPeople
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpanishWordElle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpanishWordEllx,
     }

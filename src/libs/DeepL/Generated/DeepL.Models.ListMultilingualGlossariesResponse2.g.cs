@@ -4,7 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListMultilingualGlossariesResponse2
     {

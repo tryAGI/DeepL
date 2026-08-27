@@ -9,35 +9,35 @@ namespace DeepL
     public enum ConfiguredRulesNumbersLargeNumberFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AlwaysUseArabicNumerals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOutLargeNumbers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAbbreviationsForLargeNumbers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseChineseCharactersForTenThousandsAndHundredMillions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCommaToSeparateLargeNumbersIntoUnitsOfThreeExceptForCalendarYears,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseKanjiForTrillionsHundredMillionsAndTenThousands,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseKoreanWords만억조WithSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseKoreanWords만억조WithoutSpace,
     }

@@ -9,67 +9,67 @@ namespace DeepL
     public enum ConfiguredRulesNumbersPercentageFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseArabicNumeralsFollowedByPercentSymbolWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseChineseNumbersFollowedByChineseWord百分之,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedByFullWidthPercentSymbolWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedByJapaneseWordパーセントWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedByKoreanWord퍼센트,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedByPercentSymbol,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedBySpaceThenGermanWordProzent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedBySpaceThenHalfWidthPercentSymbol,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedBySpaceThenItalianWordPerCento,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedBySpaceThenItalianWordPercento2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedBySpaceThenKoreanWord퍼센트,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedBySpaceThenPercentSymbol,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedBySpaceThenSpellOutPerCent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedBySpaceThenSpellOutPercent2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpanishWordPorCien,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpanishWordPorCiento,
     }

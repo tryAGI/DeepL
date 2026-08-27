@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationTitlesOfCreativeWorksTradeNamesLawsAndRegulations
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSingleAngleBrackets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSingleCornerBrackets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSingleStraightQuotationMarks,
     }

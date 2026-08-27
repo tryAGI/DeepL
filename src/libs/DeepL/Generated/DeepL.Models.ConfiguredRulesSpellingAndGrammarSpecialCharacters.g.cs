@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarSpecialCharacters
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NeverUseSymbols,
     }

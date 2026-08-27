@@ -20,7 +20,7 @@ namespace DeepL.JsonConverters
                     {
                         return global::DeepL.ConfiguredRulesSpellingAndGrammarInformalAddressPronounsExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

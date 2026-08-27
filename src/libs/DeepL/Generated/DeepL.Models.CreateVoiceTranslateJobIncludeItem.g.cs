@@ -4,12 +4,12 @@
 namespace DeepL
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateVoiceTranslateJobIncludeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SignedUrl,
     }

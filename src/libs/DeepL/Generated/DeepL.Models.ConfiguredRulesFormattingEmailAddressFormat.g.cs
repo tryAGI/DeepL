@@ -9,27 +9,27 @@ namespace DeepL
     public enum ConfiguredRulesFormattingEmailAddressFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PlaceDomainInParentheses,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReplaceAtSymbolWithEnglishWordAtInBracketsAndReplacePeriodsWithEnglishWordDotInBrackets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReplaceAtSymbolWithEnglishWordAtInBracketsWithSpaceOnEitherSide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReplaceAtSymbolWithEnglishWordAtInParenthesesWithSpaceOnEitherSide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReplaceAtSymbolWithEnglishWordAtWithSpaceOnEitherSide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseStandardFormat,
     }

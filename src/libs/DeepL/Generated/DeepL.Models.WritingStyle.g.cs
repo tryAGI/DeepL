@@ -10,39 +10,39 @@ namespace DeepL
     public enum WritingStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Academic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Business,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Casual,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreferAcademic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreferBusiness,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreferCasual,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreferSimple,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Simple,
     }

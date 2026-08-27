@@ -4,196 +4,196 @@
 namespace DeepL
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VoiceTargetLanguage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Da,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         De,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         El,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         En,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EnGb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EnUs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Es,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Et,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ga,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         He,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Id,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         It,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ja,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ko,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PtBr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PtPt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ru,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Th,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Zh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZhHans,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZhHant,
     }

@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneTone
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDearuStyleToGiveImpressionContentIsAccurateAndRigorousOrToConveySenseOfConfidenceAndReliability,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDesuMasuStyleToGiveImpressionContentIsPlainAndStraightforwardOrToGiveReaderReassuringOrSoftImpression,
     }

@@ -4,12 +4,12 @@
 namespace DeepL
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetStyleRuleListsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style_rules")]
         public global::System.Collections.Generic.IList<global::DeepL.StyleRuleList>? StyleRules { get; set; }

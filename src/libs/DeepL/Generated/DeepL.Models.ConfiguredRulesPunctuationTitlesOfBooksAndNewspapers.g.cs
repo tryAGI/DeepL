@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationTitlesOfBooksAndNewspapers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleAngleBrackets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleCornerBrackets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDoubleStraightQuotationMarks,
     }

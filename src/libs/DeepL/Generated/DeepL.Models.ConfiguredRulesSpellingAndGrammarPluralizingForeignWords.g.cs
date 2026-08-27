@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarPluralizingForeignWords
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFrenchSpellingRules,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseOriginalLanguageSpelling,
     }

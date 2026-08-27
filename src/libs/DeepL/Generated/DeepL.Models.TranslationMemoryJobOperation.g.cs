@@ -10,11 +10,11 @@ namespace DeepL
     public enum TranslationMemoryJobOperation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Export,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Import,
     }

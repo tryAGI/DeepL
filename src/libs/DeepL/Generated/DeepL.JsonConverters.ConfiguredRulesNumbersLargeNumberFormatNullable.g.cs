@@ -20,7 +20,7 @@ namespace DeepL.JsonConverters
                     {
                         return global::DeepL.ConfiguredRulesNumbersLargeNumberFormatExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

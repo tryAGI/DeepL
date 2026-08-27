@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationDash
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEmDash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHyphen,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseTilde,
     }

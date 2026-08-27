@@ -14,11 +14,11 @@ namespace DeepL
     public enum VoiceMessageFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Json,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Msgpack,
     }

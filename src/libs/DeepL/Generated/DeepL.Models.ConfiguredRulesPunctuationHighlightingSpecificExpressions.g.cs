@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationHighlightingSpecificExpressions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSingleCurlyQuotationMarks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSingleStraightQuotationMarks,
     }

@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationColonBetweenHoursAndMinutesOrChaptersAndVerses
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseSpaceBeforeOrAfterColon,
     }

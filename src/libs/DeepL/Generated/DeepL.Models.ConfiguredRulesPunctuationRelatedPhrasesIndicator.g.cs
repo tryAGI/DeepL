@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationRelatedPhrasesIndicator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseComma,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHyphen,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseMiddleDot,
     }

@@ -9,55 +9,55 @@ namespace DeepL
     public enum ConfiguredRulesNumbersTemperatureFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOutUnit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpellOutUnitFollowedByNumeralsThenKoreanWord도,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseArabicNumeralsFollowedBySpaceThenSpellOutUnit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseArabicNumeralsFollowedByUnitSymbolWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseArabicNumeralsThenSpellOutUnit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseChineseNumbersThenSpellOutUnit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseItalianWordGradoAndDoNotSpecifyTemperatureScale,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedByJapaneseWord度WithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedByKoreanWord도,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedBySpaceThenSpellOutUnit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedBySpaceThenUnitSymbol,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumeralsFollowedByUnitSymbolWithoutSpace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpanishWordGradoAndDoNotSpecifyTemperatureScale,
     }

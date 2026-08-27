@@ -9,27 +9,27 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarActivePassiveVoice
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseActiveVoiceIfSubjectIsProminentAndAgentIsClear,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseActiveVoiceToDescribeOperationsWithUserAsSubject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseActiveVoiceUnlessAgentIsUnknownOrIrrelevant,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePassiveVoiceAsNeeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePassiveVoiceForAutomaticOperationsFromUserPerspective,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePassiveVoiceIfAgentIsUnknownOrIrrelevant,
     }

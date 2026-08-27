@@ -160,7 +160,7 @@ namespace DeepL
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __formValues = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<string, string>>();
                             __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
@@ -582,7 +582,7 @@ namespace DeepL
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // 
+                            //
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -614,7 +614,7 @@ namespace DeepL
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // 
+                            //
                             if ((int)__response.StatusCode == 504)
                             {
                                 string? __content_504 = null;

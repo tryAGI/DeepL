@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneProximityAgreement
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use,
     }

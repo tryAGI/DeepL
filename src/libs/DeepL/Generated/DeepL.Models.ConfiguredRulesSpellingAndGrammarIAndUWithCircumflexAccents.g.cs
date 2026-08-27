@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarIAndUWithCircumflexAccents
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseCircumflexAccentsExceptInVerbsAndToDistinguishHomophones,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseCircumflexAccents,
     }

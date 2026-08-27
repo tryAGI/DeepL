@@ -9,23 +9,23 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneInstructionsStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseImperative,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseIndicative,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseInfinitive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseModalVerbs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePassiveVoice,
     }

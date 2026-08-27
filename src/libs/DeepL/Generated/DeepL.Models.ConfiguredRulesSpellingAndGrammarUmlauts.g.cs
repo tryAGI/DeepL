@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarUmlauts
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReplaceUmlautsWithAeOeUe,
     }

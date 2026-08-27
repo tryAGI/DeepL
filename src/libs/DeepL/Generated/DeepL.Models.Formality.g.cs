@@ -20,23 +20,23 @@ namespace DeepL
     public enum Formality
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Less,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         More,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreferLess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreferMore,
     }

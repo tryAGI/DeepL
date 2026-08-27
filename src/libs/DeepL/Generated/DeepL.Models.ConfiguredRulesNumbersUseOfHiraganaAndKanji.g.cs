@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesNumbersUseOfHiraganaAndKanji
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHiraganaJapaneseWordか所Orか月WhenUsingArabicNumeralsInHorizontalWritingButUseKanjiJapaneseWord箇所Or箇月WhenUsingKanjiNumbers,
     }

@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesNumbersApproximateNumbers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseKanjiNumbers,
     }

@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneTextPositionReferences
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AvoidDirectionalTermsAsOnlyReferenceToPositionInTextSpecifyExactPositionInstead,
     }

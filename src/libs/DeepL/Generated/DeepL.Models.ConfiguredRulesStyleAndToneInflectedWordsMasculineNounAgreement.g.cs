@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneInflectedWordsMasculineNounAgreement
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PlaceMasculineNounsClosestToInflectedWords,
     }

@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneMixingStyles
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotMixDesuMasuStyleAndDearuStyle,
     }

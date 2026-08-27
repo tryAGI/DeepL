@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationPossessivesOfProperNamesEndingInSStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddApostropheOnly,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddApostropheS,
     }

@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationBracket
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHexagonalBrackets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseLenticularBrackets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseParentheses,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSquareBracketsForNationalityAndHexagonalBracketsForHistoricalPeriod,
     }

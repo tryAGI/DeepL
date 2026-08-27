@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationSlash
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseSpacesBeforeAndAfterSlashes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpacesBeforeAndAfterSlashes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpacesBeforeAndAfterSlashesIfThereAreMultipleWordsBeforeAndAfterSlash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpacesBeforeAndAfterSlashesIfThereAreMultipleWordsBeforeOrAfterSlash,
     }

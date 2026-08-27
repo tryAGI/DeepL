@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesFormattingPhoneNumberCountryCodeFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use00BeforeCountryCode,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePlusSignBeforeCountryCode,
     }

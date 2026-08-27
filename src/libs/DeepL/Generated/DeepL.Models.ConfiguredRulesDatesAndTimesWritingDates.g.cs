@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesDatesAndTimesWritingDates
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdSpaceSpelledOutMonthSpaceYyyy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNumerals,
     }

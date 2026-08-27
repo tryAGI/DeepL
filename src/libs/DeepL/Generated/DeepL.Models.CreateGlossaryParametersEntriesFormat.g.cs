@@ -14,11 +14,11 @@ namespace DeepL
     public enum CreateGlossaryParametersEntriesFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Csv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tsv,
     }

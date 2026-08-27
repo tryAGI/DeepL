@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneVerbalVsNominalStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseNominalStyle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseVerbalStyle,
     }

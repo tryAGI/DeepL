@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarConjunctions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NeverStartSentenceWithCoordinatingConjunction,
     }

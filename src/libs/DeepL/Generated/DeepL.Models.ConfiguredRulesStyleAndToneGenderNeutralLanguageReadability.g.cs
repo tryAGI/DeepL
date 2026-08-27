@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneGenderNeutralLanguageReadability
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGenericMasculineForCommonCompoundNounsIfItIncreasesReadability,
     }

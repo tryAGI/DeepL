@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarAbbreviationUsage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseAbbreviations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseAbbreviationsUnlessNecessary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAbbreviations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAbbreviationsAsNeeded,
     }

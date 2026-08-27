@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesFormattingSpaceBetweenChineseAndEnglish
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUse,
     }

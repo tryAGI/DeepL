@@ -10,11 +10,11 @@ namespace DeepL
     public enum UsageResponseProductBillingUnit
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Characters,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minutes,
     }

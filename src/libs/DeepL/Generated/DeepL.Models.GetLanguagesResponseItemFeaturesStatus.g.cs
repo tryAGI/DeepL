@@ -9,15 +9,15 @@ namespace DeepL
     public enum GetLanguagesResponseItemFeaturesStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Beta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EarlyAccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stable,
     }

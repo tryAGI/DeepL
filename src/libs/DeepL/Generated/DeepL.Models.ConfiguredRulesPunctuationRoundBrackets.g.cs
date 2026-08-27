@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationRoundBrackets
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFullWidthRoundBrackets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHalfWidthRoundBrackets,
     }

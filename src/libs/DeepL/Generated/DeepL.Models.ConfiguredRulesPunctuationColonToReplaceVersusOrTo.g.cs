@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationColonToReplaceVersusOrTo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseSpaceBeforeOrAfterColon,
     }

@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationExclamationMarks
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUse,
     }

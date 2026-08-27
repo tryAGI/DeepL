@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndToneModalVerbs
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AvoidModalVerbs,
     }

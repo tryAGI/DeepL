@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationUppercaseAcronyms
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseSpaces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpaces,
     }

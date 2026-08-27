@@ -9,7 +9,7 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationColonInHeading
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpaceAfterColonNotBefore,
     }

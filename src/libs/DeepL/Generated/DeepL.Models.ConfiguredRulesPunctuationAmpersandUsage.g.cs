@@ -9,19 +9,19 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationAmpersandUsage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEnglishWordAndExceptInCompanyNamesCommonAbbreviationsTitlesSoftwareCodeAndMathematicalEquations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFullWidthAmpersand,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGermanWordUndExceptInCompanyNamesCommonAbbreviationsTitlesSoftwareCodeAndMathematicalEquations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHalfWidthAmpersand,
     }

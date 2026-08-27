@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationPeriodsInDirectQuotes
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Use,
     }

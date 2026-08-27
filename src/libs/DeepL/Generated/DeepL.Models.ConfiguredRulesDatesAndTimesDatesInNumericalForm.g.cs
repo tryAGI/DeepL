@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesDatesAndTimesDatesInNumericalForm
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdHyphenMmHyphenYyyy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdPeriodMmPeriodYyyy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseDdSlashMmSlashYyyy,
     }

@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationTextInRoundBracketsReferringToPreviousSentence
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddPeriodAfterClosingRoundBracket,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AddPeriodBeforeClosingRoundBracket,
     }

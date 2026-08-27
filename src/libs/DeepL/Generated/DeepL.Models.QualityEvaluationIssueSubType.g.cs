@@ -10,59 +10,59 @@ namespace DeepL
     public enum QualityEvaluationIssueSubType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Addition,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Awkward,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CharacterEncoding,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grammar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GrammaticalRegister,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inconsistency,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InconsistentStyle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mistranslation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Omission,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OverTranslation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Punctuation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Spelling,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnderTranslation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UntranslatedText,
     }

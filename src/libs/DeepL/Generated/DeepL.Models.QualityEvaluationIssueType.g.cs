@@ -10,19 +10,19 @@ namespace DeepL
     public enum QualityEvaluationIssueType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Accuracy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fluency,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Miscellaneous,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Style,
     }

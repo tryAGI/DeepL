@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesStyleAndTonePersonalVsImpersonalStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseImpersonalStyle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsePersonalStyle,
     }

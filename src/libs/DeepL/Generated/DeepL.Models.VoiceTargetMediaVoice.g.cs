@@ -10,11 +10,11 @@ namespace DeepL
     public enum VoiceTargetMediaVoice
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Female,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Male,
     }

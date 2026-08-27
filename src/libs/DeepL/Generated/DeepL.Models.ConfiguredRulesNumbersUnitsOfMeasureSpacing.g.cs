@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesNumbersUnitsOfMeasureSpacing
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoNotUseSpaceBetweenNumeralAndUnitOfMeasure,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSpaceBetweenNumeralAndUnitOfMeasure,
     }

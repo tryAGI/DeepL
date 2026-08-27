@@ -9,11 +9,11 @@ namespace DeepL
     public enum AdminGetCustomTagAnalyticsAggregateBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Day,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Period,
     }

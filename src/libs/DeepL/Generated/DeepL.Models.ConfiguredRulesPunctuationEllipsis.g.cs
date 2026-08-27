@@ -9,47 +9,47 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationEllipsis
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEllipsisCharacter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseOneEllipsisCharacter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSixDotsAtTheBottom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseSixDotsInTheCenter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseThreeDotsAtTheBottom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseThreeDotsInTheCenter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseThreeEllipsisCharacters,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseThreePeriods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseThreePeriodsWithoutSpaces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseThreeSpacedPeriods,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseTwoEllipsisCharacters,
     }

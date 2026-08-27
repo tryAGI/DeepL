@@ -15,23 +15,23 @@ namespace DeepL
     public enum TranslationMemoryJobResultStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AwaitingInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Expired,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processing,
     }

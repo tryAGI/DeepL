@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationColon
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFullWidthColon,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHalfWidthColon,
     }

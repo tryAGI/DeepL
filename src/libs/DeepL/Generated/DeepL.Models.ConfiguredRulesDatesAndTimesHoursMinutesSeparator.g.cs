@@ -9,15 +9,15 @@ namespace DeepL
     public enum ConfiguredRulesDatesAndTimesHoursMinutesSeparator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseColonWithoutSpaces,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseLetterHWithRegularSpaceOnEitherSide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseLetterHWithoutSpaces,
     }

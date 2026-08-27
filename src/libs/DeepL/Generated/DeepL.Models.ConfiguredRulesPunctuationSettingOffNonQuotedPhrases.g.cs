@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesPunctuationSettingOffNonQuotedPhrases
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseFullWidthQuotationMarks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseHalfWidthQuotationMarks,
     }

@@ -18,7 +18,7 @@ namespace DeepL
         public required global::System.Guid JobId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         [global::System.Text.Json.Serialization.JsonRequired]

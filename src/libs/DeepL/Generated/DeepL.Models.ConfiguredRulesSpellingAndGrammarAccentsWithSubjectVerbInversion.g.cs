@@ -9,11 +9,11 @@ namespace DeepL
     public enum ConfiguredRulesSpellingAndGrammarAccentsWithSubjectVerbInversion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseAcuteAccent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseGraveAccent,
     }
