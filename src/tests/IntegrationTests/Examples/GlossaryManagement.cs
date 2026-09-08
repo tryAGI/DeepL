@@ -45,7 +45,8 @@ public partial class Tests
                 sourceLang: GlossarySourceLanguage.En,
                 targetLang: GlossaryTargetLanguage.De);
 
-            entries.Entries.Should().NotBeNullOrEmpty();
+            entries.Dictionaries.Should().ContainSingle();
+            entries.Dictionaries![0].Entries.Should().NotBeNullOrEmpty();
 
             //// Translate text using the glossary for consistent terminology.
             //// Note: source_lang is required when using a glossary.
