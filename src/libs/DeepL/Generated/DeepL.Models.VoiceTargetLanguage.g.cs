@@ -67,6 +67,14 @@ namespace DeepL
         /// <summary>
         ///
         /// </summary>
+        FrCa,
+        /// <summary>
+        ///
+        /// </summary>
+        FrFr,
+        /// <summary>
+        ///
+        /// </summary>
         Ga,
         /// <summary>
         ///
@@ -224,6 +232,8 @@ namespace DeepL
                 VoiceTargetLanguage.Et => "et",
                 VoiceTargetLanguage.Fi => "fi",
                 VoiceTargetLanguage.Fr => "fr",
+                VoiceTargetLanguage.FrCa => "fr-CA",
+                VoiceTargetLanguage.FrFr => "fr-FR",
                 VoiceTargetLanguage.Ga => "ga",
                 VoiceTargetLanguage.He => "he",
                 VoiceTargetLanguage.Hi => "hi",
@@ -281,6 +291,8 @@ namespace DeepL
                 "et" => VoiceTargetLanguage.Et,
                 "fi" => VoiceTargetLanguage.Fi,
                 "fr" => VoiceTargetLanguage.Fr,
+                "fr-CA" => VoiceTargetLanguage.FrCa,
+                "fr-FR" => VoiceTargetLanguage.FrFr,
                 "ga" => VoiceTargetLanguage.Ga,
                 "he" => VoiceTargetLanguage.He,
                 "hi" => VoiceTargetLanguage.Hi,

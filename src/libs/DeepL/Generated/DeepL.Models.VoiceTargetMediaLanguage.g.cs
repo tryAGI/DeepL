@@ -59,6 +59,14 @@ namespace DeepL
         /// <summary>
         ///
         /// </summary>
+        FrCa,
+        /// <summary>
+        ///
+        /// </summary>
+        FrFr,
+        /// <summary>
+        ///
+        /// </summary>
         Hi,
         /// <summary>
         ///
@@ -186,6 +194,8 @@ namespace DeepL
                 VoiceTargetMediaLanguage.Es => "es",
                 VoiceTargetMediaLanguage.Fi => "fi",
                 VoiceTargetMediaLanguage.Fr => "fr",
+                VoiceTargetMediaLanguage.FrCa => "fr-CA",
+                VoiceTargetMediaLanguage.FrFr => "fr-FR",
                 VoiceTargetMediaLanguage.Hi => "hi",
                 VoiceTargetMediaLanguage.Hr => "hr",
                 VoiceTargetMediaLanguage.Hu => "hu",
@@ -234,6 +244,8 @@ namespace DeepL
                 "es" => VoiceTargetMediaLanguage.Es,
                 "fi" => VoiceTargetMediaLanguage.Fi,
                 "fr" => VoiceTargetMediaLanguage.Fr,
+                "fr-CA" => VoiceTargetMediaLanguage.FrCa,
+                "fr-FR" => VoiceTargetMediaLanguage.FrFr,
                 "hi" => VoiceTargetMediaLanguage.Hi,
                 "hr" => VoiceTargetMediaLanguage.Hr,
                 "hu" => VoiceTargetMediaLanguage.Hu,
