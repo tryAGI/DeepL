@@ -63,6 +63,10 @@ namespace DeepL
         /// <summary>
         ///
         /// </summary>
+        Hr,
+        /// <summary>
+        ///
+        /// </summary>
         Hu,
         /// <summary>
         ///
@@ -131,6 +135,10 @@ namespace DeepL
         /// <summary>
         ///
         /// </summary>
+        Tl,
+        /// <summary>
+        ///
+        /// </summary>
         Tr,
         /// <summary>
         ///
@@ -179,6 +187,7 @@ namespace DeepL
                 VoiceTargetMediaLanguage.Fi => "fi",
                 VoiceTargetMediaLanguage.Fr => "fr",
                 VoiceTargetMediaLanguage.Hi => "hi",
+                VoiceTargetMediaLanguage.Hr => "hr",
                 VoiceTargetMediaLanguage.Hu => "hu",
                 VoiceTargetMediaLanguage.Id => "id",
                 VoiceTargetMediaLanguage.It => "it",
@@ -196,6 +205,7 @@ namespace DeepL
                 VoiceTargetMediaLanguage.Sk => "sk",
                 VoiceTargetMediaLanguage.Sv => "sv",
                 VoiceTargetMediaLanguage.Ta => "ta",
+                VoiceTargetMediaLanguage.Tl => "tl",
                 VoiceTargetMediaLanguage.Tr => "tr",
                 VoiceTargetMediaLanguage.Uk => "uk",
                 VoiceTargetMediaLanguage.Vi => "vi",
@@ -225,6 +235,7 @@ namespace DeepL
                 "fi" => VoiceTargetMediaLanguage.Fi,
                 "fr" => VoiceTargetMediaLanguage.Fr,
                 "hi" => VoiceTargetMediaLanguage.Hi,
+                "hr" => VoiceTargetMediaLanguage.Hr,
                 "hu" => VoiceTargetMediaLanguage.Hu,
                 "id" => VoiceTargetMediaLanguage.Id,
                 "it" => VoiceTargetMediaLanguage.It,
@@ -242,6 +253,7 @@ namespace DeepL
                 "sk" => VoiceTargetMediaLanguage.Sk,
                 "sv" => VoiceTargetMediaLanguage.Sv,
                 "ta" => VoiceTargetMediaLanguage.Ta,
+                "tl" => VoiceTargetMediaLanguage.Tl,
                 "tr" => VoiceTargetMediaLanguage.Tr,
                 "uk" => VoiceTargetMediaLanguage.Uk,
                 "vi" => VoiceTargetMediaLanguage.Vi,

@@ -824,9 +824,13 @@ namespace DeepL
         /// glossary IDs ordered by priority (highest first). Each glossary's matching terms are applied to<br/>
         /// the translation; where entries conflict, the higher-priority glossary wins. Unknown glossary IDs<br/>
         /// are ignored.<br/>
-        /// Cannot be used together with `glossary_id`. Requests that exceed the session limit, contain<br/>
-        /// duplicates, or combine `glossary_ids` with `glossary_id` are rejected with a `400 Bad Request`<br/>
-        /// before a session is created.
+        /// In realtime Voice, glossary terms are matched against the streaming source transcription,<br/>
+        /// which affects how and when terms are applied. See<br/>
+        /// [Glossaries in realtime Voice](/docs/voice/overview#glossaries-in-realtime-voice).<br/>
+        /// Cannot be used together with `glossary_id`. Requests that exceed the<br/>
+        /// [session limit](/docs/voice/voice-api-requirements#session-limits), contain duplicates, or<br/>
+        /// combine `glossary_ids` with `glossary_id` are rejected with a `400 Bad Request` before a<br/>
+        /// session is created.
         /// </param>
         /// <param name="formality">
         /// Sets whether the translated text should lean towards formal or informal language.<br/>
