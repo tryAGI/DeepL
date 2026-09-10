@@ -5,7 +5,9 @@ namespace DeepL
     public partial interface IDeepLClient
     {
         /// <summary>
-        /// Retrieve style rule lists
+        /// Retrieve style rule lists<br/>
+        /// List the style rule lists in your account. Results are paginated. Set `detailed` to<br/>
+        /// include each list's configured rules and custom instructions.
         /// </summary>
         /// <param name="page">
         /// Default Value: 0
@@ -26,7 +28,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Retrieve style rule lists
+        /// Retrieve style rule lists<br/>
+        /// List the style rule lists in your account. Results are paginated. Set `detailed` to<br/>
+        /// include each list's configured rules and custom instructions.
         /// </summary>
         /// <param name="page">
         /// Default Value: 0

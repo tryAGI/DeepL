@@ -59,7 +59,10 @@ namespace DeepL
             ref string content);
 
         /// <summary>
-        /// Request Translation
+        /// Request Translation<br/>
+        /// Translate one or more text strings into a target language. Send multiple strings in a<br/>
+        /// single request, within the request size limit, and specify formatting, tag handling,<br/>
+        /// and customization options such as glossaries, style rules, and translation memories.
         /// </summary>
         /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
@@ -84,7 +87,10 @@ namespace DeepL
             return __response.Body;
         }
         /// <summary>
-        /// Request Translation
+        /// Request Translation<br/>
+        /// Translate one or more text strings into a target language. Send multiple strings in a<br/>
+        /// single request, within the request size limit, and specify formatting, tag handling,<br/>
+        /// and customization options such as glossaries, style rules, and translation memories.
         /// </summary>
         /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
@@ -515,20 +521,24 @@ namespace DeepL
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            //
+                            // The request URL is too long. You can avoid this error by using a POST request instead of a GET request, and sending the parameters in the HTTP body.
                             if ((int)__response.StatusCode == 414)
                             {
                                 string? __content_414 = null;
                                 global::System.Exception? __exception_414 = null;
+                                global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>? __value_414 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_414 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_414 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_414, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_414 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_414 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_414, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -537,11 +547,12 @@ namespace DeepL
                                 }
 
 
-                                throw global::DeepL.ApiException.Create(
+                                throw global::DeepL.ApiException<global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>?>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_414 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_414,
                                     responseBody: __content_414,
+                                    responseObject: __value_414,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -621,20 +632,24 @@ namespace DeepL
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            //
+                            // Internal error.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
+                                global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -643,30 +658,35 @@ namespace DeepL
                                 }
 
 
-                                throw global::DeepL.ApiException.Create(
+                                throw global::DeepL.ApiException<global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>?>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
                                     responseBody: __content_500,
+                                    responseObject: __value_500,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            //
+                            // Resource currently unavailable. Try again later.
                             if ((int)__response.StatusCode == 504)
                             {
                                 string? __content_504 = null;
                                 global::System.Exception? __exception_504 = null;
+                                global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>? __value_504 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_504 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_504, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_504 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_504, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -675,11 +695,12 @@ namespace DeepL
                                 }
 
 
-                                throw global::DeepL.ApiException.Create(
+                                throw global::DeepL.ApiException<global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>?>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_504,
                                     responseBody: __content_504,
+                                    responseObject: __value_504,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -819,7 +840,10 @@ namespace DeepL
             }
         }
         /// <summary>
-        /// Request Translation
+        /// Request Translation<br/>
+        /// Translate one or more text strings into a target language. Send multiple strings in a<br/>
+        /// single request, within the request size limit, and specify formatting, tag handling,<br/>
+        /// and customization options such as glossaries, style rules, and translation memories.
         /// </summary>
         /// <param name="xDeepLReportingTag"></param>
         /// <param name="text">

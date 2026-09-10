@@ -5,7 +5,10 @@ namespace DeepL
     public partial interface IManageGlossariesClient
     {
         /// <summary>
-        /// Create a Glossary
+        /// Create a Glossary<br/>
+        /// **For new integrations we recommend `POST /v3/glossaries`**, which supports multiple<br/>
+        /// language pairs in a single glossary.<br/>
+        /// Create a glossary for one source and target language pair and return its `glossary_id`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,7 +20,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a Glossary
+        /// Create a Glossary<br/>
+        /// **For new integrations we recommend `POST /v3/glossaries`**, which supports multiple<br/>
+        /// language pairs in a single glossary.<br/>
+        /// Create a glossary for one source and target language pair and return its `glossary_id`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -29,7 +35,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a Glossary
+        /// Create a Glossary<br/>
+        /// **For new integrations we recommend `POST /v3/glossaries`**, which supports multiple<br/>
+        /// language pairs in a single glossary.<br/>
+        /// Create a glossary for one source and target language pair and return its `glossary_id`.
         /// </summary>
         /// <param name="name">
         /// Name to be associated with the glossary.<br/>

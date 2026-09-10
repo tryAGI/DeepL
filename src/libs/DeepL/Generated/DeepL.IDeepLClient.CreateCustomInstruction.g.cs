@@ -5,7 +5,9 @@ namespace DeepL
     public partial interface IDeepLClient
     {
         /// <summary>
-        /// Create a custom instruction
+        /// Create a custom instruction<br/>
+        /// Add a custom instruction to a style rule list to express a style preference that the<br/>
+        /// predefined rules do not cover. Instructions apply to text in the given source language.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="request"></param>
@@ -19,7 +21,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a custom instruction
+        /// Create a custom instruction<br/>
+        /// Add a custom instruction to a style rule list to express a style preference that the<br/>
+        /// predefined rules do not cover. Instructions apply to text in the given source language.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="request"></param>
@@ -33,7 +37,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a custom instruction
+        /// Create a custom instruction<br/>
+        /// Add a custom instruction to a style rule list to express a style preference that the<br/>
+        /// predefined rules do not cover. Instructions apply to text in the given source language.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="label">

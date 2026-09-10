@@ -52,7 +52,11 @@ namespace DeepL
             ref string content);
 
         /// <summary>
-        /// Get Streaming URL
+        /// Get Streaming URL<br/>
+        /// Create a real-time voice session and return the WebSocket URL and ephemeral token used<br/>
+        /// to stream audio. Session options such as languages, message format, and media types are<br/>
+        /// fixed at creation time. Invalid options are rejected with HTTP 400 before a session is<br/>
+        /// created.
         /// </summary>
         /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
@@ -77,7 +81,11 @@ namespace DeepL
             return __response.Body;
         }
         /// <summary>
-        /// Get Streaming URL
+        /// Get Streaming URL<br/>
+        /// Create a real-time voice session and return the WebSocket URL and ephemeral token used<br/>
+        /// to stream audio. Session options such as languages, message format, and media types are<br/>
+        /// fixed at creation time. Invalid options are rejected with HTTP 400 before a session is<br/>
+        /// created.
         /// </summary>
         /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
@@ -545,20 +553,24 @@ namespace DeepL
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            //
+                            // Internal error.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
+                                global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -567,30 +579,35 @@ namespace DeepL
                                 }
 
 
-                                throw global::DeepL.ApiException.Create(
+                                throw global::DeepL.ApiException<global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>?>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
                                     responseBody: __content_500,
+                                    responseObject: __value_500,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            //
+                            // Resource currently unavailable. Try again later.
                             if ((int)__response.StatusCode == 503)
                             {
                                 string? __content_503 = null;
                                 global::System.Exception? __exception_503 = null;
+                                global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>? __value_503 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_503 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_503 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -599,11 +616,12 @@ namespace DeepL
                                 }
 
 
-                                throw global::DeepL.ApiException.Create(
+                                throw global::DeepL.ApiException<global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>?>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
                                     responseBody: __content_503,
+                                    responseObject: __value_503,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -706,7 +724,11 @@ namespace DeepL
             }
         }
         /// <summary>
-        /// Get Streaming URL
+        /// Get Streaming URL<br/>
+        /// Create a real-time voice session and return the WebSocket URL and ephemeral token used<br/>
+        /// to stream audio. Session options such as languages, message format, and media types are<br/>
+        /// fixed at creation time. Invalid options are rejected with HTTP 400 before a session is<br/>
+        /// created.
         /// </summary>
         /// <param name="xDeepLReportingTag"></param>
         /// <param name="messageFormat">

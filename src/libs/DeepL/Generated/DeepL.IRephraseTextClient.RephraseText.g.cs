@@ -5,7 +5,10 @@ namespace DeepL
     public partial interface IRephraseTextClient
     {
         /// <summary>
-        /// Improve text
+        /// Improve text<br/>
+        /// Rewrite one or more texts to improve fluency and readability, optionally targeting a<br/>
+        /// specific writing style or tone. Use the `correct` endpoint instead when you want a<br/>
+        /// minimal spelling and grammar pass rather than broader rewriting.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,7 +20,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Improve text
+        /// Improve text<br/>
+        /// Rewrite one or more texts to improve fluency and readability, optionally targeting a<br/>
+        /// specific writing style or tone. Use the `correct` endpoint instead when you want a<br/>
+        /// minimal spelling and grammar pass rather than broader rewriting.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -29,7 +35,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Improve text
+        /// Improve text<br/>
+        /// Rewrite one or more texts to improve fluency and readability, optionally targeting a<br/>
+        /// specific writing style or tone. Use the `correct` endpoint instead when you want a<br/>
+        /// minimal spelling and grammar pass rather than broader rewriting.
         /// </summary>
         /// <param name="text">
         /// Text to be improved. Only UTF-8-encoded plain text is supported. Improvements are returned in the same order as they are requested.

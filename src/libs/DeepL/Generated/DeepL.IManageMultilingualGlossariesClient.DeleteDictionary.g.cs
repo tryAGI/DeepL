@@ -5,7 +5,9 @@ namespace DeepL
     public partial interface IManageMultilingualGlossariesClient
     {
         /// <summary>
-        /// Deletes the dictionary associated with the given language pair with the given glossary ID.
+        /// Deletes the dictionary associated with the given language pair with the given glossary ID.<br/>
+        /// Delete the dictionary for a single source and target language pair from a glossary,<br/>
+        /// leaving the glossary and its other dictionaries in place.
         /// </summary>
         /// <param name="glossaryId"></param>
         /// <param name="sourceLang">
@@ -26,7 +28,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Deletes the dictionary associated with the given language pair with the given glossary ID.
+        /// Deletes the dictionary associated with the given language pair with the given glossary ID.<br/>
+        /// Delete the dictionary for a single source and target language pair from a glossary,<br/>
+        /// leaving the glossary and its other dictionaries in place.
         /// </summary>
         /// <param name="glossaryId"></param>
         /// <param name="sourceLang">

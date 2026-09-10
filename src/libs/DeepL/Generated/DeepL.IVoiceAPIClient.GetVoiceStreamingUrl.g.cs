@@ -5,7 +5,11 @@ namespace DeepL
     public partial interface IVoiceAPIClient
     {
         /// <summary>
-        /// Get Streaming URL
+        /// Get Streaming URL<br/>
+        /// Create a real-time voice session and return the WebSocket URL and ephemeral token used<br/>
+        /// to stream audio. Session options such as languages, message format, and media types are<br/>
+        /// fixed at creation time. Invalid options are rejected with HTTP 400 before a session is<br/>
+        /// created.
         /// </summary>
         /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
@@ -19,7 +23,11 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Streaming URL
+        /// Get Streaming URL<br/>
+        /// Create a real-time voice session and return the WebSocket URL and ephemeral token used<br/>
+        /// to stream audio. Session options such as languages, message format, and media types are<br/>
+        /// fixed at creation time. Invalid options are rejected with HTTP 400 before a session is<br/>
+        /// created.
         /// </summary>
         /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
@@ -33,7 +41,11 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Streaming URL
+        /// Get Streaming URL<br/>
+        /// Create a real-time voice session and return the WebSocket URL and ephemeral token used<br/>
+        /// to stream audio. Session options such as languages, message format, and media types are<br/>
+        /// fixed at creation time. Invalid options are rejected with HTTP 400 before a session is<br/>
+        /// created.
         /// </summary>
         /// <param name="xDeepLReportingTag"></param>
         /// <param name="messageFormat">

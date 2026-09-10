@@ -7,7 +7,10 @@ namespace DeepL
     public partial interface ITranslateDocumentsClient
     {
         /// <summary>
-        /// Upload and Translate a Document
+        /// Upload and Translate a Document<br/>
+        /// Upload a document for translation and receive a `document_id` and `document_key`. Use<br/>
+        /// them to poll the document status and download the translated file. Translation is<br/>
+        /// asynchronous: the upload response confirms the request, not a finished translation.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +22,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Upload and Translate a Document
+        /// Upload and Translate a Document<br/>
+        /// Upload a document for translation and receive a `document_id` and `document_key`. Use<br/>
+        /// them to poll the document status and download the translated file. Translation is<br/>
+        /// asynchronous: the upload response confirms the request, not a finished translation.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,7 +37,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Upload and Translate a Document
+        /// Upload and Translate a Document<br/>
+        /// Upload a document for translation and receive a `document_id` and `document_key`. Use<br/>
+        /// them to poll the document status and download the translated file. Translation is<br/>
+        /// asynchronous: the upload response confirms the request, not a finished translation.
         /// </summary>
         /// <param name="sourceLang">
         /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
@@ -130,7 +139,10 @@ namespace DeepL
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Upload and Translate a Document
+        /// Upload and Translate a Document<br/>
+        /// Upload a document for translation and receive a `document_id` and `document_key`. Use<br/>
+        /// them to poll the document status and download the translated file. Translation is<br/>
+        /// asynchronous: the upload response confirms the request, not a finished translation.
         /// </summary>
         /// <param name="sourceLang">
         /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>
@@ -228,7 +240,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Upload and Translate a Document
+        /// Upload and Translate a Document<br/>
+        /// Upload a document for translation and receive a `document_id` and `document_key`. Use<br/>
+        /// them to poll the document status and download the translated file. Translation is<br/>
+        /// asynchronous: the upload response confirms the request, not a finished translation.
         /// </summary>
         /// <param name="sourceLang">
         /// Language of the text to be translated. If this parameter is omitted, the API will attempt to<br/>

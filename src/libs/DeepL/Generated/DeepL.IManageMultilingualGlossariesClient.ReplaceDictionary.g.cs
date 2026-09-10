@@ -5,7 +5,9 @@ namespace DeepL
     public partial interface IManageMultilingualGlossariesClient
     {
         /// <summary>
-        /// Replaces or creates a dictionary in the glossary with the specified entries.
+        /// Replaces or creates a dictionary in the glossary with the specified entries.<br/>
+        /// Replace all entries in the dictionary for a source and target language pair, or create<br/>
+        /// the dictionary if it does not exist yet. Entries not included in the request are removed.
         /// </summary>
         /// <param name="glossaryId"></param>
         /// <param name="request"></param>
@@ -19,7 +21,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Replaces or creates a dictionary in the glossary with the specified entries.
+        /// Replaces or creates a dictionary in the glossary with the specified entries.<br/>
+        /// Replace all entries in the dictionary for a source and target language pair, or create<br/>
+        /// the dictionary if it does not exist yet. Entries not included in the request are removed.
         /// </summary>
         /// <param name="glossaryId"></param>
         /// <param name="request"></param>
@@ -33,7 +37,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Replaces or creates a dictionary in the glossary with the specified entries.
+        /// Replaces or creates a dictionary in the glossary with the specified entries.<br/>
+        /// Replace all entries in the dictionary for a source and target language pair, or create<br/>
+        /// the dictionary if it does not exist yet. Entries not included in the request are removed.
         /// </summary>
         /// <param name="glossaryId"></param>
         /// <param name="sourceLang">

@@ -5,7 +5,8 @@ namespace DeepL
     public partial interface IDeepLClient
     {
         /// <summary>
-        /// Update a style rule list's name
+        /// Update a style rule list's name<br/>
+        /// Rename a style rule list. This does not change its configured rules or custom instructions.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="request"></param>
@@ -19,7 +20,8 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update a style rule list's name
+        /// Update a style rule list's name<br/>
+        /// Rename a style rule list. This does not change its configured rules or custom instructions.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="request"></param>
@@ -33,7 +35,8 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update a style rule list's name
+        /// Update a style rule list's name<br/>
+        /// Rename a style rule list. This does not change its configured rules or custom instructions.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="name">

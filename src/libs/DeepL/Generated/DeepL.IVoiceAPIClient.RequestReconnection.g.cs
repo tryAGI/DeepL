@@ -5,7 +5,10 @@ namespace DeepL
     public partial interface IVoiceAPIClient
     {
         /// <summary>
-        /// Request Reconnection
+        /// Request Reconnection<br/>
+        /// Exchange a session token for a fresh WebSocket URL and token so a client can rejoin a<br/>
+        /// voice session after the connection drops. Session options are carried over from the<br/>
+        /// original session.
         /// </summary>
         /// <param name="token"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -16,7 +19,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Request Reconnection
+        /// Request Reconnection<br/>
+        /// Exchange a session token for a fresh WebSocket URL and token so a client can rejoin a<br/>
+        /// voice session after the connection drops. Session options are carried over from the<br/>
+        /// original session.
         /// </summary>
         /// <param name="token"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

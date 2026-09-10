@@ -15,6 +15,10 @@ namespace DeepL
         ///
         /// </summary>
         x0,
+        /// <summary>
+        ///
+        /// </summary>
+        x1,
     }
 
     /// <summary>
@@ -30,6 +34,7 @@ namespace DeepL
             return value switch
             {
                 OutlineDetectionOptionStr.x0 => "0",
+                OutlineDetectionOptionStr.x1 => "1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -41,6 +46,7 @@ namespace DeepL
             return value switch
             {
                 "0" => OutlineDetectionOptionStr.x0,
+                "1" => OutlineDetectionOptionStr.x1,
                 _ => null,
             };
         }
