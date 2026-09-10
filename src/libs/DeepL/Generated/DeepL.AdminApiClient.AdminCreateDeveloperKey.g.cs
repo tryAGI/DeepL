@@ -55,7 +55,9 @@ namespace DeepL
             ref string content);
 
         /// <summary>
-        /// Create a developer key as an admin
+        /// Create a developer key as an admin<br/>
+        /// Create a developer key in your organization with the given label and return its<br/>
+        /// metadata, including the `key_id`. Requires an Admin API key.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -77,7 +79,9 @@ namespace DeepL
             return __response.Body;
         }
         /// <summary>
-        /// Create a developer key as an admin
+        /// Create a developer key as an admin<br/>
+        /// Create a developer key in your organization with the given label and return its<br/>
+        /// metadata, including the `key_id`. Requires an Admin API key.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -461,20 +465,24 @@ namespace DeepL
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            //
+                            // Internal error.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
+                                global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -483,11 +491,12 @@ namespace DeepL
                                 }
 
 
-                                throw global::DeepL.ApiException.Create(
+                                throw global::DeepL.ApiException<global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>?>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
                                     responseBody: __content_500,
+                                    responseObject: __value_500,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -590,7 +599,9 @@ namespace DeepL
             }
         }
         /// <summary>
-        /// Create a developer key as an admin
+        /// Create a developer key as an admin<br/>
+        /// Create a developer key in your organization with the given label and return its<br/>
+        /// metadata, including the `key_id`. Requires an Admin API key.
         /// </summary>
         /// <param name="label">
         /// API key label. The default value is `DeepL API Key`.<br/>

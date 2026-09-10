@@ -5,7 +5,9 @@ namespace DeepL
     public partial interface IDeepLClient
     {
         /// <summary>
-        /// Replace configured rules for a style rule list
+        /// Replace configured rules for a style rule list<br/>
+        /// Replace the full set of configured rules on a style rule list. Rules not included in<br/>
+        /// the request are removed, so send the complete set you want to keep.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="request"></param>
@@ -19,7 +21,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Replace configured rules for a style rule list
+        /// Replace configured rules for a style rule list<br/>
+        /// Replace the full set of configured rules on a style rule list. Rules not included in<br/>
+        /// the request are removed, so send the complete set you want to keep.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="request"></param>
@@ -33,7 +37,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Replace configured rules for a style rule list
+        /// Replace configured rules for a style rule list<br/>
+        /// Replace the full set of configured rules on a style rule list. Rules not included in<br/>
+        /// the request are removed, so send the complete set you want to keep.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="datesAndTimes"></param>

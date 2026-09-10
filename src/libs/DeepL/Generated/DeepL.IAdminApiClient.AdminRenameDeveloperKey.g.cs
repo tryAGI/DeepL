@@ -5,7 +5,9 @@ namespace DeepL
     public partial interface IAdminApiClient
     {
         /// <summary>
-        /// Rename a developer key as an admin
+        /// Rename a developer key as an admin<br/>
+        /// Change the label of a developer key. Labels are for your own bookkeeping and do not<br/>
+        /// affect the key's permissions. Requires an Admin API key.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,7 +19,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Rename a developer key as an admin
+        /// Rename a developer key as an admin<br/>
+        /// Change the label of a developer key. Labels are for your own bookkeeping and do not<br/>
+        /// affect the key's permissions. Requires an Admin API key.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -29,7 +33,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Rename a developer key as an admin
+        /// Rename a developer key as an admin<br/>
+        /// Change the label of a developer key. Labels are for your own bookkeeping and do not<br/>
+        /// affect the key's permissions. Requires an Admin API key.
         /// </summary>
         /// <param name="keyId">
         /// API key ID. Consists of two valid GUIDs separated by a colon.<br/>

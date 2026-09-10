@@ -4,9 +4,9 @@
       "Order": 1,
       "Title": "Create a custom instruction",
       "Slug": "createcustominstruction",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Add a custom instruction to a style rule list to express a style preference that the\npredefined rules do not cover. Instructions apply to text in the given source language.",
       "Language": "http",
-      "Code": "### Create a custom instruction\n# @name createCustomInstruction\nPOST {{host}}/v3/style_rules/{{style_id}}/custom_instructions\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022label\u0022: \u0022Currency custom instruction\u0022,\n  \u0022prompt\u0022: \u0022Have currency symbols before the numerical value (e.g. $100, \\u20AC100)\u0022\n}\n\n## Responses\n# 201\n# Description: Custom instruction created successfully\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.",
+      "Code": "### Create a custom instruction\n# @name createCustomInstruction\nPOST {{host}}/v3/style_rules/{{style_id}}/custom_instructions\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022label\u0022: \u0022Currency custom instruction\u0022,\n  \u0022prompt\u0022: \u0022Have currency symbols before the numerical value (e.g. $100, \\u20AC100)\u0022\n}\n\n## Responses\n# 201\n# Description: Custom instruction created successfully\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "createCustomInstruction",
       "Setup": null
@@ -15,7 +15,7 @@
       "Order": 2,
       "Title": "Create a style rule list",
       "Slug": "createstylerulelist",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Create a style rule list for a single language, optionally with its configured rules\nand custom instructions. Use the returned \u0060style_id\u0060 with the translation endpoints\nto apply the list.",
       "Language": "csharp",
       "Code": "using var client = new DeepLClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::DeepL.CreateStyleRuleListRequest\u003E(\n    @\u0022{\n  \u0022\u0022name\u0022\u0022: \u0022\u0022My style rules\u0022\u0022,\n  \u0022\u0022language\u0022\u0022: \u0022\u0022de\u0022\u0022,\n  \u0022\u0022configured_rules\u0022\u0022: {\n    \u0022\u0022style_and_tone\u0022\u0022: {\n      \u0022\u0022abbreviations\u0022\u0022: \u0022\u0022use_abbreviations_and_symbols\u0022\u0022,\n      \u0022\u0022short_vs_long_words\u0022\u0022: \u0022\u0022use_short_words\u0022\u0022\n    },\n    \u0022\u0022punctuation\u0022\u0022: {\n      \u0022\u0022apostrophe\u0022\u0022: \u0022\u0022use_curly_apostrophes\u0022\u0022\n    }\n  },\n  \u0022\u0022custom_instructions\u0022\u0022: [\n    {\n      \u0022\u0022label\u0022\u0022: \u0022\u0022Currency custom instruction\u0022\u0022,\n      \u0022\u0022prompt\u0022\u0022: \u0022\u0022Have currency symbols before the numerical value (e.g. $100, \\u20AC100)\u0022\u0022,\n      \u0022\u0022source_language\u0022\u0022: \u0022\u0022en\u0022\u0022\n    }\n  ]\n}\u0022)!;\n\nvar response = await client.CreateStyleRuleListAsync(\n    request: request\n);",
       "Format": "sdk",
@@ -26,9 +26,9 @@
       "Order": 3,
       "Title": "Replace configured rules for a style rule list",
       "Slug": "updatestyleruleconfiguredrules",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Replace the full set of configured rules on a style rule list. Rules not included in\nthe request are removed, so send the complete set you want to keep.",
       "Language": "http",
-      "Code": "### Replace configured rules for a style rule list\n# @name updateStyleRuleConfiguredRules\nPUT {{host}}/v3/style_rules/{{style_id}}/configured_rules\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022dates_and_times\u0022: {\n    \u0022calendar_era\u0022: \u0022use_bc_and_ad\u0022\n  },\n  \u0022punctuation\u0022: {\n    \u0022periods_in_academic_degrees\u0022: \u0022do_not_use\u0022\n  }\n}\n\n## Responses\n# 200\n# Description: Configured rules updated successfully\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.",
+      "Code": "### Replace configured rules for a style rule list\n# @name updateStyleRuleConfiguredRules\nPUT {{host}}/v3/style_rules/{{style_id}}/configured_rules\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022dates_and_times\u0022: {\n    \u0022calendar_era\u0022: \u0022use_bc_and_ad\u0022\n  },\n  \u0022punctuation\u0022: {\n    \u0022periods_in_academic_degrees\u0022: \u0022do_not_use\u0022\n  }\n}\n\n## Responses\n# 200\n# Description: Configured rules updated successfully\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "updateStyleRuleConfiguredRules",
       "Setup": null
@@ -57,9 +57,20 @@
     },
     {
       "Order": 6,
+      "Title": "Correct text",
+      "Slug": "correcttext",
+      "Description": "Fix spelling and grammar errors in one or more texts. Unlike \u0060/v2/write/rephrase\u0060, this endpoint applies\na minimal-change correction pass and does not rewrite the text for style or tone.",
+      "Language": "http",
+      "Code": "### Correct text\n# @name correctText\nPOST {{host}}/v2/write/correct\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022text\u0022: [\n    \u0022this is a example sentence to imprve\u0022\n  ],\n  \u0022target_lang\u0022: \u0022de\u0022\n}\n\n## Responses\n# 200\n# Description: Successful text correction.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type. Must be application/json or application/x-www-form-urlencoded.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 504\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "correctText",
+      "Setup": null
+    },
+    {
+      "Order": 7,
       "Title": "Create a Glossary",
       "Slug": "createglossary",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "**For new integrations we recommend \u0060POST /v3/glossaries\u0060**, which supports multiple\nlanguage pairs in a single glossary.\n\nCreate a glossary for one source and target language pair and return its \u0060glossary_id\u0060.",
       "Language": "csharp",
       "Code": "using var client = new DeepLClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::DeepL.CreateGlossaryParameters\u003E(\n    @\u0022{\n  \u0022\u0022name\u0022\u0022: \u0022\u0022My Glossary\u0022\u0022,\n  \u0022\u0022source_lang\u0022\u0022: \u0022\u0022en\u0022\u0022,\n  \u0022\u0022target_lang\u0022\u0022: \u0022\u0022de\u0022\u0022,\n  \u0022\u0022entries\u0022\u0022: \u0022\u0022Hello\\tGuten Tag\u0022\u0022,\n  \u0022\u0022entries_format\u0022\u0022: \u0022\u0022tsv\u0022\u0022\n}\u0022)!;\n\nvar response = await client.ManageGlossaries.CreateGlossaryAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022glossary_id\u0022: \u0022def3a26b-3e84-45b3-84ae-0c0aaf3525f7\u0022,\n//   \u0022ready\u0022: true,\n//   \u0022name\u0022: \u0022My Glossary\u0022,\n//   \u0022source_lang\u0022: \u0022en\u0022,\n//   \u0022target_lang\u0022: \u0022de\u0022,\n//   \u0022creation_time\u0022: \u00222021-08-03T14:16:18.329Z\u0022,\n//   \u0022entry_count\u0022: 1\n// }",
       "Format": "sdk",
@@ -67,40 +78,40 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 7,
+      "Order": 8,
       "Title": "Delete a Glossary",
       "Slug": "deleteglossary",
       "Description": "Deletes the specified glossary.",
       "Language": "http",
-      "Code": "### Delete a Glossary\n# @name deleteGlossary\nDELETE {{host}}/v2/glossaries/{{glossary_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 204\n# Description: Returns no content upon success.\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Delete a Glossary\n# @name deleteGlossary\nDELETE {{host}}/v2/glossaries/{{glossary_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 204\n# Description: Returns no content upon success.\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "deleteGlossary",
       "Setup": null
     },
     {
-      "Order": 8,
+      "Order": 9,
       "Title": "Retrieve Glossary Details",
       "Slug": "getglossary",
       "Description": "Retrieve meta information for a single glossary, omitting the glossary entries.",
       "Language": "http",
-      "Code": "### Retrieve Glossary Details\n# @name getGlossary\nGET {{host}}/v2/glossaries/{{glossary_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: JSON object containing the glossary meta-information.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Retrieve Glossary Details\n# @name getGlossary\nGET {{host}}/v2/glossaries/{{glossary_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: JSON object containing the glossary meta-information.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getGlossary",
       "Setup": null
     },
     {
-      "Order": 9,
+      "Order": 10,
       "Title": "Retrieve Glossary Entries",
       "Slug": "getglossaryentries",
       "Description": "List the entries of a single glossary in the format specified by the \u0060Accept\u0060 header.",
       "Language": "http",
-      "Code": "### Retrieve Glossary Entries\n# @name getGlossaryEntries\nGET {{host}}/v2/glossaries/{{glossary_id}}/entries\nAuthorization: Bearer {{token}}\nAccept: {\u0022in\u0022:\u0022header\u0022,\u0022Accept\u0022:\u0022text/tab-separated-values\u0022}\nAccept: application/json, text/tab-separated-values\n\n## Responses\n# 200\n# Description: The entries in the requested format.\n# Content-Type: text/tab-separated-values\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Retrieve Glossary Entries\n# @name getGlossaryEntries\nGET {{host}}/v2/glossaries/{{glossary_id}}/entries\nAuthorization: Bearer {{token}}\nAccept: {\u0022in\u0022:\u0022header\u0022,\u0022Accept\u0022:\u0022text/tab-separated-values\u0022}\nAccept: application/json, text/tab-separated-values\n\n## Responses\n# 200\n# Description: The entries in the requested format.\n# Content-Type: text/tab-separated-values\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getGlossaryEntries",
       "Setup": null
     },
     {
-      "Order": 10,
+      "Order": 11,
       "Title": "List all Glossaries",
       "Slug": "listglossaries",
       "Description": "List all glossaries and their meta-information, but not the glossary entries.",
@@ -111,10 +122,10 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 11,
+      "Order": 12,
       "Title": "Create a Glossary",
       "Slug": "createmultilingualglossary",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Create a glossary containing one or more dictionaries, each holding entries for a\nsingle source and target language pair. Use the returned \u0060glossary_id\u0060 with the\ntranslation endpoints to apply your own preferred translations.",
       "Language": "csharp",
       "Code": "using var client = new DeepLClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::DeepL.CreateMultilingualGlossaryParameters\u003E(\n    @\u0022{\n  \u0022\u0022name\u0022\u0022: \u0022\u0022My Glossary\u0022\u0022,\n  \u0022\u0022dictionaries\u0022\u0022: [\n    {\n      \u0022\u0022source_lang\u0022\u0022: \u0022\u0022en\u0022\u0022,\n      \u0022\u0022target_lang\u0022\u0022: \u0022\u0022de\u0022\u0022,\n      \u0022\u0022entries\u0022\u0022: \u0022\u0022Hello\\tGuten Tag\u0022\u0022,\n      \u0022\u0022entries_format\u0022\u0022: \u0022\u0022tsv\u0022\u0022\n    },\n    {\n      \u0022\u0022source_lang\u0022\u0022: \u0022\u0022de\u0022\u0022,\n      \u0022\u0022target_lang\u0022\u0022: \u0022\u0022en\u0022\u0022,\n      \u0022\u0022entries\u0022\u0022: \u0022\u0022Guten Tag\\tHello\u0022\u0022,\n      \u0022\u0022entries_format\u0022\u0022: \u0022\u0022tsv\u0022\u0022\n    }\n  ]\n}\u0022)!;\n\nvar response = await client.ManageMultilingualGlossaries.CreateMultilingualGlossaryAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022glossary_id\u0022: \u0022def3a26b-3e84-45b3-84ae-0c0aaf3525f7\u0022,\n//   \u0022name\u0022: \u0022My Glossary\u0022,\n//   \u0022dictionaries\u0022: [\n//     {\n//       \u0022source_lang\u0022: \u0022en\u0022,\n//       \u0022target_lang\u0022: \u0022de\u0022,\n//       \u0022entry_count\u0022: 1\n//     }\n//   ],\n//   \u0022creation_time\u0022: \u00222021-08-03T14:16:18.329Z\u0022\n// }",
       "Format": "sdk",
@@ -122,51 +133,51 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 12,
+      "Order": 13,
       "Title": "Deletes the dictionary associated with the given language pair with the given glossary ID.",
       "Slug": "deletedictionary",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Delete the dictionary for a single source and target language pair from a glossary,\nleaving the glossary and its other dictionaries in place.",
       "Language": "http",
-      "Code": "### Deletes the dictionary associated with the given language pair with the given glossary ID.\n# @name deleteDictionary\nDELETE {{host}}/v3/glossaries/{{glossary_id}}/dictionaries?source_lang=ar\u0026target_lang=ar\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 204\n# Description: Returns no content upon success.\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. Too many requests were made to the glossary endpoints recently.\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Deletes the dictionary associated with the given language pair with the given glossary ID.\n# @name deleteDictionary\nDELETE {{host}}/v3/glossaries/{{glossary_id}}/dictionaries?source_lang=ar\u0026target_lang=ar\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 204\n# Description: Returns no content upon success.\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. Too many requests were made to the glossary endpoints recently.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "deleteDictionary",
       "Setup": null
     },
     {
-      "Order": 13,
+      "Order": 14,
       "Title": "Delete a Glossary",
       "Slug": "deletemultilingualglossary",
       "Description": "Deletes the specified glossary.",
       "Language": "http",
-      "Code": "### Delete a Glossary\n# @name deleteMultilingualGlossary\nDELETE {{host}}/v3/glossaries/{{glossary_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 204\n# Description: Returns no content upon success.\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. Too many requests were made to the glossary endpoints recently.\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Delete a Glossary\n# @name deleteMultilingualGlossary\nDELETE {{host}}/v3/glossaries/{{glossary_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 204\n# Description: Returns no content upon success.\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. Too many requests were made to the glossary endpoints recently.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "deleteMultilingualGlossary",
       "Setup": null
     },
     {
-      "Order": 14,
+      "Order": 15,
       "Title": "Retrieve Glossary Details",
       "Slug": "getmultilingualglossary",
       "Description": "Retrieve meta information for a single glossary, omitting the glossary entries.",
       "Language": "http",
-      "Code": "### Retrieve Glossary Details\n# @name getMultilingualGlossary\nGET {{host}}/v3/glossaries/{{glossary_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: JSON object containing the glossary meta-information.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. Too many requests were made to the glossary endpoints recently.\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Retrieve Glossary Details\n# @name getMultilingualGlossary\nGET {{host}}/v3/glossaries/{{glossary_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: JSON object containing the glossary meta-information.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. Too many requests were made to the glossary endpoints recently.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getMultilingualGlossary",
       "Setup": null
     },
     {
-      "Order": 15,
+      "Order": 16,
       "Title": "Retrieve Glossary Entries",
       "Slug": "getmultilingualglossaryentries",
       "Description": "List the entries of a single glossary in tsv format.",
       "Language": "http",
-      "Code": "### Retrieve Glossary Entries\n# @name getMultilingualGlossaryEntries\nGET {{host}}/v3/glossaries/{{glossary_id}}/entries?source_lang=ar\u0026target_lang=ar\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The entries in tsv, wrapped in a JSON object.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. Too many requests were made to the glossary endpoints recently.\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Retrieve Glossary Entries\n# @name getMultilingualGlossaryEntries\nGET {{host}}/v3/glossaries/{{glossary_id}}/entries?source_lang=ar\u0026target_lang=ar\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The entries in tsv, wrapped in a JSON object.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. Too many requests were made to the glossary endpoints recently.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getMultilingualGlossaryEntries",
       "Setup": null
     },
     {
-      "Order": 16,
+      "Order": 17,
       "Title": "List all Glossaries",
       "Slug": "listmultilingualglossaries",
       "Description": "List all glossaries and their meta-information, but not the glossary entries.",
@@ -177,29 +188,29 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 17,
+      "Order": 18,
       "Title": "Edit glossary details",
       "Slug": "patchmultilingualglossary",
       "Description": "Edit glossary details, such as name or a dictionary for a source and target language.",
       "Language": "http",
-      "Code": "### Edit glossary details\n# @name patchMultilingualGlossary\nPATCH {{host}}/v3/glossaries/{{glossary_id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022My Glossary\u0022,\n  \u0022dictionaries\u0022: [\n    {\n      \u0022source_lang\u0022: \u0022en\u0022,\n      \u0022target_lang\u0022: \u0022de\u0022,\n      \u0022entries\u0022: \u0022Hello\\tGuten Tag\u0022,\n      \u0022entries_format\u0022: \u0022tsv\u0022\n    }\n  ]\n}\n\n## Responses\n# 200\n# Description: JSON object containing the glossary meta-information.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. Too many requests were made to the glossary endpoints recently.\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Edit glossary details\n# @name patchMultilingualGlossary\nPATCH {{host}}/v3/glossaries/{{glossary_id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022My Glossary\u0022,\n  \u0022dictionaries\u0022: [\n    {\n      \u0022source_lang\u0022: \u0022en\u0022,\n      \u0022target_lang\u0022: \u0022de\u0022,\n      \u0022entries\u0022: \u0022Hello\\tGuten Tag\u0022,\n      \u0022entries_format\u0022: \u0022tsv\u0022\n    }\n  ]\n}\n\n## Responses\n# 200\n# Description: JSON object containing the glossary meta-information.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. Too many requests were made to the glossary endpoints recently.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "patchMultilingualGlossary",
       "Setup": null
     },
     {
-      "Order": 18,
+      "Order": 19,
       "Title": "Replaces or creates a dictionary in the glossary with the specified entries.",
       "Slug": "replacedictionary",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Replace all entries in the dictionary for a source and target language pair, or create\nthe dictionary if it does not exist yet. Entries not included in the request are removed.",
       "Language": "http",
-      "Code": "### Replaces or creates a dictionary in the glossary with the specified entries.\n# @name replaceDictionary\nPUT {{host}}/v3/glossaries/{{glossary_id}}/dictionaries\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022source_lang\u0022: \u0022en\u0022,\n  \u0022target_lang\u0022: \u0022de\u0022,\n  \u0022entries\u0022: \u0022Hello\\tGuten Tag\u0022,\n  \u0022entries_format\u0022: \u0022tsv\u0022\n}\n\n## Responses\n# 200\n# Description: JSON object containing the dictionary meta-information.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. Too many requests were made to the glossary endpoints recently.\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Replaces or creates a dictionary in the glossary with the specified entries.\n# @name replaceDictionary\nPUT {{host}}/v3/glossaries/{{glossary_id}}/dictionaries\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022source_lang\u0022: \u0022en\u0022,\n  \u0022target_lang\u0022: \u0022de\u0022,\n  \u0022entries\u0022: \u0022Hello\\tGuten Tag\u0022,\n  \u0022entries_format\u0022: \u0022tsv\u0022\n}\n\n## Responses\n# 200\n# Description: JSON object containing the dictionary meta-information.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Forbidden. The access to the requested resource is denied, because of insufficient access rights. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: The requested entries format specified in the \u0060Accept\u0060 header is not supported.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. Too many requests were made to the glossary endpoints recently.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "replaceDictionary",
       "Setup": null
     },
     {
-      "Order": 19,
+      "Order": 20,
       "Title": "Create Spoken Terms collection",
       "Slug": "createspokenterms",
       "Description": "Create a new Spoken Terms collection with one or more term lists. Each term list contains terms for a single language. The number of collections per account is limited by your plan.",
@@ -210,7 +221,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 20,
+      "Order": 21,
       "Title": "Delete Spoken Terms collection",
       "Slug": "deletespokenterms",
       "Description": "Delete the entire Spoken Terms collection.",
@@ -221,7 +232,7 @@
       "Setup": null
     },
     {
-      "Order": 21,
+      "Order": 22,
       "Title": "Delete a term list",
       "Slug": "deletespokentermslist",
       "Description": "Delete a term list for a specific language from the Spoken Terms collection.",
@@ -232,7 +243,7 @@
       "Setup": null
     },
     {
-      "Order": 22,
+      "Order": 23,
       "Title": "Retrieve Spoken Terms collection details",
       "Slug": "getspokenterms",
       "Description": "Retrieve metadata for a Spoken Terms collection, including term list information but not the actual terms.",
@@ -243,7 +254,7 @@
       "Setup": null
     },
     {
-      "Order": 23,
+      "Order": 24,
       "Title": "Retrieve Spoken Terms entries",
       "Slug": "getspokentermsentries",
       "Description": "Retrieve the actual terms for a specific language from a Spoken Terms collection.",
@@ -254,7 +265,7 @@
       "Setup": null
     },
     {
-      "Order": 24,
+      "Order": 25,
       "Title": "List all Spoken Terms collections",
       "Slug": "listspokenterms",
       "Description": "List all Spoken Terms collections and their metadata, but not the actual terms.",
@@ -265,7 +276,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 25,
+      "Order": 26,
       "Title": "Edit Spoken Terms collection details",
       "Slug": "patchspokenterms",
       "Description": "Update the name of a Spoken Terms collection or merge new entries into an existing term list.",
@@ -276,7 +287,7 @@
       "Setup": null
     },
     {
-      "Order": 26,
+      "Order": 27,
       "Title": "Replace or create a term list",
       "Slug": "putspokentermslist",
       "Description": "Replace an existing term list for a language, or create a new one if it doesn\u0027t exist.",
@@ -287,7 +298,7 @@
       "Setup": null
     },
     {
-      "Order": 27,
+      "Order": 28,
       "Title": "Retrieve Language Resources",
       "Slug": "getlanguageresources",
       "Description": "Returns all DeepL API resources and the features they support.\n\nFor each feature, the response indicates which languages must support it for the feature to be\navailable \u2014 source only (\u0060needs_source_support\u0060), target only (\u0060needs_target_support\u0060), or both.\nThis allows clients to determine feature availability for a language pair by checking the\nappropriate language\u0027s \u0060features\u0060 object returned by \u0060GET /v3/languages\u0060.",
@@ -298,7 +309,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 28,
+      "Order": 29,
       "Title": "Retrieve Languages",
       "Slug": "getlanguages",
       "Description": "Returns languages supported by the specified DeepL API resource. Each language indicates whether it can\nbe used as a source language, a target language, or both, along with the features it supports for that\nresource.",
@@ -309,10 +320,10 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 29,
+      "Order": 30,
       "Title": "Check Usage and Limits",
       "Slug": "getusage",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Retrieve character and minute usage for the current billing period together with the\ncorresponding account limits. Poll this endpoint to track consumption and detect when\nan account is approaching its quota.",
       "Language": "csharp",
       "Code": "using var client = new DeepLClient(apiKey);\nvar response = await client.MetaInformation.GetUsageAsync();\n\n// Example response:\n// {\n//   \u0022character_count\u0022: 180118,\n//   \u0022character_limit\u0022: 1250000\n// }",
       "Format": "sdk",
@@ -320,7 +331,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 30,
+      "Order": 31,
       "Title": "Poll for the evaluation result",
       "Slug": "pollqualityevaluation",
       "Description": "Returns the current state of an evaluation job. While the job is in progress the response contains only status information. Once complete the response includes the full evaluation report.",
@@ -331,7 +342,7 @@
       "Setup": null
     },
     {
-      "Order": 31,
+      "Order": 32,
       "Title": "Submit an evaluation job",
       "Slug": "submitqualityevaluation",
       "Description": "Starts an evaluation job for the given segments. Returns a \u0060poll_url\u0060 that can be used to retrieve the result.",
@@ -342,62 +353,73 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 32,
+      "Order": 33,
+      "Title": "Improve text",
+      "Slug": "rephrasetext",
+      "Description": "Rewrite one or more texts to improve fluency and readability, optionally targeting a\nspecific writing style or tone. Use the \u0060correct\u0060 endpoint instead when you want a\nminimal spelling and grammar pass rather than broader rewriting.",
+      "Language": "http",
+      "Code": "### Improve text\n# @name rephraseText\nPOST {{host}}/v2/write/rephrase\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022text\u0022: [\n    \u0022this is a example sentence to imprve\u0022\n  ],\n  \u0022target_lang\u0022: \u0022de\u0022,\n  \u0022writing_style\u0022: \u0022academic\u0022,\n  \u0022tone\u0022: \u0022confident\u0022\n}\n\n## Responses\n# 200\n# Description: Successful text improvement.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type. Must be application/json or application/x-www-form-urlencoded.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 504\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "rephraseText",
+      "Setup": null
+    },
+    {
+      "Order": 34,
       "Title": "Download Translated Document",
       "Slug": "downloaddocument",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Download a translated document. The document must have a status of \u0060done\u0060. Each\ndocument can be downloaded only once: after a successful download DeepL deletes the\nfile and invalidates the \u0060document_id\u0060.",
       "Language": "http",
-      "Code": "### Download Translated Document\n# @name downloadDocument\nPOST {{host}}/v2/document/{{document_id}}/result\nAuthorization: Bearer {{token}}\nContent-Type: application/x-www-form-urlencoded\nAccept: application/json, application/octet-stream\n\n{\u0022document_key\u0022:\u00220CB0054F1C132C1625B392EADDA41CB754A742822F6877173029A6C487E7F60A\u0022}\n\n## Responses\n# 200\n# Description: The document is provided as a download. There is no other data included in the response besides the document data. The content type used in the response corresponds to the document type.\n# Content-Type: application/octet-stream\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: Trying to download a document using a non-existing document ID or the wrong document key will result in a 404 error. As stated above, documents can only be downloaded once before they are deleted from the server and their document ID is invalidated.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 503\n# Description: A 503 result will be returned if the user tries to download a translated document that is currently being processed and is not yet ready for download.\nPlease make sure to check that the document status is \u0027done\u0027 before trying to send a download request.\n# Content-Type: application/json\n# 504\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Download Translated Document\n# @name downloadDocument\nPOST {{host}}/v2/document/{{document_id}}/result\nAuthorization: Bearer {{token}}\nContent-Type: application/x-www-form-urlencoded\nAccept: application/json, application/octet-stream\n\n{\u0022document_key\u0022:\u00220CB0054F1C132C1625B392EADDA41CB754A742822F6877173029A6C487E7F60A\u0022}\n\n## Responses\n# 200\n# Description: The document is provided as a download. There is no other data included in the response besides the document data. The content type used in the response corresponds to the document type.\n# Content-Type: application/octet-stream\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: Trying to download a document using a non-existing document ID or the wrong document key will result in a 404 error. As stated above, documents can only be downloaded once before they are deleted from the server and their document ID is invalidated.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: A 503 result will be returned if the user tries to download a translated document that is currently being processed and is not yet ready for download.\nPlease make sure to check that the document status is \u0027done\u0027 before trying to send a download request.\n# Content-Type: application/json\n# 504\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "downloadDocument",
       "Setup": null
     },
     {
-      "Order": 33,
+      "Order": 35,
       "Title": "Check Document Status",
       "Slug": "getdocumentstatus",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Retrieve the translation status of an uploaded document. Poll this endpoint until the\nstatus is \u0060done\u0060, then download the result. The response includes an estimated\nremaining time while the document is still translating.",
       "Language": "http",
-      "Code": "### Check Document Status\n# @name getDocumentStatus\nPOST {{host}}/v2/document/{{document_id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/x-www-form-urlencoded\nAccept: application/json\n\n{\u0022document_key\u0022:\u00220CB0054F1C132C1625B392EADDA41CB754A742822F6877173029A6C487E7F60A\u0022}\n\n## Responses\n# 200\n# Description: The document status request returns a JSON object containing the document ID that was used in the request as well as string indicating the current status of the translation process. While the translation is running, the estimated number of seconds remaining until the process is done is also included in the response.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 504\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Check Document Status\n# @name getDocumentStatus\nPOST {{host}}/v2/document/{{document_id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/x-www-form-urlencoded\nAccept: application/json\n\n{\u0022document_key\u0022:\u00220CB0054F1C132C1625B392EADDA41CB754A742822F6877173029A6C487E7F60A\u0022}\n\n## Responses\n# 200\n# Description: The document status request returns a JSON object containing the document ID that was used in the request as well as string indicating the current status of the translation process. While the translation is running, the estimated number of seconds remaining until the process is done is also included in the response.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 504\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getDocumentStatus",
       "Setup": null
     },
     {
-      "Order": 34,
+      "Order": 36,
       "Title": "Upload and Translate a Document",
       "Slug": "translatedocument",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Upload a document for translation and receive a \u0060document_id\u0060 and \u0060document_key\u0060. Use\nthem to poll the document status and download the translated file. Translation is\nasynchronous: the upload response confirms the request, not a finished translation.",
       "Language": "http",
-      "Code": "### Upload and Translate a Document\n# @name translateDocument\nPOST {{host}}/v2/document\nAuthorization: Bearer {{token}}\nContent-Type: multipart/form-data; boundary=AutoSDKBoundary\nAccept: application/json\n\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022source_lang\u0022\n\nEN\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022target_lang\u0022\n\nDE\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022file\u0022; filename=\u0022file.bin\u0022\nContent-Type: application/octet-stream\n\n\u003C ./file.bin\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022filename\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022output_format\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022formality\u0022\n\nprefer_more\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022glossary_id\u0022\n\ndef3a26b-3e84-45b3-84ae-0c0aaf3525f7\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022glossary_ids\u0022\n\ndef3a26b-3e84-45b3-84ae-0c0aaf3525f7\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022style_id\u0022\n\n7ff9bfd6-cd85-4190-8503-d6215a321519\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022translation_memory_id\u0022\n\na74d88fb-ed2a-4943-a664-a4512398b994\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022translation_memory_threshold\u0022\n\n75\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022enable_watermark\u0022\n\nfalse\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022enable_beta_languages\u0022\n\nfalse\n--AutoSDKBoundary--\n\n## Responses\n# 200\n# Description: The document function returns a JSON object containing the ID and encryption key assigned to the uploaded document. Once received by the server, uploaded documents are immediately encrypted using a uniquely generated encryption key. This key is not persistently stored on the server. Therefore, it must be stored by the client and sent back to the server with every subsequent request that refers to this particular document.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 504\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Upload and Translate a Document\n# @name translateDocument\nPOST {{host}}/v2/document\nAuthorization: Bearer {{token}}\nContent-Type: multipart/form-data; boundary=AutoSDKBoundary\nAccept: application/json\n\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022source_lang\u0022\n\nEN\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022target_lang\u0022\n\nDE\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022file\u0022; filename=\u0022file.bin\u0022\nContent-Type: application/octet-stream\n\n\u003C ./file.bin\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022filename\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022output_format\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022formality\u0022\n\nprefer_more\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022glossary_id\u0022\n\ndef3a26b-3e84-45b3-84ae-0c0aaf3525f7\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022glossary_ids\u0022\n\ndef3a26b-3e84-45b3-84ae-0c0aaf3525f7\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022style_id\u0022\n\n7ff9bfd6-cd85-4190-8503-d6215a321519\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022translation_memory_id\u0022\n\na74d88fb-ed2a-4943-a664-a4512398b994\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022translation_memory_threshold\u0022\n\n75\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022enable_watermark\u0022\n\nfalse\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022enable_beta_languages\u0022\n\nfalse\n--AutoSDKBoundary--\n\n## Responses\n# 200\n# Description: The document function returns a JSON object containing the ID and encryption key assigned to the uploaded document. Once received by the server, uploaded documents are immediately encrypted using a uniquely generated encryption key. This key is not persistently stored on the server. Therefore, it must be stored by the client and sent back to the server with every subsequent request that refers to this particular document.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 504\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "translateDocument",
       "Setup": null
     },
     {
-      "Order": 35,
+      "Order": 37,
       "Title": "Request Translation",
       "Slug": "translatetext",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Translate one or more text strings into a target language. Send multiple strings in a\nsingle request, within the request size limit, and specify formatting, tag handling,\nand customization options such as glossaries, style rules, and translation memories.",
       "Language": "http",
-      "Code": "### Request Translation\n# @name translateText\nPOST {{host}}/v2/translate\nAuthorization: Bearer {{token}}\nX-DeepL-Reporting-Tag: team-billing\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022text\u0022: [\n    \u0022Hello, World!\u0022\n  ],\n  \u0022source_lang\u0022: \u0022EN\u0022,\n  \u0022target_lang\u0022: \u0022DE\u0022,\n  \u0022context\u0022: \u0022This is context.\u0022,\n  \u0022show_billed_characters\u0022: true,\n  \u0022split_sentences\u0022: \u00221\u0022,\n  \u0022preserve_formatting\u0022: false,\n  \u0022formality\u0022: \u0022prefer_more\u0022,\n  \u0022model_type\u0022: \u0022quality_optimized\u0022,\n  \u0022glossary_id\u0022: \u0022def3a26b-3e84-45b3-84ae-0c0aaf3525f7\u0022,\n  \u0022glossary_ids\u0022: [\n    \u0022def3a26b-3e84-45b3-84ae-0c0aaf3525f7\u0022\n  ],\n  \u0022style_id\u0022: \u00227ff9bfd6-cd85-4190-8503-d6215a321519\u0022,\n  \u0022translation_memory_id\u0022: \u0022a74d88fb-ed2a-4943-a664-a4512398b994\u0022,\n  \u0022translation_memory_threshold\u0022: 75,\n  \u0022custom_instructions\u0022: [\n    \u0022Use a friendly, diplomatic tone\u0022\n  ],\n  \u0022tag_handling\u0022: \u0022html\u0022,\n  \u0022tag_handling_version\u0022: \u0022v2\u0022,\n  \u0022outline_detection\u0022: true,\n  \u0022enable_beta_languages\u0022: false,\n  \u0022non_splitting_tags\u0022: [\n    \u0022non_splitting_tag\u0022\n  ],\n  \u0022splitting_tags\u0022: [\n    \u0022splitting_tag\u0022\n  ],\n  \u0022ignore_tags\u0022: [\n    \u0022ignore_tag\u0022\n  ]\n}\n\n## Responses\n# 200\n# Description: The translate function returns a JSON representation of the translations in the order the text parameters have been specified.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 414\n# Description: The request URL is too long. You can avoid this error by using a POST request instead of a GET request, and sending the parameters in the HTTP body.\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 504\n# Description: Resource currently unavailable. Try again later.\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Request Translation\n# @name translateText\nPOST {{host}}/v2/translate\nAuthorization: Bearer {{token}}\nX-DeepL-Reporting-Tag: team-billing\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022text\u0022: [\n    \u0022Hello, World!\u0022\n  ],\n  \u0022source_lang\u0022: \u0022EN\u0022,\n  \u0022target_lang\u0022: \u0022DE\u0022,\n  \u0022context\u0022: \u0022This is context.\u0022,\n  \u0022show_billed_characters\u0022: true,\n  \u0022split_sentences\u0022: \u00221\u0022,\n  \u0022preserve_formatting\u0022: false,\n  \u0022formality\u0022: \u0022prefer_more\u0022,\n  \u0022model_type\u0022: \u0022quality_optimized\u0022,\n  \u0022glossary_id\u0022: \u0022def3a26b-3e84-45b3-84ae-0c0aaf3525f7\u0022,\n  \u0022glossary_ids\u0022: [\n    \u0022def3a26b-3e84-45b3-84ae-0c0aaf3525f7\u0022\n  ],\n  \u0022style_id\u0022: \u00227ff9bfd6-cd85-4190-8503-d6215a321519\u0022,\n  \u0022translation_memory_id\u0022: \u0022a74d88fb-ed2a-4943-a664-a4512398b994\u0022,\n  \u0022translation_memory_threshold\u0022: 75,\n  \u0022custom_instructions\u0022: [\n    \u0022Use a friendly, diplomatic tone\u0022\n  ],\n  \u0022tag_handling\u0022: \u0022html\u0022,\n  \u0022tag_handling_version\u0022: \u0022v2\u0022,\n  \u0022outline_detection\u0022: true,\n  \u0022enable_beta_languages\u0022: false,\n  \u0022non_splitting_tags\u0022: [\n    \u0022non_splitting_tag\u0022\n  ],\n  \u0022splitting_tags\u0022: [\n    \u0022splitting_tag\u0022\n  ],\n  \u0022ignore_tags\u0022: [\n    \u0022ignore_tag\u0022\n  ]\n}\n\n## Responses\n# 200\n# Description: The translate function returns a JSON representation of the translations in the order the text parameters have been specified.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 414\n# Description: The request URL is too long. You can avoid this error by using a POST request instead of a GET request, and sending the parameters in the HTTP body.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 504\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "translateText",
       "Setup": null
     },
     {
-      "Order": 36,
+      "Order": 38,
       "Title": "Export a translation memory",
       "Slug": "createtranslationmemoryexport",
       "Description": "Export a translation memory as a TMX file.\n\nThe export runs as a background job. Poll\n[Retrieve an import or export job](/api-reference/translation-memory/retrieve-a-translation-memory-job)\nuntil the status is \u0060completed\u0060, then download the file from the \u0060download_url\u0060 on the job result.\nThat URL is short-lived, so download the file rather than storing the link.\n\nIf a recent export of the same translation memory is still available, DeepL reuses it and returns\n\u0060200 OK\u0060 with that job instead of starting a new one. Handle both \u0060200\u0060 and \u0060202\u0060 as success. If a\ndifferent export of the same translation memory is still running, the request returns\n\u0060409 Conflict\u0060.\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
       "Language": "http",
-      "Code": "### Export a translation memory\n# @name createTranslationMemoryExport\nPOST {{host}}/v3/translation_memories/{{translation_memory_id}}/export\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: An existing export was reused. Poll the returned \u0060job_id\u0060 for the download URL.\n# Content-Type: application/json\n# 202\n# Description: The export job was created. Poll the returned \u0060job_id\u0060 for the download URL.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The translation memory could not be found. This is also returned for a translation memory that\nbelongs to another account.\n# Content-Type: application/json\n# 409\n# Description: An export of this translation memory is already in progress. Poll that job instead of starting\nanother export.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.",
+      "Code": "### Export a translation memory\n# @name createTranslationMemoryExport\nPOST {{host}}/v3/translation_memories/{{translation_memory_id}}/export\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: An existing export was reused. Poll the returned \u0060job_id\u0060 for the download URL.\n# Content-Type: application/json\n# 202\n# Description: The export job was created. Poll the returned \u0060job_id\u0060 for the download URL.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The translation memory could not be found. This is also returned for a translation memory that\nbelongs to another account.\n# Content-Type: application/json\n# 409\n# Description: An export of this translation memory is already in progress. Poll that job instead of starting\nanother export.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "createTranslationMemoryExport",
       "Setup": null
     },
     {
-      "Order": 37,
+      "Order": 39,
       "Title": "Import a translation memory",
       "Slug": "createtranslationmemoryimport",
       "Description": "Create a translation memory by importing a TMX file.\n\nThis endpoint does not accept the file itself. It returns a short-lived \u0060upload_url\u0060, and you\nupload the TMX file to that URL with a separate \u0060PUT\u0060 request. Processing starts automatically\nonce the upload completes, so there is no third call to confirm it.\n\n1. \u0060POST /v3/translation_memories/import\u0060 with the file\u0027s name and size. The response returns a\n   \u0060job_id\u0060, an \u0060upload_url\u0060, and the \u0060expires_at\u0060 time after which the URL stops working.\n2. \u0060PUT\u0060 the TMX file to \u0060upload_url\u0060. Do not send your \u0060Authorization\u0060 header on this request,\n   because the URL is already signed.\n3. Poll [Retrieve an import or export job](/api-reference/translation-memory/retrieve-a-translation-memory-job)\n   until the status is \u0060completed\u0060. The new \u0060translation_memory_id\u0060 is on the job result.\n\nRequires an API key with the \u0060translation_memories:write\u0060 scope.",
@@ -408,18 +430,18 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 38,
+      "Order": 40,
       "Title": "Retrieve a translation memory",
       "Slug": "gettranslationmemory",
       "Description": "Retrieve a single translation memory by its ID, including its languages and segment count.\n\nTo read the stored segments themselves, use\n[List translation memory segments](/api-reference/translation-memory/list-translation-memory-segments).\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
       "Language": "http",
-      "Code": "### Retrieve a translation memory\n# @name getTranslationMemory\nGET {{host}}/v3/translation_memories/{{translation_memory_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Returns the translation memory.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The translation memory could not be found. This is also returned for a translation memory that\nbelongs to another account.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.",
+      "Code": "### Retrieve a translation memory\n# @name getTranslationMemory\nGET {{host}}/v3/translation_memories/{{translation_memory_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Returns the translation memory.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The translation memory could not be found. This is also returned for a translation memory that\nbelongs to another account.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getTranslationMemory",
       "Setup": null
     },
     {
-      "Order": 39,
+      "Order": 41,
       "Title": "Retrieve an import or export job",
       "Slug": "gettranslationmemoryjob",
       "Description": "Retrieve the status of a translation memory import or export job.\n\nPoll this endpoint after creating a job. The \u0060operation\u0060 field tells you which kind of job it is,\nand the single entry in \u0060results\u0060 carries the status and, once the job finishes, its output: the\nnew \u0060translation_memory_id\u0060 for an import, or a \u0060download_url\u0060 for an export.\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
@@ -430,18 +452,18 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 40,
+      "Order": 42,
       "Title": "List translation memory segments",
       "Slug": "gettranslationmemorysegments",
       "Description": "List the segments stored in a translation memory, one page at a time. Each entry is a source\nsegment with its translations in every target language.\n\nThis endpoint uses cursor-based pagination rather than the numbered pages used by\n[List translation memories](/api-reference/translation-memory/list-translation-memories). Omit\n\u0060page_cursor\u0060 on your first call, then pass the \u0060next_page_cursor\u0060 from each response to get the\nfollowing page. When a response has no \u0060next_page_cursor\u0060, you have reached the last page.\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
       "Language": "http",
-      "Code": "### List translation memory segments\n# @name getTranslationMemorySegments\nGET {{host}}/v3/translation_memories/{{translation_memory_id}}/segments?page_size=50\u0026page_cursor={{page_cursor}}\u0026filter_text={{filter_text}}\u0026filter_case_sensitive=false\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Returns a page of segments.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The translation memory could not be found. This is also returned for a translation memory that\nbelongs to another account.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# 503\n# Description: Resource currently unavailable. Try again later.",
+      "Code": "### List translation memory segments\n# @name getTranslationMemorySegments\nGET {{host}}/v3/translation_memories/{{translation_memory_id}}/segments?page_size=50\u0026page_cursor={{page_cursor}}\u0026filter_text={{filter_text}}\u0026filter_case_sensitive=false\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Returns a page of segments.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 401\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The translation memory could not be found. This is also returned for a translation memory that\nbelongs to another account.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 503\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "getTranslationMemorySegments",
       "Setup": null
     },
     {
-      "Order": 41,
+      "Order": 43,
       "Title": "List translation memories",
       "Slug": "listtranslationmemories",
       "Description": "Retrieve a list of translation memories associated with the authenticated account.",
@@ -452,10 +474,10 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 42,
+      "Order": 44,
       "Title": "Get Streaming URL",
       "Slug": "getvoicestreamingurl",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Create a real-time voice session and return the WebSocket URL and ephemeral token used\nto stream audio. Session options such as languages, message format, and media types are\nfixed at creation time. Invalid options are rejected with HTTP 400 before a session is\ncreated.",
       "Language": "csharp",
       "Code": "using var client = new DeepLClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::DeepL.GetVoiceStreamingUrlRequest\u003E(\n    @\u0022{\n  \u0022\u0022source_media_content_type\u0022\u0022: \u0022\u0022audio/ogg; codecs=opus\u0022\u0022,\n  \u0022\u0022source_language\u0022\u0022: \u0022\u0022en\u0022\u0022,\n  \u0022\u0022source_language_mode\u0022\u0022: \u0022\u0022auto\u0022\u0022,\n  \u0022\u0022target_languages\u0022\u0022: [\n    \u0022\u0022de\u0022\u0022,\n    \u0022\u0022fr\u0022\u0022,\n    \u0022\u0022es\u0022\u0022\n  ],\n  \u0022\u0022message_format\u0022\u0022: \u0022\u0022json\u0022\u0022\n}\u0022)!;\n\nvar response = await client.VoiceAPI.GetVoiceStreamingUrlAsync(\n    request: request,\n    xDeepLReportingTag: \u0022team-billing\u0022\n);\n\n// Example response:\n// {\n//   \u0022streaming_url\u0022: \u0022wss://api.deepl.com/v3/voice/realtime/connect\u0022,\n//   \u0022token\u0022: \u0022VGhpcyBpcyBhIGZha2UgdG9rZW4K\u0022,\n//   \u0022session_id\u0022: \u00224f911080-cfe2-41d4-8269-0e6ec15a0354\u0022\n// }",
       "Format": "sdk",
@@ -463,10 +485,10 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 43,
+      "Order": 45,
       "Title": "Request Reconnection",
       "Slug": "requestreconnection",
-      "Description": "Generated from OpenAPI examples.",
+      "Description": "Exchange a session token for a fresh WebSocket URL and token so a client can rejoin a\nvoice session after the connection drops. Session options are carried over from the\noriginal session.",
       "Language": "csharp",
       "Code": "using var client = new DeepLClient(apiKey);\n\nvar response = await client.VoiceAPI.RequestReconnectionAsync(\n    token: \u0022VGhpcyBpcyBhIGZha2UgdG9rZW4K\u0022\n);\n\n// Example response:\n// {\n//   \u0022streaming_url\u0022: \u0022wss://api.deepl.com/v3/voice/realtime/connect\u0022,\n//   \u0022token\u0022: \u0022VGhpcyBpcyBhIGZha2UgdG9rZW4K\u0022,\n//   \u0022session_id\u0022: \u00224f911080-cfe2-41d4-8269-0e6ec15a0354\u0022\n// }",
       "Format": "sdk",
@@ -474,7 +496,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 44,
+      "Order": 46,
       "Title": "Create a voice translation job",
       "Slug": "createvoicetranslatejob",
       "Description": "Creates an async voice translation job. The response includes an upload URL for the source audio file.",
@@ -485,7 +507,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 45,
+      "Order": 47,
       "Title": "Get voice translation job status",
       "Slug": "getvoicetranslatejobstatus",
       "Description": "Returns the current status of a voice translation job, including per-target result statuses.\n\nWhen a target\u0027s status is \u0060complete\u0060, the response includes a \u0060download_url\u0060 and \u0060signature\u0060 for that target. Results are returned in the same order as the targets in the create request.",

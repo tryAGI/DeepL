@@ -7,7 +7,10 @@ namespace DeepL
     public partial interface ITranslateTextClient
     {
         /// <summary>
-        /// Request Translation
+        /// Request Translation<br/>
+        /// Translate one or more text strings into a target language. Send multiple strings in a<br/>
+        /// single request, within the request size limit, and specify formatting, tag handling,<br/>
+        /// and customization options such as glossaries, style rules, and translation memories.
         /// </summary>
         /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
@@ -21,7 +24,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Request Translation
+        /// Request Translation<br/>
+        /// Translate one or more text strings into a target language. Send multiple strings in a<br/>
+        /// single request, within the request size limit, and specify formatting, tag handling,<br/>
+        /// and customization options such as glossaries, style rules, and translation memories.
         /// </summary>
         /// <param name="xDeepLReportingTag"></param>
         /// <param name="request"></param>
@@ -35,7 +41,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Request Translation
+        /// Request Translation<br/>
+        /// Translate one or more text strings into a target language. Send multiple strings in a<br/>
+        /// single request, within the request size limit, and specify formatting, tag handling,<br/>
+        /// and customization options such as glossaries, style rules, and translation memories.
         /// </summary>
         /// <param name="xDeepLReportingTag"></param>
         /// <param name="text">

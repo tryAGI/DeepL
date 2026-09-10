@@ -5,7 +5,10 @@ namespace DeepL
     public partial interface ITranslateDocumentsClient
     {
         /// <summary>
-        /// Download Translated Document
+        /// Download Translated Document<br/>
+        /// Download a translated document. The document must have a status of `done`. Each<br/>
+        /// document can be downloaded only once: after a successful download DeepL deletes the<br/>
+        /// file and invalidates the `document_id`.
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="request"></param>
@@ -19,7 +22,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Download Translated Document
+        /// Download Translated Document<br/>
+        /// Download a translated document. The document must have a status of `done`. Each<br/>
+        /// document can be downloaded only once: after a successful download DeepL deletes the<br/>
+        /// file and invalidates the `document_id`.
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="request"></param>
@@ -33,7 +39,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Download Translated Document
+        /// Download Translated Document<br/>
+        /// Download a translated document. The document must have a status of `done`. Each<br/>
+        /// document can be downloaded only once: after a successful download DeepL deletes the<br/>
+        /// file and invalidates the `document_id`.
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="request"></param>
@@ -47,7 +56,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Download Translated Document
+        /// Download Translated Document<br/>
+        /// Download a translated document. The document must have a status of `done`. Each<br/>
+        /// document can be downloaded only once: after a successful download DeepL deletes the<br/>
+        /// file and invalidates the `document_id`.
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="documentKey1">

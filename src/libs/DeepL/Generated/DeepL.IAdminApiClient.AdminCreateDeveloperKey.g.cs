@@ -5,7 +5,9 @@ namespace DeepL
     public partial interface IAdminApiClient
     {
         /// <summary>
-        /// Create a developer key as an admin
+        /// Create a developer key as an admin<br/>
+        /// Create a developer key in your organization with the given label and return its<br/>
+        /// metadata, including the `key_id`. Requires an Admin API key.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,7 +19,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a developer key as an admin
+        /// Create a developer key as an admin<br/>
+        /// Create a developer key in your organization with the given label and return its<br/>
+        /// metadata, including the `key_id`. Requires an Admin API key.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -29,7 +33,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a developer key as an admin
+        /// Create a developer key as an admin<br/>
+        /// Create a developer key in your organization with the given label and return its<br/>
+        /// metadata, including the `key_id`. Requires an Admin API key.
         /// </summary>
         /// <param name="label">
         /// API key label. The default value is `DeepL API Key`.<br/>

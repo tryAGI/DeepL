@@ -5,7 +5,9 @@ namespace DeepL
     public partial interface IDeepLClient
     {
         /// <summary>
-        /// Replace a custom instruction
+        /// Replace a custom instruction<br/>
+        /// Replace a custom instruction. Send every field you want to keep, because omitted<br/>
+        /// fields are overwritten.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="instructionId"></param>
@@ -21,7 +23,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Replace a custom instruction
+        /// Replace a custom instruction<br/>
+        /// Replace a custom instruction. Send every field you want to keep, because omitted<br/>
+        /// fields are overwritten.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="instructionId"></param>
@@ -37,7 +41,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Replace a custom instruction
+        /// Replace a custom instruction<br/>
+        /// Replace a custom instruction. Send every field you want to keep, because omitted<br/>
+        /// fields are overwritten.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="instructionId"></param>

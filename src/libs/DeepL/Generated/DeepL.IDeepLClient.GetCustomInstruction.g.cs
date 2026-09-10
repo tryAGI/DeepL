@@ -5,7 +5,8 @@ namespace DeepL
     public partial interface IDeepLClient
     {
         /// <summary>
-        /// Get a custom instruction
+        /// Get a custom instruction<br/>
+        /// Retrieve a single custom instruction from a style rule list.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="instructionId"></param>
@@ -18,7 +19,8 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get a custom instruction
+        /// Get a custom instruction<br/>
+        /// Retrieve a single custom instruction from a style rule list.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="instructionId"></param>

@@ -5,7 +5,9 @@ namespace DeepL
     public partial interface IDeepLClient
     {
         /// <summary>
-        /// Delete a style rule list
+        /// Delete a style rule list<br/>
+        /// Delete a style rule list and its custom instructions. Requests that reference the<br/>
+        /// deleted `style_id` fail afterwards.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -16,7 +18,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a style rule list
+        /// Delete a style rule list<br/>
+        /// Delete a style rule list and its custom instructions. Requests that reference the<br/>
+        /// deleted `style_id` fail afterwards.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

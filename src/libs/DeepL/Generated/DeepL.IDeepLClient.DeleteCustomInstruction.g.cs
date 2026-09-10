@@ -5,7 +5,8 @@ namespace DeepL
     public partial interface IDeepLClient
     {
         /// <summary>
-        /// Delete a custom instruction
+        /// Delete a custom instruction<br/>
+        /// Delete a custom instruction from a style rule list. The rest of the list is unchanged.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="instructionId"></param>
@@ -18,7 +19,8 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a custom instruction
+        /// Delete a custom instruction<br/>
+        /// Delete a custom instruction from a style rule list. The rest of the list is unchanged.
         /// </summary>
         /// <param name="styleId"></param>
         /// <param name="instructionId"></param>

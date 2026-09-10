@@ -5,7 +5,9 @@ namespace DeepL
     public partial interface IAdminApiClient
     {
         /// <summary>
-        /// Set developer key usage limits as an admin
+        /// Set developer key usage limits as an admin<br/>
+        /// Set per-key usage limits for characters and speech-to-text milliseconds. Requests made<br/>
+        /// with the key fail with HTTP 456 once a limit is reached. Requires an Admin API key.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,7 +19,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Set developer key usage limits as an admin
+        /// Set developer key usage limits as an admin<br/>
+        /// Set per-key usage limits for characters and speech-to-text milliseconds. Requests made<br/>
+        /// with the key fail with HTTP 456 once a limit is reached. Requires an Admin API key.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -29,7 +33,9 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Set developer key usage limits as an admin
+        /// Set developer key usage limits as an admin<br/>
+        /// Set per-key usage limits for characters and speech-to-text milliseconds. Requests made<br/>
+        /// with the key fail with HTTP 456 once a limit is reached. Requires an Admin API key.
         /// </summary>
         /// <param name="keyId">
         /// API key ID. Consists of two valid GUIDs separated by a colon.<br/>

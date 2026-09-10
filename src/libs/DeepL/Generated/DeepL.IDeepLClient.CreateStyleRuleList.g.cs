@@ -5,7 +5,10 @@ namespace DeepL
     public partial interface IDeepLClient
     {
         /// <summary>
-        /// Create a style rule list
+        /// Create a style rule list<br/>
+        /// Create a style rule list for a single language, optionally with its configured rules<br/>
+        /// and custom instructions. Use the returned `style_id` with the translation endpoints<br/>
+        /// to apply the list.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,7 +20,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a style rule list
+        /// Create a style rule list<br/>
+        /// Create a style rule list for a single language, optionally with its configured rules<br/>
+        /// and custom instructions. Use the returned `style_id` with the translation endpoints<br/>
+        /// to apply the list.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -29,7 +35,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a style rule list
+        /// Create a style rule list<br/>
+        /// Create a style rule list for a single language, optionally with its configured rules<br/>
+        /// and custom instructions. Use the returned `style_id` with the translation endpoints<br/>
+        /// to apply the list.
         /// </summary>
         /// <param name="name">
         /// Name associated with the style rule list.

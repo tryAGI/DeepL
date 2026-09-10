@@ -5,7 +5,10 @@ namespace DeepL
     public partial interface IManageMultilingualGlossariesClient
     {
         /// <summary>
-        /// Create a Glossary
+        /// Create a Glossary<br/>
+        /// Create a glossary containing one or more dictionaries, each holding entries for a<br/>
+        /// single source and target language pair. Use the returned `glossary_id` with the<br/>
+        /// translation endpoints to apply your own preferred translations.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,7 +20,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a Glossary
+        /// Create a Glossary<br/>
+        /// Create a glossary containing one or more dictionaries, each holding entries for a<br/>
+        /// single source and target language pair. Use the returned `glossary_id` with the<br/>
+        /// translation endpoints to apply your own preferred translations.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -29,7 +35,10 @@ namespace DeepL
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a Glossary
+        /// Create a Glossary<br/>
+        /// Create a glossary containing one or more dictionaries, each holding entries for a<br/>
+        /// single source and target language pair. Use the returned `glossary_id` with the<br/>
+        /// translation endpoints to apply your own preferred translations.
         /// </summary>
         /// <param name="name">
         /// Name to be associated with the glossary.<br/>
