@@ -735,7 +735,7 @@ namespace DeepL
         /// Message encoding format for WebSocket communication. Determines how messages are serialized and transmitted.<br/>
         /// Using `json`,  messages are JSON-encoded and sent as TEXT WebSocket frames. All binary fields (such as audio data) are base64-encoded strings.<br/>
         /// Using `msgpack`, messages are MessagePack-encoded and sent as BINARY WebSocket frames. All binary fields (such as audio data) contain raw binary data.<br/>
-        /// For more details, see [Message Encoding](/api-reference/voice#message-encoding).<br/>
+        /// For more details, see [Message Encoding](/docs/voice/message-encoding).<br/>
         /// Default Value: json<br/>
         /// Example: json
         /// </param>
@@ -775,7 +775,7 @@ namespace DeepL
         /// </param>
         /// <param name="sourceLanguage">
         /// The source language of the audio stream. It can be left empty or must be one of the supported Voice API source languages and comply with IETF BCP 47 language tags.<br/>
-        /// Note: Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
+        /// Note: Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.<br/>
         /// Example: en
         /// </param>
         /// <param name="sourceLanguageMode">
@@ -786,13 +786,13 @@ namespace DeepL
         /// Example: fixed
         /// </param>
         /// <param name="targetLanguages">
-        /// List of target languages for translation. The stream will emit translations for each language. Language identifiers must comply with IETF BCP 47. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
+        /// List of target languages for translation. The stream will emit translations for each language. Language identifiers must comply with IETF BCP 47. See the [supported languages table](/docs/voice/supported-voice-languages) for details.<br/>
         /// Default Value: []<br/>
         /// Example: [de, fr, es]
         /// </param>
         /// <param name="targetMediaLanguages">
         /// List of target languages for which to generate synthesized audio. Languages specified here will automatically be added to target_languages if not already present, ensuring you receive both text translation and audio synthesis for these languages. If omitted, only text transcription and translation will be provided (no audio synthesis). Language identifiers must comply with IETF BCP 47.<br/>
-        /// Note: Some translated audio languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
+        /// Note: Some translated audio languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.<br/>
         /// Default Value: []<br/>
         /// Example: [de]
         /// </param>
@@ -829,6 +829,8 @@ namespace DeepL
         /// </param>
         /// <param name="targetMediaVoice">
         /// Target audio voice selection for synthesized speech. The default voice is language dependent.<br/>
+        /// Use `match` for speaker match, which produces translated speech with a voice close to the speaker's voice. Speaker match is only available for target languages whose translated speech is provided by DeepL, not for languages provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.<br/>
+        /// Requesting `match` for a target language that does not support it is not an error: the session is created and that language's translated speech uses a preset voice instead.<br/>
         /// Example: female
         /// </param>
         /// <param name="spokenTermsId">

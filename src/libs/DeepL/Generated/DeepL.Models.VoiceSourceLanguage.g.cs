@@ -5,13 +5,13 @@ namespace DeepL
 {
     /// <summary>
     /// The source language of the audio stream. It can be left empty or must be one of the supported Voice API source languages and comply with IETF BCP 47 language tags.<br/>
-    /// Note: Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.<br/>
+    /// Note: Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.<br/>
     /// Example: en
     /// </summary>
     public enum VoiceSourceLanguage
     {
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Ar,
         /// <summary>
@@ -23,7 +23,7 @@ namespace DeepL
         /// </summary>
         Bn,
         /// <summary>
-        ///
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Cs,
         /// <summary>
@@ -31,7 +31,7 @@ namespace DeepL
         /// </summary>
         Da,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         De,
         /// <summary>
@@ -39,15 +39,15 @@ namespace DeepL
         /// </summary>
         El,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        ///
         /// </summary>
         En,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Es,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Et,
         /// <summary>
@@ -63,7 +63,7 @@ namespace DeepL
         /// </summary>
         Ga,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         He,
         /// <summary>
@@ -71,7 +71,7 @@ namespace DeepL
         /// </summary>
         Hi,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Hr,
         /// <summary>
@@ -79,7 +79,7 @@ namespace DeepL
         /// </summary>
         Hu,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Id,
         /// <summary>
@@ -123,11 +123,11 @@ namespace DeepL
         /// </summary>
         Pl,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Pt,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Ro,
         /// <summary>
@@ -147,11 +147,11 @@ namespace DeepL
         /// </summary>
         Sv,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Ta,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Th,
         /// <summary>
@@ -159,7 +159,7 @@ namespace DeepL
         /// </summary>
         Tl,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Tr,
         /// <summary>
@@ -167,7 +167,7 @@ namespace DeepL
         /// </summary>
         Uk,
         /// <summary>
-        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/api-reference/voice#show-supported-languages) for details.
+        /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Vi,
         /// <summary>
