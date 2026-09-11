@@ -7,7 +7,7 @@ namespace DeepL
     /// Message encoding format for WebSocket communication. Determines how messages are serialized and transmitted.<br/>
     /// Using `json`,  messages are JSON-encoded and sent as TEXT WebSocket frames. All binary fields (such as audio data) are base64-encoded strings.<br/>
     /// Using `msgpack`, messages are MessagePack-encoded and sent as BINARY WebSocket frames. All binary fields (such as audio data) contain raw binary data.<br/>
-    /// For more details, see [Message Encoding](/api-reference/voice#message-encoding).<br/>
+    /// For more details, see [Message Encoding](/docs/voice/message-encoding).<br/>
     /// Default Value: json<br/>
     /// Example: json
     /// </summary>
