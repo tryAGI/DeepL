@@ -23,6 +23,10 @@ namespace DeepL
         /// </summary>
         Bn,
         /// <summary>
+        ///
+        /// </summary>
+        Ca,
+        /// <summary>
         /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
         Cs,
@@ -62,6 +66,10 @@ namespace DeepL
         ///
         /// </summary>
         Ga,
+        /// <summary>
+        ///
+        /// </summary>
+        Gl,
         /// <summary>
         /// Some source transcription languages are provided through external service partners. See the [supported languages table](/docs/voice/supported-voice-languages) for details.
         /// </summary>
@@ -191,6 +199,7 @@ namespace DeepL
                 VoiceSourceLanguage.Ar => "ar",
                 VoiceSourceLanguage.Bg => "bg",
                 VoiceSourceLanguage.Bn => "bn",
+                VoiceSourceLanguage.Ca => "ca",
                 VoiceSourceLanguage.Cs => "cs",
                 VoiceSourceLanguage.Da => "da",
                 VoiceSourceLanguage.De => "de",
@@ -201,6 +210,7 @@ namespace DeepL
                 VoiceSourceLanguage.Fi => "fi",
                 VoiceSourceLanguage.Fr => "fr",
                 VoiceSourceLanguage.Ga => "ga",
+                VoiceSourceLanguage.Gl => "gl",
                 VoiceSourceLanguage.He => "he",
                 VoiceSourceLanguage.Hi => "hi",
                 VoiceSourceLanguage.Hr => "hr",
@@ -242,6 +252,7 @@ namespace DeepL
                 "ar" => VoiceSourceLanguage.Ar,
                 "bg" => VoiceSourceLanguage.Bg,
                 "bn" => VoiceSourceLanguage.Bn,
+                "ca" => VoiceSourceLanguage.Ca,
                 "cs" => VoiceSourceLanguage.Cs,
                 "da" => VoiceSourceLanguage.Da,
                 "de" => VoiceSourceLanguage.De,
@@ -252,6 +263,7 @@ namespace DeepL
                 "fi" => VoiceSourceLanguage.Fi,
                 "fr" => VoiceSourceLanguage.Fr,
                 "ga" => VoiceSourceLanguage.Ga,
+                "gl" => VoiceSourceLanguage.Gl,
                 "he" => VoiceSourceLanguage.He,
                 "hi" => VoiceSourceLanguage.Hi,
                 "hr" => VoiceSourceLanguage.Hr,
