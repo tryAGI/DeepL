@@ -110,7 +110,7 @@ namespace DeepL
         /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
         /// </param>
         /// <param name="translationMemoryThreshold">
-        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher).<br/>
+        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher). A value below 50 is treated as 50.<br/>
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
@@ -212,7 +212,7 @@ namespace DeepL
         /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
         /// </param>
         /// <param name="translationMemoryThreshold">
-        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher).<br/>
+        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher). A value below 50 is treated as 50.<br/>
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
@@ -313,7 +313,7 @@ namespace DeepL
         /// Example: a74d88fb-ed2a-4943-a664-a4512398b994
         /// </param>
         /// <param name="translationMemoryThreshold">
-        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher).<br/>
+        /// The minimum matching percentage required for a translation memory segment to be applied (recommended to be 75% or higher). A value below 50 is treated as 50.<br/>
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
