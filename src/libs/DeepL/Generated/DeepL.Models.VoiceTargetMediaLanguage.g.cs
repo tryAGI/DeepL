@@ -19,6 +19,10 @@ namespace DeepL
         /// <summary>
         ///
         /// </summary>
+        Ca,
+        /// <summary>
+        ///
+        /// </summary>
         Cs,
         /// <summary>
         ///
@@ -64,6 +68,14 @@ namespace DeepL
         ///
         /// </summary>
         FrFr,
+        /// <summary>
+        ///
+        /// </summary>
+        Gl,
+        /// <summary>
+        ///
+        /// </summary>
+        He,
         /// <summary>
         ///
         /// </summary>
@@ -135,11 +147,19 @@ namespace DeepL
         /// <summary>
         ///
         /// </summary>
+        Sl,
+        /// <summary>
+        ///
+        /// </summary>
         Sv,
         /// <summary>
         ///
         /// </summary>
         Ta,
+        /// <summary>
+        ///
+        /// </summary>
+        Th,
         /// <summary>
         ///
         /// </summary>
@@ -184,6 +204,7 @@ namespace DeepL
             {
                 VoiceTargetMediaLanguage.Ar => "ar",
                 VoiceTargetMediaLanguage.Bg => "bg",
+                VoiceTargetMediaLanguage.Ca => "ca",
                 VoiceTargetMediaLanguage.Cs => "cs",
                 VoiceTargetMediaLanguage.Da => "da",
                 VoiceTargetMediaLanguage.De => "de",
@@ -196,6 +217,8 @@ namespace DeepL
                 VoiceTargetMediaLanguage.Fr => "fr",
                 VoiceTargetMediaLanguage.FrCa => "fr-CA",
                 VoiceTargetMediaLanguage.FrFr => "fr-FR",
+                VoiceTargetMediaLanguage.Gl => "gl",
+                VoiceTargetMediaLanguage.He => "he",
                 VoiceTargetMediaLanguage.Hi => "hi",
                 VoiceTargetMediaLanguage.Hr => "hr",
                 VoiceTargetMediaLanguage.Hu => "hu",
@@ -213,8 +236,10 @@ namespace DeepL
                 VoiceTargetMediaLanguage.Ro => "ro",
                 VoiceTargetMediaLanguage.Ru => "ru",
                 VoiceTargetMediaLanguage.Sk => "sk",
+                VoiceTargetMediaLanguage.Sl => "sl",
                 VoiceTargetMediaLanguage.Sv => "sv",
                 VoiceTargetMediaLanguage.Ta => "ta",
+                VoiceTargetMediaLanguage.Th => "th",
                 VoiceTargetMediaLanguage.Tl => "tl",
                 VoiceTargetMediaLanguage.Tr => "tr",
                 VoiceTargetMediaLanguage.Uk => "uk",
@@ -234,6 +259,7 @@ namespace DeepL
             {
                 "ar" => VoiceTargetMediaLanguage.Ar,
                 "bg" => VoiceTargetMediaLanguage.Bg,
+                "ca" => VoiceTargetMediaLanguage.Ca,
                 "cs" => VoiceTargetMediaLanguage.Cs,
                 "da" => VoiceTargetMediaLanguage.Da,
                 "de" => VoiceTargetMediaLanguage.De,
@@ -246,6 +272,8 @@ namespace DeepL
                 "fr" => VoiceTargetMediaLanguage.Fr,
                 "fr-CA" => VoiceTargetMediaLanguage.FrCa,
                 "fr-FR" => VoiceTargetMediaLanguage.FrFr,
+                "gl" => VoiceTargetMediaLanguage.Gl,
+                "he" => VoiceTargetMediaLanguage.He,
                 "hi" => VoiceTargetMediaLanguage.Hi,
                 "hr" => VoiceTargetMediaLanguage.Hr,
                 "hu" => VoiceTargetMediaLanguage.Hu,
@@ -263,8 +291,10 @@ namespace DeepL
                 "ro" => VoiceTargetMediaLanguage.Ro,
                 "ru" => VoiceTargetMediaLanguage.Ru,
                 "sk" => VoiceTargetMediaLanguage.Sk,
+                "sl" => VoiceTargetMediaLanguage.Sl,
                 "sv" => VoiceTargetMediaLanguage.Sv,
                 "ta" => VoiceTargetMediaLanguage.Ta,
+                "th" => VoiceTargetMediaLanguage.Th,
                 "tl" => VoiceTargetMediaLanguage.Tl,
                 "tr" => VoiceTargetMediaLanguage.Tr,
                 "uk" => VoiceTargetMediaLanguage.Uk,

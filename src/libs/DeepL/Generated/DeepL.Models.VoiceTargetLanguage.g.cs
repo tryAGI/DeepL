@@ -23,6 +23,10 @@ namespace DeepL
         /// <summary>
         ///
         /// </summary>
+        Ca,
+        /// <summary>
+        ///
+        /// </summary>
         Cs,
         /// <summary>
         ///
@@ -76,6 +80,10 @@ namespace DeepL
         ///
         /// </summary>
         Ga,
+        /// <summary>
+        ///
+        /// </summary>
+        Gl,
         /// <summary>
         ///
         /// </summary>
@@ -221,6 +229,7 @@ namespace DeepL
                 VoiceTargetLanguage.Ar => "ar",
                 VoiceTargetLanguage.Bg => "bg",
                 VoiceTargetLanguage.Bn => "bn",
+                VoiceTargetLanguage.Ca => "ca",
                 VoiceTargetLanguage.Cs => "cs",
                 VoiceTargetLanguage.Da => "da",
                 VoiceTargetLanguage.De => "de",
@@ -235,6 +244,7 @@ namespace DeepL
                 VoiceTargetLanguage.FrCa => "fr-CA",
                 VoiceTargetLanguage.FrFr => "fr-FR",
                 VoiceTargetLanguage.Ga => "ga",
+                VoiceTargetLanguage.Gl => "gl",
                 VoiceTargetLanguage.He => "he",
                 VoiceTargetLanguage.Hi => "hi",
                 VoiceTargetLanguage.Hr => "hr",
@@ -280,6 +290,7 @@ namespace DeepL
                 "ar" => VoiceTargetLanguage.Ar,
                 "bg" => VoiceTargetLanguage.Bg,
                 "bn" => VoiceTargetLanguage.Bn,
+                "ca" => VoiceTargetLanguage.Ca,
                 "cs" => VoiceTargetLanguage.Cs,
                 "da" => VoiceTargetLanguage.Da,
                 "de" => VoiceTargetLanguage.De,
@@ -294,6 +305,7 @@ namespace DeepL
                 "fr-CA" => VoiceTargetLanguage.FrCa,
                 "fr-FR" => VoiceTargetLanguage.FrFr,
                 "ga" => VoiceTargetLanguage.Ga,
+                "gl" => VoiceTargetLanguage.Gl,
                 "he" => VoiceTargetLanguage.He,
                 "hi" => VoiceTargetLanguage.Hi,
                 "hr" => VoiceTargetLanguage.Hr,
