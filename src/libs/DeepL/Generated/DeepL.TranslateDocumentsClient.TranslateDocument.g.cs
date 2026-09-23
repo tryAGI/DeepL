@@ -286,6 +286,14 @@ namespace DeepL
                                     name: "\"enable_watermark\"");
 
                             }
+                            if (request.EnableQualityEvaluation != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EnableQualityEvaluation, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"enable_quality_evaluation\"");
+
+                            }
                             if (request.EnableBetaLanguages != default)
                             {
 
@@ -999,6 +1007,12 @@ namespace DeepL
         /// Only supported for `docx` and `pdf` output. For all other output formats the parameter is ignored and the document is returned without a watermark.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="enableQualityEvaluation">
+        /// (beta) When `true`, DeepL also evaluates the finished translation and returns a `quality_evaluation_job_id`. Poll [`GET /v1/quality-evaluations/{job_id}`](/api-reference/quality-evaluations/poll) with it for a per-segment report of translation issues. The translation itself is unaffected.<br/>
+        /// **Important:** Available to select customers; contact your customer success manager to enable it. Supported for `docx`, `pptx`, `pdf`, `srt`, `idml`, `xml`, `dita`, `mif`, and XLIFF 2.1 uploads, and for the [supported language pairs](/api-reference/quality-evaluations/poll#supported-language-pairs) only.<br/>
+        /// Rejected before the upload is accepted: `403` if quality evaluation is not enabled for the account, `400` for an ineligible file type, an unsupported language pair, or a value other than `true` or `false`.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -1015,6 +1029,7 @@ namespace DeepL
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
             bool? enableWatermark = default,
+            bool? enableQualityEvaluation = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1032,6 +1047,7 @@ namespace DeepL
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
                 EnableWatermark = enableWatermark,
+                EnableQualityEvaluation = enableQualityEvaluation,
             };
 
             return await TranslateDocumentAsync(
@@ -1123,6 +1139,12 @@ namespace DeepL
         /// Only supported for `docx` and `pdf` output. For all other output formats the parameter is ignored and the document is returned without a watermark.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="enableQualityEvaluation">
+        /// (beta) When `true`, DeepL also evaluates the finished translation and returns a `quality_evaluation_job_id`. Poll [`GET /v1/quality-evaluations/{job_id}`](/api-reference/quality-evaluations/poll) with it for a per-segment report of translation issues. The translation itself is unaffected.<br/>
+        /// **Important:** Available to select customers; contact your customer success manager to enable it. Supported for `docx`, `pptx`, `pdf`, `srt`, `idml`, `xml`, `dita`, `mif`, and XLIFF 2.1 uploads, and for the [supported language pairs](/api-reference/quality-evaluations/poll#supported-language-pairs) only.<br/>
+        /// Rejected before the upload is accepted: `403` if quality evaluation is not enabled for the account, `400` for an ineligible file type, an unsupported language pair, or a value other than `true` or `false`.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
@@ -1139,6 +1161,7 @@ namespace DeepL
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
             bool? enableWatermark = default,
+            bool? enableQualityEvaluation = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1158,6 +1181,7 @@ namespace DeepL
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
                 EnableWatermark = enableWatermark,
+                EnableQualityEvaluation = enableQualityEvaluation,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -1344,6 +1368,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EnableWatermark, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"enable_watermark\"");
+
+                            }
+                            if (request.EnableQualityEvaluation != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EnableQualityEvaluation, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"enable_quality_evaluation\"");
 
                             }
                             if (request.EnableBetaLanguages != default)
@@ -2051,6 +2083,12 @@ namespace DeepL
         /// Only supported for `docx` and `pdf` output. For all other output formats the parameter is ignored and the document is returned without a watermark.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="enableQualityEvaluation">
+        /// (beta) When `true`, DeepL also evaluates the finished translation and returns a `quality_evaluation_job_id`. Poll [`GET /v1/quality-evaluations/{job_id}`](/api-reference/quality-evaluations/poll) with it for a per-segment report of translation issues. The translation itself is unaffected.<br/>
+        /// **Important:** Available to select customers; contact your customer success manager to enable it. Supported for `docx`, `pptx`, `pdf`, `srt`, `idml`, `xml`, `dita`, `mif`, and XLIFF 2.1 uploads, and for the [supported language pairs](/api-reference/quality-evaluations/poll#supported-language-pairs) only.<br/>
+        /// Rejected before the upload is accepted: `403` if quality evaluation is not enabled for the account, `400` for an ineligible file type, an unsupported language pair, or a value other than `true` or `false`.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
@@ -2067,6 +2105,7 @@ namespace DeepL
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
             bool? enableWatermark = default,
+            bool? enableQualityEvaluation = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -2086,6 +2125,7 @@ namespace DeepL
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
                 EnableWatermark = enableWatermark,
+                EnableQualityEvaluation = enableQualityEvaluation,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -2272,6 +2312,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EnableWatermark, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"enable_watermark\"");
+
+                            }
+                            if (request.EnableQualityEvaluation != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EnableQualityEvaluation, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"enable_quality_evaluation\"");
 
                             }
                             if (request.EnableBetaLanguages != default)

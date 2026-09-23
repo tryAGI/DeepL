@@ -40,11 +40,11 @@ namespace DeepL
             };
         partial void PreparePollQualityEvaluationArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid jobId);
+            ref string jobId);
         partial void PreparePollQualityEvaluationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid jobId);
+            string jobId);
         partial void ProcessPollQualityEvaluationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -56,16 +56,17 @@ namespace DeepL
 
         /// <summary>
         /// Poll for the evaluation result<br/>
-        /// Returns the current state of an evaluation job. While the job is in progress the response contains only status information. Once complete the response includes the full evaluation report.
+        /// Returns the current state of a quality evaluation. While the evaluation is in progress the response carries only status information; once it completes, the response carries the full report.<br/>
+        /// Evaluations are requested with `enable_quality_evaluation` on [`POST /v2/document`](/api-reference/document/upload-and-translate-a-document). There is no public endpoint for starting one.
         /// </summary>
         /// <param name="jobId">
-        /// Example: f3a8c5e1-9b7d-4e62-a1c4-8f5d2b6e3c19
+        /// Example: 04DE5AD98A02647D83285A36021911C6
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::DeepL.OneOf<global::DeepL.QualityEvaluationDone, global::DeepL.QualityEvaluationFailed>> PollQualityEvaluationAsync(
-            global::System.Guid jobId,
+            string jobId,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -79,16 +80,17 @@ namespace DeepL
         }
         /// <summary>
         /// Poll for the evaluation result<br/>
-        /// Returns the current state of an evaluation job. While the job is in progress the response contains only status information. Once complete the response includes the full evaluation report.
+        /// Returns the current state of a quality evaluation. While the evaluation is in progress the response carries only status information; once it completes, the response carries the full report.<br/>
+        /// Evaluations are requested with `enable_quality_evaluation` on [`POST /v2/document`](/api-reference/document/upload-and-translate-a-document). There is no public endpoint for starting one.
         /// </summary>
         /// <param name="jobId">
-        /// Example: f3a8c5e1-9b7d-4e62-a1c4-8f5d2b6e3c19
+        /// Example: 04DE5AD98A02647D83285A36021911C6
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::DeepL.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse<global::DeepL.OneOf<global::DeepL.QualityEvaluationDone, global::DeepL.QualityEvaluationFailed>>> PollQualityEvaluationAsResponseAsync(
-            global::System.Guid jobId,
+            string jobId,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -122,7 +124,7 @@ namespace DeepL
             {
 
                             var __pathBuilder = new global::DeepL.PathBuilder(
-                                path: $"/v1/quality-evaluation/{jobId}",
+                                path: $"/v1/quality-evaluations/{jobId}",
                                 baseUri: ResolveBaseUri(
                                 servers: s_PollQualityEvaluationServers,
                                 defaultBaseUrl: "https://api.deepl.com/"));
@@ -185,7 +187,7 @@ namespace DeepL
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PollQualityEvaluation",
                                 methodName: "PollQualityEvaluationAsync",
-                                pathTemplate: "$\"/v1/quality-evaluation/{jobId}\"",
+                                pathTemplate: "$\"/v1/quality-evaluations/{jobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -219,7 +221,7 @@ namespace DeepL
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PollQualityEvaluation",
                                 methodName: "PollQualityEvaluationAsync",
-                                pathTemplate: "$\"/v1/quality-evaluation/{jobId}\"",
+                                pathTemplate: "$\"/v1/quality-evaluations/{jobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -260,7 +262,7 @@ namespace DeepL
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PollQualityEvaluation",
                                 methodName: "PollQualityEvaluationAsync",
-                                pathTemplate: "$\"/v1/quality-evaluation/{jobId}\"",
+                                pathTemplate: "$\"/v1/quality-evaluations/{jobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -308,7 +310,7 @@ namespace DeepL
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PollQualityEvaluation",
                                 methodName: "PollQualityEvaluationAsync",
-                                pathTemplate: "$\"/v1/quality-evaluation/{jobId}\"",
+                                pathTemplate: "$\"/v1/quality-evaluations/{jobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -330,7 +332,7 @@ namespace DeepL
                             context: global::DeepL.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PollQualityEvaluation",
                                 methodName: "PollQualityEvaluationAsync",
-                                pathTemplate: "$\"/v1/quality-evaluation/{jobId}\"",
+                                pathTemplate: "$\"/v1/quality-evaluations/{jobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -345,7 +347,7 @@ namespace DeepL
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Invalid `job_id` format. The `job_id` must be a valid UUID.
+                            // The `job_id` is not a well-formed identifier.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -382,7 +384,7 @@ namespace DeepL
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Job not found. The `job_id` is well-formed but no job exists with that ID, or it has expired. Jobs are retained for 24 hours after reaching `done` or `error` state.
+                            // No evaluation exists for this `job_id`, it belongs to another account, or it has expired. See [Report retention](/api-reference/quality-evaluations/poll#report-retention).
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;

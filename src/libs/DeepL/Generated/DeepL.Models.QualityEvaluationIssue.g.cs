@@ -9,7 +9,7 @@ namespace DeepL
     public sealed partial class QualityEvaluationIssue
     {
         /// <summary>
-        /// Top-level category of the issue. See [Type and sub-type values](/api-reference/quality-evaluation/poll#type-and-sub-type-values).<br/>
+        /// Top-level category of the issue. See [Type and sub-type values](/api-reference/quality-evaluations/poll#type-and-sub-type-values).<br/>
         /// Example: Accuracy
         /// </summary>
         /// <example>Accuracy</example>
@@ -19,7 +19,7 @@ namespace DeepL
         public required global::DeepL.QualityEvaluationIssueType Type { get; set; }
 
         /// <summary>
-        /// Finer-grained category within `type`. See [Type and sub-type values](/api-reference/quality-evaluation/poll#type-and-sub-type-values).<br/>
+        /// Finer-grained category within `type`. See [Type and sub-type values](/api-reference/quality-evaluations/poll#type-and-sub-type-values).<br/>
         /// Example: Mistranslation
         /// </summary>
         /// <example>Mistranslation</example>
@@ -29,7 +29,7 @@ namespace DeepL
         public required global::DeepL.QualityEvaluationIssueSubType SubType { get; set; }
 
         /// <summary>
-        /// How serious the issue is. See [Severity values](/api-reference/quality-evaluation/poll#severity-values).<br/>
+        /// How serious the issue is. See [Severity values](/api-reference/quality-evaluations/poll#severity-values).<br/>
         /// Example: Critical
         /// </summary>
         /// <example>Critical</example>
@@ -48,14 +48,14 @@ namespace DeepL
         public required string Explanation { get; set; }
 
         /// <summary>
-        /// Spans on the segment's source text where this issue applies. Empty if no source-side highlight. See [About span ranges](/api-reference/quality-evaluation/poll#about-span-ranges).
+        /// Spans on the segment's source text where this issue applies. Empty if no source-side highlight. See [Span ranges](/api-reference/quality-evaluations/poll#span-ranges).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_spans")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::DeepL.QualityEvaluationSpan> SourceSpans { get; set; }
 
         /// <summary>
-        /// Spans on the segment's target text where this issue applies. Empty if no target-side highlight. See [About span ranges](/api-reference/quality-evaluation/poll#about-span-ranges).
+        /// Spans on the segment's target text where this issue applies. Empty if no target-side highlight. See [Span ranges](/api-reference/quality-evaluations/poll#span-ranges).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_spans")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -71,15 +71,15 @@ namespace DeepL
         /// Initializes a new instance of the <see cref="QualityEvaluationIssue" /> class.
         /// </summary>
         /// <param name="type">
-        /// Top-level category of the issue. See [Type and sub-type values](/api-reference/quality-evaluation/poll#type-and-sub-type-values).<br/>
+        /// Top-level category of the issue. See [Type and sub-type values](/api-reference/quality-evaluations/poll#type-and-sub-type-values).<br/>
         /// Example: Accuracy
         /// </param>
         /// <param name="subType">
-        /// Finer-grained category within `type`. See [Type and sub-type values](/api-reference/quality-evaluation/poll#type-and-sub-type-values).<br/>
+        /// Finer-grained category within `type`. See [Type and sub-type values](/api-reference/quality-evaluations/poll#type-and-sub-type-values).<br/>
         /// Example: Mistranslation
         /// </param>
         /// <param name="severity">
-        /// How serious the issue is. See [Severity values](/api-reference/quality-evaluation/poll#severity-values).<br/>
+        /// How serious the issue is. See [Severity values](/api-reference/quality-evaluations/poll#severity-values).<br/>
         /// Example: Critical
         /// </param>
         /// <param name="explanation">
@@ -87,10 +87,10 @@ namespace DeepL
         /// Example: The source says revenue was '5% above forecast' but the translation says '5 % unter der Prognose' (5% below forecast). This completely reverses the meaning and has financial implications.
         /// </param>
         /// <param name="sourceSpans">
-        /// Spans on the segment's source text where this issue applies. Empty if no source-side highlight. See [About span ranges](/api-reference/quality-evaluation/poll#about-span-ranges).
+        /// Spans on the segment's source text where this issue applies. Empty if no source-side highlight. See [Span ranges](/api-reference/quality-evaluations/poll#span-ranges).
         /// </param>
         /// <param name="targetSpans">
-        /// Spans on the segment's target text where this issue applies. Empty if no target-side highlight. See [About span ranges](/api-reference/quality-evaluation/poll#about-span-ranges).
+        /// Spans on the segment's target text where this issue applies. Empty if no target-side highlight. See [Span ranges](/api-reference/quality-evaluations/poll#span-ranges).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

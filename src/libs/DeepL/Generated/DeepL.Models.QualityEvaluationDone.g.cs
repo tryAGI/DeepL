@@ -9,12 +9,12 @@ namespace DeepL
     public sealed partial class QualityEvaluationDone
     {
         /// <summary>
-        /// Example: f3a8c5e1-9b7d-4e62-a1c4-8f5d2b6e3c19
+        /// Example: 04DE5AD98A02647D83285A36021911C6
         /// </summary>
-        /// <example>f3a8c5e1-9b7d-4e62-a1c4-8f5d2b6e3c19</example>
+        /// <example>04DE5AD98A02647D83285A36021911C6</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("job_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid JobId { get; set; }
+        public required string JobId { get; set; }
 
         /// <summary>
         /// Example: done
@@ -25,18 +25,11 @@ namespace DeepL
         public global::DeepL.QualityEvaluationDoneStatus Status { get; set; }
 
         /// <summary>
-        /// One entry per submitted segment, in request order.
+        /// One entry per evaluated segment of the document, in reading order.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segments")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::DeepL.QualityEvaluationSegment> Segments { get; set; }
-
-        /// <summary>
-        /// Aggregate quality results across all segments.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::DeepL.QualityEvaluationDoneSummary Summary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,13 +41,10 @@ namespace DeepL
         /// Initializes a new instance of the <see cref="QualityEvaluationDone" /> class.
         /// </summary>
         /// <param name="jobId">
-        /// Example: f3a8c5e1-9b7d-4e62-a1c4-8f5d2b6e3c19
+        /// Example: 04DE5AD98A02647D83285A36021911C6
         /// </param>
         /// <param name="segments">
-        /// One entry per submitted segment, in request order.
-        /// </param>
-        /// <param name="summary">
-        /// Aggregate quality results across all segments.
+        /// One entry per evaluated segment of the document, in reading order.
         /// </param>
         /// <param name="status">
         /// Example: done
@@ -63,15 +53,13 @@ namespace DeepL
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QualityEvaluationDone(
-            global::System.Guid jobId,
+            string jobId,
             global::System.Collections.Generic.IList<global::DeepL.QualityEvaluationSegment> segments,
-            global::DeepL.QualityEvaluationDoneSummary summary,
             global::DeepL.QualityEvaluationDoneStatus status)
         {
-            this.JobId = jobId;
+            this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
             this.Status = status;
             this.Segments = segments ?? throw new global::System.ArgumentNullException(nameof(segments));
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
         }
 
         /// <summary>
