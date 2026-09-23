@@ -334,26 +334,15 @@
       "Order": 31,
       "Title": "Poll for the evaluation result",
       "Slug": "pollqualityevaluation",
-      "Description": "Returns the current state of an evaluation job. While the job is in progress the response contains only status information. Once complete the response includes the full evaluation report.",
+      "Description": "Returns the current state of a quality evaluation. While the evaluation is in progress the response carries only status information; once it completes, the response carries the full report.\n\nEvaluations are requested with \u0060enable_quality_evaluation\u0060 on [\u0060POST /v2/document\u0060](/api-reference/document/upload-and-translate-a-document). There is no public endpoint for starting one.",
       "Language": "http",
-      "Code": "### Poll for the evaluation result\n# @name pollQualityEvaluation\nGET {{host}}/v1/quality-evaluation/{{job_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Polling result. The response shape depends on the \u0060status\u0060 field. \u0060done\u0060 returns the full evaluation report; \u0060error\u0060 returns error details.\n# Content-Type: application/json\n# 202\n# Description: Job is still processing. Continue polling after the time suggested by the \u0060Retry-After\u0060 header.\n# Content-Type: application/json\n# 400\n# Description: Invalid \u0060job_id\u0060 format. The \u0060job_id\u0060 must be a valid UUID.\n# Content-Type: application/json\n# 404\n# Description: Job not found. The \u0060job_id\u0060 is well-formed but no job exists with that ID, or it has expired. Jobs are retained for 24 hours after reaching \u0060done\u0060 or \u0060error\u0060 state.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Poll for the evaluation result\n# @name pollQualityEvaluation\nGET {{host}}/v1/quality-evaluations/{{job_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Polling result. The response shape depends on the \u0060status\u0060 field. \u0060done\u0060 carries the full report; \u0060error\u0060 carries error details.\n# Content-Type: application/json\n# 202\n# Description: The evaluation is still running. Continue polling after the time suggested by the \u0060Retry-After\u0060 header.\n# Content-Type: application/json\n# 400\n# Description: The \u0060job_id\u0060 is not a well-formed identifier.\n# Content-Type: application/json\n# 404\n# Description: No evaluation exists for this \u0060job_id\u0060, it belongs to another account, or it has expired. See [Report retention](/api-reference/quality-evaluations/poll#report-retention).\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "pollQualityEvaluation",
       "Setup": null
     },
     {
       "Order": 32,
-      "Title": "Submit an evaluation job",
-      "Slug": "submitqualityevaluation",
-      "Description": "Starts an evaluation job for the given segments. Returns a \u0060poll_url\u0060 that can be used to retrieve the result.",
-      "Language": "csharp",
-      "Code": "using var client = new DeepLClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::DeepL.QualityEvaluationRequest\u003E(\n    @\u0022{\n  \u0022\u0022metadata\u0022\u0022: {\n    \u0022\u0022source_language\u0022\u0022: \u0022\u0022en\u0022\u0022,\n    \u0022\u0022target_language\u0022\u0022: \u0022\u0022de\u0022\u0022\n  },\n  \u0022\u0022segments\u0022\u0022: [\n    {\n      \u0022\u0022source\u0022\u0022: \u0022\u0022Our Q3 revenue came in 5% above forecast.\u0022\u0022,\n      \u0022\u0022target\u0022\u0022: \u0022\u0022Unser Q3-Umsatz lag 5 % unter der Prognose.\u0022\u0022\n    },\n    {\n      \u0022\u0022source\u0022\u0022: \u0022\u0022Please share these results with your teams by Friday.\u0022\u0022,\n      \u0022\u0022target\u0022\u0022: \u0022\u0022Bitte teilen Sie diese Ergebnisse mit Ihrem Team.\u0022\u0022\n    }\n  ]\n}\u0022)!;\n\nvar response = await client.QualityEvaluation.SubmitQualityEvaluationAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022job_id\u0022: \u0022f3a8c5e1-9b7d-4e62-a1c4-8f5d2b6e3c19\u0022,\n//   \u0022poll_url\u0022: \u0022/v1/quality-evaluation/f3a8c5e1-9b7d-4e62-a1c4-8f5d2b6e3c19\u0022\n// }",
-      "Format": "sdk",
-      "OperationId": "submitQualityEvaluation",
-      "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
-    },
-    {
-      "Order": 33,
       "Title": "Improve text",
       "Slug": "rephrasetext",
       "Description": "Rewrite one or more texts to improve fluency and readability, optionally targeting a\nspecific writing style or tone. Use the \u0060correct\u0060 endpoint instead when you want a\nminimal spelling and grammar pass rather than broader rewriting.",
@@ -364,7 +353,7 @@
       "Setup": null
     },
     {
-      "Order": 34,
+      "Order": 33,
       "Title": "Download Translated Document",
       "Slug": "downloaddocument",
       "Description": "Download a translated document. The document must have a status of \u0060done\u0060. Each\ndocument can be downloaded only once: after a successful download DeepL deletes the\nfile and invalidates the \u0060document_id\u0060.",
@@ -375,7 +364,7 @@
       "Setup": null
     },
     {
-      "Order": 35,
+      "Order": 34,
       "Title": "Check Document Status",
       "Slug": "getdocumentstatus",
       "Description": "Retrieve the translation status of an uploaded document. Poll this endpoint until the\nstatus is \u0060done\u0060, then download the result. The response includes an estimated\nremaining time while the document is still translating.",
@@ -386,18 +375,18 @@
       "Setup": null
     },
     {
-      "Order": 36,
+      "Order": 35,
       "Title": "Upload and Translate a Document",
       "Slug": "translatedocument",
       "Description": "Upload a document for translation and receive a \u0060document_id\u0060 and \u0060document_key\u0060. Use\nthem to poll the document status and download the translated file. Translation is\nasynchronous: the upload response confirms the request, not a finished translation.",
       "Language": "http",
-      "Code": "### Upload and Translate a Document\n# @name translateDocument\nPOST {{host}}/v2/document\nAuthorization: Bearer {{token}}\nContent-Type: multipart/form-data; boundary=AutoSDKBoundary\nAccept: application/json\n\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022source_lang\u0022\n\nEN\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022target_lang\u0022\n\nDE\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022file\u0022; filename=\u0022file.bin\u0022\nContent-Type: application/octet-stream\n\n\u003C ./file.bin\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022filename\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022output_format\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022formality\u0022\n\nprefer_more\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022glossary_id\u0022\n\ndef3a26b-3e84-45b3-84ae-0c0aaf3525f7\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022glossary_ids\u0022\n\ndef3a26b-3e84-45b3-84ae-0c0aaf3525f7\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022style_id\u0022\n\n7ff9bfd6-cd85-4190-8503-d6215a321519\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022translation_memory_id\u0022\n\na74d88fb-ed2a-4943-a664-a4512398b994\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022translation_memory_threshold\u0022\n\n75\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022enable_watermark\u0022\n\nfalse\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022enable_beta_languages\u0022\n\nfalse\n--AutoSDKBoundary--\n\n## Responses\n# 200\n# Description: The document function returns a JSON object containing the ID and encryption key assigned to the uploaded document. Once received by the server, uploaded documents are immediately encrypted using a uniquely generated encryption key. This key is not persistently stored on the server. Therefore, it must be stored by the client and sent back to the server with every subsequent request that refers to this particular document.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 504\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
+      "Code": "### Upload and Translate a Document\n# @name translateDocument\nPOST {{host}}/v2/document\nAuthorization: Bearer {{token}}\nContent-Type: multipart/form-data; boundary=AutoSDKBoundary\nAccept: application/json\n\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022source_lang\u0022\n\nEN\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022target_lang\u0022\n\nDE\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022file\u0022; filename=\u0022file.bin\u0022\nContent-Type: application/octet-stream\n\n\u003C ./file.bin\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022filename\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022output_format\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022formality\u0022\n\nprefer_more\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022glossary_id\u0022\n\ndef3a26b-3e84-45b3-84ae-0c0aaf3525f7\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022glossary_ids\u0022\n\ndef3a26b-3e84-45b3-84ae-0c0aaf3525f7\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022style_id\u0022\n\n7ff9bfd6-cd85-4190-8503-d6215a321519\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022translation_memory_id\u0022\n\na74d88fb-ed2a-4943-a664-a4512398b994\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022translation_memory_threshold\u0022\n\n75\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022enable_watermark\u0022\n\nfalse\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022enable_quality_evaluation\u0022\n\nfalse\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022enable_beta_languages\u0022\n\nfalse\n--AutoSDKBoundary--\n\n## Responses\n# 200\n# Description: The document function returns a JSON object containing the ID and encryption key assigned to the uploaded document. Once received by the server, uploaded documents are immediately encrypted using a uniquely generated encryption key. This key is not persistently stored on the server. Therefore, it must be stored by the client and sent back to the server with every subsequent request that refers to this particular document.\n# Content-Type: application/json\n# 400\n# Description: Bad request. Please check error message and your parameters.\n# Content-Type: application/json\n# 403\n# Description: Authorization failed. Please supply a valid \u0060DeepL-Auth-Key\u0060 via the \u0060Authorization\u0060 header. This error is also returned when the API key is scoped but does not include the scope required for this endpoint.\n# Content-Type: application/json\n# 404\n# Description: The requested resource could not be found.\n# Content-Type: application/json\n# 413\n# Description: The request size exceeds the limit.\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json\n# 456\n# Description: Quota exceeded. The character limit has been reached.\n# Content-Type: application/json\n# 500\n# Description: Internal error.\n# Content-Type: application/json\n# 504\n# Description: Resource currently unavailable. Try again later.\n# Content-Type: application/json\n# 529\n# Description: Too many requests. Please wait and resend your request.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "translateDocument",
       "Setup": null
     },
     {
-      "Order": 37,
+      "Order": 36,
       "Title": "Request Translation",
       "Slug": "translatetext",
       "Description": "Translate one or more text strings into a target language. Send multiple strings in a\nsingle request, within the request size limit, and specify formatting, tag handling,\nand customization options such as glossaries, style rules, and translation memories.",
@@ -408,7 +397,7 @@
       "Setup": null
     },
     {
-      "Order": 38,
+      "Order": 37,
       "Title": "Export a translation memory",
       "Slug": "createtranslationmemoryexport",
       "Description": "Export a translation memory as a TMX file.\n\nThe export runs as a background job. Poll\n[Retrieve an import or export job](/api-reference/translation-memory/retrieve-a-translation-memory-job)\nuntil the status is \u0060completed\u0060, then download the file from the \u0060download_url\u0060 on the job result.\nThat URL is short-lived, so download the file rather than storing the link.\n\nIf a recent export of the same translation memory is still available, DeepL reuses it and returns\n\u0060200 OK\u0060 with that job instead of starting a new one. Handle both \u0060200\u0060 and \u0060202\u0060 as success. If a\ndifferent export of the same translation memory is still running, the request returns\n\u0060409 Conflict\u0060.\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
@@ -419,7 +408,7 @@
       "Setup": null
     },
     {
-      "Order": 39,
+      "Order": 38,
       "Title": "Import a translation memory",
       "Slug": "createtranslationmemoryimport",
       "Description": "Create a translation memory by importing a TMX file.\n\nThis endpoint does not accept the file itself. It returns a short-lived \u0060upload_url\u0060, and you\nupload the TMX file to that URL with a separate \u0060PUT\u0060 request. Processing starts automatically\nonce the upload completes, so there is no third call to confirm it.\n\n1. \u0060POST /v3/translation_memories/import\u0060 with the file\u0027s name and size. The response returns a\n   \u0060job_id\u0060, an \u0060upload_url\u0060, and the \u0060expires_at\u0060 time after which the URL stops working.\n2. \u0060PUT\u0060 the TMX file to \u0060upload_url\u0060. Do not send your \u0060Authorization\u0060 header on this request,\n   because the URL is already signed.\n3. Poll [Retrieve an import or export job](/api-reference/translation-memory/retrieve-a-translation-memory-job)\n   until the status is \u0060completed\u0060. The new \u0060translation_memory_id\u0060 is on the job result.\n\nRequires an API key with the \u0060translation_memories:write\u0060 scope.",
@@ -430,7 +419,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 40,
+      "Order": 39,
       "Title": "Retrieve a translation memory",
       "Slug": "gettranslationmemory",
       "Description": "Retrieve a single translation memory by its ID, including its languages and segment count.\n\nTo read the stored segments themselves, use\n[List translation memory segments](/api-reference/translation-memory/list-translation-memory-segments).\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
@@ -441,7 +430,7 @@
       "Setup": null
     },
     {
-      "Order": 41,
+      "Order": 40,
       "Title": "Retrieve an import or export job",
       "Slug": "gettranslationmemoryjob",
       "Description": "Retrieve the status of a translation memory import or export job.\n\nPoll this endpoint after creating a job. The \u0060operation\u0060 field tells you which kind of job it is,\nand the single entry in \u0060results\u0060 carries the status and, once the job finishes, its output: the\nnew \u0060translation_memory_id\u0060 for an import, or a \u0060download_url\u0060 for an export.\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
@@ -452,7 +441,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 42,
+      "Order": 41,
       "Title": "List translation memory segments",
       "Slug": "gettranslationmemorysegments",
       "Description": "List the segments stored in a translation memory, one page at a time. Each entry is a source\nsegment with its translations in every target language.\n\nThis endpoint uses cursor-based pagination rather than the numbered pages used by\n[List translation memories](/api-reference/translation-memory/list-translation-memories). Omit\n\u0060page_cursor\u0060 on your first call, then pass the \u0060next_page_cursor\u0060 from each response to get the\nfollowing page. When a response has no \u0060next_page_cursor\u0060, you have reached the last page.\n\nRequires an API key with the \u0060translation_memories:read\u0060 scope.",
@@ -463,7 +452,7 @@
       "Setup": null
     },
     {
-      "Order": 43,
+      "Order": 42,
       "Title": "List translation memories",
       "Slug": "listtranslationmemories",
       "Description": "Retrieve a list of translation memories associated with the authenticated account.",
@@ -474,7 +463,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 44,
+      "Order": 43,
       "Title": "Get Streaming URL",
       "Slug": "getvoicestreamingurl",
       "Description": "Create a real-time voice session and return the WebSocket URL and ephemeral token used\nto stream audio. Session options such as languages, message format, and media types are\nfixed at creation time. Invalid options are rejected with HTTP 400 before a session is\ncreated.",
@@ -485,7 +474,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 45,
+      "Order": 44,
       "Title": "Request Reconnection",
       "Slug": "requestreconnection",
       "Description": "Exchange a session token for a fresh WebSocket URL and token so a client can rejoin a\nvoice session after the connection drops. Session options are carried over from the\noriginal session.",
@@ -496,7 +485,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 46,
+      "Order": 45,
       "Title": "Create a voice translation job",
       "Slug": "createvoicetranslatejob",
       "Description": "Creates an async voice translation job. The response includes an upload URL for the source audio file.",
@@ -507,7 +496,7 @@
       "Setup": "This example assumes \u0060using DeepL;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 47,
+      "Order": 46,
       "Title": "Get voice translation job status",
       "Slug": "getvoicetranslatejobstatus",
       "Description": "Returns the current status of a voice translation job, including per-target result statuses.\n\nWhen a target\u0027s status is \u0060complete\u0060, the response includes a \u0060download_url\u0060 and \u0060signature\u0060 for that target. Results are returned in the same order as the targets in the create request.",

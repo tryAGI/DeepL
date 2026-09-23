@@ -134,6 +134,15 @@ namespace DeepL
         public bool? EnableWatermark { get; set; }
 
         /// <summary>
+        /// (beta) When `true`, DeepL also evaluates the finished translation and returns a `quality_evaluation_job_id`. Poll [`GET /v1/quality-evaluations/{job_id}`](/api-reference/quality-evaluations/poll) with it for a per-segment report of translation issues. The translation itself is unaffected.<br/>
+        /// **Important:** Available to select customers; contact your customer success manager to enable it. Supported for `docx`, `pptx`, `pdf`, `srt`, `idml`, `xml`, `dita`, `mif`, and XLIFF 2.1 uploads, and for the [supported language pairs](/api-reference/quality-evaluations/poll#supported-language-pairs) only.<br/>
+        /// Rejected before the upload is accepted: `403` if quality evaluation is not enabled for the account, `400` for an ineligible file type, an unsupported language pair, or a value other than `true` or `false`.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_quality_evaluation")]
+        public bool? EnableQualityEvaluation { get; set; }
+
+        /// <summary>
         /// This parameter is maintained for backward compatibility and has no effect.<br/>
         /// Default Value: false
         /// </summary>
@@ -227,6 +236,12 @@ namespace DeepL
         /// Only supported for `docx` and `pdf` output. For all other output formats the parameter is ignored and the document is returned without a watermark.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="enableQualityEvaluation">
+        /// (beta) When `true`, DeepL also evaluates the finished translation and returns a `quality_evaluation_job_id`. Poll [`GET /v1/quality-evaluations/{job_id}`](/api-reference/quality-evaluations/poll) with it for a per-segment report of translation issues. The translation itself is unaffected.<br/>
+        /// **Important:** Available to select customers; contact your customer success manager to enable it. Supported for `docx`, `pptx`, `pdf`, `srt`, `idml`, `xml`, `dita`, `mif`, and XLIFF 2.1 uploads, and for the [supported language pairs](/api-reference/quality-evaluations/poll#supported-language-pairs) only.<br/>
+        /// Rejected before the upload is accepted: `403` if quality evaluation is not enabled for the account, `400` for an ineligible file type, an unsupported language pair, or a value other than `true` or `false`.<br/>
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -242,7 +257,8 @@ namespace DeepL
             string? styleId,
             global::System.Guid? translationMemoryId,
             int? translationMemoryThreshold,
-            bool? enableWatermark)
+            bool? enableWatermark,
+            bool? enableQualityEvaluation)
         {
             this.SourceLang = sourceLang;
             this.TargetLang = targetLang ?? throw new global::System.ArgumentNullException(nameof(targetLang));
@@ -256,6 +272,7 @@ namespace DeepL
             this.TranslationMemoryId = translationMemoryId;
             this.TranslationMemoryThreshold = translationMemoryThreshold;
             this.EnableWatermark = enableWatermark;
+            this.EnableQualityEvaluation = enableQualityEvaluation;
         }
 
         /// <summary>
