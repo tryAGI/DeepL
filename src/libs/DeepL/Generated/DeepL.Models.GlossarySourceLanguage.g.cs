@@ -124,10 +124,6 @@ namespace DeepL
         /// <summary>
         ///
         /// </summary>
-        Th,
-        /// <summary>
-        ///
-        /// </summary>
         Tr,
         /// <summary>
         ///
@@ -183,7 +179,6 @@ namespace DeepL
                 GlossarySourceLanguage.Sk => "sk",
                 GlossarySourceLanguage.Sl => "sl",
                 GlossarySourceLanguage.Sv => "sv",
-                GlossarySourceLanguage.Th => "th",
                 GlossarySourceLanguage.Tr => "tr",
                 GlossarySourceLanguage.Uk => "uk",
                 GlossarySourceLanguage.Vi => "vi",
@@ -226,7 +221,6 @@ namespace DeepL
                 "sk" => GlossarySourceLanguage.Sk,
                 "sl" => GlossarySourceLanguage.Sl,
                 "sv" => GlossarySourceLanguage.Sv,
-                "th" => GlossarySourceLanguage.Th,
                 "tr" => GlossarySourceLanguage.Tr,
                 "uk" => GlossarySourceLanguage.Uk,
                 "vi" => GlossarySourceLanguage.Vi,

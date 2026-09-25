@@ -4,7 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// How serious the issue is. See [Severity values](/api-reference/quality-evaluation/poll#severity-values).<br/>
+    /// How serious the issue is. See [Severity values](/api-reference/quality-evaluations/poll#severity-values).<br/>
     /// Example: Critical
     /// </summary>
     public enum QualityEvaluationIssueSeverity

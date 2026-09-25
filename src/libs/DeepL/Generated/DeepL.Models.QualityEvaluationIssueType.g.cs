@@ -4,7 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// Top-level category of the issue. See [Type and sub-type values](/api-reference/quality-evaluation/poll#type-and-sub-type-values).<br/>
+    /// Top-level category of the issue. See [Type and sub-type values](/api-reference/quality-evaluations/poll#type-and-sub-type-values).<br/>
     /// Example: Accuracy
     /// </summary>
     public enum QualityEvaluationIssueType
@@ -17,6 +17,10 @@ namespace DeepL
         ///
         /// </summary>
         Fluency,
+        /// <summary>
+        ///
+        /// </summary>
+        InternalTQEError,
         /// <summary>
         ///
         /// </summary>
@@ -41,6 +45,7 @@ namespace DeepL
             {
                 QualityEvaluationIssueType.Accuracy => "Accuracy",
                 QualityEvaluationIssueType.Fluency => "Fluency",
+                QualityEvaluationIssueType.InternalTQEError => "InternalTQEError",
                 QualityEvaluationIssueType.Miscellaneous => "Miscellaneous",
                 QualityEvaluationIssueType.Style => "Style",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -55,6 +60,7 @@ namespace DeepL
             {
                 "Accuracy" => QualityEvaluationIssueType.Accuracy,
                 "Fluency" => QualityEvaluationIssueType.Fluency,
+                "InternalTQEError" => QualityEvaluationIssueType.InternalTQEError,
                 "Miscellaneous" => QualityEvaluationIssueType.Miscellaneous,
                 "Style" => QualityEvaluationIssueType.Style,
                 _ => null,

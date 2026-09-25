@@ -138,7 +138,7 @@ namespace DeepL
         };
 
         /// <summary>
-        /// **Closed alpha.** Evaluate translation quality. Submit source/target segment pairs and retrieve per-segment quality issues categorized by error type and severity, with character spans pointing to where each issue occurs.
+        /// **Beta.** Retrieve a quality evaluation report for a document DeepL has translated. Reports are requested with `enable_quality_evaluation` on `POST /v2/document` and polled here. A report lists per-segment quality issues categorized by error type and severity, with character spans pointing to where each issue occurs.
         /// </summary>
         public QualityEvaluationClient QualityEvaluation => new QualityEvaluationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

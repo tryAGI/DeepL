@@ -4,7 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// Finer-grained category within `type`. See [Type and sub-type values](/api-reference/quality-evaluation/poll#type-and-sub-type-values).<br/>
+    /// Finer-grained category within `type`. See [Type and sub-type values](/api-reference/quality-evaluations/poll#type-and-sub-type-values).<br/>
     /// Example: Mistranslation
     /// </summary>
     public enum QualityEvaluationIssueSubType
@@ -56,6 +56,10 @@ namespace DeepL
         /// <summary>
         ///
         /// </summary>
+        SegmentTooLarge,
+        /// <summary>
+        ///
+        /// </summary>
         Spelling,
         /// <summary>
         ///
@@ -90,6 +94,7 @@ namespace DeepL
                 QualityEvaluationIssueSubType.Omission => "Omission",
                 QualityEvaluationIssueSubType.OverTranslation => "Over-translation",
                 QualityEvaluationIssueSubType.Punctuation => "Punctuation",
+                QualityEvaluationIssueSubType.SegmentTooLarge => "SegmentTooLarge",
                 QualityEvaluationIssueSubType.Spelling => "Spelling",
                 QualityEvaluationIssueSubType.UnderTranslation => "Under-translation",
                 QualityEvaluationIssueSubType.UntranslatedText => "Untranslated text",
@@ -114,6 +119,7 @@ namespace DeepL
                 "Omission" => QualityEvaluationIssueSubType.Omission,
                 "Over-translation" => QualityEvaluationIssueSubType.OverTranslation,
                 "Punctuation" => QualityEvaluationIssueSubType.Punctuation,
+                "SegmentTooLarge" => QualityEvaluationIssueSubType.SegmentTooLarge,
                 "Spelling" => QualityEvaluationIssueSubType.Spelling,
                 "Under-translation" => QualityEvaluationIssueSubType.UnderTranslation,
                 "Untranslated text" => QualityEvaluationIssueSubType.UntranslatedText,

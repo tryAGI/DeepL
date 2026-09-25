@@ -4,7 +4,7 @@
 namespace DeepL
 {
     /// <summary>
-    /// A half-open `[start, end)` range of Unicode code points within a segment's source or target text. See [About span ranges](/api-reference/quality-evaluation/poll#about-span-ranges).
+    /// A half-open `[start, end)` range of Unicode code points within a segment's source or target text. See [Span ranges](/api-reference/quality-evaluations/poll#span-ranges).
     /// </summary>
     public sealed partial class QualityEvaluationSpan
     {

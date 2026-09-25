@@ -9,12 +9,12 @@ namespace DeepL
     public sealed partial class QualityEvaluationProcessing
     {
         /// <summary>
-        /// Example: f3a8c5e1-9b7d-4e62-a1c4-8f5d2b6e3c19
+        /// Example: 04DE5AD98A02647D83285A36021911C6
         /// </summary>
-        /// <example>f3a8c5e1-9b7d-4e62-a1c4-8f5d2b6e3c19</example>
+        /// <example>04DE5AD98A02647D83285A36021911C6</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("job_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid JobId { get; set; }
+        public required string JobId { get; set; }
 
         /// <summary>
         /// Example: processing
@@ -34,7 +34,7 @@ namespace DeepL
         /// Initializes a new instance of the <see cref="QualityEvaluationProcessing" /> class.
         /// </summary>
         /// <param name="jobId">
-        /// Example: f3a8c5e1-9b7d-4e62-a1c4-8f5d2b6e3c19
+        /// Example: 04DE5AD98A02647D83285A36021911C6
         /// </param>
         /// <param name="status">
         /// Example: processing
@@ -43,10 +43,10 @@ namespace DeepL
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QualityEvaluationProcessing(
-            global::System.Guid jobId,
+            string jobId,
             global::DeepL.QualityEvaluationProcessingStatus status)
         {
-            this.JobId = jobId;
+            this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
             this.Status = status;
         }
 
