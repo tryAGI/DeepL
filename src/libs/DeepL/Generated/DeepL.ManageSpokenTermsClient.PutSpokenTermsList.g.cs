@@ -181,7 +181,7 @@ namespace DeepL
                 PreparePutSpokenTermsListRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    spokenTermsId: spokenTermsId!,
+                    spokenTermsId: spokenTermsId,
                     request: request);
 
                 return __httpRequest;
@@ -204,7 +204,7 @@ namespace DeepL
                                 pathTemplate: "$\"/v3/spoken-terms/{spokenTermsId}/term-lists\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -238,7 +238,7 @@ namespace DeepL
                                 pathTemplate: "$\"/v3/spoken-terms/{spokenTermsId}/term-lists\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -279,7 +279,7 @@ namespace DeepL
                                 pathTemplate: "$\"/v3/spoken-terms/{spokenTermsId}/term-lists\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -327,7 +327,7 @@ namespace DeepL
                                 pathTemplate: "$\"/v3/spoken-terms/{spokenTermsId}/term-lists\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -349,7 +349,7 @@ namespace DeepL
                                 pathTemplate: "$\"/v3/spoken-terms/{spokenTermsId}/term-lists\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
