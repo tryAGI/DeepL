@@ -990,7 +990,10 @@ namespace DeepL
         /// </param>
         /// <param name="styleId">
         /// Specify the [style rule list](/docs/customize/using-style-rules) to use for the translation.<br/>
-        /// **Important:** The target language has to match the language of the style rule list.<br/>
+        /// **Important:** The target language has to match the language of the style rule list. A list<br/>
+        /// created for a root language (for example `en`) applies to that language and all of its variants<br/>
+        /// (`EN-GB`, `EN-US`). A list created for a variant (for example `en-GB`) applies only when<br/>
+        /// `target_lang` is that variant.<br/>
         /// Example: 7ff9bfd6-cd85-4190-8503-d6215a321519
         /// </param>
         /// <param name="translationMemoryId">
@@ -1122,7 +1125,10 @@ namespace DeepL
         /// </param>
         /// <param name="styleId">
         /// Specify the [style rule list](/docs/customize/using-style-rules) to use for the translation.<br/>
-        /// **Important:** The target language has to match the language of the style rule list.<br/>
+        /// **Important:** The target language has to match the language of the style rule list. A list<br/>
+        /// created for a root language (for example `en`) applies to that language and all of its variants<br/>
+        /// (`EN-GB`, `EN-US`). A list created for a variant (for example `en-GB`) applies only when<br/>
+        /// `target_lang` is that variant.<br/>
         /// Example: 7ff9bfd6-cd85-4190-8503-d6215a321519
         /// </param>
         /// <param name="translationMemoryId">
@@ -2066,7 +2072,10 @@ namespace DeepL
         /// </param>
         /// <param name="styleId">
         /// Specify the [style rule list](/docs/customize/using-style-rules) to use for the translation.<br/>
-        /// **Important:** The target language has to match the language of the style rule list.<br/>
+        /// **Important:** The target language has to match the language of the style rule list. A list<br/>
+        /// created for a root language (for example `en`) applies to that language and all of its variants<br/>
+        /// (`EN-GB`, `EN-US`). A list created for a variant (for example `en-GB`) applies only when<br/>
+        /// `target_lang` is that variant.<br/>
         /// Example: 7ff9bfd6-cd85-4190-8503-d6215a321519
         /// </param>
         /// <param name="translationMemoryId">
