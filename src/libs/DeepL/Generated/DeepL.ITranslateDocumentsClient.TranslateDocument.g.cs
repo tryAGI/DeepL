@@ -58,16 +58,26 @@ namespace DeepL
         ///   * `docx` - Microsoft Word Document<br/>
         ///   * `pptx` - Microsoft PowerPoint Document<br/>
         ///   * `xlsx` - Microsoft Excel Document<br/>
+        ///   * `xlsm` - Microsoft Excel Macro-Enabled Workbook (currently in beta)<br/>
         ///   * `pdf` - Portable Document Format<br/>
         ///   * `htm / html` - HTML Document<br/>
         ///   * `txt` - Plain Text Document<br/>
         ///   * `xlf / xliff` - XLIFF Document (versions 1.2, 2.0, and 2.1)<br/>
         ///   * `srt` - SRT Document<br/>
+        ///   * `vtt` - WebVTT Subtitle Document (currently in beta)<br/>
         ///   * `idml` - Adobe InDesign Markup Language<br/>
         ///   * `xml` - XML Document<br/>
         ///   * `json` - JSON Document<br/>
+        ///   * `yaml / yml` - YAML Document (currently in beta)<br/>
+        ///   * `properties` - Java Properties Document (currently in beta)<br/>
+        ///   * `strings` - iOS/macOS Strings Document (currently in beta)<br/>
+        ///   * `md / markdown` - Markdown Document (currently in beta)<br/>
         ///   * `dita` - DITA topic (Darwin Information Typing Architecture)<br/>
         ///   * `mif` - Adobe FrameMaker Interchange Format<br/>
+        ///   * `zip` - SCORM Package (e-learning content, currently in beta)<br/>
+        ///   * `odt` - OpenDocument Text Document (currently in beta)<br/>
+        ///   * `rtf` - Rich Text Format Document (currently in beta)<br/>
+        ///   * `resx` - .NET Resource Document (currently in beta)<br/>
         ///   * `jpeg` / `jpg` / `png` - Image (currently in beta)
         /// </param>
         /// <param name="filename">
@@ -75,6 +85,13 @@ namespace DeepL
         /// </param>
         /// <param name="outputFormat">
         /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.
+        /// </param>
+        /// <param name="inputConversionOptions">
+        /// Comma-separated list of `key:value` conversion options, prefixed with a version, that control how the input document is converted before translation. For example: `version:1,suppress-image-types:all`.<br/>
+        /// Supported keys:<br/>
+        ///   * `suppress-image-types` - Leaves the specified types of images embedded in the document untranslated. The value is a hyphen-separated list of image content types (for example `logo-photo` suppresses logos and photos), or `all` to suppress every embedded image. Recognized image content types: `logo`, `icon`, `decorative`, `barcode`, `formula`, `signature`, `handwriting`, `stamp`, `screenshot`, `diagram`, `chart`, `photo`, `illustration`, `comic`, `music`, `infographic`, `table`, `text`, `other`, `unknown`.<br/>
+        /// Only `pptx` documents support conversion options; for other file types this parameter is ignored. Unrecognized keys are ignored.<br/>
+        /// Example: version:1,suppress-image-types:all
         /// </param>
         /// <param name="formality">
         /// Sets whether the translated text should lean towards formal or informal language.<br/>
@@ -137,6 +154,7 @@ namespace DeepL
             string? sourceLang = default,
             string? filename = default,
             string? outputFormat = default,
+            string? inputConversionOptions = default,
             global::DeepL.Formality? formality = default,
             string? glossaryId = default,
             global::System.Collections.Generic.IList<string>? glossaryIds = default,
@@ -170,16 +188,26 @@ namespace DeepL
         /// * `docx` - Microsoft Word Document<br/>
         /// * `pptx` - Microsoft PowerPoint Document<br/>
         /// * `xlsx` - Microsoft Excel Document<br/>
+        /// * `xlsm` - Microsoft Excel Macro-Enabled Workbook (currently in beta)<br/>
         /// * `pdf` - Portable Document Format<br/>
         /// * `htm / html` - HTML Document<br/>
         /// * `txt` - Plain Text Document<br/>
         /// * `xlf / xliff` - XLIFF Document (versions 1.2, 2.0, and 2.1)<br/>
         /// * `srt` - SRT Document<br/>
+        /// * `vtt` - WebVTT Subtitle Document (currently in beta)<br/>
         /// * `idml` - Adobe InDesign Markup Language<br/>
         /// * `xml` - XML Document<br/>
         /// * `json` - JSON Document<br/>
+        /// * `yaml / yml` - YAML Document (currently in beta)<br/>
+        /// * `properties` - Java Properties Document (currently in beta)<br/>
+        /// * `strings` - iOS/macOS Strings Document (currently in beta)<br/>
+        /// * `md / markdown` - Markdown Document (currently in beta)<br/>
         /// * `dita` - DITA topic (Darwin Information Typing Architecture)<br/>
         /// * `mif` - Adobe FrameMaker Interchange Format<br/>
+        /// * `zip` - SCORM Package (e-learning content, currently in beta)<br/>
+        /// * `odt` - OpenDocument Text Document (currently in beta)<br/>
+        /// * `rtf` - Rich Text Format Document (currently in beta)<br/>
+        /// * `resx` - .NET Resource Document (currently in beta)<br/>
         /// * `jpeg` / `jpg` / `png` - Image (currently in beta)
         /// </param>
         /// <param name="filename">
@@ -187,6 +215,13 @@ namespace DeepL
         /// </param>
         /// <param name="outputFormat">
         /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.
+        /// </param>
+        /// <param name="inputConversionOptions">
+        /// Comma-separated list of `key:value` conversion options, prefixed with a version, that control how the input document is converted before translation. For example: `version:1,suppress-image-types:all`.<br/>
+        /// Supported keys:<br/>
+        /// * `suppress-image-types` - Leaves the specified types of images embedded in the document untranslated. The value is a hyphen-separated list of image content types (for example `logo-photo` suppresses logos and photos), or `all` to suppress every embedded image. Recognized image content types: `logo`, `icon`, `decorative`, `barcode`, `formula`, `signature`, `handwriting`, `stamp`, `screenshot`, `diagram`, `chart`, `photo`, `illustration`, `comic`, `music`, `infographic`, `table`, `text`, `other`, `unknown`.<br/>
+        /// Only `pptx` documents support conversion options; for other file types this parameter is ignored. Unrecognized keys are ignored.<br/>
+        /// Example: version:1,suppress-image-types:all
         /// </param>
         /// <param name="formality">
         /// Sets whether the translated text should lean towards formal or informal language.<br/>
@@ -249,6 +284,7 @@ namespace DeepL
             string? sourceLang = default,
             string? filename = default,
             string? outputFormat = default,
+            string? inputConversionOptions = default,
             global::DeepL.Formality? formality = default,
             string? glossaryId = default,
             global::System.Collections.Generic.IList<string>? glossaryIds = default,
@@ -281,16 +317,26 @@ namespace DeepL
         /// * `docx` - Microsoft Word Document<br/>
         /// * `pptx` - Microsoft PowerPoint Document<br/>
         /// * `xlsx` - Microsoft Excel Document<br/>
+        /// * `xlsm` - Microsoft Excel Macro-Enabled Workbook (currently in beta)<br/>
         /// * `pdf` - Portable Document Format<br/>
         /// * `htm / html` - HTML Document<br/>
         /// * `txt` - Plain Text Document<br/>
         /// * `xlf / xliff` - XLIFF Document (versions 1.2, 2.0, and 2.1)<br/>
         /// * `srt` - SRT Document<br/>
+        /// * `vtt` - WebVTT Subtitle Document (currently in beta)<br/>
         /// * `idml` - Adobe InDesign Markup Language<br/>
         /// * `xml` - XML Document<br/>
         /// * `json` - JSON Document<br/>
+        /// * `yaml / yml` - YAML Document (currently in beta)<br/>
+        /// * `properties` - Java Properties Document (currently in beta)<br/>
+        /// * `strings` - iOS/macOS Strings Document (currently in beta)<br/>
+        /// * `md / markdown` - Markdown Document (currently in beta)<br/>
         /// * `dita` - DITA topic (Darwin Information Typing Architecture)<br/>
         /// * `mif` - Adobe FrameMaker Interchange Format<br/>
+        /// * `zip` - SCORM Package (e-learning content, currently in beta)<br/>
+        /// * `odt` - OpenDocument Text Document (currently in beta)<br/>
+        /// * `rtf` - Rich Text Format Document (currently in beta)<br/>
+        /// * `resx` - .NET Resource Document (currently in beta)<br/>
         /// * `jpeg` / `jpg` / `png` - Image (currently in beta)
         /// </param>
         /// <param name="filename">
@@ -298,6 +344,13 @@ namespace DeepL
         /// </param>
         /// <param name="outputFormat">
         /// File extension of desired format of translated file, for example: `docx`. If unspecified, by default the translated file will be in the same format as the input file.
+        /// </param>
+        /// <param name="inputConversionOptions">
+        /// Comma-separated list of `key:value` conversion options, prefixed with a version, that control how the input document is converted before translation. For example: `version:1,suppress-image-types:all`.<br/>
+        /// Supported keys:<br/>
+        /// * `suppress-image-types` - Leaves the specified types of images embedded in the document untranslated. The value is a hyphen-separated list of image content types (for example `logo-photo` suppresses logos and photos), or `all` to suppress every embedded image. Recognized image content types: `logo`, `icon`, `decorative`, `barcode`, `formula`, `signature`, `handwriting`, `stamp`, `screenshot`, `diagram`, `chart`, `photo`, `illustration`, `comic`, `music`, `infographic`, `table`, `text`, `other`, `unknown`.<br/>
+        /// Only `pptx` documents support conversion options; for other file types this parameter is ignored. Unrecognized keys are ignored.<br/>
+        /// Example: version:1,suppress-image-types:all
         /// </param>
         /// <param name="formality">
         /// Sets whether the translated text should lean towards formal or informal language.<br/>
@@ -360,6 +413,7 @@ namespace DeepL
             string? sourceLang = default,
             string? filename = default,
             string? outputFormat = default,
+            string? inputConversionOptions = default,
             global::DeepL.Formality? formality = default,
             string? glossaryId = default,
             global::System.Collections.Generic.IList<string>? glossaryIds = default,

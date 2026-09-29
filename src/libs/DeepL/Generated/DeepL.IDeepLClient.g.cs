@@ -138,16 +138,26 @@ namespace DeepL
         ///   * `docx` - Microsoft Word Document<br/>
         ///   * `pptx` - Microsoft PowerPoint Document<br/>
         ///   * `xlsx` - Microsoft Excel Document<br/>
+        ///   * `xlsm` - Microsoft Excel Macro-Enabled Workbook (currently in beta)<br/>
         ///   * `pdf` - Portable Document Format<br/>
         ///   * `htm / html` - HTML Document<br/>
         ///   * `txt` - Plain Text Document<br/>
         ///   * `xlf / xliff` - XLIFF Document (versions 1.2, 2.0, and 2.1)<br/>
         ///   * `srt` - SRT Document<br/>
+        ///   * `vtt` - WebVTT Subtitle Document (currently in beta)<br/>
         ///   * `idml` - Adobe InDesign Markup Language<br/>
         ///   * `xml` - XML Document<br/>
         ///   * `json` - JSON Document<br/>
+        ///   * `yaml / yml` - YAML Document (currently in beta)<br/>
+        ///   * `properties` - Java Properties Document (currently in beta)<br/>
+        ///   * `strings` - iOS/macOS Strings Document (currently in beta)<br/>
+        ///   * `md / markdown` - Markdown Document (currently in beta)<br/>
         ///   * `dita` - DITA topic (Darwin Information Typing Architecture)<br/>
         ///   * `mif` - Adobe FrameMaker Interchange Format<br/>
+        ///   * `zip` - SCORM Package (e-learning content, currently in beta)<br/>
+        ///   * `odt` - OpenDocument Text Document (currently in beta)<br/>
+        ///   * `rtf` - Rich Text Format Document (currently in beta)<br/>
+        ///   * `resx` - .NET Resource Document (currently in beta)<br/>
         ///   * `jpeg` / `jpg` / `png` - Image (currently in beta).
         /// </summary>
         public TranslateDocumentsClient TranslateDocuments { get; }
