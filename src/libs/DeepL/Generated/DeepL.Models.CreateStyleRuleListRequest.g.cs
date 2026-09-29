@@ -16,7 +16,14 @@ namespace DeepL
         public required string Name { get; set; }
 
         /// <summary>
-        /// The language that the style rule list is applied to.
+        /// The target language the style rule list applies to. Codes are matched case-insensitively;<br/>
+        /// the response returns the canonical form (for example `de-CH`).<br/>
+        /// A root code (for example `en`) applies to that language and all of its variants. A variant<br/>
+        /// code (for example `en-GB`) applies only when `target_lang` is that variant.<br/>
+        /// Variant lists for `de-CH`, `fr-CA`, `pt-BR`, and `pt-PT` are generally available. Variant<br/>
+        /// lists for `de-DE`, `en-GB`, `en-US`, `es-419`, `es-ES`, `fr-FR`, `zh-Hans`, and `zh-Hant`<br/>
+        /// are in beta. The current list and the status of each language are returned by<br/>
+        /// [`GET /v3/languages?resource=style_rules&amp;include=beta`](/docs/languages/using-the-languages-api).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::DeepL.JsonConverters.StyleRuleLanguageJsonConverter))]
@@ -50,7 +57,14 @@ namespace DeepL
         /// Name associated with the style rule list.
         /// </param>
         /// <param name="language">
-        /// The language that the style rule list is applied to.
+        /// The target language the style rule list applies to. Codes are matched case-insensitively;<br/>
+        /// the response returns the canonical form (for example `de-CH`).<br/>
+        /// A root code (for example `en`) applies to that language and all of its variants. A variant<br/>
+        /// code (for example `en-GB`) applies only when `target_lang` is that variant.<br/>
+        /// Variant lists for `de-CH`, `fr-CA`, `pt-BR`, and `pt-PT` are generally available. Variant<br/>
+        /// lists for `de-DE`, `en-GB`, `en-US`, `es-419`, `es-ES`, `fr-FR`, `zh-Hans`, and `zh-Hant`<br/>
+        /// are in beta. The current list and the status of each language are returned by<br/>
+        /// [`GET /v3/languages?resource=style_rules&amp;include=beta`](/docs/languages/using-the-languages-api).
         /// </param>
         /// <param name="configuredRules">
         /// The enabled rules for the style rule list including what option was selected for each rule. This schema combines rules from all supported languages.<br/>
