@@ -55,6 +55,10 @@ namespace DeepL
         /// <summary>
         ///
         /// </summary>
+        Es419,
+        /// <summary>
+        ///
+        /// </summary>
         Fi,
         /// <summary>
         ///
@@ -213,6 +217,7 @@ namespace DeepL
                 VoiceTargetMediaLanguage.EnGb => "en-GB",
                 VoiceTargetMediaLanguage.EnUs => "en-US",
                 VoiceTargetMediaLanguage.Es => "es",
+                VoiceTargetMediaLanguage.Es419 => "es-419",
                 VoiceTargetMediaLanguage.Fi => "fi",
                 VoiceTargetMediaLanguage.Fr => "fr",
                 VoiceTargetMediaLanguage.FrCa => "fr-CA",
@@ -268,6 +273,7 @@ namespace DeepL
                 "en-GB" => VoiceTargetMediaLanguage.EnGb,
                 "en-US" => VoiceTargetMediaLanguage.EnUs,
                 "es" => VoiceTargetMediaLanguage.Es,
+                "es-419" => VoiceTargetMediaLanguage.Es419,
                 "fi" => VoiceTargetMediaLanguage.Fi,
                 "fr" => VoiceTargetMediaLanguage.Fr,
                 "fr-CA" => VoiceTargetMediaLanguage.FrCa,
