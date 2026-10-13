@@ -154,8 +154,7 @@ namespace DeepL
         public int? TranslationMemoryThreshold { get; set; }
 
         /// <summary>
-        /// Specify a list of instructions to customize the translation behavior. Up to 10 custom instructions can be specified, each with a maximum of 300 characters.<br/>
-        /// **Important:**  The target language must be `de`, `en`, `es`, `fr`, `it`, `ja`, `ko`, `zh` or any variants of these languages.
+        /// Specify a list of instructions to customize the translation behavior. Up to 10 custom instructions can be specified, each with a maximum of 300 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_instructions")]
         public global::System.Collections.Generic.IList<string>? CustomInstructions { get; set; }
@@ -312,8 +311,7 @@ namespace DeepL
         /// Example: 75
         /// </param>
         /// <param name="customInstructions">
-        /// Specify a list of instructions to customize the translation behavior. Up to 10 custom instructions can be specified, each with a maximum of 300 characters.<br/>
-        /// **Important:**  The target language must be `de`, `en`, `es`, `fr`, `it`, `ja`, `ko`, `zh` or any variants of these languages.
+        /// Specify a list of instructions to customize the translation behavior. Up to 10 custom instructions can be specified, each with a maximum of 300 characters.
         /// </param>
         /// <param name="tagHandling">
         /// Sets which kind of tags should be handled. Options currently available:<br/>
