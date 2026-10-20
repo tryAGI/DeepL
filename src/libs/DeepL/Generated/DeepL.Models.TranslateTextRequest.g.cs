@@ -160,6 +160,23 @@ namespace DeepL
         public global::System.Collections.Generic.IList<string>? CustomInstructions { get; set; }
 
         /// <summary>
+        /// Translate with a [style profile](/api-reference/style-profiles/list-all-style-profiles): its glossaries,<br/>
+        /// style rule lists and translation memories through one ID. The profile is applied per text once the<br/>
+        /// source language is known: the glossaries with a dictionary for the text's language pair, the style<br/>
+        /// rule list for the target language, and the translation memories whose source language matches the<br/>
+        /// text. A component that does not fit a text's language pair is left out for that text; this is not an<br/>
+        /// error.<br/>
+        /// Cannot be combined with `glossary_id`, `glossary_ids`, `style_id`, `translation_memory_id`,<br/>
+        /// `translation_memory_threshold` or `custom_instructions`. A request that combines them is rejected<br/>
+        /// with `400 Bad Request`. A style profile that does not exist or that your account cannot access is<br/>
+        /// rejected with `404 Not Found`.<br/>
+        /// Example: 3f1c9d0e-7a24-4b58-9c31-8f0e5d2a1b47
+        /// </summary>
+        /// <example>3f1c9d0e-7a24-4b58-9c31-8f0e5d2a1b47</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("style_profile_id")]
+        public global::System.Guid? StyleProfileId { get; set; }
+
+        /// <summary>
         /// Sets which kind of tags should be handled. Options currently available:<br/>
         ///  * `xml`<br/>
         ///  * `html`<br/>
@@ -313,6 +330,19 @@ namespace DeepL
         /// <param name="customInstructions">
         /// Specify a list of instructions to customize the translation behavior. Up to 10 custom instructions can be specified, each with a maximum of 300 characters.
         /// </param>
+        /// <param name="styleProfileId">
+        /// Translate with a [style profile](/api-reference/style-profiles/list-all-style-profiles): its glossaries,<br/>
+        /// style rule lists and translation memories through one ID. The profile is applied per text once the<br/>
+        /// source language is known: the glossaries with a dictionary for the text's language pair, the style<br/>
+        /// rule list for the target language, and the translation memories whose source language matches the<br/>
+        /// text. A component that does not fit a text's language pair is left out for that text; this is not an<br/>
+        /// error.<br/>
+        /// Cannot be combined with `glossary_id`, `glossary_ids`, `style_id`, `translation_memory_id`,<br/>
+        /// `translation_memory_threshold` or `custom_instructions`. A request that combines them is rejected<br/>
+        /// with `400 Bad Request`. A style profile that does not exist or that your account cannot access is<br/>
+        /// rejected with `404 Not Found`.<br/>
+        /// Example: 3f1c9d0e-7a24-4b58-9c31-8f0e5d2a1b47
+        /// </param>
         /// <param name="tagHandling">
         /// Sets which kind of tags should be handled. Options currently available:<br/>
         ///  * `xml`<br/>
@@ -358,6 +388,7 @@ namespace DeepL
             global::System.Guid? translationMemoryId,
             int? translationMemoryThreshold,
             global::System.Collections.Generic.IList<string>? customInstructions,
+            global::System.Guid? styleProfileId,
             global::DeepL.TagHandlingOption? tagHandling,
             global::DeepL.TagHandlingVersionOption? tagHandlingVersion,
             bool? outlineDetection,
@@ -380,6 +411,7 @@ namespace DeepL
             this.TranslationMemoryId = translationMemoryId;
             this.TranslationMemoryThreshold = translationMemoryThreshold;
             this.CustomInstructions = customInstructions;
+            this.StyleProfileId = styleProfileId;
             this.TagHandling = tagHandling;
             this.TagHandlingVersion = tagHandlingVersion;
             this.OutlineDetection = outlineDetection;

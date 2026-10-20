@@ -286,6 +286,14 @@ namespace DeepL
                                     name: "\"translation_memory_threshold\"");
 
                             }
+                            if (request.StyleProfileId != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.StyleProfileId.ToString() ?? string.Empty),
+                                    name: "\"style_profile_id\"");
+
+                            }
                             if (request.EnableWatermark != default)
                             {
 
@@ -1031,6 +1039,18 @@ namespace DeepL
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
+        /// <param name="styleProfileId">
+        /// Translate with a [style profile](/api-reference/style-profiles/list-all-style-profiles): its glossaries,<br/>
+        /// style rule lists and translation memories through one ID. The profile is applied once the<br/>
+        /// document's source language is known: the glossaries with a dictionary for the language pair, the<br/>
+        /// style rule list for the target language, and the translation memories whose source language matches<br/>
+        /// the document. A component that does not fit the language pair is left out; this is not an error.<br/>
+        /// Cannot be combined with `glossary_id`, `glossary_ids`, `style_id`, `translation_memory_id` or<br/>
+        /// `translation_memory_threshold`. A request that combines them is rejected with `400 Bad Request`.<br/>
+        /// A style profile that does not exist or that your account cannot access is not rejected at upload:<br/>
+        /// the document status reports an error with the message `Style profile not found.`.<br/>
+        /// Example: 3f1c9d0e-7a24-4b58-9c31-8f0e5d2a1b47
+        /// </param>
         /// <param name="enableWatermark">
         /// When `true`, adds a "Translated by DeepL" watermark to the translated document.<br/>
         /// Only supported for `docx` and `pdf` output. For all other output formats the parameter is ignored and the document is returned without a watermark.<br/>
@@ -1058,6 +1078,7 @@ namespace DeepL
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
+            global::System.Guid? styleProfileId = default,
             bool? enableWatermark = default,
             bool? enableQualityEvaluation = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
@@ -1077,6 +1098,7 @@ namespace DeepL
                 StyleId = styleId,
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
+                StyleProfileId = styleProfileId,
                 EnableWatermark = enableWatermark,
                 EnableQualityEvaluation = enableQualityEvaluation,
             };
@@ -1186,6 +1208,18 @@ namespace DeepL
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
+        /// <param name="styleProfileId">
+        /// Translate with a [style profile](/api-reference/style-profiles/list-all-style-profiles): its glossaries,<br/>
+        /// style rule lists and translation memories through one ID. The profile is applied once the<br/>
+        /// document's source language is known: the glossaries with a dictionary for the language pair, the<br/>
+        /// style rule list for the target language, and the translation memories whose source language matches<br/>
+        /// the document. A component that does not fit the language pair is left out; this is not an error.<br/>
+        /// Cannot be combined with `glossary_id`, `glossary_ids`, `style_id`, `translation_memory_id` or<br/>
+        /// `translation_memory_threshold`. A request that combines them is rejected with `400 Bad Request`.<br/>
+        /// A style profile that does not exist or that your account cannot access is not rejected at upload:<br/>
+        /// the document status reports an error with the message `Style profile not found.`.<br/>
+        /// Example: 3f1c9d0e-7a24-4b58-9c31-8f0e5d2a1b47
+        /// </param>
         /// <param name="enableWatermark">
         /// When `true`, adds a "Translated by DeepL" watermark to the translated document.<br/>
         /// Only supported for `docx` and `pdf` output. For all other output formats the parameter is ignored and the document is returned without a watermark.<br/>
@@ -1213,6 +1247,7 @@ namespace DeepL
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
+            global::System.Guid? styleProfileId = default,
             bool? enableWatermark = default,
             bool? enableQualityEvaluation = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
@@ -1234,6 +1269,7 @@ namespace DeepL
                 StyleId = styleId,
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
+                StyleProfileId = styleProfileId,
                 EnableWatermark = enableWatermark,
                 EnableQualityEvaluation = enableQualityEvaluation,
             };
@@ -1422,6 +1458,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.TranslationMemoryThreshold, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"translation_memory_threshold\"");
+
+                            }
+                            if (request.StyleProfileId != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.StyleProfileId.ToString() ?? string.Empty),
+                                    name: "\"style_profile_id\"");
 
                             }
                             if (request.EnableWatermark != default)
@@ -2161,6 +2205,18 @@ namespace DeepL
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
+        /// <param name="styleProfileId">
+        /// Translate with a [style profile](/api-reference/style-profiles/list-all-style-profiles): its glossaries,<br/>
+        /// style rule lists and translation memories through one ID. The profile is applied once the<br/>
+        /// document's source language is known: the glossaries with a dictionary for the language pair, the<br/>
+        /// style rule list for the target language, and the translation memories whose source language matches<br/>
+        /// the document. A component that does not fit the language pair is left out; this is not an error.<br/>
+        /// Cannot be combined with `glossary_id`, `glossary_ids`, `style_id`, `translation_memory_id` or<br/>
+        /// `translation_memory_threshold`. A request that combines them is rejected with `400 Bad Request`.<br/>
+        /// A style profile that does not exist or that your account cannot access is not rejected at upload:<br/>
+        /// the document status reports an error with the message `Style profile not found.`.<br/>
+        /// Example: 3f1c9d0e-7a24-4b58-9c31-8f0e5d2a1b47
+        /// </param>
         /// <param name="enableWatermark">
         /// When `true`, adds a "Translated by DeepL" watermark to the translated document.<br/>
         /// Only supported for `docx` and `pdf` output. For all other output formats the parameter is ignored and the document is returned without a watermark.<br/>
@@ -2188,6 +2244,7 @@ namespace DeepL
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
+            global::System.Guid? styleProfileId = default,
             bool? enableWatermark = default,
             bool? enableQualityEvaluation = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
@@ -2209,6 +2266,7 @@ namespace DeepL
                 StyleId = styleId,
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
+                StyleProfileId = styleProfileId,
                 EnableWatermark = enableWatermark,
                 EnableQualityEvaluation = enableQualityEvaluation,
             };
@@ -2397,6 +2455,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.TranslationMemoryThreshold, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"translation_memory_threshold\"");
+
+                            }
+                            if (request.StyleProfileId != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.StyleProfileId.ToString() ?? string.Empty),
+                                    name: "\"style_profile_id\"");
 
                             }
                             if (request.EnableWatermark != default)

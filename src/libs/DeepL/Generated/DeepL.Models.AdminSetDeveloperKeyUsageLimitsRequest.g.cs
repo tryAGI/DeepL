@@ -38,6 +38,16 @@ namespace DeepL
         public double? SpeechToTextMilliseconds { get; set; }
 
         /// <summary>
+        /// Restricts the number of milliseconds of speech-to-speech that can be consumed by an API key in a one-month usage period.<br/>
+        /// Setting the limit to `0` means the API key will not be able to consume speech-to-speech milliseconds.<br/>
+        /// Setting the limit to `null` disables the limit, effectively allowing unlimited usage.<br/>
+        /// Example: 3600000
+        /// </summary>
+        /// <example>3600000</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speech_to_speech_milliseconds")]
+        public double? SpeechToSpeechMilliseconds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -62,17 +72,25 @@ namespace DeepL
         /// Setting the limit to `null` disables the limit, effectively allowing unlimited usage.<br/>
         /// Example: 3600000
         /// </param>
+        /// <param name="speechToSpeechMilliseconds">
+        /// Restricts the number of milliseconds of speech-to-speech that can be consumed by an API key in a one-month usage period.<br/>
+        /// Setting the limit to `0` means the API key will not be able to consume speech-to-speech milliseconds.<br/>
+        /// Setting the limit to `null` disables the limit, effectively allowing unlimited usage.<br/>
+        /// Example: 3600000
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AdminSetDeveloperKeyUsageLimitsRequest(
             string keyId,
             double? characters,
-            double? speechToTextMilliseconds)
+            double? speechToTextMilliseconds,
+            double? speechToSpeechMilliseconds)
         {
             this.KeyId = keyId ?? throw new global::System.ArgumentNullException(nameof(keyId));
             this.Characters = characters;
             this.SpeechToTextMilliseconds = speechToTextMilliseconds;
+            this.SpeechToSpeechMilliseconds = speechToSpeechMilliseconds;
         }
 
         /// <summary>
