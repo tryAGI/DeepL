@@ -1051,6 +1051,26 @@ namespace DeepL
 
             typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>),
 
+            typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>),
+
+            typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>),
+
+            typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>),
+
+            typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>),
+
+            typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>),
+
+            typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>),
+
+            typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>),
+
+            typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>),
+
+            typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>),
+
+            typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>),
+
             typeof(global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.QualityEvaluationDone, global::DeepL.QualityEvaluationFailed>),
 
             typeof(global::DeepL.JsonConverters.UnixTimestampJsonConverter),
@@ -1238,8 +1258,11 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.GlossaryDictionary>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GlossaryDictionary))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CustomInstruction))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.StyleRuleList))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.StyleProfile))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Guid>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.StyleRuleList))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.StyleRuleLanguage), TypeInfoPropertyName = "StyleRuleLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.CustomInstruction>))]
@@ -1247,7 +1270,6 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.DocumentKey))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.Formality), TypeInfoPropertyName = "Formality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GlossaryEntriesFormat), TypeInfoPropertyName = "GlossaryEntriesFormat2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ModelType), TypeInfoPropertyName = "ModelType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.MonolingualGlossary))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.MultilingualGlossary))]
@@ -1380,6 +1402,8 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CreateTranslationMemoryImportRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CreateTranslationMemoryImportRequestSourceFile))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CreateTranslationMemoryImportRequestParameters))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CreateStyleProfileRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.UpdateStyleProfileRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CreateStyleRuleListRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.CreateStyleRuleListRequestCustomInstruction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CreateStyleRuleListRequestCustomInstruction))]
@@ -1458,10 +1482,13 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CreateTranslationMemoryImportResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetTranslationMemorySegmentsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.TranslationMemorySegment>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ListStyleProfilesResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.StyleProfile>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GetStyleRuleListsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.StyleRuleList>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.OneOf<global::DeepL.QualityEvaluationDone, global::DeepL.QualityEvaluationFailed>), TypeInfoPropertyName = "OneOfQualityEvaluationDoneQualityEvaluationFailed2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.GlossaryDictionary>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Guid>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.CustomInstruction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.MultilingualGlossaryEntriesInformation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.SpokenTermsListInput>))]
@@ -1502,6 +1529,7 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.GetLanguagesResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.TranslationMemory>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.TranslationMemorySegment>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.StyleProfile>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.StyleRuleList>))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {

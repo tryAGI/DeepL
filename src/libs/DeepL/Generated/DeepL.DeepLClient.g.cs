@@ -128,6 +128,24 @@ namespace DeepL
         };
 
         /// <summary>
+        /// The style profile endpoints allow you to create, inspect, edit and delete style profiles. A style<br/>
+        /// profile bundles glossaries, style rule lists and translation memories under one ID. Pass its<br/>
+        /// `style_profile_id` in a translation request instead of the individual customization parameters.<br/>
+        /// Every component list is optional, and you can link components later with an update. A style<br/>
+        /// profile can reference at most one style rule list per target language and at most one translation<br/>
+        /// memory per source language. With `glossary_priority_order_enabled`, the order of the glossary IDs<br/>
+        /// decides which glossary wins when two of them define the same source term.<br/>
+        /// Deleting a style profile does not delete the glossaries, style rule lists and translation memories it<br/>
+        /// links. Deleting one of those components removes it from every style profile that links it.
+        /// </summary>
+        public ManageStyleProfilesClient ManageStyleProfiles => new ManageStyleProfilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
         /// Information about API usage and value ranges.
         /// </summary>
         public MetaInformationClient MetaInformation => new MetaInformationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)

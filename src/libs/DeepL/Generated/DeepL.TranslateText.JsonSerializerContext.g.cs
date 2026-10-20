@@ -15,9 +15,9 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.Formality), TypeInfoPropertyName = "Formality2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ModelType), TypeInfoPropertyName = "ModelType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.OutlineDetectionOptionStr), TypeInfoPropertyName = "OutlineDetectionOptionStr2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.PreserveFormattingOptionStr), TypeInfoPropertyName = "PreserveFormattingOptionStr2")]
@@ -36,9 +36,9 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.TranslateTextResponseTranslation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.TranslateTextResponseTranslationTagHandlingVersion), TypeInfoPropertyName = "TranslateTextResponseTranslationTagHandlingVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.Formality?), TypeInfoPropertyName = "NullableFormality2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ModelType?), TypeInfoPropertyName = "NullableModelType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.OutlineDetectionOptionStr?), TypeInfoPropertyName = "NullableOutlineDetectionOptionStr2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.PreserveFormattingOptionStr?), TypeInfoPropertyName = "NullablePreserveFormattingOptionStr2")]
@@ -98,6 +98,16 @@ namespace DeepL
         {
             options.Converters.Add(new global::DeepL.JsonConverters.AllOfJsonConverter<string, object>());
             options.Converters.Add(new global::DeepL.JsonConverters.AllOfJsonConverter<string, object>());
+            options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());
+            options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());
+            options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());
+            options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());
+            options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());
+            options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());
+            options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());
+            options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());
+            options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());
+            options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());
             options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());
             options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());
             options.Converters.Add(new global::DeepL.JsonConverters.OneOfJsonConverter<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>());

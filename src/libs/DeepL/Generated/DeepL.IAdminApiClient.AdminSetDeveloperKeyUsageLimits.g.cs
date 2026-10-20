@@ -6,8 +6,9 @@ namespace DeepL
     {
         /// <summary>
         /// Set developer key usage limits as an admin<br/>
-        /// Set per-key usage limits for characters and speech-to-text milliseconds. Requests made<br/>
-        /// with the key fail with HTTP 456 once a limit is reached. Requires an Admin API key.
+        /// Set per-key usage limits for characters, speech-to-text milliseconds, and<br/>
+        /// speech-to-speech milliseconds. Requests made with the key fail with HTTP 456<br/>
+        /// once a limit is reached. Requires an Admin API key.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -20,8 +21,9 @@ namespace DeepL
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set developer key usage limits as an admin<br/>
-        /// Set per-key usage limits for characters and speech-to-text milliseconds. Requests made<br/>
-        /// with the key fail with HTTP 456 once a limit is reached. Requires an Admin API key.
+        /// Set per-key usage limits for characters, speech-to-text milliseconds, and<br/>
+        /// speech-to-speech milliseconds. Requests made with the key fail with HTTP 456<br/>
+        /// once a limit is reached. Requires an Admin API key.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -34,8 +36,9 @@ namespace DeepL
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set developer key usage limits as an admin<br/>
-        /// Set per-key usage limits for characters and speech-to-text milliseconds. Requests made<br/>
-        /// with the key fail with HTTP 456 once a limit is reached. Requires an Admin API key.
+        /// Set per-key usage limits for characters, speech-to-text milliseconds, and<br/>
+        /// speech-to-speech milliseconds. Requests made with the key fail with HTTP 456<br/>
+        /// once a limit is reached. Requires an Admin API key.
         /// </summary>
         /// <param name="keyId">
         /// API key ID. Consists of two valid GUIDs separated by a colon.<br/>
@@ -53,6 +56,12 @@ namespace DeepL
         /// Setting the limit to `null` disables the limit, effectively allowing unlimited usage.<br/>
         /// Example: 3600000
         /// </param>
+        /// <param name="speechToSpeechMilliseconds">
+        /// Restricts the number of milliseconds of speech-to-speech that can be consumed by an API key in a one-month usage period.<br/>
+        /// Setting the limit to `0` means the API key will not be able to consume speech-to-speech milliseconds.<br/>
+        /// Setting the limit to `null` disables the limit, effectively allowing unlimited usage.<br/>
+        /// Example: 3600000
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -60,6 +69,7 @@ namespace DeepL
             string keyId,
             double? characters = default,
             double? speechToTextMilliseconds = default,
+            double? speechToSpeechMilliseconds = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
