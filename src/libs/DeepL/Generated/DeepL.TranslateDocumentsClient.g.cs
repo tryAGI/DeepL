@@ -62,14 +62,14 @@ namespace DeepL
 
         internal global::DeepL.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::DeepL.AutoSDKServerConfiguration();
 
-        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::DeepL.TranslateDocumentsSourceGenerationContext.Default);
+        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext>? JsonSerializerContextProvider { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
-            get => JsonSerializerContextProvider.Value;
+            get => JsonSerializerContextProvider?.Value ?? global::DeepL.TranslateDocumentsSourceGenerationContext.Default;
             set => JsonSerializerContextProvider = new(() => value);
         }
 
