@@ -110,12 +110,14 @@ namespace DeepL
         /// </param>
         /// <param name="glossaryId">
         /// A unique ID assigned to a glossary. To check glossary support for a language pair, call `GET /v3/languages?resource=translate_document` and verify the `glossary` feature key is present on both the source and target language.<br/>
+        /// Requires the `source_lang` parameter. The request returns a `400` if `source_lang` is omitted.<br/>
         /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </param>
         /// <param name="glossaryIds">
         /// Comma-separated list of up to 5 glossary IDs to use for the translation. Each glossary's matching terms are applied to the translated document. May also be sent as a repeated parameter.<br/>
-        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Requires the `source_lang` parameter. The request returns a `400` if `source_lang` is omitted.<br/>
         /// Cannot be used together with `glossary_id`.
         /// </param>
         /// <param name="styleId">
@@ -254,12 +256,14 @@ namespace DeepL
         /// </param>
         /// <param name="glossaryId">
         /// A unique ID assigned to a glossary. To check glossary support for a language pair, call `GET /v3/languages?resource=translate_document` and verify the `glossary` feature key is present on both the source and target language.<br/>
+        /// Requires the `source_lang` parameter. The request returns a `400` if `source_lang` is omitted.<br/>
         /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </param>
         /// <param name="glossaryIds">
         /// Comma-separated list of up to 5 glossary IDs to use for the translation. Each glossary's matching terms are applied to the translated document. May also be sent as a repeated parameter.<br/>
-        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Requires the `source_lang` parameter. The request returns a `400` if `source_lang` is omitted.<br/>
         /// Cannot be used together with `glossary_id`.
         /// </param>
         /// <param name="styleId">
@@ -397,12 +401,14 @@ namespace DeepL
         /// </param>
         /// <param name="glossaryId">
         /// A unique ID assigned to a glossary. To check glossary support for a language pair, call `GET /v3/languages?resource=translate_document` and verify the `glossary` feature key is present on both the source and target language.<br/>
+        /// Requires the `source_lang` parameter. The request returns a `400` if `source_lang` is omitted.<br/>
         /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </param>
         /// <param name="glossaryIds">
         /// Comma-separated list of up to 5 glossary IDs to use for the translation. Each glossary's matching terms are applied to the translated document. May also be sent as a repeated parameter.<br/>
-        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Requires the `source_lang` parameter. The request returns a `400` if `source_lang` is omitted.<br/>
         /// Cannot be used together with `glossary_id`.
         /// </param>
         /// <param name="styleId">
