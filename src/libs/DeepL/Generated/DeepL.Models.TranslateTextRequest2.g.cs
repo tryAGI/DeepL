@@ -103,9 +103,11 @@ namespace DeepL
         public global::DeepL.ModelType? ModelType { get; set; }
 
         /// <summary>
-        /// Specify the glossary to use for the translation. **Important:** This requires the `source_lang`<br/>
-        /// parameter to be set. The language pair of the glossary has to match the language pair of the<br/>
-        /// request.<br/>
+        /// Specify the glossary to use for the translation. The glossary needs a dictionary for the<br/>
+        /// language pair of the request.<br/>
+        /// If `source_lang` is omitted, DeepL detects the source language and uses the dictionary for<br/>
+        /// the detected language pair. The request returns a `400` if the glossary has no dictionary<br/>
+        /// for that pair.<br/>
         /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </summary>
@@ -115,7 +117,10 @@ namespace DeepL
 
         /// <summary>
         /// Comma-separated list of up to 5 glossary IDs to use for the translation. Each glossary's matching terms are applied to the translation. May also be sent as a repeated parameter.<br/>
-        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// If `source_lang` is omitted, DeepL detects the source language and every listed glossary must<br/>
+        /// contain a dictionary for the detected language pair. A single glossary without a matching<br/>
+        /// dictionary returns a `400` for the whole request.<br/>
         /// Cannot be used together with `glossary_id`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("glossary_ids")]
@@ -266,15 +271,20 @@ namespace DeepL
         /// Specifies which DeepL model should be used for translation.
         /// </param>
         /// <param name="glossaryId">
-        /// Specify the glossary to use for the translation. **Important:** This requires the `source_lang`<br/>
-        /// parameter to be set. The language pair of the glossary has to match the language pair of the<br/>
-        /// request.<br/>
+        /// Specify the glossary to use for the translation. The glossary needs a dictionary for the<br/>
+        /// language pair of the request.<br/>
+        /// If `source_lang` is omitted, DeepL detects the source language and uses the dictionary for<br/>
+        /// the detected language pair. The request returns a `400` if the glossary has no dictionary<br/>
+        /// for that pair.<br/>
         /// Cannot be used together with `glossary_ids`.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </param>
         /// <param name="glossaryIds">
         /// Comma-separated list of up to 5 glossary IDs to use for the translation. Each glossary's matching terms are applied to the translation. May also be sent as a repeated parameter.<br/>
-        /// **Important:** This requires the `source_lang` parameter to be set. Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// Every listed glossary must contain a dictionary for the requested language pair.<br/>
+        /// If `source_lang` is omitted, DeepL detects the source language and every listed glossary must<br/>
+        /// contain a dictionary for the detected language pair. A single glossary without a matching<br/>
+        /// dictionary returns a `400` for the whole request.<br/>
         /// Cannot be used together with `glossary_id`.
         /// </param>
         /// <param name="translationMemoryId">

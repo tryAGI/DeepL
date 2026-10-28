@@ -102,7 +102,8 @@ namespace DeepL
         /// (e.g. `EN-US`, `EN-GB`, `PT-PT`, `PT-BR`, or `ZH-HANS`).<br/>
         /// Dictionaries with target language `EN` can be used in translations with either English variant.<br/>
         /// Similarly `PT`, and `ZH` dictionaries can be used in translations with their corresponding variants.<br/>
-        /// (When you provide the ID of a glossary to a translation, the appropriate dictionary is automatically applied. Currently glossaries can not yet be used with source language detection.)<br/>
+        /// (When you provide the ID of a glossary to a translation, the appropriate dictionary is automatically applied.)<br/>
+        /// For text translation, if you omit `source_lang`, DeepL detects the source language and applies the dictionary for the detected language pair. Document translation with a glossary requires `source_lang`.<br/>
         /// Glossaries created via the DeepL API are now unified with glossaries created via the DeepL website and DeepL apps.<br/>
         /// Please only use the v3 glossary API in conjunction with multilingual or edited glossaries from the website.
         /// </summary>
