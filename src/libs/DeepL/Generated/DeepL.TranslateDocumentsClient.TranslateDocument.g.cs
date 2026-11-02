@@ -286,6 +286,14 @@ namespace DeepL
                                     name: "\"translation_memory_threshold\"");
 
                             }
+                            if (request.CustomInstructions != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.CustomInstructions ?? string.Empty),
+                                    name: "\"custom_instructions\"");
+
+                            }
                             if (request.StyleProfileId != default)
                             {
 
@@ -962,27 +970,27 @@ namespace DeepL
         ///   * `docx` - Microsoft Word Document<br/>
         ///   * `pptx` - Microsoft PowerPoint Document<br/>
         ///   * `xlsx` - Microsoft Excel Document<br/>
-        ///   * `xlsm` - Microsoft Excel Macro-Enabled Workbook (currently in beta)<br/>
+        ///   * `xlsm` - Microsoft Excel Macro-Enabled Workbook<br/>
         ///   * `pdf` - Portable Document Format<br/>
         ///   * `htm / html` - HTML Document<br/>
         ///   * `txt` - Plain Text Document<br/>
         ///   * `xlf / xliff` - XLIFF Document (versions 1.2, 2.0, and 2.1)<br/>
         ///   * `srt` - SRT Document<br/>
-        ///   * `vtt` - WebVTT Subtitle Document (currently in beta)<br/>
+        ///   * `vtt` - WebVTT Subtitle Document<br/>
         ///   * `idml` - Adobe InDesign Markup Language<br/>
         ///   * `xml` - XML Document<br/>
         ///   * `json` - JSON Document<br/>
-        ///   * `yaml / yml` - YAML Document (currently in beta)<br/>
-        ///   * `properties` - Java Properties Document (currently in beta)<br/>
-        ///   * `strings` - iOS/macOS Strings Document (currently in beta)<br/>
-        ///   * `md / markdown` - Markdown Document (currently in beta)<br/>
+        ///   * `yaml / yml` - YAML Document<br/>
+        ///   * `properties` - Java Properties Document<br/>
+        ///   * `strings` - iOS/macOS Strings Document<br/>
+        ///   * `md / markdown` - Markdown Document<br/>
         ///   * `dita` - DITA topic (Darwin Information Typing Architecture)<br/>
         ///   * `mif` - Adobe FrameMaker Interchange Format<br/>
-        ///   * `zip` - SCORM Package (e-learning content, currently in beta)<br/>
-        ///   * `odt` - OpenDocument Text Document (currently in beta)<br/>
-        ///   * `rtf` - Rich Text Format Document (currently in beta)<br/>
-        ///   * `resx` - .NET Resource Document (currently in beta)<br/>
-        ///   * `jpeg` / `jpg` / `png` - Image (currently in beta)
+        ///   * `zip` - SCORM Package (e-learning content)<br/>
+        ///   * `odt` - OpenDocument Text Document<br/>
+        ///   * `rtf` - Rich Text Format Document<br/>
+        ///   * `resx` - .NET Resource Document<br/>
+        ///   * `jpeg` / `jpg` / `png` - Image
         /// </param>
         /// <param name="filename">
         /// The name of the uploaded file. Can be used as an alternative to including the file name in the file part's content disposition.
@@ -1041,14 +1049,20 @@ namespace DeepL
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
+        /// <param name="customInstructions">
+        /// Specify a list of instructions to customize the translation behavior, as a JSON array of strings, for example `["Use a friendly, diplomatic tone"]`. Up to 10 custom instructions can be specified, each with a maximum of 300 characters.<br/>
+        /// Rejected with `400` before the upload is accepted if the value is not a JSON array of strings or exceeds these limits.<br/>
+        /// Example: ["Use a friendly, diplomatic tone"]
+        /// </param>
         /// <param name="styleProfileId">
         /// Translate with a [style profile](/api-reference/style-profiles/list-all-style-profiles): its glossaries,<br/>
         /// style rule lists and translation memories through one ID. The profile is applied once the<br/>
         /// document's source language is known: the glossaries with a dictionary for the language pair, the<br/>
         /// style rule list for the target language, and the translation memories whose source language matches<br/>
         /// the document. A component that does not fit the language pair is left out; this is not an error.<br/>
-        /// Cannot be combined with `glossary_id`, `glossary_ids`, `style_id`, `translation_memory_id` or<br/>
-        /// `translation_memory_threshold`. A request that combines them is rejected with `400 Bad Request`.<br/>
+        /// Cannot be combined with `glossary_id`, `glossary_ids`, `style_id`, `translation_memory_id`,<br/>
+        /// `translation_memory_threshold` or `custom_instructions`. A request that combines them is rejected<br/>
+        /// with `400 Bad Request`.<br/>
         /// A style profile that does not exist or that your account cannot access is not rejected at upload:<br/>
         /// the document status reports an error with the message `Style profile not found.`.<br/>
         /// Example: 3f1c9d0e-7a24-4b58-9c31-8f0e5d2a1b47
@@ -1080,6 +1094,7 @@ namespace DeepL
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
+            string? customInstructions = default,
             global::System.Guid? styleProfileId = default,
             bool? enableWatermark = default,
             bool? enableQualityEvaluation = default,
@@ -1100,6 +1115,7 @@ namespace DeepL
                 StyleId = styleId,
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
+                CustomInstructions = customInstructions,
                 StyleProfileId = styleProfileId,
                 EnableWatermark = enableWatermark,
                 EnableQualityEvaluation = enableQualityEvaluation,
@@ -1133,27 +1149,27 @@ namespace DeepL
         /// * `docx` - Microsoft Word Document<br/>
         /// * `pptx` - Microsoft PowerPoint Document<br/>
         /// * `xlsx` - Microsoft Excel Document<br/>
-        /// * `xlsm` - Microsoft Excel Macro-Enabled Workbook (currently in beta)<br/>
+        /// * `xlsm` - Microsoft Excel Macro-Enabled Workbook<br/>
         /// * `pdf` - Portable Document Format<br/>
         /// * `htm / html` - HTML Document<br/>
         /// * `txt` - Plain Text Document<br/>
         /// * `xlf / xliff` - XLIFF Document (versions 1.2, 2.0, and 2.1)<br/>
         /// * `srt` - SRT Document<br/>
-        /// * `vtt` - WebVTT Subtitle Document (currently in beta)<br/>
+        /// * `vtt` - WebVTT Subtitle Document<br/>
         /// * `idml` - Adobe InDesign Markup Language<br/>
         /// * `xml` - XML Document<br/>
         /// * `json` - JSON Document<br/>
-        /// * `yaml / yml` - YAML Document (currently in beta)<br/>
-        /// * `properties` - Java Properties Document (currently in beta)<br/>
-        /// * `strings` - iOS/macOS Strings Document (currently in beta)<br/>
-        /// * `md / markdown` - Markdown Document (currently in beta)<br/>
+        /// * `yaml / yml` - YAML Document<br/>
+        /// * `properties` - Java Properties Document<br/>
+        /// * `strings` - iOS/macOS Strings Document<br/>
+        /// * `md / markdown` - Markdown Document<br/>
         /// * `dita` - DITA topic (Darwin Information Typing Architecture)<br/>
         /// * `mif` - Adobe FrameMaker Interchange Format<br/>
-        /// * `zip` - SCORM Package (e-learning content, currently in beta)<br/>
-        /// * `odt` - OpenDocument Text Document (currently in beta)<br/>
-        /// * `rtf` - Rich Text Format Document (currently in beta)<br/>
-        /// * `resx` - .NET Resource Document (currently in beta)<br/>
-        /// * `jpeg` / `jpg` / `png` - Image (currently in beta)
+        /// * `zip` - SCORM Package (e-learning content)<br/>
+        /// * `odt` - OpenDocument Text Document<br/>
+        /// * `rtf` - Rich Text Format Document<br/>
+        /// * `resx` - .NET Resource Document<br/>
+        /// * `jpeg` / `jpg` / `png` - Image
         /// </param>
         /// <param name="filename">
         /// The name of the uploaded file. Can be used as an alternative to including the file name in the file part's content disposition.
@@ -1212,14 +1228,20 @@ namespace DeepL
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
+        /// <param name="customInstructions">
+        /// Specify a list of instructions to customize the translation behavior, as a JSON array of strings, for example `["Use a friendly, diplomatic tone"]`. Up to 10 custom instructions can be specified, each with a maximum of 300 characters.<br/>
+        /// Rejected with `400` before the upload is accepted if the value is not a JSON array of strings or exceeds these limits.<br/>
+        /// Example: ["Use a friendly, diplomatic tone"]
+        /// </param>
         /// <param name="styleProfileId">
         /// Translate with a [style profile](/api-reference/style-profiles/list-all-style-profiles): its glossaries,<br/>
         /// style rule lists and translation memories through one ID. The profile is applied once the<br/>
         /// document's source language is known: the glossaries with a dictionary for the language pair, the<br/>
         /// style rule list for the target language, and the translation memories whose source language matches<br/>
         /// the document. A component that does not fit the language pair is left out; this is not an error.<br/>
-        /// Cannot be combined with `glossary_id`, `glossary_ids`, `style_id`, `translation_memory_id` or<br/>
-        /// `translation_memory_threshold`. A request that combines them is rejected with `400 Bad Request`.<br/>
+        /// Cannot be combined with `glossary_id`, `glossary_ids`, `style_id`, `translation_memory_id`,<br/>
+        /// `translation_memory_threshold` or `custom_instructions`. A request that combines them is rejected<br/>
+        /// with `400 Bad Request`.<br/>
         /// A style profile that does not exist or that your account cannot access is not rejected at upload:<br/>
         /// the document status reports an error with the message `Style profile not found.`.<br/>
         /// Example: 3f1c9d0e-7a24-4b58-9c31-8f0e5d2a1b47
@@ -1251,6 +1273,7 @@ namespace DeepL
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
+            string? customInstructions = default,
             global::System.Guid? styleProfileId = default,
             bool? enableWatermark = default,
             bool? enableQualityEvaluation = default,
@@ -1273,6 +1296,7 @@ namespace DeepL
                 StyleId = styleId,
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
+                CustomInstructions = customInstructions,
                 StyleProfileId = styleProfileId,
                 EnableWatermark = enableWatermark,
                 EnableQualityEvaluation = enableQualityEvaluation,
@@ -1462,6 +1486,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.TranslationMemoryThreshold, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"translation_memory_threshold\"");
+
+                            }
+                            if (request.CustomInstructions != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.CustomInstructions ?? string.Empty),
+                                    name: "\"custom_instructions\"");
 
                             }
                             if (request.StyleProfileId != default)
@@ -2132,27 +2164,27 @@ namespace DeepL
         /// * `docx` - Microsoft Word Document<br/>
         /// * `pptx` - Microsoft PowerPoint Document<br/>
         /// * `xlsx` - Microsoft Excel Document<br/>
-        /// * `xlsm` - Microsoft Excel Macro-Enabled Workbook (currently in beta)<br/>
+        /// * `xlsm` - Microsoft Excel Macro-Enabled Workbook<br/>
         /// * `pdf` - Portable Document Format<br/>
         /// * `htm / html` - HTML Document<br/>
         /// * `txt` - Plain Text Document<br/>
         /// * `xlf / xliff` - XLIFF Document (versions 1.2, 2.0, and 2.1)<br/>
         /// * `srt` - SRT Document<br/>
-        /// * `vtt` - WebVTT Subtitle Document (currently in beta)<br/>
+        /// * `vtt` - WebVTT Subtitle Document<br/>
         /// * `idml` - Adobe InDesign Markup Language<br/>
         /// * `xml` - XML Document<br/>
         /// * `json` - JSON Document<br/>
-        /// * `yaml / yml` - YAML Document (currently in beta)<br/>
-        /// * `properties` - Java Properties Document (currently in beta)<br/>
-        /// * `strings` - iOS/macOS Strings Document (currently in beta)<br/>
-        /// * `md / markdown` - Markdown Document (currently in beta)<br/>
+        /// * `yaml / yml` - YAML Document<br/>
+        /// * `properties` - Java Properties Document<br/>
+        /// * `strings` - iOS/macOS Strings Document<br/>
+        /// * `md / markdown` - Markdown Document<br/>
         /// * `dita` - DITA topic (Darwin Information Typing Architecture)<br/>
         /// * `mif` - Adobe FrameMaker Interchange Format<br/>
-        /// * `zip` - SCORM Package (e-learning content, currently in beta)<br/>
-        /// * `odt` - OpenDocument Text Document (currently in beta)<br/>
-        /// * `rtf` - Rich Text Format Document (currently in beta)<br/>
-        /// * `resx` - .NET Resource Document (currently in beta)<br/>
-        /// * `jpeg` / `jpg` / `png` - Image (currently in beta)
+        /// * `zip` - SCORM Package (e-learning content)<br/>
+        /// * `odt` - OpenDocument Text Document<br/>
+        /// * `rtf` - Rich Text Format Document<br/>
+        /// * `resx` - .NET Resource Document<br/>
+        /// * `jpeg` / `jpg` / `png` - Image
         /// </param>
         /// <param name="filename">
         /// The name of the uploaded file. Can be used as an alternative to including the file name in the file part's content disposition.
@@ -2211,14 +2243,20 @@ namespace DeepL
         /// Default Value: 75<br/>
         /// Example: 75
         /// </param>
+        /// <param name="customInstructions">
+        /// Specify a list of instructions to customize the translation behavior, as a JSON array of strings, for example `["Use a friendly, diplomatic tone"]`. Up to 10 custom instructions can be specified, each with a maximum of 300 characters.<br/>
+        /// Rejected with `400` before the upload is accepted if the value is not a JSON array of strings or exceeds these limits.<br/>
+        /// Example: ["Use a friendly, diplomatic tone"]
+        /// </param>
         /// <param name="styleProfileId">
         /// Translate with a [style profile](/api-reference/style-profiles/list-all-style-profiles): its glossaries,<br/>
         /// style rule lists and translation memories through one ID. The profile is applied once the<br/>
         /// document's source language is known: the glossaries with a dictionary for the language pair, the<br/>
         /// style rule list for the target language, and the translation memories whose source language matches<br/>
         /// the document. A component that does not fit the language pair is left out; this is not an error.<br/>
-        /// Cannot be combined with `glossary_id`, `glossary_ids`, `style_id`, `translation_memory_id` or<br/>
-        /// `translation_memory_threshold`. A request that combines them is rejected with `400 Bad Request`.<br/>
+        /// Cannot be combined with `glossary_id`, `glossary_ids`, `style_id`, `translation_memory_id`,<br/>
+        /// `translation_memory_threshold` or `custom_instructions`. A request that combines them is rejected<br/>
+        /// with `400 Bad Request`.<br/>
         /// A style profile that does not exist or that your account cannot access is not rejected at upload:<br/>
         /// the document status reports an error with the message `Style profile not found.`.<br/>
         /// Example: 3f1c9d0e-7a24-4b58-9c31-8f0e5d2a1b47
@@ -2250,6 +2288,7 @@ namespace DeepL
             string? styleId = default,
             global::System.Guid? translationMemoryId = default,
             int? translationMemoryThreshold = default,
+            string? customInstructions = default,
             global::System.Guid? styleProfileId = default,
             bool? enableWatermark = default,
             bool? enableQualityEvaluation = default,
@@ -2272,6 +2311,7 @@ namespace DeepL
                 StyleId = styleId,
                 TranslationMemoryId = translationMemoryId,
                 TranslationMemoryThreshold = translationMemoryThreshold,
+                CustomInstructions = customInstructions,
                 StyleProfileId = styleProfileId,
                 EnableWatermark = enableWatermark,
                 EnableQualityEvaluation = enableQualityEvaluation,
@@ -2461,6 +2501,14 @@ namespace DeepL
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.TranslationMemoryThreshold, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"translation_memory_threshold\"");
+
+                            }
+                            if (request.CustomInstructions != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.CustomInstructions ?? string.Empty),
+                                    name: "\"custom_instructions\"");
 
                             }
                             if (request.StyleProfileId != default)
