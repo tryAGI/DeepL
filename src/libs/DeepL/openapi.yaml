@@ -1734,7 +1734,7 @@ paths:
           in: query
           required: true
           schema:
-            $ref: '#/components/schemas/GlossaryTargetLanguage'
+            $ref: '#/components/schemas/MultilingualGlossaryTargetLanguage'
       responses:
         '200':
           description: The entries in tsv, wrapped in a JSON object.
@@ -1795,7 +1795,7 @@ paths:
           in: query
           required: true
           schema:
-            $ref: '#/components/schemas/GlossaryTargetLanguage'
+            $ref: '#/components/schemas/MultilingualGlossaryTargetLanguage'
       responses:
         '204':
           description: Returns no content upon success.
@@ -7169,7 +7169,7 @@ components:
         source_lang:
           $ref: '#/components/schemas/GlossarySourceLanguage'
         target_lang:
-          $ref: '#/components/schemas/GlossaryTargetLanguage'
+          $ref: '#/components/schemas/MultilingualGlossaryTargetLanguage'
         entries:
           $ref: '#/components/schemas/GlossaryEntries'
         entries_format:
@@ -7279,6 +7279,67 @@ components:
         - vi
         - zh
       example: de
+    MultilingualGlossaryTargetLanguage:
+      type: string
+      description: |-
+        The language in which the target texts in the dictionary are specified. Besides the base languages, the
+        target can be one of these variants: `de-CH`, `de-DE`, `en-GB`, `en-US`, `es-419`, `es-ES`, `fr-CA`,
+        `fr-FR`, `pt-BR`, `pt-PT`, `zh-Hans`, or `zh-Hant`. Source languages are always base languages. The current
+        list is returned by `GET /v3/languages?resource=glossary`.
+
+        A dictionary with a base target, such as `de`, applies when translating into that language and any of its
+        variants. A dictionary with a variant target, such as `de-CH`, applies only when translating into that
+        exact variant.
+
+        Within one glossary, each language family uses either the base language or its variants as targets, not
+        both. For example, `de-CH` and `de-DE` can be combined, but `de` and `de-DE` cannot. Adding a dictionary
+        that breaks this rule returns a 400 error.
+      enum:
+        - ar
+        - bg
+        - cs
+        - da
+        - de
+        - de-CH
+        - de-DE
+        - el
+        - en
+        - en-GB
+        - en-US
+        - es
+        - es-419
+        - es-ES
+        - et
+        - fi
+        - fr
+        - fr-CA
+        - fr-FR
+        - he
+        - hu
+        - id
+        - it
+        - ja
+        - ko
+        - lt
+        - lv
+        - nb
+        - nl
+        - pl
+        - pt
+        - pt-BR
+        - pt-PT
+        - ro
+        - ru
+        - sk
+        - sl
+        - sv
+        - tr
+        - uk
+        - vi
+        - zh
+        - zh-Hans
+        - zh-Hant
+      example: de
     SpokenTermsId:
       type: string
       format: uuid
@@ -7356,7 +7417,7 @@ components:
         source_lang:
           $ref: '#/components/schemas/GlossarySourceLanguage'
         target_lang:
-          $ref: '#/components/schemas/GlossaryTargetLanguage'
+          $ref: '#/components/schemas/MultilingualGlossaryTargetLanguage'
         entries:
           $ref: '#/components/schemas/GlossaryEntries'
         entries_format:
@@ -7374,7 +7435,7 @@ components:
         source_lang:
           $ref: '#/components/schemas/GlossarySourceLanguage'
         target_lang:
-          $ref: '#/components/schemas/GlossaryTargetLanguage'
+          $ref: '#/components/schemas/MultilingualGlossaryTargetLanguage'
         entry_count:
           $ref: '#/components/schemas/GlossaryEntryCount'
     OutlineDetectionOption:
@@ -7932,8 +7993,10 @@ components:
     TagHandlingVersionOption:
       description: |-
         Sets which version of the tag handling algorithm should be used. Options currently available:
-        * `v1`: Traditional algorithm (currently the default, will become deprecated in the future).
-        * `v2`: Improved algorithm released in October 2025 (will become the default in the future).
+        * `v1`: Traditional algorithm (will become deprecated in the future).
+        * `v2`: Improved algorithm released in October 2025. This is the default.
+
+        The `tag_handling_version` field in the response shows which version was applied.
       type: string
       enum:
         - v2
