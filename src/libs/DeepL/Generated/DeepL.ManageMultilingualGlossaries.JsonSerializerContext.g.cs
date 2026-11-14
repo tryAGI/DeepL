@@ -16,12 +16,12 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GlossarySourceLanguage), TypeInfoPropertyName = "GlossarySourceLanguage2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GlossaryTargetLanguage), TypeInfoPropertyName = "GlossaryTargetLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CreateMultilingualGlossaryParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.GlossaryDictionary>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GlossaryDictionary))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.MultilingualGlossaryTargetLanguage), TypeInfoPropertyName = "MultilingualGlossaryTargetLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GlossaryEntriesFormat), TypeInfoPropertyName = "GlossaryEntriesFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.MultilingualGlossary))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.MultilingualGlossaryEntries))]
@@ -44,9 +44,9 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.DeleteDictionaryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ReplaceDictionaryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GlossarySourceLanguage?), TypeInfoPropertyName = "NullableGlossarySourceLanguage2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GlossaryTargetLanguage?), TypeInfoPropertyName = "NullableGlossaryTargetLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.MultilingualGlossaryTargetLanguage?), TypeInfoPropertyName = "NullableMultilingualGlossaryTargetLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GlossaryEntriesFormat?), TypeInfoPropertyName = "NullableGlossaryEntriesFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>?), TypeInfoPropertyName = "NullableOneOfErrorResponseInfrastructureErrorResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::DeepL.GlossaryDictionary>))]
@@ -235,9 +235,9 @@ namespace DeepL
 
                     || typeToConvert == typeof(global::DeepL.GlossarySourceLanguage?)
 
-                    || typeToConvert == typeof(global::DeepL.GlossaryTargetLanguage)
+                    || typeToConvert == typeof(global::DeepL.MultilingualGlossaryTargetLanguage)
 
-                    || typeToConvert == typeof(global::DeepL.GlossaryTargetLanguage?);
+                    || typeToConvert == typeof(global::DeepL.MultilingualGlossaryTargetLanguage?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -264,14 +264,14 @@ namespace DeepL
                     return new global::DeepL.JsonConverters.GlossarySourceLanguageNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::DeepL.GlossaryTargetLanguage))
+                if (typeToConvert == typeof(global::DeepL.MultilingualGlossaryTargetLanguage))
                 {
-                    return new global::DeepL.JsonConverters.GlossaryTargetLanguageJsonConverter();
+                    return new global::DeepL.JsonConverters.MultilingualGlossaryTargetLanguageJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::DeepL.GlossaryTargetLanguage?))
+                if (typeToConvert == typeof(global::DeepL.MultilingualGlossaryTargetLanguage?))
                 {
-                    return new global::DeepL.JsonConverters.GlossaryTargetLanguageNullableJsonConverter();
+                    return new global::DeepL.JsonConverters.MultilingualGlossaryTargetLanguageNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }
