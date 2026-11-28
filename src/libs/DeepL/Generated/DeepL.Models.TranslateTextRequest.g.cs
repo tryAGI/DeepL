@@ -194,8 +194,9 @@ namespace DeepL
 
         /// <summary>
         /// Sets which version of the tag handling algorithm should be used. Options currently available:<br/>
-        /// * `v1`: Traditional algorithm (currently the default, will become deprecated in the future).<br/>
-        /// * `v2`: Improved algorithm released in October 2025 (will become the default in the future).
+        /// * `v1`: Traditional algorithm (will become deprecated in the future).<br/>
+        /// * `v2`: Improved algorithm released in October 2025. This is the default.<br/>
+        /// The `tag_handling_version` field in the response shows which version was applied.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_handling_version")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::DeepL.JsonConverters.TagHandlingVersionOptionJsonConverter))]
@@ -361,8 +362,9 @@ namespace DeepL
         /// </param>
         /// <param name="tagHandlingVersion">
         /// Sets which version of the tag handling algorithm should be used. Options currently available:<br/>
-        /// * `v1`: Traditional algorithm (currently the default, will become deprecated in the future).<br/>
-        /// * `v2`: Improved algorithm released in October 2025 (will become the default in the future).
+        /// * `v1`: Traditional algorithm (will become deprecated in the future).<br/>
+        /// * `v2`: Improved algorithm released in October 2025. This is the default.<br/>
+        /// The `tag_handling_version` field in the response shows which version was applied.
         /// </param>
         /// <param name="outlineDetection">
         /// Disable the automatic detection of XML structure by setting the `outline_detection` parameter<br/>

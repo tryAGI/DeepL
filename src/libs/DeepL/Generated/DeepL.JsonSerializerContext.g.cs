@@ -671,6 +671,10 @@ namespace DeepL
 
             typeof(global::DeepL.JsonConverters.GlossaryTargetLanguageNullableJsonConverter),
 
+            typeof(global::DeepL.JsonConverters.MultilingualGlossaryTargetLanguageJsonConverter),
+
+            typeof(global::DeepL.JsonConverters.MultilingualGlossaryTargetLanguageNullableJsonConverter),
+
             typeof(global::DeepL.JsonConverters.ModelTypeJsonConverter),
 
             typeof(global::DeepL.JsonConverters.ModelTypeNullableJsonConverter),
@@ -1270,6 +1274,7 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.DocumentTranslationError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.DocumentKey))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.Formality), TypeInfoPropertyName = "Formality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.MultilingualGlossaryTargetLanguage), TypeInfoPropertyName = "MultilingualGlossaryTargetLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.GlossaryEntriesFormat), TypeInfoPropertyName = "GlossaryEntriesFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ModelType), TypeInfoPropertyName = "ModelType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.MonolingualGlossary))]
@@ -1397,9 +1402,7 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.TranslateDocumentRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.RephraseTextRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.RephraseTextRequest2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CorrectTextRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CorrectTextRequest2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CreateTranslationMemoryImportRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CreateTranslationMemoryImportRequestSourceFile))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.CreateTranslationMemoryImportRequestParameters))]

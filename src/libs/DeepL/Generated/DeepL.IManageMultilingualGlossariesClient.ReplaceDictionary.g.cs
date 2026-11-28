@@ -47,7 +47,16 @@ namespace DeepL
         /// Example: en
         /// </param>
         /// <param name="targetLang">
-        /// The language in which the target texts in the glossary are specified.<br/>
+        /// The language in which the target texts in the dictionary are specified. Besides the base languages, the<br/>
+        /// target can be one of these variants: `de-CH`, `de-DE`, `en-GB`, `en-US`, `es-419`, `es-ES`, `fr-CA`,<br/>
+        /// `fr-FR`, `pt-BR`, `pt-PT`, `zh-Hans`, or `zh-Hant`. Source languages are always base languages. The current<br/>
+        /// list is returned by `GET /v3/languages?resource=glossary`.<br/>
+        /// A dictionary with a base target, such as `de`, applies when translating into that language and any of its<br/>
+        /// variants. A dictionary with a variant target, such as `de-CH`, applies only when translating into that<br/>
+        /// exact variant.<br/>
+        /// Within one glossary, each language family uses either the base language or its variants as targets, not<br/>
+        /// both. For example, `de-CH` and `de-DE` can be combined, but `de` and `de-DE` cannot. Adding a dictionary<br/>
+        /// that breaks this rule returns a 400 error.<br/>
         /// Example: de
         /// </param>
         /// <param name="entries">
@@ -68,7 +77,7 @@ namespace DeepL
         global::System.Threading.Tasks.Task<global::DeepL.MultilingualGlossaryEntriesInformation> ReplaceDictionaryAsync(
             string glossaryId,
             global::DeepL.GlossarySourceLanguage? sourceLang = default,
-            global::DeepL.GlossaryTargetLanguage? targetLang = default,
+            global::DeepL.MultilingualGlossaryTargetLanguage? targetLang = default,
             string? entries = default,
             global::DeepL.GlossaryEntriesFormat? entriesFormat = default,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,

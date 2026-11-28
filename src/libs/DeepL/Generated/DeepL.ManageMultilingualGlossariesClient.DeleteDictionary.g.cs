@@ -42,13 +42,13 @@ namespace DeepL
             global::System.Net.Http.HttpClient httpClient,
             ref string glossaryId,
             ref global::DeepL.GlossarySourceLanguage sourceLang,
-            ref global::DeepL.GlossaryTargetLanguage targetLang);
+            ref global::DeepL.MultilingualGlossaryTargetLanguage targetLang);
         partial void PrepareDeleteDictionaryRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string glossaryId,
             global::DeepL.GlossarySourceLanguage sourceLang,
-            global::DeepL.GlossaryTargetLanguage targetLang);
+            global::DeepL.MultilingualGlossaryTargetLanguage targetLang);
         partial void ProcessDeleteDictionaryResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -64,7 +64,16 @@ namespace DeepL
         /// Example: en
         /// </param>
         /// <param name="targetLang">
-        /// The language in which the target texts in the glossary are specified.<br/>
+        /// The language in which the target texts in the dictionary are specified. Besides the base languages, the<br/>
+        /// target can be one of these variants: `de-CH`, `de-DE`, `en-GB`, `en-US`, `es-419`, `es-ES`, `fr-CA`,<br/>
+        /// `fr-FR`, `pt-BR`, `pt-PT`, `zh-Hans`, or `zh-Hant`. Source languages are always base languages. The current<br/>
+        /// list is returned by `GET /v3/languages?resource=glossary`.<br/>
+        /// A dictionary with a base target, such as `de`, applies when translating into that language and any of its<br/>
+        /// variants. A dictionary with a variant target, such as `de-CH`, applies only when translating into that<br/>
+        /// exact variant.<br/>
+        /// Within one glossary, each language family uses either the base language or its variants as targets, not<br/>
+        /// both. For example, `de-CH` and `de-DE` can be combined, but `de` and `de-DE` cannot. Adding a dictionary<br/>
+        /// that breaks this rule returns a 400 error.<br/>
         /// Example: de
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -73,7 +82,7 @@ namespace DeepL
         public async global::System.Threading.Tasks.Task DeleteDictionaryAsync(
             string glossaryId,
             global::DeepL.GlossarySourceLanguage sourceLang,
-            global::DeepL.GlossaryTargetLanguage targetLang,
+            global::DeepL.MultilingualGlossaryTargetLanguage targetLang,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -96,7 +105,16 @@ namespace DeepL
         /// Example: en
         /// </param>
         /// <param name="targetLang">
-        /// The language in which the target texts in the glossary are specified.<br/>
+        /// The language in which the target texts in the dictionary are specified. Besides the base languages, the<br/>
+        /// target can be one of these variants: `de-CH`, `de-DE`, `en-GB`, `en-US`, `es-419`, `es-ES`, `fr-CA`,<br/>
+        /// `fr-FR`, `pt-BR`, `pt-PT`, `zh-Hans`, or `zh-Hant`. Source languages are always base languages. The current<br/>
+        /// list is returned by `GET /v3/languages?resource=glossary`.<br/>
+        /// A dictionary with a base target, such as `de`, applies when translating into that language and any of its<br/>
+        /// variants. A dictionary with a variant target, such as `de-CH`, applies only when translating into that<br/>
+        /// exact variant.<br/>
+        /// Within one glossary, each language family uses either the base language or its variants as targets, not<br/>
+        /// both. For example, `de-CH` and `de-DE` can be combined, but `de` and `de-DE` cannot. Adding a dictionary<br/>
+        /// that breaks this rule returns a 400 error.<br/>
         /// Example: de
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -105,7 +123,7 @@ namespace DeepL
         public async global::System.Threading.Tasks.Task<global::DeepL.AutoSDKHttpResponse> DeleteDictionaryAsResponseAsync(
             string glossaryId,
             global::DeepL.GlossarySourceLanguage sourceLang,
-            global::DeepL.GlossaryTargetLanguage targetLang,
+            global::DeepL.MultilingualGlossaryTargetLanguage targetLang,
             global::DeepL.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -381,13 +399,13 @@ namespace DeepL
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::DeepL.DeleteDictionaryResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::DeepL.DeleteDictionaryResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::DeepL.DeleteDictionaryResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::DeepL.DeleteDictionaryResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -398,7 +416,7 @@ namespace DeepL
 
                                 throw global::DeepL.ApiException<global::DeepL.DeleteDictionaryResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_400 is { Length: > 0 } ? __content_400 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     responseBody: __content_400,
                                     responseObject: __value_400,
@@ -418,13 +436,13 @@ namespace DeepL
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::DeepL.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::DeepL.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -435,7 +453,7 @@ namespace DeepL
 
                                 throw global::DeepL.ApiException<global::DeepL.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_401 is { Length: > 0 } ? __content_401 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
@@ -455,13 +473,13 @@ namespace DeepL
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::DeepL.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::DeepL.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -472,7 +490,7 @@ namespace DeepL
 
                                 throw global::DeepL.ApiException<global::DeepL.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_403 is { Length: > 0 } ? __content_403 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
@@ -492,13 +510,13 @@ namespace DeepL
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::DeepL.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::DeepL.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -509,7 +527,7 @@ namespace DeepL
 
                                 throw global::DeepL.ApiException<global::DeepL.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_404 is { Length: > 0 } ? __content_404 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
@@ -529,13 +547,13 @@ namespace DeepL
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_413 = global::DeepL.ErrorResponse.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = __content_413 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_413, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_413 = global::DeepL.ErrorResponse.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = __content_413 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_413, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -546,7 +564,7 @@ namespace DeepL
 
                                 throw global::DeepL.ApiException<global::DeepL.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_413 is { Length: > 0 } ? __content_413 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
                                     responseBody: __content_413,
                                     responseObject: __value_413,
@@ -566,13 +584,13 @@ namespace DeepL
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_415 = global::DeepL.ErrorResponse.FromJson(__content_415, JsonSerializerContext);
+                                        __value_415 = __content_415 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_415, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_415 = global::DeepL.ErrorResponse.FromJson(__content_415, JsonSerializerContext);
+                                        __value_415 = __content_415 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_415, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -583,7 +601,7 @@ namespace DeepL
 
                                 throw global::DeepL.ApiException<global::DeepL.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_415 is { Length: > 0 } ? __content_415 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_415,
                                     responseBody: __content_415,
                                     responseObject: __value_415,
@@ -603,13 +621,13 @@ namespace DeepL
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::DeepL.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = __content_429 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::DeepL.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = __content_429 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -620,7 +638,7 @@ namespace DeepL
 
                                 throw global::DeepL.ApiException<global::DeepL.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_429 is { Length: > 0 } ? __content_429 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
                                     responseBody: __content_429,
                                     responseObject: __value_429,
@@ -640,13 +658,13 @@ namespace DeepL
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_456 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_456 = global::DeepL.ErrorResponse.FromJson(__content_456, JsonSerializerContext);
+                                        __value_456 = __content_456 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_456, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_456 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_456 = global::DeepL.ErrorResponse.FromJson(__content_456, JsonSerializerContext);
+                                        __value_456 = __content_456 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_456, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -657,7 +675,7 @@ namespace DeepL
 
                                 throw global::DeepL.ApiException<global::DeepL.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_456 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_456 is { Length: > 0 } ? __content_456 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_456,
                                     responseBody: __content_456,
                                     responseObject: __value_456,
@@ -677,13 +695,13 @@ namespace DeepL
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = __content_500 is not { Length: > 0 } ? null : global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = __content_500 is not { Length: > 0 } ? null : global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -694,7 +712,7 @@ namespace DeepL
 
                                 throw global::DeepL.ApiException<global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>?>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_500 is { Length: > 0 } ? __content_500 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
                                     responseBody: __content_500,
                                     responseObject: __value_500,
@@ -714,13 +732,13 @@ namespace DeepL
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -731,7 +749,7 @@ namespace DeepL
 
                                 throw global::DeepL.ApiException<global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>?>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_503 is { Length: > 0 } ? __content_503 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
                                     responseBody: __content_503,
                                     responseObject: __value_503,
@@ -751,13 +769,13 @@ namespace DeepL
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_529 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_529 = global::DeepL.ErrorResponse.FromJson(__content_529, JsonSerializerContext);
+                                        __value_529 = __content_529 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_529, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_529 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_529 = global::DeepL.ErrorResponse.FromJson(__content_529, JsonSerializerContext);
+                                        __value_529 = __content_529 is not { Length: > 0 } ? null : global::DeepL.ErrorResponse.FromJson(__content_529, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -768,7 +786,7 @@ namespace DeepL
 
                                 throw global::DeepL.ApiException<global::DeepL.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_529 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_529 is { Length: > 0 } ? __content_529 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_529,
                                     responseBody: __content_529,
                                     responseObject: __value_529,
@@ -804,7 +822,7 @@ namespace DeepL
                                 {
                                     throw global::DeepL.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -840,7 +858,7 @@ namespace DeepL
 
                                     throw global::DeepL.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(

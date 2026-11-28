@@ -23,7 +23,6 @@ namespace DeepL
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.InfrastructureErrorResponseError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.ErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.RephraseTextRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.RephraseTextRequest2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.OneOf<global::DeepL.ErrorResponse, global::DeepL.InfrastructureErrorResponse>), TypeInfoPropertyName = "OneOfErrorResponseInfrastructureErrorResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::DeepL.RephraseTextResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::DeepL.RephraseTextResponseImprovement>))]
